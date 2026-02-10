@@ -13,6 +13,8 @@
     .bg-ventus { background-color: #1e3a5f; }
     .btn-ventus { background-color: #1e3a5f; transition: background-color 0.2s; }
     .btn-ventus:hover { background-color: #2d5a8e; }
+    .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -22,7 +24,7 @@
       <a href="../" class="text-2xl font-bold ventus-blue tracking-tight">VENTUS</a>
       <div class="flex items-center gap-6">
         <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Productos</a>
-        <button onclick="buyProduct('BUNDLE')" class="btn-ventus text-white text-sm font-medium px-4 py-2 rounded-lg cursor-pointer">Comprar</button>
+        <button onclick="buyProduct('BUNDLE')" class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-4 py-2 rounded-lg cursor-pointer transition">Comprar</button>
       </div>
     </div>
   </nav>
@@ -32,13 +34,26 @@
       <a href="../#productos" class="text-sm text-gray-400 hover:text-gray-600 mb-6 inline-block">&larr; Todos los productos</a>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- IMAGES -->
         <div>
-          <div class="aspect-square bg-gray-50 rounded-xl flex items-center justify-center p-8 relative">
+          <div class="aspect-square bg-gray-50 rounded-xl flex items-center justify-center p-8 relative mb-4">
             <div class="absolute top-4 right-4 bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full">Ahorrá Q25</div>
-            <img src="../assets/img/bundle/bundle.png" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain">
+            <img id="main-image" src="../assets/img/bundle/bundle.png" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain">
+          </div>
+          <div class="flex gap-3">
+            <button onclick="switchImage('../assets/img/bundle/bundle.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-orange-500 cursor-pointer">
+              <img src="../assets/img/bundle/bundle.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/mt-01/frente.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/mt-01/frente.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/nt-01/frente.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/nt-01/frente.png" alt="" class="w-full h-full object-contain">
+            </button>
           </div>
         </div>
 
+        <!-- INFO -->
         <div>
           <p class="text-sm font-medium text-orange-600 mb-2">MEJOR VALOR</p>
           <h1 class="text-3xl font-bold mb-2">Bundle VENTUS</h1>
@@ -58,20 +73,22 @@
             <div class="bg-gray-50 rounded-xl p-4 mb-4">
               <h4 class="font-semibold text-sm mb-3">El bundle incluye:</h4>
               <div class="space-y-3">
-                <div class="flex items-center gap-3">
+                <a href="mouth-tape.html" class="flex items-center gap-3 hover:bg-gray-100 rounded-lg p-1 -m-1 transition">
                   <img src="../assets/img/mt-01/frente.png" alt="Mouth Tape" class="w-12 h-12 object-contain bg-white rounded-lg p-1">
-                  <div>
+                  <div class="flex-1">
                     <p class="text-sm font-medium">Mouth Tape (30 cintas)</p>
                     <p class="text-xs text-gray-500">Para dormir con respiración nasal</p>
                   </div>
-                </div>
-                <div class="flex items-center gap-3">
+                  <span class="text-xs text-gray-400">Q100</span>
+                </a>
+                <a href="nose-tape.html" class="flex items-center gap-3 hover:bg-gray-100 rounded-lg p-1 -m-1 transition">
                   <img src="../assets/img/nt-01/frente.png" alt="Nose Tape" class="w-12 h-12 object-contain bg-white rounded-lg p-1">
-                  <div>
+                  <div class="flex-1">
                     <p class="text-sm font-medium">Nose Tape (30 tiras)</p>
                     <p class="text-xs text-gray-500">Para deporte y día a día</p>
                   </div>
-                </div>
+                  <span class="text-xs text-gray-400">Q100</span>
+                </a>
               </div>
             </div>
 
@@ -91,16 +108,109 @@
             </ul>
           </div>
 
-          <button onclick="buyProduct('BUNDLE')" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg text-lg cursor-pointer mb-3 transition">
+          <button onclick="buyProduct('BUNDLE')" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3.5 rounded-lg text-lg cursor-pointer mb-3 transition">
             Comprar Bundle — Q175
           </button>
-          <p class="text-xs text-gray-400 text-center">Pago seguro con tarjeta vía Recurrente. Envío a toda Guatemala.</p>
+
+          <!-- Trust signals -->
+          <div class="flex items-center justify-center gap-4 text-xs text-gray-400 mb-6">
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              Pago seguro
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+              Envío a toda Guatemala
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              Tarjeta vía Recurrente
+            </span>
+          </div>
+
+          <!-- Why bundle -->
+          <div class="pt-6 border-t border-gray-100">
+            <h3 class="font-semibold text-sm mb-3">¿Por qué el Bundle?</h3>
+            <div class="space-y-3 text-sm text-gray-600">
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span class="text-blue-700 font-bold text-xs">1</span>
+                </div>
+                <p><strong>De noche:</strong> El Mouth Tape mantiene tu boca cerrada mientras dormís, forzando respiración nasal.</p>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-green-100 rounded-full flex items-center justify-center">
+                  <span class="text-green-700 font-bold text-xs">2</span>
+                </div>
+                <p><strong>De día:</strong> El Nose Tape abre tus fosas nasales para mejor rendimiento en ejercicio.</p>
+              </div>
+              <div class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center">
+                  <span class="text-orange-700 font-bold text-xs">3</span>
+                </div>
+                <p><strong>24/7:</strong> Respiración nasal optimizada todo el día, todos los días.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDIVIDUAL PRODUCTS -->
+      <div class="mt-12">
+        <h2 class="text-xl font-bold mb-6">O comprá por separado</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <a href="mouth-tape.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
+            <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
+              <img src="../assets/img/mt-01/frente.png" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-4">
+              <p class="text-xs font-medium text-blue-600 mb-1">SUEÑO</p>
+              <h3 class="font-semibold text-sm mb-1">Mouth Tape</h3>
+              <span class="text-sm font-bold">Q100</span>
+            </div>
+          </a>
+          <a href="nose-tape.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
+            <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
+              <img src="../assets/img/nt-01/frente.png" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-4">
+              <p class="text-xs font-medium text-green-600 mb-1">RESPIRACIÓN</p>
+              <h3 class="font-semibold text-sm mb-1">Nose Tape</h3>
+              <span class="text-sm font-bold">Q100</span>
+            </div>
+          </a>
+          <a href="nose-tape-premium.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
+            <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
+              <img src="../assets/img/nt-02/frente.png" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-4">
+              <p class="text-xs font-medium text-purple-600 mb-1">PREMIUM</p>
+              <h3 class="font-semibold text-sm mb-1">Nose Tape Premium</h3>
+              <span class="text-sm font-bold">Q100</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="py-8 px-4 border-t border-gray-100">
+  <!-- Sticky mobile CTA -->
+  <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-40 md:hidden translate-y-full transition-transform duration-300">
+    <div class="flex items-center justify-between gap-3 max-w-lg mx-auto">
+      <div>
+        <p class="font-semibold text-sm">Bundle VENTUS</p>
+        <div class="flex items-baseline gap-2">
+          <p class="text-lg font-bold">Q175</p>
+          <p class="text-xs text-gray-400 line-through">Q200</p>
+        </div>
+      </div>
+      <button onclick="buyProduct('BUNDLE')" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2.5 rounded-lg cursor-pointer text-sm transition">
+        Comprar ahora
+      </button>
+    </div>
+  </div>
+
+  <footer class="py-8 px-4 border-t border-gray-100 mb-16 md:mb-0">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <span class="font-bold ventus-blue">VENTUS</span>
@@ -113,6 +223,28 @@
     </div>
   </footer>
 
+  <script>
+    function switchImage(src, el) {
+      document.getElementById('main-image').src = src;
+      document.querySelectorAll('button[onclick^="switchImage"]').forEach(b => {
+        b.classList.remove('border-orange-500');
+        b.classList.add('border-transparent');
+      });
+      el.classList.remove('border-transparent');
+      el.classList.add('border-orange-500');
+    }
+
+    // Sticky CTA on mobile
+    const stickyCta = document.getElementById('sticky-cta');
+    const buyBtn = document.querySelector('button[onclick="buyProduct(\'BUNDLE\')"]');
+    if (stickyCta && buyBtn) {
+      const observer = new IntersectionObserver(([entry]) => {
+        stickyCta.classList.toggle('translate-y-full', entry.isIntersecting);
+        stickyCta.classList.toggle('translate-y-0', !entry.isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(buyBtn);
+    }
+  </script>
   <script src="../js/recurrente.js"></script>
 </body>
 </html>
