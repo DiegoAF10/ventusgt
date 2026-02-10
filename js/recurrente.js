@@ -6,10 +6,10 @@
  */
 
 const PAYMENT_LINKS = {
-  'MT-01': 'https://app.recurrente.com/checkout-session/ch_7tuglribplwbqmpv',
-  'NT-01': 'https://app.recurrente.com/checkout-session/ch_cnlrm37qrrkifb1b',
-  'NT-02': 'https://app.recurrente.com/checkout-session/ch_nqkfbihznql2p2uo',
-  'BUNDLE': 'https://app.recurrente.com/checkout-session/ch_mbptcdcolmhqh7hy',
+  'MT-01': 'https://app.recurrente.com/checkout-session/ch_gdis7nkdoxbzjuxj',
+  'NT-01': 'https://app.recurrente.com/checkout-session/ch_25blzckec4beff1k',
+  'NT-02': 'https://app.recurrente.com/checkout-session/ch_pg6gp77hqp01hk1o',
+  'BUNDLE': 'https://app.recurrente.com/checkout-session/ch_moo3xnqvuxqimv7t',
 };
 
 function buyProduct(sku) {

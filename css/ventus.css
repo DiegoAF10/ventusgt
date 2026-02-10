@@ -1,16 +1,20 @@
 /*
- * VENTUS Design System v2.0
+ * VENTUS Design System v3.0
  * tiendaventus.com
  *
+ * Source of truth: BRAND.md (Canva Brand Kit)
+ *
  * Colors:
- *   Navy:    #0c1b2e  (hero, footer)
- *   Blue:    #1e3a5f  (primary brand)
- *   BlueMid: #2d5a8e  (hover)
+ *   Blue:    #0b3e5d  (primary brand — Canva canonical)
+ *   BlueMid: #2d5289  (hover — Canva canonical)
+ *   Black:   #000000  (text alt)
+ *   White:   #ffffff  (backgrounds, inverted text)
+ *   Cream:   #f4ede5  (alternate backgrounds — Canva canonical)
  *   Orange:  #e67e22  (accent/bundle)
  *   Green:   #059669  (success)
  *   Purple:  #7c3aed  (premium)
  *
- * Typography: Inter 300-800
+ * Typography: Montserrat 300-800
  * Spacing:    8px base grid
  */
 
@@ -18,27 +22,28 @@
 * { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Brand Utilities ──────────────────────────────── */
-.ventus-blue      { color: #1e3a5f; }
-.bg-ventus        { background-color: #1e3a5f; }
-.bg-ventus-dark   { background-color: #0c1b2e; }
-.border-ventus    { border-color: #1e3a5f; }
+.ventus-blue      { color: #0b3e5d; }
+.bg-ventus        { background-color: #0b3e5d; }
+.bg-ventus-dark   { background-color: #051a2a; }
+.bg-ventus-cream  { background-color: #f4ede5; }
+.border-ventus    { border-color: #0b3e5d; }
 
 .btn-ventus {
-  background-color: #1e3a5f;
+  background-color: #0b3e5d;
   color: white;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 .btn-ventus:hover {
-  background-color: #2d5a8e;
+  background-color: #2d5289;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.25);
+  box-shadow: 0 4px 14px rgba(11, 62, 93, 0.25);
 }
 .btn-ventus:active { transform: translateY(0); }
 .btn-ventus:disabled { opacity: 0.7; cursor: wait; transform: none; }
@@ -59,7 +64,7 @@ body {
 
 /* ── Hero ─────────────────────────────────────────── */
 .hero-gradient {
-  background: linear-gradient(160deg, #080f1a 0%, #0c1b2e 30%, #1e3a5f 65%, #0c1b2e 100%);
+  background: linear-gradient(160deg, #051a2a 0%, #0b3e5d 50%, #051a2a 100%);
 }
 
 /* ── Cards ────────────────────────────────────────── */
@@ -109,7 +114,7 @@ body {
 
 /* ── Focus States (WCAG 2.1 AA) ──────────────────── */
 :focus-visible {
-  outline: 2px solid #1e3a5f;
+  outline: 2px solid #0b3e5d;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -121,7 +126,7 @@ body {
   -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid #e2e8f0;
 }
-.nav-scrolled .nav-logo { color: #1e3a5f !important; }
+.nav-scrolled .nav-logo { color: #0b3e5d !important; }
 .nav-scrolled .nav-link { color: #475569 !important; }
 .nav-scrolled .nav-link:hover { color: #0f172a !important; }
 
@@ -131,6 +136,6 @@ body {
 
 /* ── Selection ────────────────────────────────────── */
 ::selection {
-  background-color: #dbeafe;
-  color: #1e3a5f;
+  background-color: #d4e6f1;
+  color: #0b3e5d;
 }
