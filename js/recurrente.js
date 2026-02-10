@@ -25,8 +25,6 @@ function buyProduct(sku) {
       'BUNDLE': 'Hola! Me interesa el Bundle VENTUS (Q175)',
     };
     const msg = encodeURIComponent(messages[sku] || 'Hola! Me interesan los productos VENTUS');
-    // TODO: Replace with actual WhatsApp number
-    // window.open(`https://wa.me/502XXXXXXXX?text=${msg}`, '_blank');
-    alert('Enlace de pago próximamente. Escribinos por WhatsApp o Instagram @ventus.gt');
+    window.open(`https://wa.me/50231015202?text=${msg}`, '_blank');
   }
 }

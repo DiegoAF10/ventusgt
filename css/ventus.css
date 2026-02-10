@@ -1,0 +1,136 @@
+/*
+ * VENTUS Design System v2.0
+ * tiendaventus.com
+ *
+ * Colors:
+ *   Navy:    #0c1b2e  (hero, footer)
+ *   Blue:    #1e3a5f  (primary brand)
+ *   BlueMid: #2d5a8e  (hover)
+ *   Orange:  #e67e22  (accent/bundle)
+ *   Green:   #059669  (success)
+ *   Purple:  #7c3aed  (premium)
+ *
+ * Typography: Inter 300-800
+ * Spacing:    8px base grid
+ */
+
+/* ── Base ─────────────────────────────────────────── */
+* { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Brand Utilities ──────────────────────────────── */
+.ventus-blue      { color: #1e3a5f; }
+.bg-ventus        { background-color: #1e3a5f; }
+.bg-ventus-dark   { background-color: #0c1b2e; }
+.border-ventus    { border-color: #1e3a5f; }
+
+.btn-ventus {
+  background-color: #1e3a5f;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-ventus:hover {
+  background-color: #2d5a8e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.25);
+}
+.btn-ventus:active { transform: translateY(0); }
+.btn-ventus:disabled { opacity: 0.7; cursor: wait; transform: none; }
+
+.btn-orange {
+  background-color: #e67e22;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-orange:hover {
+  background-color: #d35400;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.25);
+}
+.btn-orange:active { transform: translateY(0); }
+.btn-orange:disabled { opacity: 0.7; cursor: wait; transform: none; }
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(160deg, #080f1a 0%, #0c1b2e 30%, #1e3a5f 65%, #0c1b2e 100%);
+}
+
+/* ── Cards ────────────────────────────────────────── */
+.card-product {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+.card-product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Scroll Animations ────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Float Animation ──────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* ── Image Zoom ───────────────────────────────────── */
+.img-zoom-container { overflow: hidden; }
+.img-zoom { transition: transform 0.5s ease; }
+.img-zoom-container:hover .img-zoom { transform: scale(1.08); }
+
+/* ── FAQ Accordion ────────────────────────────────── */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.faq-answer.open { max-height: 300px; }
+.faq-chevron {
+  transition: transform 0.3s ease;
+}
+.faq-chevron.open { transform: rotate(180deg); }
+
+/* ── Focus States (WCAG 2.1 AA) ──────────────────── */
+:focus-visible {
+  outline: 2px solid #1e3a5f;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Nav scroll state ─────────────────────────────── */
+.nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+.nav-scrolled .nav-logo { color: #1e3a5f !important; }
+.nav-scrolled .nav-link { color: #475569 !important; }
+.nav-scrolled .nav-link:hover { color: #0f172a !important; }
+
+/* ── Sticky CTA ───────────────────────────────────── */
+.sticky-cta-hidden { transform: translateY(100%); }
+.sticky-cta-visible { transform: translateY(0); }
+
+/* ── Selection ────────────────────────────────────── */
+::selection {
+  background-color: #dbeafe;
+  color: #1e3a5f;
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tiendaventus.com/sitemap.xml
+
+# Block thank-you page from indexing
+Disallow: /gracias.html

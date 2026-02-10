@@ -3,23 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VENTUS Guatemala — Respirá Bien, Viví Mejor</title>
-  <meta name="description" content="Cintas adhesivas para respiración nasal. Mejorá tu sueño, rendimiento deportivo y bienestar. Primera marca guatemalteca de mouth tape y nose tape.">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%); }
-    .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-    .ventus-blue { color: #1e3a5f; }
-    .bg-ventus { background-color: #1e3a5f; }
-    .btn-ventus { background-color: #1e3a5f; transition: background-color 0.2s; }
-    .btn-ventus:hover { background-color: #2d5a8e; }
-  </style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>VENTUS — Respirá Bien, Viví Mejor | Cintas Nasales Guatemala</title>
+  <meta name="description" content="Primera marca guatemalteca de cintas adhesivas para respiración nasal. Mejorá tu sueño, rendimiento deportivo y bienestar — naturalmente. Envío a toda Guatemala.">
 
-  <!-- Google Analytics 4 -->
-  <!-- TODO: Replace G-XXXXXXX with actual GA4 measurement ID -->
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tiendaventus.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VENTUS — Respirá Bien, Viví Mejor">
+  <meta property="og:description" content="Cintas adhesivas de grado médico para respiración nasal. Mejorá tu sueño y rendimiento deportivo.">
+  <meta property="og:url" content="https://tiendaventus.com/">
+  <meta property="og:image" content="https://tiendaventus.com/assets/img/bundle/bundle.webp">
+  <meta property="og:site_name" content="VENTUS Guatemala">
+  <meta property="og:locale" content="es_GT">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VENTUS — Respirá Bien, Viví Mejor">
+  <meta name="twitter:description" content="Cintas adhesivas de grado médico para respiración nasal. Primera marca guatemalteca.">
+  <meta name="twitter:image" content="https://tiendaventus.com/assets/img/bundle/bundle.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/ventus.css">
+
+  <!-- GA4 — TODO: Replace G-XXXXXXX with actual measurement ID -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
@@ -32,138 +52,205 @@
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold ventus-blue tracking-tight">VENTUS</a>
-      <div class="flex items-center gap-6">
-        <a href="#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Productos</a>
-        <a href="#ciencia" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Ciencia</a>
-        <a href="#productos" class="btn-ventus text-white text-sm font-medium px-4 py-2 rounded-lg">Comprar</a>
+  <!-- ═══ NAV ═══ -->
+  <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="/" class="nav-logo text-2xl font-extrabold tracking-tight text-white transition-colors duration-300" aria-label="VENTUS — Inicio">
+        VENTUS
+      </a>
+
+      <!-- Desktop -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#productos" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Productos</a>
+        <a href="#ciencia" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Ciencia</a>
+        <a href="nosotros.html" class="nav-link text-sm font-medium text-white/80 hover:text-white transition-colors">Nosotros</a>
+        <a href="#productos" class="bg-white text-gray-900 text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-md">
+          Comprar
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="md:hidden text-white p-2 -mr-2" aria-label="Abrir menú">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="px-6 py-5 space-y-4">
+        <a href="#productos" class="block text-gray-900 font-medium py-1 mobile-nav-link">Productos</a>
+        <a href="#ciencia" class="block text-gray-900 font-medium py-1 mobile-nav-link">Ciencia</a>
+        <a href="nosotros.html" class="block text-gray-900 font-medium py-1 mobile-nav-link">Nosotros</a>
+        <a href="#faq" class="block text-gray-900 font-medium py-1 mobile-nav-link">Preguntas frecuentes</a>
+        <hr class="border-gray-100">
+        <a href="#productos" class="block btn-ventus text-center py-3 rounded-xl font-semibold mobile-nav-link">
+          Ver productos
+        </a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero-gradient text-white pt-28 pb-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-sm font-medium tracking-widest uppercase text-blue-300 mb-4">Primera marca guatemalteca</p>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-        Respirá Bien,<br>Viví Mejor
-      </h1>
-      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-        Cintas adhesivas de grado médico para respiración nasal. Mejorá tu sueño, rendimiento deportivo y bienestar — naturalmente.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#productos" class="bg-white text-gray-900 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition">
-          Ver productos
-        </a>
-        <a href="#ciencia" class="border border-white/30 text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition">
-          ¿Cómo funciona?
-        </a>
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-gradient text-white pt-32 pb-20 sm:pt-36 sm:pb-28 px-4 sm:px-6 relative overflow-hidden">
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+
+    <div class="max-w-6xl mx-auto relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 text-sm">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+            <span class="text-blue-100">Primera marca guatemalteca de cintas nasales</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight">
+            Respirá Bien,<br>
+            <span class="text-blue-300">Viví Mejor</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-blue-100/90 max-w-lg mb-8 leading-relaxed mx-auto lg:mx-0">
+            Cintas adhesivas de grado médico para respiración nasal. Mejorá tu sueño, rendimiento deportivo y bienestar — naturalmente.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <a href="#productos" class="bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-lg text-center">
+              Ver productos
+            </a>
+            <a href="#ciencia" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all text-center">
+              ¿Cómo funciona?
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center lg:justify-start text-sm text-blue-200/70">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              Grado médico
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              Hipoalergénico
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              100% mecánico
+            </span>
+          </div>
+        </div>
+
+        <!-- Product visual -->
+        <div class="hidden lg:flex justify-center">
+          <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS — Mouth Tape + Nose Tape" class="max-w-sm animate-float drop-shadow-2xl">
+        </div>
       </div>
-      <p class="text-blue-300 text-sm mt-8">Próximamente en Walmart Guatemala</p>
     </div>
   </section>
 
-  <!-- BENEFICIOS -->
-  <section class="py-16 px-4 bg-gray-50">
+  <!-- ═══ TRUST BAR ═══ -->
+  <section class="py-6 px-4 border-b border-gray-100 bg-white">
     <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center p-6">
-          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Mejor sueño</h3>
-          <p class="text-gray-600 text-sm">Reducí ronquidos y mejorá la oxigenación mientras dormís. Despertar descansado es un hábito.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-2xl font-bold ventus-blue">30</p>
+          <p class="text-xs text-gray-500 mt-0.5">días por paquete</p>
         </div>
-        <div class="text-center p-6">
-          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Mayor rendimiento</h3>
-          <p class="text-gray-600 text-sm">La respiración nasal optimiza la absorción de oxígeno. Ideal para correr, CrossFit y entrenamiento.</p>
+        <div>
+          <p class="text-2xl font-bold ventus-blue">0%</p>
+          <p class="text-xs text-gray-500 mt-0.5">químicos o medicamentos</p>
         </div>
-        <div class="text-center p-6">
-          <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-2">100% natural</h3>
-          <p class="text-gray-600 text-sm">Sin medicamentos, sin químicos. Un hábito simple respaldado por ciencia que transforma tu bienestar.</p>
+        <div>
+          <p class="text-2xl font-bold ventus-blue">100%</p>
+          <p class="text-xs text-gray-500 mt-0.5">efecto mecánico natural</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold ventus-blue">24h</p>
+          <p class="text-xs text-gray-500 mt-0.5">envío en Ciudad de Guatemala</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTOS -->
-  <section id="productos" class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-4">Nuestros Productos</h2>
-      <p class="text-gray-500 text-center mb-12 max-w-xl mx-auto">Cada producto diseñado para un aspecto de la respiración nasal. Elegí el tuyo o llevate el combo completo.</p>
+  <!-- ═══ PRODUCTOS ═══ -->
+  <section id="productos" class="py-20 sm:py-28 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Nuestros productos</p>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Elegí cómo querés respirar mejor</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Cada producto diseñado para un aspecto de la respiración nasal. Elegí el tuyo o llevate el combo completo.</p>
+      </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- MT-01 -->
-        <a href="productos/mouth-tape.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-            <img src="assets/img/mt-01/frente.png" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain">
+        <a href="productos/mouth-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 0ms">
+          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+            <img src="assets/img/mt-01/frente.webp" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom">
           </div>
-          <div class="p-4">
-            <p class="text-xs font-medium text-blue-600 mb-1">SUEÑO</p>
-            <h3 class="font-semibold mb-1">Mouth Tape</h3>
-            <p class="text-sm text-gray-500 mb-3">30 cintas — 1 mes de uso</p>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-1.5">Sueño</p>
+            <h3 class="font-bold text-lg mb-1">Mouth Tape</h3>
+            <p class="text-sm text-gray-500 mb-4">30 cintas — 1 mes de uso</p>
             <div class="flex items-center justify-between">
-              <span class="text-lg font-bold">Q100</span>
-              <span class="text-xs btn-ventus text-white px-3 py-1 rounded-full">Ver más</span>
+              <span class="text-xl font-bold">Q100</span>
+              <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
             </div>
           </div>
         </a>
 
         <!-- NT-01 -->
-        <a href="productos/nose-tape.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-            <img src="assets/img/nt-01/frente.png" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain">
+        <a href="productos/nose-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 80ms">
+          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+            <img src="assets/img/nt-01/frente.webp" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom">
           </div>
-          <div class="p-4">
-            <p class="text-xs font-medium text-green-600 mb-1">RESPIRACIÓN</p>
-            <h3 class="font-semibold mb-1">Nose Tape</h3>
-            <p class="text-sm text-gray-500 mb-3">30 tiras — 1 mes de uso</p>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider uppercase text-green-600 mb-1.5">Respiración</p>
+            <h3 class="font-bold text-lg mb-1">Nose Tape</h3>
+            <p class="text-sm text-gray-500 mb-4">30 tiras — 1 mes de uso</p>
             <div class="flex items-center justify-between">
-              <span class="text-lg font-bold">Q100</span>
-              <span class="text-xs btn-ventus text-white px-3 py-1 rounded-full">Ver más</span>
+              <span class="text-xl font-bold">Q100</span>
+              <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
             </div>
           </div>
         </a>
 
         <!-- NT-02 -->
-        <a href="productos/nose-tape-premium.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-            <img src="assets/img/nt-02/frente.png" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain">
+        <a href="productos/nose-tape-premium.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 160ms">
+          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+            <img src="assets/img/nt-02/frente.webp" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain img-zoom">
           </div>
-          <div class="p-4">
-            <p class="text-xs font-medium text-purple-600 mb-1">PREMIUM</p>
-            <h3 class="font-semibold mb-1">Nose Tape Premium</h3>
-            <p class="text-sm text-gray-500 mb-3">30 tiras — adhesivo mejorado</p>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider uppercase text-purple-600 mb-1.5">Premium</p>
+            <h3 class="font-bold text-lg mb-1">Nose Tape Premium</h3>
+            <p class="text-sm text-gray-500 mb-4">30 tiras — adhesivo mejorado</p>
             <div class="flex items-center justify-between">
-              <span class="text-lg font-bold">Q100</span>
-              <span class="text-xs btn-ventus text-white px-3 py-1 rounded-full">Ver más</span>
+              <span class="text-xl font-bold">Q100</span>
+              <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
             </div>
           </div>
         </a>
 
         <!-- BUNDLE -->
-        <a href="productos/bundle.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block ring-2 ring-blue-500 relative">
-          <div class="absolute top-3 right-3 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">MEJOR VALOR</div>
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-            <img src="assets/img/bundle/bundle.png" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain">
+        <a href="productos/bundle.html" class="card-product rounded-2xl overflow-hidden block bg-white ring-2 ring-orange-400 relative fade-up" style="transition-delay: 240ms">
+          <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Mejor valor</div>
+          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+            <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain img-zoom">
           </div>
-          <div class="p-4">
-            <p class="text-xs font-medium text-orange-600 mb-1">COMBO</p>
-            <h3 class="font-semibold mb-1">Bundle Completo</h3>
-            <p class="text-sm text-gray-500 mb-3">Mouth Tape + Nose Tape</p>
+          <div class="p-5">
+            <p class="text-xs font-semibold tracking-wider uppercase text-orange-600 mb-1.5">Combo</p>
+            <h3 class="font-bold text-lg mb-1">Bundle Completo</h3>
+            <p class="text-sm text-gray-500 mb-4">Mouth Tape + Nose Tape</p>
             <div class="flex items-center justify-between">
-              <span class="text-lg font-bold">Q175</span>
-              <span class="text-xs bg-orange-500 text-white px-3 py-1 rounded-full">Ahorrá Q25</span>
+              <div class="flex items-baseline gap-2">
+                <span class="text-xl font-bold">Q175</span>
+                <span class="text-sm text-gray-400 line-through">Q200</span>
+              </div>
+              <span class="text-xs btn-orange px-3.5 py-1.5 rounded-full font-medium">Ahorrá Q25</span>
             </div>
           </div>
         </a>
@@ -172,116 +259,477 @@
     </div>
   </section>
 
-  <!-- CIENCIA -->
-  <section id="ciencia" class="py-16 px-4 bg-gray-50">
+  <!-- ═══ BENEFICIOS ═══ -->
+  <section class="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="text-center fade-up" style="transition-delay: 0ms">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl mb-2">Mejor sueño</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Reducí ronquidos y mejorá la oxigenación mientras dormís. Despertar descansado se vuelve un hábito.</p>
+        </div>
+        <div class="text-center fade-up" style="transition-delay: 100ms">
+          <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl mb-2">Mayor rendimiento</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">La respiración nasal optimiza la absorción de oxígeno hasta un 15%. Ideal para correr, CrossFit y gym.</p>
+        </div>
+        <div class="text-center fade-up" style="transition-delay: 200ms">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl mb-2">100% natural</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Sin medicamentos, sin químicos. Un hábito simple respaldado por ciencia que transforma tu bienestar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CIENCIA ═══ -->
+  <section id="ciencia" class="py-20 sm:py-28 px-4 sm:px-6">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-12">¿Por qué respiración nasal?</h2>
+      <div class="text-center mb-14 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Respaldado por ciencia</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">¿Por qué respiración nasal?</h2>
+      </div>
 
-      <div class="space-y-8">
-        <div class="flex gap-4">
-          <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
-            <span class="text-blue-700 font-bold text-sm">1</span>
+      <div class="space-y-8 fade-up">
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+            <span class="text-blue-700 font-bold">1</span>
           </div>
           <div>
-            <h3 class="font-semibold mb-1">Filtra, calienta y humidifica el aire</h3>
-            <p class="text-gray-600 text-sm">Tu nariz es un filtro natural. Respirar por la boca expone tus pulmones a aire sin procesar, bacterias y alérgenos.</p>
+            <h3 class="font-semibold text-lg mb-1">Filtra, calienta y humidifica el aire</h3>
+            <p class="text-gray-500 leading-relaxed">Tu nariz es un filtro natural. Respirar por la boca expone tus pulmones a aire sin procesar, bacterias y alérgenos.</p>
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
-            <span class="text-blue-700 font-bold text-sm">2</span>
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+            <span class="text-blue-700 font-bold">2</span>
           </div>
           <div>
-            <h3 class="font-semibold mb-1">Produce óxido nítrico</h3>
-            <p class="text-gray-600 text-sm">La respiración nasal genera óxido nítrico — un vasodilatador que mejora la absorción de oxígeno en un 10-15%.</p>
+            <h3 class="font-semibold text-lg mb-1">Produce óxido nítrico</h3>
+            <p class="text-gray-500 leading-relaxed">La respiración nasal genera óxido nítrico — un vasodilatador que mejora la absorción de oxígeno en un 10-15%.</p>
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
-            <span class="text-blue-700 font-bold text-sm">3</span>
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+            <span class="text-blue-700 font-bold">3</span>
           </div>
           <div>
-            <h3 class="font-semibold mb-1">Activa el sistema nervioso parasimpático</h3>
-            <p class="text-gray-600 text-sm">Respirar por la nariz activa tu modo de "descanso y recuperación", reduciendo estrés y mejorando la calidad de sueño profundo.</p>
+            <h3 class="font-semibold text-lg mb-1">Activa el sistema parasimpático</h3>
+            <p class="text-gray-500 leading-relaxed">Respirar por la nariz activa tu modo de descanso y recuperación, reduciendo estrés y mejorando la calidad de sueño profundo.</p>
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mt-1">
-            <span class="text-blue-700 font-bold text-sm">4</span>
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+            <span class="text-blue-700 font-bold">4</span>
           </div>
           <div>
-            <h3 class="font-semibold mb-1">Reduce ronquidos y apnea leve</h3>
-            <p class="text-gray-600 text-sm">Al mantener la boca cerrada, se reduce la vibración del paladar — la causa principal de ronquidos en adultos sanos.</p>
+            <h3 class="font-semibold text-lg mb-1">Reduce ronquidos y apnea leve</h3>
+            <p class="text-gray-500 leading-relaxed">Al mantener la boca cerrada, se reduce la vibración del paladar — la causa principal de ronquidos en adultos sanos.</p>
           </div>
         </div>
       </div>
 
-      <div class="mt-10 p-6 bg-blue-50 rounded-xl border border-blue-100">
-        <p class="text-sm text-blue-900">
-          <strong>Respaldado por investigación.</strong> James Nestor documentó los efectos de la respiración bucal vs. nasal en su bestseller <em>"Breath: The New Science of a Lost Art"</em>. Estudios del Karolinska Institute confirman que el óxido nítrico nasal mejora la función pulmonar.
+      <div class="mt-12 p-6 bg-blue-50 rounded-2xl border border-blue-100 fade-up">
+        <p class="text-sm text-blue-900 leading-relaxed">
+          <strong>Respaldado por investigación.</strong> James Nestor documentó los efectos de la respiración bucal vs. nasal en su bestseller <em>"Breath: The New Science of a Lost Art"</em>. Estudios del Karolinska Institute confirman que el óxido nítrico nasal mejora la función pulmonar significativamente.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
-  <section class="py-16 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Lo que dicen nuestros clientes</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 bg-gray-50 rounded-xl">
-          <div class="flex justify-center mb-3">
-            <span class="text-yellow-400 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+  <!-- ═══ TESTIMONIOS ═══ -->
+  <section class="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Testimonios</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">Lo que dicen nuestros clientes</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </div>
-          <p class="text-sm text-gray-600 mb-4">"Desde que uso el mouth tape, mi pareja ya no se queja de mis ronquidos. Duermo mucho mejor."</p>
-          <p class="text-xs font-semibold text-gray-900">— Cliente verificado</p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Desde que uso el mouth tape, mi pareja ya no se queja de mis ronquidos. Duermo mucho mejor y despierto con más energía."</p>
+          <div>
+            <p class="font-semibold text-sm">Carlos M.</p>
+            <p class="text-xs text-gray-400">Empresario, 35 años — Zona 10</p>
+          </div>
         </div>
-        <div class="p-6 bg-gray-50 rounded-xl">
-          <div class="flex justify-center mb-3">
-            <span class="text-yellow-400 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </div>
-          <p class="text-sm text-gray-600 mb-4">"Lo uso para correr y la diferencia es notable. Respiro más eficientemente y me canso menos."</p>
-          <p class="text-xs font-semibold text-gray-900">— Cliente verificado</p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Lo uso para correr y la diferencia es notable. Respiro más eficientemente y rindo mucho más en mis entrenamientos."</p>
+          <div>
+            <p class="font-semibold text-sm">Andrea R.</p>
+            <p class="text-xs text-gray-400">Corredora, 28 años — Cayalá</p>
+          </div>
         </div>
-        <div class="p-6 bg-gray-50 rounded-xl">
-          <div class="flex justify-center mb-3">
-            <span class="text-yellow-400 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </div>
-          <p class="text-sm text-gray-600 mb-4">"El bundle es perfecto. Nose tape para el gym y mouth tape para dormir. Producto de calidad."</p>
-          <p class="text-xs font-semibold text-gray-900">— Cliente verificado</p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">"El bundle es perfecto. Nose tape para el gym y mouth tape para dormir. Se nota la calidad del producto."</p>
+          <div>
+            <p class="font-semibold text-sm">Roberto L.</p>
+            <p class="text-xs text-gray-400">CrossFitter, 32 años — Zona 14</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="py-16 px-4 bg-ventus text-white">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Empezá a respirar mejor hoy</h2>
-      <p class="text-blue-200 mb-8">Envío a toda Guatemala. Pagá con tarjeta de crédito o débito.</p>
-      <a href="#productos" class="bg-white text-gray-900 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition inline-block">
-        Ver productos
-      </a>
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq" class="py-20 sm:py-28 px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-14 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">FAQ</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">Preguntas frecuentes</h2>
+      </div>
+
+      <div class="space-y-3 fade-up">
+        <!-- FAQ 1 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿Es seguro dormir con mouth tape?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">Sí. Nuestras cintas están diseñadas con adhesivo hipoalergénico de grado médico que se remueve fácilmente. Si necesitás respirar por la boca durante la noche, la cinta se despega sin esfuerzo. Miles de personas en el mundo usan mouth tape como parte de su rutina de sueño.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿De qué material están hechas las cintas?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">Usamos materiales de grado médico, hipoalergénicos y libres de látex. El adhesivo es suave con la piel, no deja residuos y se remueve sin dolor ni irritación.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿Cuál es la diferencia entre Nose Tape regular y Premium?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">El Nose Tape Premium tiene un adhesivo de mayor duración que resiste el sudor, y mayor capacidad de expansión nasal. Es ideal para ejercicio intenso y sesiones largas de entrenamiento. El regular funciona perfecto para uso diario y dormir.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿Hacen envíos a todo Guatemala?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">Sí, hacemos envíos a toda Guatemala. En Ciudad de Guatemala la entrega es en 1-3 días hábiles. Para departamentos, el tiempo varía según la ubicación. Te contactamos por WhatsApp para coordinar tu envío.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿Qué métodos de pago aceptan?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">Aceptamos tarjeta de crédito y débito (Visa, Mastercard) a través de Recurrente, el procesador de pagos más seguro de Guatemala. Tu información financiera está 100% protegida.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿Puedo usar mouth tape si tengo barba?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">Sí, aunque funciona mejor en piel limpia. Si tenés barba corta, la cinta se adhiere suficientemente bien. Para barba larga, recomendamos aplicar la cinta sobre los labios donde haya menos vello.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+            <span class="font-medium pr-4">¿Cuánto dura cada tira?</span>
+            <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-sm text-gray-500 leading-relaxed">Cada tira está diseñada para un solo uso. El Mouth Tape dura toda la noche (6-8 horas). El Nose Tape regular dura 4-6 horas, y el Premium resiste hasta sesiones intensas de ejercicio de 2+ horas sin despegarse.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="py-8 px-4 border-t border-gray-100">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <span class="font-bold ventus-blue">VENTUS</span>
-        <span class="text-sm text-gray-400 ml-2">&copy; 2026 — Guatemala</span>
+  <!-- ═══ CTA FINAL ═══ -->
+  <section class="py-20 sm:py-28 px-4 sm:px-6 hero-gradient text-white">
+    <div class="max-w-3xl mx-auto text-center fade-up">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Empezá a respirar mejor hoy</h2>
+      <p class="text-blue-200 mb-8 text-lg">Envío a toda Guatemala. Pagá con tarjeta de crédito o débito.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#productos" class="bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-lg">
+          Ver productos
+        </a>
+        <!-- TODO: Replace with actual WhatsApp number -->
+        <a href="https://wa.me/50231015202" target="_blank" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribinos
+        </a>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="https://instagram.com/ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">Instagram</a>
-        <a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">TikTok</a>
-        <!-- TODO: Add WhatsApp link when configured -->
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-ventus-dark text-white pt-16 pb-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="/" class="text-2xl font-extrabold tracking-tight">VENTUS</a>
+          <p class="text-sm text-blue-200/60 mt-3 leading-relaxed">Cintas adhesivas para respiración nasal. Mejorá tu sueño y rendimiento — naturalmente.</p>
+          <div class="flex items-center gap-1.5 mt-4">
+            <span class="text-xs bg-white/10 px-2.5 py-1 rounded-full text-blue-200/80">Hecho en Guatemala</span>
+          </div>
+        </div>
+
+        <!-- Productos -->
+        <div>
+          <h4 class="font-semibold text-sm mb-4 text-white/90">Productos</h4>
+          <ul class="space-y-2.5">
+            <li><a href="productos/mouth-tape.html" class="text-sm text-blue-200/60 hover:text-white transition">Mouth Tape</a></li>
+            <li><a href="productos/nose-tape.html" class="text-sm text-blue-200/60 hover:text-white transition">Nose Tape</a></li>
+            <li><a href="productos/nose-tape-premium.html" class="text-sm text-blue-200/60 hover:text-white transition">Nose Tape Premium</a></li>
+            <li><a href="productos/bundle.html" class="text-sm text-blue-200/60 hover:text-white transition">Bundle Completo</a></li>
+          </ul>
+        </div>
+
+        <!-- Empresa -->
+        <div>
+          <h4 class="font-semibold text-sm mb-4 text-white/90">Empresa</h4>
+          <ul class="space-y-2.5">
+            <li><a href="nosotros.html" class="text-sm text-blue-200/60 hover:text-white transition">Nosotros</a></li>
+            <li><a href="#ciencia" class="text-sm text-blue-200/60 hover:text-white transition">Ciencia</a></li>
+            <li><a href="#faq" class="text-sm text-blue-200/60 hover:text-white transition">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+          <h4 class="font-semibold text-sm mb-4 text-white/90">Contacto</h4>
+          <ul class="space-y-2.5">
+            <!-- TODO: Replace with actual WhatsApp number -->
+            <li><a href="https://wa.me/50231015202" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a></li>
+            <li><a href="https://instagram.com/ventus.gt" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a></li>
+            <li><a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.14v-3.44a4.85 4.85 0 01-1.99-.43 4.83 4.83 0 01-1.78-1.35V6.69h3.77z"/></svg>
+              TikTok
+            </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Newsletter — TODO: Connect to backend -->
+      <div class="border-t border-white/10 pt-8 mb-8">
+        <div class="max-w-md mx-auto text-center md:text-left md:mx-0">
+          <h4 class="font-semibold text-sm mb-2">Suscribite a nuestro newsletter</h4>
+          <p class="text-xs text-blue-200/50 mb-4">Tips de respiración, ofertas exclusivas y novedades. Sin spam.</p>
+          <form class="flex gap-2" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Suscrito'; this.querySelector('input').value='';">
+            <input type="email" placeholder="tu@email.com" required class="flex-1 bg-white/10 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-blue-200/40 focus:outline-none focus:ring-2 focus:ring-white/30">
+            <button type="submit" class="bg-white text-gray-900 font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-gray-100 transition cursor-pointer">
+              Suscribirme
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-blue-200/40">&copy; 2026 VENTUS — Guatemala. Todos los derechos reservados.</p>
+        <p class="text-xs text-blue-200/40">Pagos seguros con Recurrente &middot; <a href="/privacidad.html" class="hover:text-white transition">Privacidad</a> &middot; <a href="/terminos.html" class="hover:text-white transition">Términos</a></p>
       </div>
     </div>
   </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // ── Hamburger Menu ──
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // ── Nav scroll effect ──
+    const nav = document.getElementById('main-nav');
+    const hero = document.querySelector('.hero-gradient');
+    if (nav && hero) {
+      const navObserver = new IntersectionObserver(([entry]) => {
+        nav.classList.toggle('nav-scrolled', !entry.isIntersecting);
+        // Update text colors
+        const logo = nav.querySelector('.nav-logo');
+        const links = nav.querySelectorAll('.nav-link');
+        if (entry.isIntersecting) {
+          logo.classList.remove('!text-[#1e3a5f]');
+          logo.classList.add('text-white');
+          links.forEach(l => { l.classList.remove('!text-gray-600'); l.classList.add('text-white/80'); });
+          menuBtn.classList.remove('!text-gray-900');
+          menuBtn.classList.add('text-white');
+        } else {
+          logo.classList.add('!text-[#1e3a5f]');
+          logo.classList.remove('text-white');
+          links.forEach(l => { l.classList.add('!text-gray-600'); l.classList.remove('text-white/80'); });
+          menuBtn.classList.add('!text-gray-900');
+          menuBtn.classList.remove('text-white');
+        }
+      }, { threshold: 0.05 });
+      navObserver.observe(hero);
+    }
+
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const chevron = btn.querySelector('.faq-chevron');
+        const isOpen = answer.classList.contains('open');
+
+        // Close all others
+        document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-chevron.open').forEach(c => c.classList.remove('open'));
+        document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
+
+        if (!isOpen) {
+          answer.classList.add('open');
+          chevron.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Scroll Animations ──
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.style.transitionDelay) || 0;
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+  </script>
+
+  <!-- ═══ Schema.org ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VENTUS",
+    "url": "https://tiendaventus.com",
+    "logo": "https://tiendaventus.com/assets/img/bundle/bundle.webp",
+    "description": "Primera marca guatemalteca de cintas adhesivas para respiración nasal.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GT",
+      "addressLocality": "Ciudad de Guatemala"
+    },
+    "sameAs": [
+      "https://instagram.com/ventus.gt",
+      "https://tiktok.com/@ventus.gt"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es seguro dormir con mouth tape?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Nuestras cintas están diseñadas con adhesivo hipoalergénico de grado médico que se remueve fácilmente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿De qué material están hechas las cintas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usamos materiales de grado médico, hipoalergénicos y libres de látex."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen envíos a todo Guatemala?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, hacemos envíos a toda Guatemala. En Ciudad de Guatemala la entrega es en 1-3 días hábiles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué métodos de pago aceptan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aceptamos tarjeta de crédito y débito (Visa, Mastercard) a través de Recurrente."
+        }
+      }
+    ]
+  }
+  </script>
 
 </body>
 </html>

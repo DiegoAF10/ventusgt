@@ -3,60 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>Nose Tape Premium VENTUS — Máxima apertura nasal</title>
-  <meta name="description" content="Dilatador nasal premium con adhesivo mejorado y mayor capacidad de expansión. 30 tiras por paquete.">
+  <meta name="description" content="Dilatador nasal premium con adhesivo mejorado y mayor capacidad de expansión. 30 tiras por paquete. Resiste ejercicio intenso. Envío a toda Guatemala.">
+
+  <link rel="canonical" href="https://tiendaventus.com/productos/nose-tape-premium.html">
+
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Nose Tape Premium VENTUS — Máxima apertura nasal">
+  <meta property="og:description" content="30 tiras premium con adhesivo mejorado. Resiste ejercicio intenso. Q100 con envío a toda Guatemala.">
+  <meta property="og:url" content="https://tiendaventus.com/productos/nose-tape-premium.html">
+  <meta property="og:image" content="https://tiendaventus.com/assets/img/nt-02/frente.webp">
+  <meta property="og:site_name" content="VENTUS Guatemala">
+  <meta property="og:locale" content="es_GT">
+  <meta property="product:price:amount" content="100.00">
+  <meta property="product:price:currency" content="GTQ">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nose Tape Premium VENTUS — Máxima apertura nasal">
+  <meta name="twitter:description" content="30 tiras premium con adhesivo mejorado. Q100 — envío a toda Guatemala.">
+  <meta name="twitter:image" content="https://tiendaventus.com/assets/img/nt-02/frente.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .ventus-blue { color: #1e3a5f; }
-    .bg-ventus { background-color: #1e3a5f; }
-    .btn-ventus { background-color: #1e3a5f; transition: background-color 0.2s; }
-    .btn-ventus:hover { background-color: #2d5a8e; }
-    .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
-    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-  </style>
+  <link rel="stylesheet" href="../css/ventus.css">
 </head>
 <body class="bg-white text-gray-900">
 
-  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="../" class="text-2xl font-bold ventus-blue tracking-tight">VENTUS</a>
-      <div class="flex items-center gap-6">
-        <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Productos</a>
-        <button onclick="buyProduct('NT-02')" class="btn-ventus text-white text-sm font-medium px-4 py-2 rounded-lg cursor-pointer">Comprar</button>
+  <nav class="fixed top-0 w-full z-50 bg-white/97 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="../" class="text-2xl font-extrabold tracking-tight ventus-blue">VENTUS</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Productos</a>
+        <a href="../#ciencia" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Ciencia</a>
+        <a href="../nosotros.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Nosotros</a>
+        <button onclick="buyProduct('NT-02')" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer">Comprar</button>
+      </div>
+      <button id="menu-btn" class="md:hidden text-gray-900 p-2 -mr-2" aria-label="Abrir menú">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="px-6 py-5 space-y-4">
+        <a href="../#productos" class="block text-gray-900 font-medium py-1 mobile-nav-link">Productos</a>
+        <a href="../#ciencia" class="block text-gray-900 font-medium py-1 mobile-nav-link">Ciencia</a>
+        <a href="../nosotros.html" class="block text-gray-900 font-medium py-1 mobile-nav-link">Nosotros</a>
+        <a href="../#faq" class="block text-gray-900 font-medium py-1 mobile-nav-link">Preguntas frecuentes</a>
+        <hr class="border-gray-100">
+        <button onclick="buyProduct('NT-02')" class="block w-full btn-ventus text-white text-center py-3 rounded-xl font-semibold mobile-nav-link cursor-pointer">Comprar — Q100</button>
       </div>
     </div>
   </nav>
 
-  <main class="pt-20 pb-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <a href="../#productos" class="text-sm text-gray-400 hover:text-gray-600 mb-6 inline-block">&larr; Todos los productos</a>
+  <div class="pt-20 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto py-4">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-400">
+        <a href="../" class="hover:text-gray-600 transition-colors">Inicio</a>
+        <span class="mx-2">/</span>
+        <a href="../#productos" class="hover:text-gray-600 transition-colors">Productos</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-700">Nose Tape Premium</span>
+      </nav>
+    </div>
+  </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- IMAGES -->
-        <div>
-          <div class="aspect-square bg-gray-50 rounded-xl flex items-center justify-center p-8 mb-4">
-            <img id="main-image" src="../assets/img/nt-02/frente.png" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain">
+  <main class="pb-20 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+
+        <div class="fade-up">
+          <div class="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center p-8 mb-4 img-zoom-container relative">
+            <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Premium</div>
+            <img id="main-image" src="../assets/img/nt-02/frente.webp" alt="Nose Tape Premium VENTUS — Vista frontal" class="max-h-full max-w-full object-contain img-zoom">
           </div>
           <div class="flex gap-3">
-            <button onclick="switchImage('../assets/img/nt-02/frente.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-blue-500 cursor-pointer">
-              <img src="../assets/img/nt-02/frente.png" alt="" class="w-full h-full object-contain">
+            <button onclick="switchImage('../assets/img/nt-02/frente.webp', this)" class="w-16 h-16 bg-gray-50 rounded-xl p-2 border-2 border-purple-500 cursor-pointer transition-all hover:shadow-md" aria-label="Vista frontal">
+              <img src="../assets/img/nt-02/frente.webp" alt="" class="w-full h-full object-contain">
             </button>
-            <button onclick="switchImage('../assets/img/nt-02/atras.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
-              <img src="../assets/img/nt-02/atras.png" alt="" class="w-full h-full object-contain">
+            <button onclick="switchImage('../assets/img/nt-02/atras.webp', this)" class="w-16 h-16 bg-gray-50 rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Vista trasera">
+              <img src="../assets/img/nt-02/atras.webp" alt="" class="w-full h-full object-contain">
             </button>
-            <button onclick="switchImage('../assets/img/nt-02/lado.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
-              <img src="../assets/img/nt-02/lado.png" alt="" class="w-full h-full object-contain">
+            <button onclick="switchImage('../assets/img/nt-02/lado.webp', this)" class="w-16 h-16 bg-gray-50 rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Vista lateral">
+              <img src="../assets/img/nt-02/lado.webp" alt="" class="w-full h-full object-contain">
             </button>
           </div>
         </div>
 
-        <!-- INFO -->
-        <div>
-          <p class="text-sm font-medium text-purple-600 mb-2">PREMIUM</p>
-          <h1 class="text-3xl font-bold mb-2">Nose Tape Premium</h1>
-          <p class="text-gray-500 mb-4">Máxima apertura nasal, máximo confort</p>
+        <div class="fade-up" style="transition-delay: 100ms">
+          <p class="text-sm font-semibold tracking-wider uppercase text-purple-600 mb-2">Premium</p>
+          <h1 class="text-3xl sm:text-4xl font-bold mb-2">Nose Tape Premium</h1>
+          <p class="text-gray-500 mb-5">Máxima apertura nasal, máximo confort</p>
 
           <div class="flex items-baseline gap-3 mb-6">
             <span class="text-3xl font-bold">Q100</span>
@@ -64,122 +107,159 @@
           </div>
 
           <div class="mb-6">
-            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
               Versión premium del dilatador nasal con adhesivo mejorado y mayor capacidad de expansión. Para quienes buscan el máximo rendimiento respiratorio.
             </p>
-            <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-sm text-gray-600">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 Adhesivo premium de mayor duración
               </li>
-              <li class="flex items-start gap-2 text-sm text-gray-600">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 Mayor capacidad de expansión nasal
               </li>
-              <li class="flex items-start gap-2 text-sm text-gray-600">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                30 tiras por paquete
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Resiste sudor en ejercicio intenso
               </li>
-              <li class="flex items-start gap-2 text-sm text-gray-600">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 Diseño discreto y cómodo
               </li>
             </ul>
           </div>
 
-          <button onclick="buyProduct('NT-02')" class="w-full btn-ventus text-white font-semibold py-3.5 rounded-lg text-lg cursor-pointer mb-3">
+          <button onclick="buyProduct('NT-02')" class="w-full btn-ventus text-white font-semibold py-4 rounded-xl text-lg cursor-pointer mb-3">
             Comprar — Q100
           </button>
 
-          <!-- Trust signals -->
-          <div class="flex items-center justify-center gap-4 text-xs text-gray-400 mb-6">
-            <span class="flex items-center gap-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-gray-400 mb-8">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               Pago seguro
             </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
               Envío a toda Guatemala
             </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-              Tarjeta vía Recurrente
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              Visa / Mastercard vía Recurrente
             </span>
           </div>
 
-          <!-- Comparison -->
-          <div class="pt-6 border-t border-gray-100">
-            <h3 class="font-semibold text-sm mb-3">¿Cuál es la diferencia con el Nose Tape regular?</h3>
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="bg-gray-50 rounded-lg p-3">
-                <p class="font-medium text-xs text-gray-400 mb-2">REGULAR</p>
-                <ul class="space-y-1 text-gray-600 text-xs">
-                  <li>Adhesivo estándar</li>
-                  <li>Expansión normal</li>
-                  <li>Uso general / dormir</li>
+          <!-- Regular vs Premium comparison -->
+          <div class="pt-6 border-t border-gray-100 mb-8">
+            <h3 class="font-semibold mb-4">Regular vs. Premium</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div class="bg-gray-50 rounded-xl p-4">
+                <p class="font-semibold text-xs tracking-wider uppercase text-gray-400 mb-3">Regular</p>
+                <ul class="space-y-2 text-gray-600 text-xs">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>Adhesivo estándar</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>Expansión normal</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>Uso general / dormir</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>4-6 horas de duración</li>
                 </ul>
+                <a href="nose-tape.html" class="text-xs text-blue-600 font-medium mt-3 inline-block hover:underline">Ver Nose Tape Regular</a>
               </div>
-              <div class="bg-purple-50 rounded-lg p-3 ring-1 ring-purple-200">
-                <p class="font-medium text-xs text-purple-600 mb-2">PREMIUM</p>
-                <ul class="space-y-1 text-gray-600 text-xs">
-                  <li>Adhesivo de mayor duración</li>
-                  <li>Expansión superior</li>
-                  <li>Ideal para ejercicio intenso</li>
+              <div class="bg-purple-50 rounded-xl p-4 ring-1 ring-purple-200">
+                <p class="font-semibold text-xs tracking-wider uppercase text-purple-600 mb-3">Premium</p>
+                <ul class="space-y-2 text-gray-600 text-xs">
+                  <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Adhesivo de mayor duración</li>
+                  <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Expansión superior</li>
+                  <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Ideal para ejercicio intenso</li>
+                  <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Resiste 2+ horas de sudor</li>
                 </ul>
               </div>
             </div>
           </div>
+
+          <!-- How to use -->
+          <div class="pt-6 border-t border-gray-100">
+            <h3 class="font-semibold mb-4">¿Cómo se usa?</h3>
+            <ol class="space-y-3 text-sm text-gray-600">
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">1</span></div>
+                <p>Limpiá tu nariz — la piel debe estar seca y sin grasa.</p>
+              </li>
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">2</span></div>
+                <p>Despegá la tira y colocala sobre el puente nasal.</p>
+              </li>
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">3</span></div>
+                <p>Presioná suavemente para que se adhiera bien.</p>
+              </li>
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">4</span></div>
+                <p>Sentí la diferencia — más aire, más rendimiento, incluso con sudor.</p>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
 
-      <!-- UPSELL: Bundle -->
-      <div class="mt-16 p-6 bg-gray-50 rounded-xl border border-gray-200">
+      <div class="mt-20 p-6 sm:p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-100 fade-up">
         <div class="flex flex-col sm:flex-row items-center gap-6">
-          <img src="../assets/img/bundle/bundle.png" alt="Bundle VENTUS" class="w-24 h-24 object-contain flex-shrink-0">
+          <img src="../assets/img/bundle/bundle.webp" alt="Bundle VENTUS" class="w-28 h-28 object-contain flex-shrink-0">
           <div class="flex-1 text-center sm:text-left">
-            <p class="text-xs font-medium text-orange-600 mb-1">MEJOR VALOR</p>
-            <h3 class="font-semibold text-lg">Combiná con el Mouth Tape</h3>
+            <p class="text-xs font-semibold tracking-wider uppercase text-orange-600 mb-1">Mejor valor</p>
+            <h3 class="font-bold text-lg mb-1">Combiná con el Mouth Tape</h3>
             <p class="text-sm text-gray-500">Nose Tape de día + Mouth Tape de noche por Q175 — ahorrás Q25.</p>
           </div>
-          <a href="bundle.html" class="flex-shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2.5 rounded-lg transition text-sm">
-            Ver Bundle — Q175
-          </a>
+          <a href="bundle.html" class="flex-shrink-0 btn-orange font-semibold px-7 py-3 rounded-xl text-sm">Ver Bundle — Q175</a>
         </div>
       </div>
 
-      <!-- RELATED PRODUCTS -->
-      <div class="mt-12">
-        <h2 class="text-xl font-bold mb-6">También te puede interesar</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <a href="mouth-tape.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
-            <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-              <img src="../assets/img/mt-01/frente.png" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain">
+      <div class="mt-20 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Complementá tu rutina</p>
+        <h2 class="text-2xl font-bold mb-8">También te puede interesar</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <a href="mouth-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white">
+            <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+              <img src="../assets/img/mt-01/frente.webp" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom">
             </div>
-            <div class="p-4">
-              <p class="text-xs font-medium text-blue-600 mb-1">SUEÑO</p>
-              <h3 class="font-semibold text-sm mb-1">Mouth Tape</h3>
-              <span class="text-sm font-bold">Q100</span>
-            </div>
-          </a>
-          <a href="nose-tape.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block">
-            <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-              <img src="../assets/img/nt-01/frente.png" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain">
-            </div>
-            <div class="p-4">
-              <p class="text-xs font-medium text-green-600 mb-1">RESPIRACIÓN</p>
-              <h3 class="font-semibold text-sm mb-1">Nose Tape</h3>
-              <span class="text-sm font-bold">Q100</span>
+            <div class="p-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-1.5">Sueño</p>
+              <h3 class="font-bold text-lg mb-1">Mouth Tape</h3>
+              <p class="text-sm text-gray-500 mb-3">30 cintas — 1 mes de uso</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold">Q100</span>
+                <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
+              </div>
             </div>
           </a>
-          <a href="bundle.html" class="card-hover bg-white rounded-xl border border-gray-200 overflow-hidden block ring-2 ring-orange-400 relative">
-            <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full z-10">-Q25</div>
-            <div class="aspect-square bg-gray-50 flex items-center justify-center p-4">
-              <img src="../assets/img/bundle/bundle.png" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain">
+          <a href="nose-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white">
+            <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+              <img src="../assets/img/nt-01/frente.webp" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom">
             </div>
-            <div class="p-4">
-              <p class="text-xs font-medium text-orange-600 mb-1">COMBO</p>
-              <h3 class="font-semibold text-sm mb-1">Bundle Completo</h3>
-              <span class="text-sm font-bold">Q175</span>
+            <div class="p-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-green-600 mb-1.5">Respiración</p>
+              <h3 class="font-bold text-lg mb-1">Nose Tape</h3>
+              <p class="text-sm text-gray-500 mb-3">30 tiras — 1 mes de uso</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold">Q100</span>
+                <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
+              </div>
+            </div>
+          </a>
+          <a href="bundle.html" class="card-product rounded-2xl overflow-hidden block bg-white ring-2 ring-orange-400 relative">
+            <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">-Q25</div>
+            <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+              <img src="../assets/img/bundle/bundle.webp" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain img-zoom">
+            </div>
+            <div class="p-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-orange-600 mb-1.5">Combo</p>
+              <h3 class="font-bold text-lg mb-1">Bundle Completo</h3>
+              <p class="text-sm text-gray-500 mb-3">Mouth Tape + Nose Tape</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-xl font-bold">Q175</span>
+                  <span class="text-sm text-gray-400 line-through">Q200</span>
+                </div>
+                <span class="text-xs btn-orange px-3.5 py-1.5 rounded-full font-medium">Ahorrá Q25</span>
+              </div>
             </div>
           </a>
         </div>
@@ -187,28 +267,53 @@
     </div>
   </main>
 
-  <!-- Sticky mobile CTA -->
-  <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-40 md:hidden translate-y-full transition-transform duration-300">
+  <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white/97 backdrop-blur-md border-t border-gray-200 p-3 z-40 md:hidden sticky-cta-hidden transition-transform duration-300">
     <div class="flex items-center justify-between gap-3 max-w-lg mx-auto">
       <div>
         <p class="font-semibold text-sm">Nose Tape Premium</p>
         <p class="text-lg font-bold">Q100</p>
       </div>
-      <button onclick="buyProduct('NT-02')" class="btn-ventus text-white font-semibold px-6 py-2.5 rounded-lg cursor-pointer text-sm">
-        Comprar ahora
-      </button>
+      <button onclick="buyProduct('NT-02')" class="btn-ventus text-white font-semibold px-6 py-2.5 rounded-xl cursor-pointer text-sm">Comprar ahora</button>
     </div>
   </div>
 
-  <footer class="py-8 px-4 border-t border-gray-100 mb-16 md:mb-0">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <span class="font-bold ventus-blue">VENTUS</span>
-        <span class="text-sm text-gray-400 ml-2">&copy; 2026 — Guatemala</span>
+  <footer class="bg-ventus-dark text-white pt-16 pb-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="../" class="text-2xl font-extrabold tracking-tight">VENTUS</a>
+          <p class="text-sm text-blue-200/60 mt-3 leading-relaxed">Cintas adhesivas para respiración nasal. Mejorá tu sueño y rendimiento — naturalmente.</p>
+          <span class="text-xs bg-white/10 px-2.5 py-1 rounded-full text-blue-200/80 inline-block mt-4">Hecho en Guatemala</span>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-4 text-white/90">Productos</h4>
+          <ul class="space-y-2.5">
+            <li><a href="mouth-tape.html" class="text-sm text-blue-200/60 hover:text-white transition">Mouth Tape</a></li>
+            <li><a href="nose-tape.html" class="text-sm text-blue-200/60 hover:text-white transition">Nose Tape</a></li>
+            <li><a href="nose-tape-premium.html" class="text-sm text-blue-200/60 hover:text-white transition">Nose Tape Premium</a></li>
+            <li><a href="bundle.html" class="text-sm text-blue-200/60 hover:text-white transition">Bundle Completo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-4 text-white/90">Empresa</h4>
+          <ul class="space-y-2.5">
+            <li><a href="../nosotros.html" class="text-sm text-blue-200/60 hover:text-white transition">Nosotros</a></li>
+            <li><a href="../#ciencia" class="text-sm text-blue-200/60 hover:text-white transition">Ciencia</a></li>
+            <li><a href="../#faq" class="text-sm text-blue-200/60 hover:text-white transition">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-4 text-white/90">Contacto</h4>
+          <ul class="space-y-2.5">
+            <li><a href="https://wa.me/50231015202" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition">WhatsApp</a></li>
+            <li><a href="https://instagram.com/ventus.gt" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition">Instagram</a></li>
+            <li><a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition">TikTok</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="https://instagram.com/ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">Instagram</a>
-        <a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">TikTok</a>
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-blue-200/40">&copy; 2026 VENTUS — Guatemala. Todos los derechos reservados.</p>
+        <p class="text-xs text-blue-200/40">Pagos seguros con Recurrente &middot; <a href="/privacidad.html" class="hover:text-white transition">Privacidad</a> &middot; <a href="/terminos.html" class="hover:text-white transition">Términos</a></p>
       </div>
     </div>
   </footer>
@@ -216,25 +321,59 @@
   <script>
     function switchImage(src, el) {
       document.getElementById('main-image').src = src;
-      document.querySelectorAll('button[onclick^="switchImage"]').forEach(b => {
-        b.classList.remove('border-blue-500');
-        b.classList.add('border-transparent');
-      });
-      el.classList.remove('border-transparent');
-      el.classList.add('border-blue-500');
+      document.querySelectorAll('button[onclick^="switchImage"]').forEach(b => { b.classList.remove('border-purple-500'); b.classList.add('border-transparent'); });
+      el.classList.remove('border-transparent'); el.classList.add('border-purple-500');
     }
 
-    // Sticky CTA on mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden'); });
+    document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.add('hidden'); iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden'); }));
+
     const stickyCta = document.getElementById('sticky-cta');
-    const buyBtn = document.querySelector('button[onclick="buyProduct(\'NT-02\')"]');
-    if (stickyCta && buyBtn) {
-      const observer = new IntersectionObserver(([entry]) => {
-        stickyCta.classList.toggle('translate-y-full', entry.isIntersecting);
-        stickyCta.classList.toggle('translate-y-0', !entry.isIntersecting);
-      }, { threshold: 0 });
-      observer.observe(buyBtn);
+    const mainBuyBtn = document.querySelector('button[onclick="buyProduct(\'NT-02\')"]');
+    if (stickyCta && mainBuyBtn) {
+      new IntersectionObserver(([e]) => { stickyCta.classList.toggle('sticky-cta-hidden', e.isIntersecting); stickyCta.classList.toggle('sticky-cta-visible', !e.isIntersecting); }, { threshold: 0 }).observe(mainBuyBtn);
     }
+
+    document.querySelectorAll('.fade-up').forEach(el => new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { const d = parseInt(e.target.style.transitionDelay) || 0; setTimeout(() => e.target.classList.add('visible'), d); } }); }, { threshold: 0.1 }).observe(el));
   </script>
+
   <script src="../js/recurrente.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Nose Tape Premium VENTUS",
+    "description": "Dilatador nasal premium con adhesivo mejorado y mayor capacidad de expansión. 30 tiras por paquete.",
+    "image": "https://tiendaventus.com/assets/img/nt-02/frente.webp",
+    "brand": { "@type": "Brand", "name": "VENTUS" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://tiendaventus.com/productos/nose-tape-premium.html",
+      "priceCurrency": "GTQ",
+      "price": "100.00",
+      "availability": "https://schema.org/InStock",
+      "shippingDetails": { "@type": "OfferShippingDetails", "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "GT" } }
+    },
+    "sku": "NT-02",
+    "category": "Health & Wellness"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tiendaventus.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://tiendaventus.com/#productos" },
+      { "@type": "ListItem", "position": 3, "name": "Nose Tape Premium" }
+    ]
+  }
+  </script>
+
 </body>
 </html>
