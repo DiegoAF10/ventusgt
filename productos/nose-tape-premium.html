@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nose Tape Premium VENTUS — Máxima apertura nasal</title>
+  <meta name="description" content="Dilatador nasal premium con adhesivo mejorado y mayor capacidad de expansión. 30 tiras por paquete.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></link>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .ventus-blue { color: #1e3a5f; }
+    .bg-ventus { background-color: #1e3a5f; }
+    .btn-ventus { background-color: #1e3a5f; transition: background-color 0.2s; }
+    .btn-ventus:hover { background-color: #2d5a8e; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../" class="text-2xl font-bold ventus-blue tracking-tight">VENTUS</a>
+      <div class="flex items-center gap-6">
+        <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Productos</a>
+        <button onclick="buyProduct('NT-02')" class="btn-ventus text-white text-sm font-medium px-4 py-2 rounded-lg cursor-pointer">Comprar</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20 pb-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <a href="../#productos" class="text-sm text-gray-400 hover:text-gray-600 mb-6 inline-block">&larr; Todos los productos</a>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+          <div class="aspect-square bg-gray-50 rounded-xl flex items-center justify-center p-8 mb-4">
+            <img id="main-image" src="../assets/img/nt-02/frente.png" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain">
+          </div>
+          <div class="flex gap-3">
+            <button onclick="switchImage('../assets/img/nt-02/frente.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-blue-500 cursor-pointer">
+              <img src="../assets/img/nt-02/frente.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/nt-02/atras.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/nt-02/atras.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/nt-02/lado.png', this)" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/nt-02/lado.png" alt="" class="w-full h-full object-contain">
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm font-medium text-purple-600 mb-2">PREMIUM</p>
+          <h1 class="text-3xl font-bold mb-2">Nose Tape Premium</h1>
+          <p class="text-gray-500 mb-4">Máxima apertura nasal, máximo confort</p>
+
+          <div class="flex items-baseline gap-3 mb-6">
+            <span class="text-3xl font-bold">Q100</span>
+            <span class="text-sm text-gray-400">30 tiras — adhesivo mejorado</span>
+          </div>
+
+          <div class="mb-6">
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              Versión premium del dilatador nasal con adhesivo mejorado y mayor capacidad de expansión. Para quienes buscan el máximo rendimiento respiratorio.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Adhesivo premium de mayor duración
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Mayor capacidad de expansión nasal
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                30 tiras por paquete
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Diseño discreto y cómodo
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="buyProduct('NT-02')" class="w-full btn-ventus text-white font-semibold py-3 rounded-lg text-lg cursor-pointer mb-3">
+            Comprar — Q100
+          </button>
+          <p class="text-xs text-gray-400 text-center">Pago seguro con tarjeta vía Recurrente. Envío a toda Guatemala.</p>
+
+          <div class="mt-8 pt-6 border-t border-gray-100">
+            <h3 class="font-semibold text-sm mb-3">¿Cuál es la diferencia con el Nose Tape regular?</h3>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p>El Nose Tape Premium usa un adhesivo de mayor duración que no se despega con el sudor, haciéndolo ideal para sesiones intensas de ejercicio.</p>
+              <p>Además, tiene mayor capacidad de expansión — abriendo más los conductos nasales para un flujo de aire superior.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-8 px-4 border-t border-gray-100">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-bold ventus-blue">VENTUS</span>
+        <span class="text-sm text-gray-400 ml-2">&copy; 2026 — Guatemala</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com/ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">Instagram</a>
+        <a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchImage(src, el) {
+      document.getElementById('main-image').src = src;
+      document.querySelectorAll('button[onclick^="switchImage"]').forEach(b => {
+        b.classList.remove('border-blue-500');
+        b.classList.add('border-transparent');
+      });
+      el.classList.remove('border-transparent');
+      el.classList.add('border-blue-500');
+    }
+
+  </script>
+  <script src="../js/recurrente.js"></script>
+</body>
+</html>

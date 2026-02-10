@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bundle VENTUS — Mouth + Nose Tape, el combo completo</title>
+  <meta name="description" content="Combo Mouth Tape + Nose Tape VENTUS. Ahorrá Q25 y obtené la experiencia completa de respiración nasal.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></link>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .ventus-blue { color: #1e3a5f; }
+    .bg-ventus { background-color: #1e3a5f; }
+    .btn-ventus { background-color: #1e3a5f; transition: background-color 0.2s; }
+    .btn-ventus:hover { background-color: #2d5a8e; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../" class="text-2xl font-bold ventus-blue tracking-tight">VENTUS</a>
+      <div class="flex items-center gap-6">
+        <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Productos</a>
+        <button onclick="buyProduct('BUNDLE')" class="btn-ventus text-white text-sm font-medium px-4 py-2 rounded-lg cursor-pointer">Comprar</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20 pb-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <a href="../#productos" class="text-sm text-gray-400 hover:text-gray-600 mb-6 inline-block">&larr; Todos los productos</a>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+          <div class="aspect-square bg-gray-50 rounded-xl flex items-center justify-center p-8 relative">
+            <div class="absolute top-4 right-4 bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full">Ahorrá Q25</div>
+            <img src="../assets/img/bundle/bundle.png" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain">
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm font-medium text-orange-600 mb-2">MEJOR VALOR</p>
+          <h1 class="text-3xl font-bold mb-2">Bundle VENTUS</h1>
+          <p class="text-gray-500 mb-4">El combo completo para respirar mejor</p>
+
+          <div class="flex items-baseline gap-3 mb-2">
+            <span class="text-3xl font-bold">Q175</span>
+            <span class="text-sm text-gray-400 line-through">Q200</span>
+          </div>
+          <p class="text-sm text-orange-600 font-medium mb-6">Ahorrás Q25 vs. compra individual</p>
+
+          <div class="mb-6">
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              Combiná el Mouth Tape + Nose Tape para la experiencia completa de respiración nasal. Dormí mejor, rendí más, respirá como tu cuerpo fue diseñado.
+            </p>
+
+            <div class="bg-gray-50 rounded-xl p-4 mb-4">
+              <h4 class="font-semibold text-sm mb-3">El bundle incluye:</h4>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <img src="../assets/img/mt-01/frente.png" alt="Mouth Tape" class="w-12 h-12 object-contain bg-white rounded-lg p-1">
+                  <div>
+                    <p class="text-sm font-medium">Mouth Tape (30 cintas)</p>
+                    <p class="text-xs text-gray-500">Para dormir con respiración nasal</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <img src="../assets/img/nt-01/frente.png" alt="Nose Tape" class="w-12 h-12 object-contain bg-white rounded-lg p-1">
+                  <div>
+                    <p class="text-sm font-medium">Nose Tape (30 tiras)</p>
+                    <p class="text-xs text-gray-500">Para deporte y día a día</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                2 meses de respiración optimizada
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Mouth tape de noche + nose tape de día
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                El kit ideal para empezar
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="buyProduct('BUNDLE')" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg text-lg cursor-pointer mb-3 transition">
+            Comprar Bundle — Q175
+          </button>
+          <p class="text-xs text-gray-400 text-center">Pago seguro con tarjeta vía Recurrente. Envío a toda Guatemala.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-8 px-4 border-t border-gray-100">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-bold ventus-blue">VENTUS</span>
+        <span class="text-sm text-gray-400 ml-2">&copy; 2026 — Guatemala</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com/ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">Instagram</a>
+        <a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/recurrente.js"></script>
+</body>
+</html>

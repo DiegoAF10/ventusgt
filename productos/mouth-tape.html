@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouth Tape VENTUS — Respirá por la nariz mientras dormís</title>
+  <meta name="description" content="Cinta adhesiva hipoalergénica para respiración nasal nocturna. 30 cintas por paquete. Mejorá tu sueño naturalmente.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></link>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .ventus-blue { color: #1e3a5f; }
+    .bg-ventus { background-color: #1e3a5f; }
+    .btn-ventus { background-color: #1e3a5f; transition: background-color 0.2s; }
+    .btn-ventus:hover { background-color: #2d5a8e; }
+    .thumb-active { ring: 2px solid #1e3a5f; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../" class="text-2xl font-bold ventus-blue tracking-tight">VENTUS</a>
+      <div class="flex items-center gap-6">
+        <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden sm:block">Productos</a>
+        <button onclick="buyProduct('MT-01')" class="btn-ventus text-white text-sm font-medium px-4 py-2 rounded-lg cursor-pointer">Comprar</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20 pb-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <a href="../#productos" class="text-sm text-gray-400 hover:text-gray-600 mb-6 inline-block">&larr; Todos los productos</a>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- IMAGES -->
+        <div>
+          <div class="aspect-square bg-gray-50 rounded-xl flex items-center justify-center p-8 mb-4" id="main-image-container">
+            <img id="main-image" src="../assets/img/mt-01/frente.png" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain">
+          </div>
+          <div class="flex gap-3">
+            <button onclick="switchImage('../assets/img/mt-01/frente.png')" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-blue-500 cursor-pointer">
+              <img src="../assets/img/mt-01/frente.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/mt-01/atras.png')" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/mt-01/atras.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/mt-01/lifestyle-m.png')" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/mt-01/lifestyle-m.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/mt-01/lifestyle-f.png')" class="w-16 h-16 bg-gray-50 rounded-lg p-2 border-2 border-transparent hover:border-gray-300 cursor-pointer">
+              <img src="../assets/img/mt-01/lifestyle-f.png" alt="" class="w-full h-full object-contain">
+            </button>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <p class="text-sm font-medium text-blue-600 mb-2">SUEÑO</p>
+          <h1 class="text-3xl font-bold mb-2">Mouth Tape VENTUS</h1>
+          <p class="text-gray-500 mb-4">Respirá por la nariz mientras dormís</p>
+
+          <div class="flex items-baseline gap-3 mb-6">
+            <span class="text-3xl font-bold">Q100</span>
+            <span class="text-sm text-gray-400">30 cintas — 1 mes de uso</span>
+          </div>
+
+          <div class="mb-6">
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              Cinta adhesiva hipoalergénica diseñada para mantener la boca cerrada durante el sueño, promoviendo la respiración nasal. Mejora la calidad de sueño, reduce ronquidos y optimiza la oxigenación.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Adhesivo hipoalergénico — suave para tu piel
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Fácil de aplicar y remover
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                30 cintas por paquete (1 mes de uso)
+              </li>
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Diseñado para dormir cómodamente toda la noche
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="buyProduct('MT-01')" class="w-full btn-ventus text-white font-semibold py-3 rounded-lg text-lg cursor-pointer mb-3">
+            Comprar — Q100
+          </button>
+          <p class="text-xs text-gray-400 text-center">Pago seguro con tarjeta vía Recurrente. Envío a toda Guatemala.</p>
+
+          <div class="mt-8 pt-6 border-t border-gray-100">
+            <h3 class="font-semibold text-sm mb-3">¿Cómo se usa?</h3>
+            <ol class="space-y-2 text-sm text-gray-600">
+              <li><strong>1.</strong> Limpiá y secá tus labios antes de dormir.</li>
+              <li><strong>2.</strong> Despegá una cinta y colocala sobre tus labios cerrados.</li>
+              <li><strong>3.</strong> Dormí normalmente — tu cuerpo se adapta en 1-3 noches.</li>
+              <li><strong>4.</strong> Al despertar, removela suavemente.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-4 border-t border-gray-100">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-bold ventus-blue">VENTUS</span>
+        <span class="text-sm text-gray-400 ml-2">&copy; 2026 — Guatemala</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com/ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">Instagram</a>
+        <a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-gray-400 hover:text-gray-600 text-sm">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchImage(src) {
+      document.getElementById('main-image').src = src;
+      document.querySelectorAll('#main-image-container ~ div button').forEach(b => {
+        b.classList.remove('border-blue-500');
+        b.classList.add('border-transparent');
+      });
+      event.currentTarget.classList.remove('border-transparent');
+      event.currentTarget.classList.add('border-blue-500');
+    }
+
+  </script>
+  <script src="../js/recurrente.js"></script>
+
+</body>
+</html>
