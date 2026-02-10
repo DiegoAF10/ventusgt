@@ -10,10 +10,10 @@
 const WORKER_URL = 'https://ventus-backoffice.ventusgt.workers.dev';
 
 const PRODUCT_INFO = {
-  'MT-01': { name: 'Mouth Tape VENTUS', price: 'Q100' },
-  'NT-01': { name: 'Nose Tape VENTUS', price: 'Q100' },
-  'NT-02': { name: 'Nose Tape VENTUS — Edicion Premium', price: 'Q100' },
-  'BUNDLE': { name: 'Bundle VENTUS — Mouth + Nose Tape', price: 'Q175' },
+  'MT-01': { name: 'Mouth Tape VENTUS', price: 100 },
+  'NT-01': { name: 'Nose Tape VENTUS', price: 100 },
+  'NT-02': { name: 'Nose Tape VENTUS — Edicion Premium', price: 100 },
+  'BUNDLE': { name: 'Bundle VENTUS — Mouth + Nose Tape', price: 175 },
 };
 
 const DEPARTMENTS = [
@@ -46,7 +46,7 @@ function openCheckoutModal(sku, product) {
       <div class="checkout-header">
         <div>
           <h2 class="checkout-title">Finalizar Compra</h2>
-          <p class="checkout-subtitle">${product.name} — ${product.price}</p>
+          <p class="checkout-subtitle">${product.name} — Q${product.price}</p>
         </div>
         <button onclick="closeCheckoutModal()" class="checkout-close" aria-label="Cerrar">&times;</button>
       </div>
@@ -122,10 +122,26 @@ function openCheckoutModal(sku, product) {
           </div>
         </div>
 
+        <!-- Price summary -->
+        <div class="checkout-summary">
+          <div class="checkout-summary-row">
+            <span>Producto</span>
+            <span>Q${product.price}.00</span>
+          </div>
+          <div class="checkout-summary-row" id="checkout-shipping-row">
+            <span>Envio</span>
+            <span id="checkout-shipping-value">Gratis</span>
+          </div>
+          <div class="checkout-summary-row checkout-summary-total">
+            <span>Total</span>
+            <span id="checkout-total-value">Q${product.price}.00</span>
+          </div>
+        </div>
+
         <div id="checkout-error" class="checkout-error" style="display:none;"></div>
 
         <button type="submit" id="checkout-submit" class="checkout-btn">
-          Continuar al pago
+          Continuar al pago — Q${product.price}.00
         </button>
 
         <p class="checkout-disclaimer">
@@ -148,8 +164,35 @@ function openCheckoutModal(sku, product) {
   // Close on Escape
   document.addEventListener('keydown', handleEscKey);
 
+  // Update shipping when department changes
+  const deptSelect = modal.querySelector('#ch-department');
+  deptSelect.addEventListener('change', () => updateShippingQuote(sku, deptSelect.value, product.price));
+
   // Focus first input
   setTimeout(() => document.getElementById('ch-name')?.focus(), 100);
+}
+
+async function updateShippingQuote(sku, department, productPrice) {
+  const shippingEl = document.getElementById('checkout-shipping-value');
+  const totalEl = document.getElementById('checkout-total-value');
+  const btn = document.getElementById('checkout-submit');
+  if (!department) return;
+
+  try {
+    const res = await fetch(`${WORKER_URL}/api/shipping?sku=${sku}&department=${encodeURIComponent(department)}`);
+    const data = await res.json();
+    if (data.shipping > 0) {
+      shippingEl.textContent = `Q${data.shipping.toFixed(2)}`;
+    } else {
+      shippingEl.textContent = 'Gratis';
+    }
+    totalEl.textContent = `Q${data.total.toFixed(2)}`;
+    btn.textContent = `Continuar al pago — Q${data.total.toFixed(2)}`;
+  } catch {
+    // If quote fails, keep showing product price only
+    totalEl.textContent = `Q${productPrice}.00`;
+    btn.textContent = `Continuar al pago — Q${productPrice}.00`;
+  }
 }
 
 function handleEscKey(e) {

@@ -296,6 +296,28 @@ select.checkout-input { cursor: pointer; }
   transform: none;
 }
 
+.checkout-summary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.checkout-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #475569;
+  padding: 4px 0;
+}
+.checkout-summary-total {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 16px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 6px;
+  padding-top: 8px;
+}
+
 .checkout-disclaimer {
   font-size: 12px;
   color: #94a3b8;
