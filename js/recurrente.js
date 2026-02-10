@@ -12,8 +12,8 @@ const WORKER_URL = 'https://ventus-backoffice.ventusgt.workers.dev';
 const PRODUCT_INFO = {
   'MT-01': { name: 'Mouth Tape VENTUS', price: 100 },
   'NT-01': { name: 'Nose Tape VENTUS', price: 100 },
-  'NT-02': { name: 'Nose Tape VENTUS — Edicion Premium', price: 100 },
-  'BUNDLE': { name: 'Bundle VENTUS — Mouth + Nose Tape', price: 175 },
+  'NT-02': { name: 'Nose Tape VENTUS — Edicion Premium', price: 149 },
+  'BUNDLE': { name: 'Bundle VENTUS — Mouth + Nose Tape', price: 169 },
 };
 
 const DEPARTMENTS = [
