@@ -628,6 +628,26 @@ select.checkout-input { cursor: pointer; }
 .ugc-scroll::-webkit-scrollbar { display: none; }
 .ugc-scroll > * { scroll-snap-align: center; flex-shrink: 0; }
 
+/* ── Shipping Banner ─────────────────────────────── */
+.shipping-banner {
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Timer Pulse (checkout promo) ────────────────── */
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.timer-pulse {
+  animation: timerPulse 2s ease-in-out infinite;
+}
+
 /* ── Selection ────────────────────────────────────── */
 ::selection {
   background-color: #d4e6f1;
