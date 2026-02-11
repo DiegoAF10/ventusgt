@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>Checkout — VENTUS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/ventus.css">
+</head>
+<body class="bg-[#f8fafc] text-gray-900">
+
+  <!-- ═══ SHIPPING BANNER ═══ -->
+  <div class="shipping-banner">Envio gratis en pedidos de Q149+</div>
+
+  <!-- ═══ NAV (minimal) ═══ -->
+  <nav class="fixed top-[36px] w-full z-50 bg-white/97 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="/" aria-label="VENTUS — Inicio">
+        <img src="assets/img/brand/logo-full.png" alt="VENTUS" class="nav-logo-img">
+      </a>
+      <a href="productos.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Volver a productos
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══ MAIN CHECKOUT ═══ -->
+  <main class="pt-24 pb-16 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Loading state (shown while JS parses SKU) -->
+      <div id="checkout-loading" class="text-center py-20">
+        <div class="w-8 h-8 border-2 border-gray-300 border-t-[#0b3e5d] rounded-full animate-spin mx-auto mb-4"></div>
+        <p class="text-gray-500 text-sm">Cargando checkout...</p>
+      </div>
+
+      <!-- Checkout content (hidden until JS fills it) -->
+      <div id="checkout-content" class="hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+          <!-- ═══ LEFT COLUMN (7/12) ═══ -->
+          <div class="lg:col-span-7 space-y-6">
+
+            <!-- Product summary card -->
+            <div class="bg-white rounded-2xl p-5 border border-gray-200 flex gap-4 items-center">
+              <div class="w-20 h-20 bg-[#f4ede5] rounded-xl flex items-center justify-center flex-shrink-0">
+                <img id="ch-product-img" src="" alt="" class="max-h-full max-w-full object-contain">
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-bold text-lg" id="ch-product-name"></p>
+                <p class="text-sm text-gray-500" id="ch-product-desc"></p>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <p class="text-xl font-bold" id="ch-product-price"></p>
+              </div>
+            </div>
+
+            <!-- Promo banner -->
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-blue-900">Completá tu compra</p>
+                <p class="text-xs text-blue-700">Tu carrito se reserva por <span id="ch-timer" class="font-mono font-bold">15:00</span></p>
+              </div>
+            </div>
+
+            <!-- NT-03 gift block (only for NT-02) -->
+            <div id="ch-nt03-gift" class="hidden rounded-xl border-2 border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 p-4">
+              <div class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                </div>
+                <div class="flex-1">
+                  <p class="font-semibold text-green-800 text-sm">Regalo incluido: Repuestos VENTUS</p>
+                  <p class="text-xs text-green-700 mt-0.5"><span class="line-through text-gray-400">Q49</span> <span class="font-bold text-green-600">GRATIS</span></p>
+                  <p class="text-xs text-green-600 mt-1">30 dias completos de uso + parches extras</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Checkout form -->
+            <form id="checkout-form" onsubmit="submitCheckout(event)">
+              <div class="bg-white rounded-2xl p-6 border border-gray-200 space-y-6">
+
+                <div class="checkout-section">
+                  <p class="checkout-section-label">Datos personales</p>
+                  <div class="checkout-grid">
+                    <div class="checkout-field checkout-full">
+                      <label class="checkout-label" for="ch-name">Nombre completo *</label>
+                      <input type="text" id="ch-name" name="name" class="checkout-input" required placeholder="Ej: Maria Lopez" autocomplete="name">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-email">Email *</label>
+                      <input type="email" id="ch-email" name="email" class="checkout-input" required placeholder="tu@email.com" autocomplete="email">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-phone">Telefono *</label>
+                      <input type="tel" id="ch-phone" name="phone" class="checkout-input" required placeholder="5555 1234" autocomplete="tel">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="checkout-section">
+                  <p class="checkout-section-label">Direccion de entrega</p>
+                  <div class="checkout-grid">
+                    <div class="checkout-field checkout-full">
+                      <label class="checkout-label" for="ch-address">Direccion *</label>
+                      <input type="text" id="ch-address" name="line1" class="checkout-input" required placeholder="Ej: 4a Avenida 12-34">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-zone">Zona</label>
+                      <input type="text" id="ch-zone" name="zone" class="checkout-input" placeholder="Ej: 10">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-neighborhood">Colonia / Residencial</label>
+                      <input type="text" id="ch-neighborhood" name="neighborhood" class="checkout-input" placeholder="Ej: Oakland">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-city">Ciudad *</label>
+                      <input type="text" id="ch-city" name="city" class="checkout-input" required placeholder="Ej: Guatemala" autocomplete="address-level2">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-department">Departamento *</label>
+                      <select id="ch-department" name="department" class="checkout-input" required>
+                        <option value="">Seleccionar...</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="checkout-section">
+                  <p class="checkout-section-label">Facturacion</p>
+                  <div class="checkout-grid">
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-nit">NIT</label>
+                      <input type="text" id="ch-nit" name="nit" class="checkout-input" placeholder="CF" value="CF">
+                    </div>
+                    <div class="checkout-field">
+                      <label class="checkout-label" for="ch-notes">Notas de entrega</label>
+                      <input type="text" id="ch-notes" name="delivery_notes" class="checkout-input" placeholder="Ej: Edificio azul, apto 3B">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Promo code -->
+                <div class="checkout-section">
+                  <p class="checkout-section-label">Codigo promocional</p>
+                  <div class="flex gap-2">
+                    <input type="text" id="ch-promo" class="checkout-input flex-1" placeholder="Ingresá tu código">
+                    <button type="button" onclick="applyPromoCode()" class="px-5 py-2.5 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg border border-gray-200 hover:bg-gray-200 transition cursor-pointer whitespace-nowrap">
+                      Aplicar
+                    </button>
+                  </div>
+                  <p id="ch-promo-msg" class="text-xs mt-1 hidden"></p>
+                </div>
+              </div>
+
+              <!-- Error & submit (visible on mobile below form, desktop in sidebar) -->
+              <div class="lg:hidden mt-6 space-y-4">
+                <div id="checkout-error-mobile" class="checkout-error" style="display:none;"></div>
+                <button type="submit" id="checkout-submit-mobile" class="checkout-btn">
+                  Continuar al pago
+                </button>
+                <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- ═══ RIGHT COLUMN (5/12, sticky) ═══ -->
+          <div class="lg:col-span-5">
+            <div class="lg:sticky lg:top-28 space-y-6">
+
+              <!-- Order summary -->
+              <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                <h3 class="font-bold text-lg mb-4">Resumen de orden</h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-gray-600" id="ch-summary-product">Producto</span>
+                    <span class="font-medium" id="ch-summary-price"></span>
+                  </div>
+                  <div id="ch-summary-gift" class="hidden flex justify-between text-sm">
+                    <span class="text-green-600">Repuestos VENTUS (REGALO)</span>
+                    <span class="text-green-600 font-medium">Q0</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-gray-600">Envio</span>
+                    <span class="font-medium" id="ch-summary-shipping"></span>
+                  </div>
+                  <div class="border-t border-gray-200 pt-3 flex justify-between">
+                    <span class="font-bold">Total</span>
+                    <span class="font-bold text-lg" id="ch-summary-total"></span>
+                  </div>
+                </div>
+
+                <!-- Desktop submit -->
+                <div class="hidden lg:block mt-6 space-y-3">
+                  <div id="checkout-error" class="checkout-error" style="display:none;"></div>
+                  <button type="submit" form="checkout-form" id="checkout-submit" class="checkout-btn">
+                    Continuar al pago
+                  </button>
+                  <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
+                </div>
+              </div>
+
+              <!-- Trust badges -->
+              <div class="bg-white rounded-2xl p-5 border border-gray-200">
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <div>
+                      <p class="text-sm font-medium">Pago 100% seguro</p>
+                      <p class="text-xs text-gray-500">Procesado por Recurrente con cifrado SSL</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <div>
+                      <p class="text-sm font-medium">Datos protegidos</p>
+                      <p class="text-xs text-gray-500">Tu informacion nunca se comparte</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-orange-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+                    <div>
+                      <p class="text-sm font-medium">Envio coordinado</p>
+                      <p class="text-xs text-gray-500">Te contactamos para coordinar la entrega</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cross-sell -->
+              <div class="bg-white rounded-2xl p-5 border border-gray-200">
+                <h4 class="font-semibold text-sm mb-3 text-gray-500 uppercase tracking-wider">Tambien te puede interesar</h4>
+                <div class="space-y-3" id="ch-cross-sell"></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // ── Banner/Nav smooth position ──
+    (function() {
+      const nav = document.querySelector('nav');
+      const shippingBanner = document.querySelector('.shipping-banner');
+      if (shippingBanner && nav) {
+        const bannerHeight = shippingBanner.offsetHeight;
+        let ticking = false;
+        function updateNavPosition() {
+          const offset = Math.max(bannerHeight - window.scrollY, 0);
+          nav.style.top = offset + 'px';
+        }
+        updateNavPosition();
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => { updateNavPosition(); ticking = false; });
+            ticking = true;
+          }
+        }, { passive: true });
+      }
+    })();
+  </script>
+
+  <script src="js/recurrente.js"></script>
+
+  <script>
+    // ── Checkout Page Logic ──
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const sku = params.get('sku');
+
+      if (!sku || !PRODUCT_INFO[sku]) {
+        window.location.href = '/productos.html';
+        return;
+      }
+
+      const product = PRODUCT_INFO[sku];
+      const shipping = calculateShipping(product.price);
+      const total = product.price + shipping;
+      const isNT02 = sku === 'NT-02';
+
+      // Set current SKU for submitCheckout
+      currentSku = sku;
+
+      // Fill product info
+      document.getElementById('ch-product-img').src = '/assets/img/' + sku.toLowerCase() + '/frente.webp';
+      document.getElementById('ch-product-img').alt = product.name;
+      document.getElementById('ch-product-name').textContent = product.name;
+      document.getElementById('ch-product-desc').textContent = getProductDesc(sku);
+      document.getElementById('ch-product-price').textContent = 'Q' + product.price;
+
+      // Fill order summary
+      document.getElementById('ch-summary-product').textContent = product.name;
+      document.getElementById('ch-summary-price').textContent = 'Q' + product.price + '.00';
+      document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
+        ? '<span class="text-green-600">Gratis</span>'
+        : 'Q' + shipping + '.00';
+      document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
+
+      // NT-02 gift block
+      if (isNT02) {
+        document.getElementById('ch-nt03-gift').classList.remove('hidden');
+        document.getElementById('ch-summary-gift').classList.remove('hidden');
+      }
+
+      // Fill departments
+      var deptSelect = document.getElementById('ch-department');
+      DEPARTMENTS.forEach(function(d) {
+        var opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        deptSelect.appendChild(opt);
+      });
+
+      // Cross-sell
+      var crossSellContainer = document.getElementById('ch-cross-sell');
+      Object.keys(PRODUCT_INFO).forEach(function(s) {
+        if (s === sku) return;
+        var p = PRODUCT_INFO[s];
+        var link = document.createElement('a');
+        link.href = '/checkout.html?sku=' + s;
+        link.className = 'flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors';
+        link.innerHTML =
+          '<div class="w-12 h-12 bg-[#f4ede5] rounded-lg flex items-center justify-center flex-shrink-0">' +
+            '<img src="/assets/img/' + s.toLowerCase() + '/frente.webp" alt="' + p.name + '" class="max-h-full max-w-full object-contain">' +
+          '</div>' +
+          '<div class="flex-1 min-w-0">' +
+            '<p class="text-sm font-medium truncate">' + p.name + '</p>' +
+            '<p class="text-xs text-gray-500">Q' + p.price + '</p>' +
+          '</div>' +
+          '<svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
+        crossSellContainer.appendChild(link);
+      });
+
+      // Show checkout, hide loading
+      document.getElementById('checkout-loading').classList.add('hidden');
+      document.getElementById('checkout-content').classList.remove('hidden');
+
+      // Focus first input
+      setTimeout(function() { document.getElementById('ch-name').focus(); }, 100);
+
+      // ── Countdown Timer (15 min) ──
+      var timerSeconds = 900;
+      var timerEl = document.getElementById('ch-timer');
+      setInterval(function() {
+        timerSeconds--;
+        if (timerSeconds <= 0) timerSeconds = 0;
+        var min = Math.floor(timerSeconds / 60);
+        var sec = timerSeconds % 60;
+        timerEl.textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
+      }, 1000);
+
+      function getProductDesc(sku) {
+        var descs = {
+          'MT-01': '30 cintas — 1 mes de uso',
+          'NT-01': '30 tiras — 1 mes de uso',
+          'NT-02': '30 tiras — adhesivo mejorado + regalo',
+          'NT-03': 'Parches extra + pimple patch',
+          'BUNDLE': 'Mouth Tape + Nose Tape',
+        };
+        return descs[sku] || '';
+      }
+    })();
+
+    // ── Promo Code (UI only) ──
+    function applyPromoCode() {
+      var code = document.getElementById('ch-promo').value.trim();
+      var msg = document.getElementById('ch-promo-msg');
+      if (!code) return;
+      msg.textContent = 'Codigo no valido';
+      msg.className = 'text-xs mt-1 text-red-500';
+      msg.classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
