@@ -463,6 +463,66 @@ select.checkout-input { cursor: pointer; }
   animation: countUp 0.6s ease forwards;
 }
 
+/* ── Exit Intent Popup ────────────────────────────── */
+.exit-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  transition: background 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.exit-popup-backdrop.active {
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  pointer-events: auto;
+}
+.exit-popup {
+  background: #ffffff;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  position: relative;
+}
+.exit-popup-backdrop.active .exit-popup {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.exit-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #94a3b8;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+.exit-popup-close:hover { color: #0f172a; }
+
+/* ── Announcement Bar ────────────────────────────── */
+.announcement-bar {
+  background: linear-gradient(90deg, #0b3e5d 0%, #1a5276 100%);
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 0.02em;
+}
+
 /* ── Selection ────────────────────────────────────── */
 ::selection {
   background-color: #d4e6f1;
