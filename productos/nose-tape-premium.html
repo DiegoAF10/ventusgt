@@ -97,6 +97,12 @@
             <button onclick="switchImage('../assets/img/nt-02/lado.webp', this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Vista lateral">
               <img loading="lazy"src="../assets/img/nt-02/lado.webp" alt="" class="w-full h-full object-contain">
             </button>
+            <button onclick="playGalleryVideo(this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl border-2 border-transparent cursor-pointer transition-all hover:border-purple-500 hover:shadow-md gallery-video-thumb" aria-label="Ver video demo">
+              <svg class="gallery-play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <div class="w-full h-full rounded-lg bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </div>
+            </button>
           </div>
         </div>
 
@@ -263,6 +269,33 @@
         </div>
       </div>
 
+      <!-- ═══ UGC VIDEO SECTION ═══ -->
+      <div class="mt-20 fade-up">
+        <div class="text-center mb-10">
+          <p class="text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3">Miralo en accion</p>
+          <h2 class="text-2xl font-bold mb-2">Asi se usa el Nose Tape Premium</h2>
+          <p class="text-gray-500 text-sm max-w-md mx-auto">Personas reales usando VENTUS en su rutina diaria</p>
+        </div>
+        <div class="flex justify-center">
+          <div class="ugc-scroll justify-center">
+            <div class="ugc-phone-frame" onclick="toggleUgcVideo(this)">
+              <video src="../assets/video/nt-02/demo-01.mp4" playsinline loop preload="metadata" muted></video>
+              <div class="ugc-play-overlay">
+                <div class="ugc-play-btn">
+                  <svg class="w-6 h-6 text-purple-700 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="ugc-badge">
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  <span class="font-medium">@berdealzz</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="mt-20 fade-up">
         <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Complementá tu rutina</p>
         <h2 class="text-2xl font-bold mb-8">También te puede interesar</h2>
@@ -401,8 +434,11 @@
     }
 
     function switchImage(src, el) {
+      var container = document.getElementById('main-image').parentElement;
+      var existingVideo = container.querySelector('video');
+      if (existingVideo) { existingVideo.remove(); document.getElementById('main-image').style.display = ''; }
       document.getElementById('main-image').src = src;
-      document.querySelectorAll('button[onclick^="switchImage"]').forEach(b => { b.classList.remove('border-purple-500'); b.classList.add('border-transparent'); });
+      document.querySelectorAll('button[onclick^="switchImage"], .gallery-video-thumb').forEach(b => { b.classList.remove('border-purple-500'); b.classList.add('border-transparent'); });
       el.classList.remove('border-transparent'); el.classList.add('border-purple-500');
     }
 
@@ -412,6 +448,46 @@
     const iconClose = document.getElementById('menu-icon-close');
     menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden'); });
     document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.add('hidden'); iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden'); }));
+
+    // ── Gallery Video ──
+    function playGalleryVideo(el) {
+      var container = document.getElementById('main-image').parentElement;
+      var existingVideo = container.querySelector('video');
+      if (existingVideo) {
+        existingVideo.remove();
+        document.getElementById('main-image').style.display = '';
+        document.querySelectorAll('button[onclick^="switchImage"]').forEach(function(b) { b.classList.remove('border-purple-500'); b.classList.add('border-transparent'); });
+        document.querySelector('button[onclick^="switchImage"]:first-of-type').classList.remove('border-transparent');
+        document.querySelector('button[onclick^="switchImage"]:first-of-type').classList.add('border-purple-500');
+        el.classList.remove('border-purple-500');
+        return;
+      }
+      document.getElementById('main-image').style.display = 'none';
+      var video = document.createElement('video');
+      video.src = '../assets/video/nt-02/demo-01.mp4';
+      video.className = 'gallery-video-main';
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.muted = false;
+      container.appendChild(video);
+      document.querySelectorAll('button[onclick^="switchImage"], .gallery-video-thumb').forEach(function(b) { b.classList.remove('border-purple-500'); b.classList.add('border-transparent'); });
+      el.classList.remove('border-transparent');
+      el.classList.add('border-purple-500');
+    }
+
+    // ── UGC Video Toggle ──
+    function toggleUgcVideo(frame) {
+      var video = frame.querySelector('video');
+      if (video.paused) {
+        video.muted = false;
+        video.play();
+        frame.classList.add('playing');
+      } else {
+        video.pause();
+        frame.classList.remove('playing');
+      }
+    }
 
     const stickyCta = document.getElementById('sticky-cta');
     const mainBuyBtn = document.querySelector('button[onclick="buyProduct(\'NT-02\')"]');

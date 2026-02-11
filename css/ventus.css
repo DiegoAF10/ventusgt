@@ -523,6 +523,111 @@ select.checkout-input { cursor: pointer; }
   letter-spacing: 0.02em;
 }
 
+/* ── Video in Product Gallery ───────────────────── */
+.gallery-video-thumb {
+  position: relative;
+  cursor: pointer;
+}
+.gallery-video-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: inherit;
+  transition: background 0.2s ease;
+}
+.gallery-video-thumb:hover::after {
+  background: rgba(0, 0, 0, 0.08);
+}
+.gallery-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  color: white;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+.gallery-video-main {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #000;
+}
+
+/* ── UGC Video Section ─────────────────────────── */
+.ugc-phone-frame {
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 9/16;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  position: relative;
+  cursor: pointer;
+}
+.ugc-phone-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ugc-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+.ugc-phone-frame.playing .ugc-play-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+.ugc-play-btn {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.ugc-play-btn:hover {
+  transform: scale(1.08);
+}
+.ugc-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: white;
+  font-size: 12px;
+  z-index: 2;
+}
+
+/* ── UGC Scroll Container ──────────────────────── */
+.ugc-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+.ugc-scroll::-webkit-scrollbar { display: none; }
+.ugc-scroll > * { scroll-snap-align: center; flex-shrink: 0; }
+
 /* ── Selection ────────────────────────────────────── */
 ::selection {
   background-color: #d4e6f1;
