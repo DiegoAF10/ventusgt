@@ -62,10 +62,7 @@ body {
 .btn-orange:active { transform: translateY(0); }
 .btn-orange:disabled { opacity: 0.7; cursor: wait; transform: none; }
 
-/* ── Hero ─────────────────────────────────────────── */
-.hero-gradient {
-  background: linear-gradient(160deg, #051a2a 0%, #0b3e5d 50%, #051a2a 100%);
-}
+/* ── Hero (static fallback — overridden by animated version below) ── */
 
 /* ── Cards ────────────────────────────────────────── */
 .card-product {
@@ -117,6 +114,16 @@ body {
   outline: 2px solid #0b3e5d;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* ── Nav Logo ─────────────────────────────────────── */
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  transition: filter 0.3s ease;
+}
+.nav-logo-img.nav-logo-white {
+  filter: brightness(0) invert(1);
 }
 
 /* ── Nav scroll state ─────────────────────────────── */
@@ -323,6 +330,137 @@ select.checkout-input { cursor: pointer; }
   color: #94a3b8;
   text-align: center;
   margin: 0;
+}
+
+/* ── Hero Animated Gradient ──────────────────────── */
+@keyframes heroShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.hero-gradient {
+  background: linear-gradient(160deg, #051a2a 0%, #0b3e5d 30%, #1a5276 50%, #0b3e5d 70%, #051a2a 100%);
+  background-size: 300% 300%;
+  animation: heroShift 18s ease-in-out infinite;
+}
+
+/* ── WhatsApp Float Button ──────────────────────── */
+@keyframes whatsappPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: whatsappPulse 2.5s infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: none;
+}
+
+/* ── Sticky Mobile CTA ──────────────────────────── */
+.sticky-mobile-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid #e2e8f0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.sticky-mobile-cta.visible {
+  transform: translateY(0);
+}
+
+/* ── "Cómo funciona" Steps ──────────────────────── */
+.step-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  position: relative;
+}
+.step-connector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #0b3e5d 0%, transparent 100%);
+  opacity: 0.15;
+}
+
+/* ── Testimonial Avatars ────────────────────────── */
+.avatar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* ── Product Info Tabs ───────────────────────────── */
+.product-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+.product-tab {
+  cursor: pointer;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+}
+.product-tab:hover { color: #475569; }
+.product-tab.active {
+  color: #0b3e5d;
+  border-bottom-color: #0b3e5d;
+}
+.product-tab-content { display: none; }
+.product-tab-content.active { display: block; }
+
+/* ── Stat Counter ───────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stat-animated {
+  animation: countUp 0.6s ease forwards;
 }
 
 /* ── Selection ────────────────────────────────────── */

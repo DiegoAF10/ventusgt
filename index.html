@@ -35,7 +35,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind v4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -59,8 +59,8 @@
   <!-- ═══ NAV ═══ -->
   <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      <a href="/" class="nav-logo text-2xl font-extrabold tracking-tight text-white transition-colors duration-300" aria-label="VENTUS — Inicio">
-        VENTUS
+      <a href="/" class="nav-logo" aria-label="VENTUS — Inicio">
+        <img src="assets/img/brand/logo-full.png" alt="VENTUS" class="nav-logo-img nav-logo-white">
       </a>
 
       <!-- Desktop -->
@@ -146,11 +146,23 @@
               100% mecánico
             </span>
           </div>
+
+          <!-- Social proof -->
+          <div class="flex items-center gap-3 justify-center lg:justify-start mt-6">
+            <div class="flex gap-0.5">
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <span class="text-sm text-blue-200/80">4.9/5 — Clientes satisfechos en Guatemala</span>
+          </div>
         </div>
 
         <!-- Product visual -->
-        <div class="hidden lg:flex justify-center">
-          <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS — Mouth Tape + Nose Tape" class="max-w-sm animate-float drop-shadow-2xl" loading="lazy">
+        <div class="flex justify-center">
+          <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS — Mouth Tape + Nose Tape" class="max-w-[200px] sm:max-w-[280px] lg:max-w-sm animate-float drop-shadow-2xl" loading="lazy">
         </div>
       </div>
     </div>
@@ -180,6 +192,47 @@
     </div>
   </section>
 
+  <!-- ═══ CÓMO FUNCIONA ═══ -->
+  <section class="py-16 sm:py-20 px-4 sm:px-6 bg-[#f4ede5]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Tres pasos simples</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">Cómo funciona</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 relative">
+        <!-- Step 1 -->
+        <div class="text-center fade-up" style="transition-delay: 0ms">
+          <div class="step-icon bg-blue-100 mx-auto">
+            <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            <div class="step-connector hidden md:block"></div>
+          </div>
+          <p class="text-2xl font-bold ventus-blue mb-2">1. Elegí</p>
+          <p class="text-sm text-gray-500 leading-relaxed max-w-[220px] mx-auto">Mouth Tape para dormir, Nose Tape para entrenar, o el Bundle completo.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center fade-up" style="transition-delay: 120ms">
+          <div class="step-icon bg-green-100 mx-auto">
+            <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+            <div class="step-connector hidden md:block"></div>
+          </div>
+          <p class="text-2xl font-bold ventus-blue mb-2">2. Aplicá</p>
+          <p class="text-sm text-gray-500 leading-relaxed max-w-[220px] mx-auto">Colocá la cinta sobre piel limpia y seca. Toma 5 segundos, sin complicaciones.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center fade-up" style="transition-delay: 240ms">
+          <div class="step-icon bg-purple-100 mx-auto">
+            <svg class="w-7 h-7 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <p class="text-2xl font-bold ventus-blue mb-2">3. Respirá</p>
+          <p class="text-sm text-gray-500 leading-relaxed max-w-[220px] mx-auto">Sentí la diferencia desde la primera noche. Mejor sueño, más energía, mayor rendimiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ PRODUCTOS ═══ -->
   <section id="productos" class="py-20 sm:py-28 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
@@ -193,13 +246,17 @@
 
         <!-- MT-01 -->
         <a href="productos/mouth-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 0ms">
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
             <img src="assets/img/mt-01/frente.webp" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
           </div>
           <div class="p-5">
             <p class="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-1.5">Sueño</p>
             <h3 class="font-bold text-lg mb-1">Mouth Tape</h3>
-            <p class="text-sm text-gray-500 mb-4">30 cintas — 1 mes de uso</p>
+            <p class="text-sm text-gray-500 mb-2">30 cintas — 1 mes de uso</p>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Para dormir</span>
+              <span class="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Anti-ronquido</span>
+            </div>
             <div class="flex items-center justify-between">
               <span class="text-xl font-bold">Q100</span>
               <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
@@ -209,13 +266,17 @@
 
         <!-- NT-01 -->
         <a href="productos/nose-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 80ms">
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
             <img src="assets/img/nt-01/frente.webp" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
           </div>
           <div class="p-5">
             <p class="text-xs font-semibold tracking-wider uppercase text-green-600 mb-1.5">Respiración</p>
             <h3 class="font-bold text-lg mb-1">Nose Tape</h3>
-            <p class="text-sm text-gray-500 mb-4">30 tiras — 1 mes de uso</p>
+            <p class="text-sm text-gray-500 mb-2">30 tiras — 1 mes de uso</p>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Deporte</span>
+              <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Respiración nasal</span>
+            </div>
             <div class="flex items-center justify-between">
               <span class="text-xl font-bold">Q100</span>
               <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
@@ -225,13 +286,17 @@
 
         <!-- NT-02 -->
         <a href="productos/nose-tape-premium.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 160ms">
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
             <img src="assets/img/nt-02/frente.webp" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
           </div>
           <div class="p-5">
             <p class="text-xs font-semibold tracking-wider uppercase text-purple-600 mb-1.5">Premium</p>
             <h3 class="font-bold text-lg mb-1">Nose Tape Premium</h3>
-            <p class="text-sm text-gray-500 mb-4">30 tiras — adhesivo mejorado</p>
+            <p class="text-sm text-gray-500 mb-2">30 tiras — adhesivo mejorado</p>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Ejercicio intenso</span>
+              <span class="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Anti-sudor</span>
+            </div>
             <div class="flex items-center justify-between">
               <span class="text-xl font-bold">Q149</span>
               <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
@@ -242,13 +307,17 @@
         <!-- BUNDLE -->
         <a href="productos/bundle.html" class="card-product rounded-2xl overflow-hidden block bg-white ring-2 ring-orange-400 relative fade-up" style="transition-delay: 240ms">
           <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Mejor valor</div>
-          <div class="aspect-square bg-gray-50 flex items-center justify-center p-6 img-zoom-container">
+          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
             <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
           </div>
           <div class="p-5">
             <p class="text-xs font-semibold tracking-wider uppercase text-orange-600 mb-1.5">Combo</p>
             <h3 class="font-bold text-lg mb-1">Bundle Completo</h3>
-            <p class="text-sm text-gray-500 mb-4">Mouth Tape + Nose Tape</p>
+            <p class="text-sm text-gray-500 mb-2">Mouth Tape + Nose Tape</p>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[10px] font-medium bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">Sueño + deporte</span>
+              <span class="text-[10px] font-medium bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">Ahorrá Q31</span>
+            </div>
             <div class="flex items-center justify-between">
               <div class="flex items-baseline gap-2">
                 <span class="text-xl font-bold">Q169</span>
@@ -264,7 +333,7 @@
   </section>
 
   <!-- ═══ BENEFICIOS ═══ -->
-  <section class="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
+  <section class="py-20 sm:py-28 px-4 sm:px-6 bg-[#f4ede5]">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div class="text-center fade-up" style="transition-delay: 0ms">
@@ -294,113 +363,233 @@
 
   <!-- ═══ CIENCIA ═══ -->
   <section id="ciencia" class="py-20 sm:py-28 px-4 sm:px-6">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <div class="text-center mb-14 fade-up">
         <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Respaldado por ciencia</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">¿Por qué respiración nasal?</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">¿Por qué respiración nasal?</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Tu nariz no es solo para oler — es el sistema de filtrado, calentamiento y optimización de aire más avanzado que existe.</p>
       </div>
 
-      <div class="space-y-8 fade-up">
-        <div class="flex gap-5">
-          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
-            <span class="text-blue-700 font-bold">1</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Filtra, calienta y humidifica el aire</h3>
-            <p class="text-gray-500 leading-relaxed">Tu nariz es un filtro natural. Respirar por la boca expone tus pulmones a aire sin procesar, bacterias y alérgenos.</p>
-          </div>
+      <!-- Stat highlight -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14 fade-up">
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <p class="text-3xl sm:text-4xl font-extrabold ventus-blue" data-stat="10-15">10-15%</p>
+          <p class="text-xs text-gray-500 mt-1">más absorción de oxígeno</p>
         </div>
-
-        <div class="flex gap-5">
-          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
-            <span class="text-blue-700 font-bold">2</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Produce óxido nítrico</h3>
-            <p class="text-gray-500 leading-relaxed">La respiración nasal genera óxido nítrico — un vasodilatador que mejora la absorción de oxígeno en un 10-15%.</p>
-          </div>
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <p class="text-3xl sm:text-4xl font-extrabold ventus-blue">40%</p>
+          <p class="text-xs text-gray-500 mt-1">de adultos respiran por la boca</p>
         </div>
-
-        <div class="flex gap-5">
-          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
-            <span class="text-blue-700 font-bold">3</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Activa el sistema parasimpático</h3>
-            <p class="text-gray-500 leading-relaxed">Respirar por la nariz activa tu modo de descanso y recuperación, reduciendo estrés y mejorando la calidad de sueño profundo.</p>
-          </div>
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <p class="text-3xl sm:text-4xl font-extrabold ventus-blue">6x</p>
+          <p class="text-xs text-gray-500 mt-1">más óxido nítrico nasal</p>
         </div>
-
-        <div class="flex gap-5">
-          <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
-            <span class="text-blue-700 font-bold">4</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Reduce ronquidos y apnea leve</h3>
-            <p class="text-gray-500 leading-relaxed">Al mantener la boca cerrada, se reduce la vibración del paladar — la causa principal de ronquidos en adultos sanos.</p>
-          </div>
+        <div class="text-center p-4 bg-blue-50 rounded-xl">
+          <p class="text-3xl sm:text-4xl font-extrabold ventus-blue">8hrs</p>
+          <p class="text-xs text-gray-500 mt-1">de sueño optimizado</p>
         </div>
       </div>
 
-      <div class="mt-12 p-6 bg-blue-50 rounded-2xl border border-blue-100 fade-up">
-        <p class="text-sm text-blue-900 leading-relaxed">
-          <strong>Respaldado por investigación.</strong> James Nestor documentó los efectos de la respiración bucal vs. nasal en su bestseller <em>"Breath: The New Science of a Lost Art"</em>. Estudios del Karolinska Institute confirman que el óxido nítrico nasal mejora la función pulmonar significativamente.
-        </p>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-8 fade-up">
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+              <span class="text-blue-700 font-bold">1</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Filtra, calienta y humidifica el aire</h3>
+              <p class="text-gray-500 leading-relaxed">Tu nariz es un filtro natural. Respirar por la boca expone tus pulmones a aire sin procesar, bacterias y alérgenos.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+              <span class="text-blue-700 font-bold">2</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Produce óxido nítrico</h3>
+              <p class="text-gray-500 leading-relaxed">La respiración nasal genera óxido nítrico — un vasodilatador que mejora la absorción de oxígeno en un 10-15%.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+              <span class="text-blue-700 font-bold">3</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Activa el sistema parasimpático</h3>
+              <p class="text-gray-500 leading-relaxed">Respirar por la nariz activa tu modo de descanso y recuperación, reduciendo estrés y mejorando la calidad de sueño profundo.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mt-0.5">
+              <span class="text-blue-700 font-bold">4</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Reduce ronquidos y apnea leve</h3>
+              <p class="text-gray-500 leading-relaxed">Al mantener la boca cerrada, se reduce la vibración del paladar — la causa principal de ronquidos en adultos sanos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- James Nestor quote -->
+        <div class="mt-12 p-6 sm:p-8 bg-blue-50 rounded-2xl border border-blue-100 fade-up">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-blue-300">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            </div>
+            <div>
+              <p class="text-sm sm:text-base text-blue-900 leading-relaxed italic mb-3">"Respirar por la boca cambia la estructura física de la cara y las vías respiratorias. La respiración nasal es, literalmente, la forma en que fuimos diseñados para respirar."</p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center">
+                  <span class="text-xs font-bold text-blue-800">JN</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-blue-900">James Nestor</p>
+                  <p class="text-xs text-blue-600">Autor, "Breath: The New Science of a Lost Art"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic badge -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400 fade-up">
+          <span class="flex items-center gap-1.5 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Karolinska Institute
+          </span>
+          <span class="flex items-center gap-1.5 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Journal of Clinical Sleep Medicine
+          </span>
+          <span class="flex items-center gap-1.5 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Buteyko Breathing Method
+          </span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ TESTIMONIOS ═══ -->
-  <section class="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
+  <section class="py-20 sm:py-28 px-4 sm:px-6 bg-[#f4ede5]">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14 fade-up">
+      <div class="text-center mb-6 fade-up">
         <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Testimonios</p>
         <h2 class="text-3xl sm:text-4xl font-bold">Lo que dicen nuestros clientes</h2>
       </div>
 
+      <!-- Aggregate rating -->
+      <div class="flex items-center justify-center gap-2 mb-12 fade-up">
+        <div class="flex gap-0.5">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <span class="text-sm font-semibold">4.9/5</span>
+        <span class="text-sm text-gray-500">— Clientes verificados</span>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+        <!-- Testimonial 1 -->
         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div class="flex gap-0.5 mb-4">
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Desde que uso el mouth tape, mi pareja ya no se queja de mis ronquidos. Duermo mucho mejor y despierto con más energía."</p>
-          <div>
-            <p class="font-semibold text-sm">Carlos M.</p>
-            <p class="text-xs text-gray-400">Empresario, 35 años — Zona 10</p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Desde que uso el mouth tape, mi pareja ya no se queja de mis ronquidos. Duermo mucho mejor y despierto con más energía."</p>
+          <div class="flex items-center gap-3">
+            <div class="avatar-initials" style="background-color: #0b3e5d;">CM</div>
+            <div>
+              <p class="font-semibold text-sm">Carlos M.</p>
+              <p class="text-xs text-gray-400">Empresario — Zona 10, Guatemala</p>
+            </div>
           </div>
         </div>
 
+        <!-- Testimonial 2 -->
         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div class="flex gap-0.5 mb-4">
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">"Lo uso para correr y la diferencia es notable. Respiro más eficientemente y rindo mucho más en mis entrenamientos."</p>
-          <div>
-            <p class="font-semibold text-sm">Andrea R.</p>
-            <p class="text-xs text-gray-400">Corredora, 28 años — Cayalá</p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Lo uso para correr y la diferencia es notable. Respiro más eficientemente y rindo mucho más en mis entrenamientos."</p>
+          <div class="flex items-center gap-3">
+            <div class="avatar-initials" style="background-color: #059669;">AR</div>
+            <div>
+              <p class="font-semibold text-sm">Andrea R.</p>
+              <p class="text-xs text-gray-400">Corredora — Cayalá, Guatemala</p>
+            </div>
           </div>
         </div>
 
+        <!-- Testimonial 3 -->
         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
           <div class="flex gap-0.5 mb-4">
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">"El bundle es perfecto. Nose tape para el gym y mouth tape para dormir. Se nota la calidad del producto."</p>
-          <div>
-            <p class="font-semibold text-sm">Roberto L.</p>
-            <p class="text-xs text-gray-400">CrossFitter, 32 años — Zona 14</p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">"El bundle es perfecto. Nose tape para el gym y mouth tape para dormir. Se nota la calidad del producto."</p>
+          <div class="flex items-center gap-3">
+            <div class="avatar-initials" style="background-color: #e67e22;">RL</div>
+            <div>
+              <p class="font-semibold text-sm">Roberto L.</p>
+              <p class="text-xs text-gray-400">CrossFitter — Zona 14, Guatemala</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: 2 more testimonials -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto fade-up">
+        <!-- Testimonial 4 -->
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Soy dentista y recomiendo la respiración nasal a mis pacientes. VENTUS es exactamente lo que necesitaba — calidad médica y fácil de usar."</p>
+          <div class="flex items-center gap-3">
+            <div class="avatar-initials" style="background-color: #7c3aed;">MV</div>
+            <div>
+              <p class="font-semibold text-sm">Dra. María V.</p>
+              <p class="text-xs text-gray-400">Odontóloga — Antigua Guatemala</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Lo probé por curiosidad y ahora no puedo dormir sin él. La calidad del adhesivo es increíble — no irrita nada."</p>
+          <div class="flex items-center gap-3">
+            <div class="avatar-initials" style="background-color: #2d5289;">JA</div>
+            <div>
+              <p class="font-semibold text-sm">José A.</p>
+              <p class="text-xs text-gray-400">Ingeniero — Quetzaltenango</p>
+            </div>
           </div>
         </div>
       </div>
@@ -418,7 +607,7 @@
       <div class="space-y-3 fade-up">
         <!-- FAQ 1 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿Es seguro dormir con mouth tape?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -429,7 +618,7 @@
 
         <!-- FAQ 2 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿De qué material están hechas las cintas?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -440,7 +629,7 @@
 
         <!-- FAQ 3 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿Cuál es la diferencia entre Nose Tape regular y Premium?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -451,7 +640,7 @@
 
         <!-- FAQ 4 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿Hacen envíos a todo Guatemala?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -462,7 +651,7 @@
 
         <!-- FAQ 5 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿Qué métodos de pago aceptan?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -473,7 +662,7 @@
 
         <!-- FAQ 6 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿Puedo usar mouth tape si tengo barba?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -484,7 +673,7 @@
 
         <!-- FAQ 7 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden">
-          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition cursor-pointer" aria-expanded="false">
+          <button class="faq-question w-full flex items-center justify-between p-5 text-left hover:bg-[#f4ede5] transition cursor-pointer" aria-expanded="false">
             <span class="font-medium pr-4">¿Cuánto dura cada tira?</span>
             <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -505,7 +694,6 @@
         <a href="#productos" class="bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-lg">
           Ver productos
         </a>
-        <!-- TODO: Replace with actual WhatsApp number -->
         <a href="https://wa.me/50231015202" target="_blank" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Escribinos
@@ -552,7 +740,6 @@
         <div>
           <h4 class="font-semibold text-sm mb-4 text-white/90">Contacto</h4>
           <ul class="space-y-2.5">
-            <!-- TODO: Replace with actual WhatsApp number -->
             <li><a href="https://wa.me/50231015202" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition flex items-center gap-2">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               WhatsApp
@@ -572,8 +759,8 @@
       <!-- Newsletter — TODO: Connect to backend -->
       <div class="border-t border-white/10 pt-8 mb-8">
         <div class="max-w-md mx-auto text-center md:text-left md:mx-0">
-          <h4 class="font-semibold text-sm mb-2">Suscribite a nuestro newsletter</h4>
-          <p class="text-xs text-blue-200/50 mb-4">Tips de respiración, ofertas exclusivas y novedades. Sin spam.</p>
+          <h4 class="font-semibold text-sm mb-2">Respirá mejor cada semana</h4>
+          <p class="text-xs text-blue-200/50 mb-4">Tips de respiración nasal, ciencia del sueño y ofertas exclusivas. Una vez por semana, sin spam.</p>
           <form class="flex gap-2" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Suscrito'; this.querySelector('input').value='';">
             <input type="email" placeholder="tu@email.com" required class="flex-1 bg-white/10 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-blue-200/40 focus:outline-none focus:ring-2 focus:ring-white/30">
             <button type="submit" class="bg-white text-gray-900 font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-gray-100 transition cursor-pointer">
@@ -590,6 +777,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══ WHATSAPP FLOAT ═══ -->
+  <a href="https://wa.me/50231015202" target="_blank" class="whatsapp-float" aria-label="Chateá con nosotros por WhatsApp" id="whatsapp-btn">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ═══ STICKY MOBILE CTA ═══ -->
+  <div class="sticky-mobile-cta md:hidden" id="sticky-cta">
+    <a href="#productos" class="btn-ventus block text-center py-3 rounded-xl font-semibold text-sm">
+      Ver productos — Desde Q100
+    </a>
+  </div>
 
   <!-- ═══ SCRIPTS ═══ -->
   <script>
@@ -621,18 +820,15 @@
     if (nav && hero) {
       const navObserver = new IntersectionObserver(([entry]) => {
         nav.classList.toggle('nav-scrolled', !entry.isIntersecting);
-        // Update text colors
-        const logo = nav.querySelector('.nav-logo');
+        const logoImg = nav.querySelector('.nav-logo-img');
         const links = nav.querySelectorAll('.nav-link');
         if (entry.isIntersecting) {
-          logo.classList.remove('!text-[#1e3a5f]');
-          logo.classList.add('text-white');
+          if (logoImg) logoImg.classList.add('nav-logo-white');
           links.forEach(l => { l.classList.remove('!text-gray-600'); l.classList.add('text-white/80'); });
           menuBtn.classList.remove('!text-gray-900');
           menuBtn.classList.add('text-white');
         } else {
-          logo.classList.add('!text-[#1e3a5f]');
-          logo.classList.remove('text-white');
+          if (logoImg) logoImg.classList.remove('nav-logo-white');
           links.forEach(l => { l.classList.add('!text-gray-600'); l.classList.remove('text-white/80'); });
           menuBtn.classList.add('!text-gray-900');
           menuBtn.classList.remove('text-white');
@@ -672,6 +868,16 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+    // ── Sticky Mobile CTA ──
+    const stickyCta = document.getElementById('sticky-cta');
+    const productosSection = document.getElementById('productos');
+    if (stickyCta && productosSection) {
+      const stickyObserver = new IntersectionObserver(([entry]) => {
+        stickyCta.classList.toggle('visible', !entry.isIntersecting);
+      }, { threshold: 0.1 });
+      stickyObserver.observe(productosSection);
+    }
   </script>
 
   <!-- ═══ Schema.org ═══ -->
