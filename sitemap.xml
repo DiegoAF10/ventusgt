@@ -37,6 +37,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tiendaventus.com/ciencia/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendaventus.com/productos.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tiendaventus.com/faq.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://tiendaventus.com/nosotros.html</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>

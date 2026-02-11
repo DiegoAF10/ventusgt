@@ -19,6 +19,9 @@
 </head>
 <body class="bg-[#f8fafc] text-gray-900">
 
+  <!-- Skip to content (a11y) -->
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
   <!-- ═══ SHIPPING BANNER ═══ -->
   <div class="shipping-banner">Envio gratis en pedidos de Q149+</div>
 
@@ -36,7 +39,7 @@
   </nav>
 
   <!-- ═══ MAIN CHECKOUT ═══ -->
-  <main class="pt-24 pb-16 px-4 sm:px-6">
+  <main id="main-content" class="pt-24 pb-16 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto">
 
       <!-- Loading state (shown while JS parses SKU) -->
@@ -175,6 +178,21 @@
                   Continuar al pago
                 </button>
                 <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
+                <!-- Trust badges -->
+                <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+                  <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+                    <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
+                    <svg class="h-4" viewBox="0 0 32 16" fill="none"><circle cx="11" cy="8" r="7" fill="#EB001B"/><circle cx="21" cy="8" r="7" fill="#F79E1B"/><path d="M16 2.5a7 7 0 010 11" fill="#FF5F00"/></svg>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    Pago seguro con Recurrente
+                  </div>
+                  <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+                    Envio con Boxful
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -212,6 +230,21 @@
                     Continuar al pago
                   </button>
                   <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
+                  <!-- Trust badges -->
+                  <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+                    <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+                      <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
+                      <svg class="h-4" viewBox="0 0 32 16" fill="none"><circle cx="11" cy="8" r="7" fill="#EB001B"/><circle cx="21" cy="8" r="7" fill="#F79E1B"/><path d="M16 2.5a7 7 0 010 11" fill="#FF5F00"/></svg>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+                      <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                      Pago seguro con Recurrente
+                    </div>
+                    <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+                      <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+                      Envio con Boxful
+                    </div>
+                  </div>
                 </div>
               </div>
 

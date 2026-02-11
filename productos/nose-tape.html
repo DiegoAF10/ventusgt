@@ -37,6 +37,8 @@
   <link rel="stylesheet" href="../css/ventus.css">
 </head>
 <body class="bg-white text-gray-900">
+  <!-- Skip to content (a11y) -->
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
   <!-- ═══ SHIPPING BANNER ═══ -->
   <div class="shipping-banner">Envio gratis en pedidos de Q149+</div>
@@ -49,7 +51,7 @@
       </a>
       <div class="hidden md:flex items-center gap-8">
         <a href="../#productos" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Productos</a>
-        <a href="../#ciencia" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Ciencia</a>
+        <a href="/ciencia/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Ciencia</a>
         <a href="../nosotros.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Nosotros</a>
         <button onclick="buyProduct('NT-01')" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer">Comprar</button>
       </div>
@@ -61,7 +63,7 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
       <div class="px-6 py-5 space-y-4">
         <a href="../#productos" class="block text-gray-900 font-medium py-1 mobile-nav-link">Productos</a>
-        <a href="../#ciencia" class="block text-gray-900 font-medium py-1 mobile-nav-link">Ciencia</a>
+        <a href="/ciencia/" class="block text-gray-900 font-medium py-1 mobile-nav-link">Ciencia</a>
         <a href="../nosotros.html" class="block text-gray-900 font-medium py-1 mobile-nav-link">Nosotros</a>
         <a href="../#faq" class="block text-gray-900 font-medium py-1 mobile-nav-link">Preguntas frecuentes</a>
         <hr class="border-gray-100">
@@ -84,7 +86,7 @@
   </div>
 
   <!-- ═══ PRODUCT ═══ -->
-  <main class="pb-20 px-4 sm:px-6">
+  <main id="main-content" class="pb-20 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
 
@@ -133,7 +135,25 @@
             <span class="text-3xl font-bold">Q100</span>
             <span class="text-sm text-gray-400">30 tiras — 1 mes de uso</span>
           </div>
-          <p class="text-sm text-gray-500 mb-6">Envio Q35 · <a href="bundle.html" class="text-green-600 font-medium hover:underline">Envio gratis al llevar el Bundle</a></p>
+          <p class="text-sm text-gray-500 mb-4">Envio Q35 · <a href="bundle.html" class="text-green-600 font-medium hover:underline">Envio gratis al llevar el Bundle</a></p>
+
+          <!-- Lightning benefit icons -->
+          <div class="flex items-center gap-3 sm:gap-4 mb-6 py-3 px-4 bg-green-50/50 rounded-xl">
+            <div class="flex items-center gap-1.5 text-xs text-gray-700">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              <span>Respiración libre</span>
+            </div>
+            <div class="w-px h-5 bg-gray-200"></div>
+            <div class="flex items-center gap-1.5 text-xs text-gray-700">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span>Ideal deporte</span>
+            </div>
+            <div class="w-px h-5 bg-gray-200"></div>
+            <div class="flex items-center gap-1.5 text-xs text-gray-700">
+              <svg class="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+              <span>Sin químicos</span>
+            </div>
+          </div>
 
           <div class="mb-6">
             <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -163,29 +183,36 @@
             Comprar — Q100
           </button>
 
-          <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-gray-400 mb-8">
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-              Pago seguro
-            </span>
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
-              Envío a toda Guatemala
-            </span>
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-              Visa / Mastercard vía Recurrente
-            </span>
+          <!-- Guarantee badge -->
+          <div class="flex items-center justify-center gap-2 text-sm text-green-700 mb-4">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <span>Satisfacción garantizada o te devolvemos tu dinero</span>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+              <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
+              <svg class="h-4" viewBox="0 0 32 16" fill="none"><circle cx="11" cy="8" r="7" fill="#EB001B"/><circle cx="21" cy="8" r="7" fill="#F79E1B"/><path d="M16 2.5a7 7 0 010 11" fill="#FF5F00"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+              <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              Recurrente
+            </div>
+            <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
+              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+              Boxful
+            </div>
           </div>
 
           <!-- Info Tabs -->
           <div class="pt-6 border-t border-gray-100">
             <div class="product-tabs" role="tablist">
-              <button class="product-tab active" onclick="switchTab('uso')" role="tab">Uso</button>
-              <button class="product-tab" onclick="switchTab('envio')" role="tab">Envio</button>
+              <button class="product-tab active" onclick="switchTab('uso')" role="tab" aria-selected="true" aria-controls="tab-uso">Uso</button>
+              <button class="product-tab" onclick="switchTab('envio')" role="tab" aria-selected="false" aria-controls="tab-envio">Envio</button>
             </div>
 
-            <div id="tab-uso" class="product-tab-content active">
+            <div id="tab-uso" class="product-tab-content active" role="tabpanel">
               <ol class="space-y-3 text-sm text-gray-600">
                 <li class="flex gap-3">
                   <div class="flex-shrink-0 w-7 h-7 bg-green-50 rounded-lg flex items-center justify-center"><span class="text-green-700 font-bold text-xs">1</span></div>
@@ -206,7 +233,7 @@
               </ol>
             </div>
 
-            <div id="tab-envio" class="product-tab-content">
+            <div id="tab-envio" class="product-tab-content" role="tabpanel">
               <div class="space-y-4 text-sm text-gray-600">
                 <div class="flex gap-3">
                   <div class="flex-shrink-0 w-7 h-7 bg-blue-50 rounded-lg flex items-center justify-center">
@@ -353,32 +380,32 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
         <div class="col-span-2 md:col-span-1">
           <a href="../" class="text-2xl font-extrabold tracking-tight">VENTUS</a>
-          <p class="text-sm text-blue-200/60 mt-3 leading-relaxed">Cintas adhesivas para respiración nasal. Mejorá tu sueño y rendimiento — naturalmente.</p>
+          <p class="text-sm text-blue-200/80 mt-3 leading-relaxed">Cintas adhesivas para respiración nasal. Mejorá tu sueño y rendimiento — naturalmente.</p>
           <span class="text-xs bg-white/10 px-2.5 py-1 rounded-full text-blue-200/80 inline-block mt-4">Hecho en Guatemala</span>
         </div>
         <div>
           <h4 class="font-semibold text-sm mb-4 text-white/90">Productos</h4>
           <ul class="space-y-2.5">
-            <li><a href="mouth-tape.html" class="text-sm text-blue-200/60 hover:text-white transition">Mouth Tape</a></li>
-            <li><a href="nose-tape.html" class="text-sm text-blue-200/60 hover:text-white transition">Nose Tape</a></li>
-            <li><a href="nose-tape-premium.html" class="text-sm text-blue-200/60 hover:text-white transition">Nose Tape Premium</a></li>
-            <li><a href="bundle.html" class="text-sm text-blue-200/60 hover:text-white transition">Bundle Completo</a></li>
+            <li><a href="mouth-tape.html" class="text-sm text-blue-200/80 hover:text-white transition">Mouth Tape</a></li>
+            <li><a href="nose-tape.html" class="text-sm text-blue-200/80 hover:text-white transition">Nose Tape</a></li>
+            <li><a href="nose-tape-premium.html" class="text-sm text-blue-200/80 hover:text-white transition">Nose Tape Premium</a></li>
+            <li><a href="bundle.html" class="text-sm text-blue-200/80 hover:text-white transition">Bundle Completo</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold text-sm mb-4 text-white/90">Empresa</h4>
           <ul class="space-y-2.5">
-            <li><a href="../nosotros.html" class="text-sm text-blue-200/60 hover:text-white transition">Nosotros</a></li>
-            <li><a href="../#ciencia" class="text-sm text-blue-200/60 hover:text-white transition">Ciencia</a></li>
-            <li><a href="../#faq" class="text-sm text-blue-200/60 hover:text-white transition">Preguntas frecuentes</a></li>
+            <li><a href="../nosotros.html" class="text-sm text-blue-200/80 hover:text-white transition">Nosotros</a></li>
+            <li><a href="/ciencia/" class="text-sm text-blue-200/80 hover:text-white transition">Ciencia</a></li>
+            <li><a href="../#faq" class="text-sm text-blue-200/80 hover:text-white transition">Preguntas frecuentes</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold text-sm mb-4 text-white/90">Contacto</h4>
           <ul class="space-y-2.5">
-            <li><a href="https://wa.me/50231015202" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition">WhatsApp</a></li>
-            <li><a href="https://instagram.com/ventus.gt" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition">Instagram</a></li>
-            <li><a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-sm text-blue-200/60 hover:text-white transition">TikTok</a></li>
+            <li><a href="https://wa.me/50231015202" target="_blank" class="text-sm text-blue-200/80 hover:text-white transition">WhatsApp</a></li>
+            <li><a href="https://instagram.com/ventus.gt" target="_blank" class="text-sm text-blue-200/80 hover:text-white transition">Instagram</a></li>
+            <li><a href="https://tiktok.com/@ventus.gt" target="_blank" class="text-sm text-blue-200/80 hover:text-white transition">TikTok</a></li>
           </ul>
         </div>
       </div>
@@ -432,8 +459,10 @@
     function switchTab(tabId) {
       document.querySelectorAll('.product-tab-content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.product-tab').forEach(t => t.setAttribute('aria-selected', 'false'));
       document.getElementById('tab-' + tabId).classList.add('active');
       event.currentTarget.classList.add('active');
+      document.querySelector(`.product-tab[onclick="switchTab('${tabId}')"]`).setAttribute('aria-selected', 'true');
     }
 
     function switchImage(src, el) {
