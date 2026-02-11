@@ -124,6 +124,12 @@
             <button onclick="switchImage('../assets/img/mt-01/lifestyle-f.webp', this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Lifestyle femenino">
               <img loading="lazy"src="../assets/img/mt-01/lifestyle-f.webp" alt="" class="w-full h-full object-contain">
             </button>
+            <button onclick="playGalleryVideo(this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl border-2 border-transparent cursor-pointer transition-all hover:border-blue-500 hover:shadow-md gallery-video-thumb" aria-label="Ver video demo">
+              <svg class="gallery-play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <div class="w-full h-full rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </div>
+            </button>
           </div>
         </div>
 
@@ -267,6 +273,27 @@
           <a href="bundle.html" class="flex-shrink-0 btn-orange font-semibold px-7 py-3 rounded-xl text-sm">
             Ver Bundle — Q169
           </a>
+        </div>
+      </div>
+
+      <!-- ═══ UGC VIDEO SECTION ═══ -->
+      <div class="mt-20 fade-up">
+        <div class="text-center mb-10">
+          <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Miralo en accion</p>
+          <h2 class="text-2xl font-bold mb-2">Asi se usa el Mouth Tape</h2>
+          <p class="text-gray-500 text-sm max-w-md mx-auto">Personas reales usando VENTUS en su rutina nocturna</p>
+        </div>
+        <div class="flex justify-center">
+          <div class="ugc-scroll justify-center">
+            <div class="ugc-phone-frame" onclick="toggleUgcVideo(this)">
+              <video src="../assets/video/mt-01/demo-01.mp4" playsinline loop preload="metadata" muted></video>
+              <div class="ugc-play-overlay">
+                <div class="ugc-play-btn">
+                  <svg class="w-6 h-6 text-blue-700 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -427,13 +454,56 @@
 
     // ── Image Gallery ──
     function switchImage(src, el) {
+      var container = document.getElementById('main-image').parentElement;
+      var existingVideo = container.querySelector('video');
+      if (existingVideo) { existingVideo.remove(); document.getElementById('main-image').style.display = ''; }
       document.getElementById('main-image').src = src;
-      document.querySelectorAll('button[onclick^="switchImage"]').forEach(b => {
+      document.querySelectorAll('button[onclick^="switchImage"], .gallery-video-thumb').forEach(b => {
         b.classList.remove('border-blue-500');
         b.classList.add('border-transparent');
       });
       el.classList.remove('border-transparent');
       el.classList.add('border-blue-500');
+    }
+
+    // ── Gallery Video ──
+    function playGalleryVideo(el) {
+      var container = document.getElementById('main-image').parentElement;
+      var existingVideo = container.querySelector('video');
+      if (existingVideo) {
+        existingVideo.remove();
+        document.getElementById('main-image').style.display = '';
+        document.querySelectorAll('button[onclick^="switchImage"]').forEach(function(b) { b.classList.remove('border-blue-500'); b.classList.add('border-transparent'); });
+        document.querySelector('button[onclick^="switchImage"]:first-of-type').classList.remove('border-transparent');
+        document.querySelector('button[onclick^="switchImage"]:first-of-type').classList.add('border-blue-500');
+        el.classList.remove('border-blue-500');
+        return;
+      }
+      document.getElementById('main-image').style.display = 'none';
+      var video = document.createElement('video');
+      video.src = '../assets/video/mt-01/demo-01.mp4';
+      video.className = 'gallery-video-main';
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.muted = false;
+      container.appendChild(video);
+      document.querySelectorAll('button[onclick^="switchImage"], .gallery-video-thumb').forEach(function(b) { b.classList.remove('border-blue-500'); b.classList.add('border-transparent'); });
+      el.classList.remove('border-transparent');
+      el.classList.add('border-blue-500');
+    }
+
+    // ── UGC Video Toggle ──
+    function toggleUgcVideo(frame) {
+      var video = frame.querySelector('video');
+      if (video.paused) {
+        video.muted = false;
+        video.play();
+        frame.classList.add('playing');
+      } else {
+        video.pause();
+        frame.classList.remove('playing');
+      }
     }
 
     // ── Hamburger Menu ──
