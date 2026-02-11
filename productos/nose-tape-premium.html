@@ -38,7 +38,10 @@
 </head>
 <body class="bg-white text-gray-900">
 
-  <nav class="fixed top-0 w-full z-50 bg-white/97 backdrop-blur-md border-b border-gray-100">
+  <!-- ═══ SHIPPING BANNER ═══ -->
+  <div class="shipping-banner">Envio gratis en pedidos de Q149+</div>
+
+  <nav class="fixed top-[36px] w-full z-50 bg-white/97 backdrop-blur-md border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
       <a href="../" aria-label="VENTUS — Inicio">
         <img src="../assets/img/brand/logo-full.png" alt="VENTUS" class="nav-logo-img">
@@ -122,9 +125,13 @@
             <span class="text-xs text-gray-400">(29 reseñas)</span>
           </div>
 
-          <div class="flex items-baseline gap-3 mb-6">
+          <div class="flex items-baseline gap-3 mb-2">
             <span class="text-3xl font-bold">Q149</span>
             <span class="text-sm text-gray-400">30 tiras — adhesivo mejorado</span>
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-sm font-medium text-green-600">Envio gratis</span>
+            <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
           </div>
 
           <div class="mb-6">
@@ -149,6 +156,19 @@
                 Diseño discreto y cómodo
               </li>
             </ul>
+          </div>
+
+          <!-- NT-03 Gift Callout -->
+          <div class="mb-6 p-4 rounded-xl border-2 border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-green-800 text-sm">Incluye regalo: Repuestos VENTUS</p>
+                <p class="text-xs text-green-700 mt-1">30 dias completos de uso + parches extras. Valor <span class="line-through">Q49</span> — <span class="font-bold text-green-600">GRATIS</span> con tu compra.</p>
+              </div>
+            </div>
           </div>
 
           <button onclick="buyProduct('NT-02')" class="w-full btn-ventus text-white font-semibold py-4 rounded-xl text-lg cursor-pointer mb-3">
@@ -226,26 +246,26 @@
             <div id="tab-envio" class="product-tab-content">
               <div class="space-y-4 text-sm text-gray-600">
                 <div class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center">
-                    <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+                  <div class="flex-shrink-0 w-7 h-7 bg-green-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <p class="font-medium text-gray-900">Ciudad de Guatemala</p>
-                    <p>Entrega en 1-3 dias habiles</p>
+                    <p class="font-medium text-green-700">Tu NT-02 califica para envio gratis</p>
+                    <p>Envio gratis a toda Guatemala via Boxful</p>
                   </div>
                 </div>
                 <div class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center">
-                    <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <div class="flex-shrink-0 w-7 h-7 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
                   </div>
                   <div>
-                    <p class="font-medium text-gray-900">Departamentos</p>
-                    <p>Segun ubicacion — coordinamos por WhatsApp</p>
+                    <p class="font-medium text-gray-900">Entrega en 1-5 dias habiles</p>
+                    <p>Coordinamos por WhatsApp para confirmar entrega</p>
                   </div>
                 </div>
                 <div class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center">
-                    <svg class="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                  <div class="flex-shrink-0 w-7 h-7 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
                   </div>
                   <div>
                     <p class="font-medium text-gray-900">Pago seguro</p>
@@ -301,20 +321,16 @@
         <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Complementá tu rutina</p>
         <h2 class="text-2xl font-bold mb-8">También te puede interesar</h2>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <a href="mouth-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white">
-            <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
-              <img loading="lazy"src="../assets/img/mt-01/frente.webp" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom">
-            </div>
-            <div class="p-5">
-              <p class="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-1.5">Sueño</p>
-              <h3 class="font-bold text-lg mb-1">Mouth Tape</h3>
-              <p class="text-sm text-gray-500 mb-3">30 cintas — 1 mes de uso</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xl font-bold">Q100</span>
-                <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
-              </div>
-            </div>
-          </a>
+        <a href="repuestos.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up">
+          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
+            <img src="../assets/img/nt-02/frente.webp" alt="Repuestos VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold mb-1">Repuestos VENTUS</h4>
+            <p class="text-sm text-gray-500 mb-2">Parches extra + pimple patch</p>
+            <span class="text-lg font-bold">Q49</span>
+          </div>
+        </a>
           <a href="nose-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white">
             <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
               <img loading="lazy"src="../assets/img/nt-01/frente.webp" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom">
