@@ -477,7 +477,7 @@
   }
   </script>
 
-  <!-- Mobile menu toggle -->
+  <!-- Mobile menu toggle + nav scroll -->
   <script>
     var menuBtn = document.getElementById('menu-btn');
     var mobileMenu = document.getElementById('mobile-menu');
@@ -489,6 +489,26 @@
       iconOpen.classList.toggle('hidden');
       iconClose.classList.toggle('hidden');
     });
+
+    (function() {
+      var nav = document.querySelector('nav');
+      var shippingBanner = document.querySelector('.shipping-banner');
+      if (shippingBanner && nav) {
+        var bannerHeight = shippingBanner.offsetHeight;
+        var ticking = false;
+        function updateNavPosition() {
+          var offset = Math.max(bannerHeight - window.scrollY, 0);
+          nav.style.top = offset + 'px';
+        }
+        updateNavPosition();
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(function() { updateNavPosition(); ticking = false; });
+            ticking = true;
+          }
+        }, { passive: true });
+      }
+    })();
   </script>
 </body>
 </html>
