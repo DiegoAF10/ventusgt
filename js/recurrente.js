@@ -105,6 +105,17 @@ async function submitCheckout(e) {
     }
 
     if (result.checkout_url) {
+      // Save order data for Purchase pixel event on gracias.html
+      const product = PRODUCT_INFO[currentSku];
+      const shipping = calculateShipping(product?.price || 0);
+      localStorage.setItem('ventus_last_order', JSON.stringify({
+        sku: currentSku,
+        product_name: product?.name || '',
+        value: (product?.price || 0) + shipping,
+        price: product?.price || 0,
+        shipping,
+        timestamp: Date.now(),
+      }));
       window.location.href = result.checkout_url;
     } else {
       throw new Error('No se recibio URL de pago');
