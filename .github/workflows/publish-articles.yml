@@ -1,0 +1,37 @@
+name: Publish Scheduled Articles
+
+on:
+  schedule:
+    # Runs daily at 12:00 UTC (6:00 AM Guatemala CST)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run publish script
+        run: node scripts/publish.js
+
+      - name: Commit and push if changes
+        run: |
+          git config user.name "VENTUS Bot"
+          git config user.email "noreply@tiendaventus.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📝 Publish scheduled article(s)"
+            git push
+          fi
