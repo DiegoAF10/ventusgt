@@ -393,6 +393,13 @@
       document.getElementById('checkout-loading').classList.add('hidden');
       document.getElementById('checkout-content').classList.remove('hidden');
 
+      // Auto-apply coupon from URL param (e.g., ?sku=MT-01&coupon=VEN-XXXXX)
+      var couponParam = params.get('coupon');
+      if (couponParam) {
+        document.getElementById('ch-promo').value = couponParam;
+        setTimeout(function() { applyPromoCode(); }, 200);
+      }
+
       // Focus first input
       setTimeout(function() { document.getElementById('ch-name').focus(); }, 100);
 
@@ -419,14 +426,58 @@
       }
     })();
 
-    // ── Promo Code (UI only) ──
-    function applyPromoCode() {
+    // ── Promo Code ──
+    async function applyPromoCode() {
       var code = document.getElementById('ch-promo').value.trim();
       var msg = document.getElementById('ch-promo-msg');
       if (!code) return;
-      msg.textContent = 'Codigo no valido';
-      msg.className = 'text-xs mt-1 text-red-500';
+
+      msg.textContent = 'Validando...';
+      msg.className = 'text-xs mt-1 text-gray-500';
       msg.classList.remove('hidden');
+
+      try {
+        var res = await fetch(WORKER_URL + '/api/coupons/validate?code=' + encodeURIComponent(code) + '&sku=' + currentSku);
+        var data = await res.json();
+
+        if (data.valid) {
+          appliedCoupon = { code: data.code, discount_percent: data.discount_percent };
+          var product = PRODUCT_INFO[currentSku];
+          var discountAmount = Math.round(product.price * data.discount_percent / 100);
+          var newPrice = product.price - discountAmount;
+          var shipping = calculateShipping(newPrice);
+          var total = newPrice + shipping;
+
+          msg.textContent = '¡' + data.discount_percent + '% de descuento aplicado! Ahorrás Q' + discountAmount;
+          msg.className = 'text-xs mt-1 text-green-600 font-medium';
+
+          // Update order summary
+          var discountRow = document.getElementById('ch-summary-discount');
+          if (!discountRow) {
+            var summaryContainer = document.getElementById('ch-summary-price').parentElement.parentElement;
+            var row = document.createElement('div');
+            row.id = 'ch-summary-discount';
+            row.className = 'flex justify-between text-sm';
+            row.innerHTML = '<span class="text-green-600">Descuento (' + data.discount_percent + '%)</span><span class="text-green-600 font-medium">-Q' + discountAmount + '.00</span>';
+            summaryContainer.insertBefore(row, document.getElementById('ch-summary-shipping').parentElement.nextSibling || summaryContainer.children[2]);
+          }
+
+          document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
+            ? '<span class="text-green-600">Gratis</span>'
+            : 'Q' + shipping + '.00';
+          document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
+
+          // Disable input
+          document.getElementById('ch-promo').disabled = true;
+        } else {
+          appliedCoupon = null;
+          msg.textContent = data.error || 'Codigo no valido';
+          msg.className = 'text-xs mt-1 text-red-500';
+        }
+      } catch (err) {
+        msg.textContent = 'Error al validar. Intentá de nuevo.';
+        msg.className = 'text-xs mt-1 text-red-500';
+      }
     }
   </script>
 
