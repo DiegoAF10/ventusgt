@@ -60,16 +60,31 @@
           <div class="lg:col-span-7 space-y-6">
 
             <!-- Product summary card -->
-            <div class="bg-white rounded-2xl p-5 border border-gray-200 flex gap-4 items-center">
-              <div class="w-20 h-20 bg-[#f4ede5] rounded-xl flex items-center justify-center flex-shrink-0">
-                <img id="ch-product-img" src="" alt="" class="max-h-full max-w-full object-contain">
+            <div class="bg-white rounded-2xl p-5 border border-gray-200">
+              <div class="flex gap-4 items-center">
+                <div class="w-20 h-20 bg-[#f4ede5] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img id="ch-product-img" src="" alt="" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-lg" id="ch-product-name"></p>
+                  <p class="text-sm text-gray-500" id="ch-product-desc"></p>
+                  <p class="text-xs text-gray-400 mt-0.5" id="ch-unit-price" style="display:none;"></p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <p class="text-xl font-bold" id="ch-product-price"></p>
+                </div>
               </div>
-              <div class="flex-1 min-w-0">
-                <p class="font-bold text-lg" id="ch-product-name"></p>
-                <p class="text-sm text-gray-500" id="ch-product-desc"></p>
-              </div>
-              <div class="text-right flex-shrink-0">
-                <p class="text-xl font-bold" id="ch-product-price"></p>
+              <!-- Quantity selector -->
+              <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                <span class="text-sm font-medium text-gray-600">Cantidad</span>
+                <div class="flex items-center">
+                  <button type="button" id="ch-qty-minus" onclick="changeQuantity(-1)"
+                    class="w-9 h-9 flex items-center justify-center rounded-l-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors text-gray-600 font-medium text-lg cursor-pointer select-none"
+                    style="opacity:0.4" disabled>&#8722;</button>
+                  <span id="ch-quantity" class="w-12 h-9 flex items-center justify-center border-t border-b border-gray-200 bg-white text-sm font-semibold select-none">1</span>
+                  <button type="button" id="ch-qty-plus" onclick="changeQuantity(1)"
+                    class="w-9 h-9 flex items-center justify-center rounded-r-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors text-gray-600 font-medium text-lg cursor-pointer select-none">+</button>
+                </div>
               </div>
             </div>
 
@@ -221,6 +236,7 @@
                     <span class="text-gray-600">Envio</span>
                     <span class="font-medium" id="ch-summary-shipping"></span>
                   </div>
+                  <p id="ch-shipping-hint" class="text-xs text-blue-600" style="display:none;"></p>
                   <div class="border-t border-gray-200 pt-3 flex justify-between">
                     <span class="font-bold">Total</span>
                     <span class="font-bold text-lg" id="ch-summary-total"></span>
@@ -332,27 +348,20 @@
       }
 
       const product = PRODUCT_INFO[sku];
-      const shipping = calculateShipping(product.price);
-      const total = product.price + shipping;
       const isNT02 = sku === 'NT-02';
 
-      // Set current SKU for submitCheckout
+      // Set current SKU and quantity for submitCheckout
       currentSku = sku;
+      currentQuantity = 1;
 
-      // Fill product info
+      // Fill product info (static parts)
       document.getElementById('ch-product-img').src = '/assets/img/' + sku.toLowerCase() + '/frente.webp';
       document.getElementById('ch-product-img').alt = product.name;
       document.getElementById('ch-product-name').textContent = product.name;
       document.getElementById('ch-product-desc').textContent = getProductDesc(sku);
-      document.getElementById('ch-product-price').textContent = 'Q' + product.price;
 
-      // Fill order summary
-      document.getElementById('ch-summary-product').textContent = product.name;
-      document.getElementById('ch-summary-price').textContent = 'Q' + product.price + '.00';
-      document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
-        ? '<span class="text-green-600">Gratis</span>'
-        : 'Q' + shipping + '.00';
-      document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
+      // Calculate and fill order summary (price, shipping, total, qty buttons)
+      updateOrderSummary();
 
       // NT-02 gift block
       if (isNT02) {
@@ -442,48 +451,22 @@
 
         if (data.valid) {
           appliedCoupon = { code: data.code, type: data.type, discount_percent: data.discount_percent };
-          var product = PRODUCT_INFO[currentSku];
-          var basePrice = product.price;
 
+          // Recalculate everything with the coupon applied
+          updateOrderSummary();
+
+          // Show success message
           if (data.type === 'free_shipping') {
-            // Free shipping coupon
-            var shipping = 0;
-            var total = basePrice + shipping;
-            var originalShipping = calculateShipping(basePrice);
-
-            if (originalShipping > 0) {
-              msg.textContent = '¡Envío GRATIS aplicado! Ahorrás Q' + originalShipping;
-            } else {
-              msg.textContent = '¡Código válido! Tu pedido ya tiene envío gratis.';
-            }
-            msg.className = 'text-xs mt-1 text-green-600 font-medium';
-
-            document.getElementById('ch-summary-shipping').innerHTML = '<span class="text-green-600">Gratis (código)</span>';
-            document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
-
+            var originalShipping = calculateShipping(PRODUCT_INFO[currentSku].price * currentQuantity);
+            msg.textContent = originalShipping > 0
+              ? '¡Envío GRATIS aplicado! Ahorrás Q' + originalShipping
+              : '¡Código válido! Tu pedido ya tiene envío gratis.';
           } else if (data.type === 'percent') {
-            // Percentage discount
-            var discountAmount = Math.round(basePrice * data.discount_percent / 100);
-            var newPrice = basePrice - discountAmount;
-            var shipping = calculateShipping(newPrice);
-            var total = newPrice + shipping;
-
-            msg.textContent = '¡' + data.discount_percent + '% de descuento aplicado! Ahorrás Q' + discountAmount;
-            msg.className = 'text-xs mt-1 text-green-600 font-medium';
-
-            var summaryContainer = document.getElementById('ch-summary-price').parentElement.parentElement;
-            var row = document.createElement('div');
-            row.id = 'ch-summary-discount';
-            row.className = 'flex justify-between text-sm';
-            row.innerHTML = '<span class="text-green-600">Descuento (' + data.discount_percent + '%)</span><span class="text-green-600 font-medium">-Q' + discountAmount + '.00</span>';
-            summaryContainer.insertBefore(row, summaryContainer.children[2]);
-
-            document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
-              ? '<span class="text-green-600">Gratis</span>'
-              : 'Q' + shipping + '.00';
-            document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
+            var subtotal = PRODUCT_INFO[currentSku].price * currentQuantity;
+            var saved = Math.round(subtotal * data.discount_percent / 100);
+            msg.textContent = '¡' + data.discount_percent + '% de descuento aplicado! Ahorrás Q' + saved;
           }
-
+          msg.className = 'text-xs mt-1 text-green-600 font-medium';
           document.getElementById('ch-promo').disabled = true;
         } else {
           appliedCoupon = null;
