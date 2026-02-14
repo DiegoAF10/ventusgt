@@ -441,33 +441,49 @@
         var data = await res.json();
 
         if (data.valid) {
-          appliedCoupon = { code: data.code, discount_percent: data.discount_percent };
+          appliedCoupon = { code: data.code, type: data.type, discount_percent: data.discount_percent };
           var product = PRODUCT_INFO[currentSku];
-          var discountAmount = Math.round(product.price * data.discount_percent / 100);
-          var newPrice = product.price - discountAmount;
-          var shipping = calculateShipping(newPrice);
-          var total = newPrice + shipping;
+          var basePrice = product.price;
 
-          msg.textContent = '¡' + data.discount_percent + '% de descuento aplicado! Ahorrás Q' + discountAmount;
-          msg.className = 'text-xs mt-1 text-green-600 font-medium';
+          if (data.type === 'free_shipping') {
+            // Free shipping coupon
+            var shipping = 0;
+            var total = basePrice + shipping;
+            var originalShipping = calculateShipping(basePrice);
 
-          // Update order summary
-          var discountRow = document.getElementById('ch-summary-discount');
-          if (!discountRow) {
+            if (originalShipping > 0) {
+              msg.textContent = '¡Envío GRATIS aplicado! Ahorrás Q' + originalShipping;
+            } else {
+              msg.textContent = '¡Código válido! Tu pedido ya tiene envío gratis.';
+            }
+            msg.className = 'text-xs mt-1 text-green-600 font-medium';
+
+            document.getElementById('ch-summary-shipping').innerHTML = '<span class="text-green-600">Gratis (código)</span>';
+            document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
+
+          } else if (data.type === 'percent') {
+            // Percentage discount
+            var discountAmount = Math.round(basePrice * data.discount_percent / 100);
+            var newPrice = basePrice - discountAmount;
+            var shipping = calculateShipping(newPrice);
+            var total = newPrice + shipping;
+
+            msg.textContent = '¡' + data.discount_percent + '% de descuento aplicado! Ahorrás Q' + discountAmount;
+            msg.className = 'text-xs mt-1 text-green-600 font-medium';
+
             var summaryContainer = document.getElementById('ch-summary-price').parentElement.parentElement;
             var row = document.createElement('div');
             row.id = 'ch-summary-discount';
             row.className = 'flex justify-between text-sm';
             row.innerHTML = '<span class="text-green-600">Descuento (' + data.discount_percent + '%)</span><span class="text-green-600 font-medium">-Q' + discountAmount + '.00</span>';
-            summaryContainer.insertBefore(row, document.getElementById('ch-summary-shipping').parentElement.nextSibling || summaryContainer.children[2]);
+            summaryContainer.insertBefore(row, summaryContainer.children[2]);
+
+            document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
+              ? '<span class="text-green-600">Gratis</span>'
+              : 'Q' + shipping + '.00';
+            document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
           }
 
-          document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
-            ? '<span class="text-green-600">Gratis</span>'
-            : 'Q' + shipping + '.00';
-          document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
-
-          // Disable input
           document.getElementById('ch-promo').disabled = true;
         } else {
           appliedCoupon = null;

@@ -33,7 +33,7 @@ const DEPARTMENTS = [
 ];
 
 let currentSku = null;
-let appliedCoupon = null; // { code, discount_percent }
+let appliedCoupon = null; // { code, type, discount_percent? }
 
 /**
  * Called from product pages — redirects to checkout page
@@ -110,9 +110,11 @@ async function submitCheckout(e) {
       // Save order data for Purchase pixel event on gracias.html
       const product = PRODUCT_INFO[currentSku];
       const basePrice = product?.price || 0;
-      const discount = appliedCoupon ? Math.round(basePrice * appliedCoupon.discount_percent / 100) : 0;
+      const isFreeShipping = appliedCoupon && appliedCoupon.type === 'free_shipping';
+      const discount = appliedCoupon && appliedCoupon.type === 'percent'
+        ? Math.round(basePrice * appliedCoupon.discount_percent / 100) : 0;
       const finalPrice = basePrice - discount;
-      const shipping = calculateShipping(finalPrice);
+      const shipping = isFreeShipping ? 0 : calculateShipping(finalPrice);
       localStorage.setItem('ventus_last_order', JSON.stringify({
         sku: currentSku,
         product_name: product?.name || '',
@@ -120,6 +122,7 @@ async function submitCheckout(e) {
         price: finalPrice,
         original_price: basePrice,
         discount,
+        shipping_waived: isFreeShipping,
         coupon: appliedCoupon ? appliedCoupon.code : null,
         shipping,
         timestamp: Date.now(),
