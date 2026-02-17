@@ -1,0 +1,74 @@
+{
+  "id": "blitz-15",
+  "date": "2026-02-22",
+  "status": "draft",
+  "pillar": "social_proof",
+  "topic": "Atletas de élite que respiran por la nariz",
+  "format": "carousel",
+  "media_file": "media/carousels/15-slide-1.png",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "https://tiendaventus.com/assets/content/blitz-feb/15/01.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/15/02.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/15/03.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/15/04.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/15/05.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/15/06.png"
+  ],
+  "publish_at": "2026-02-25T19:00:00-06:00",
+  "hook": "Haaland usa cinta en la boca para dormir. LeBron gasta $1.5M al año en recovery. ¿Qué saben que vos no?",
+  "copy": "Haaland usa cinta en la boca para dormir. LeBron gasta $1.5M al año en recovery. ¿Qué saben que vos no?\n\nLos mejores atletas del mundo optimizan TODO — incluyendo cómo respiran.\n\nNo es casualidad. No es tendencia. Es ciencia aplicada al rendimiento deportivo.\n\nDeslizá para ver qué hacen 👉\n\nErling Haaland, el goleador del Manchester City, duerme con mouth tape. Recovery es tan importante como el entrenamiento.\n\nLeBron James invierte $1.5M al año en su equipo de recovery — incluyendo especialistas en respiración. A los 40 años, sigue dominando la NBA.\n\nLos All Blacks, el equipo más dominante del rugby mundial, entrenan respiración nasal con Patrick McKeown, autor de 'The Oxygen Advantage'.\n\nNo es moda. Es ciencia.\n\nLa respiración nasal mejora la oxigenación, reduce el cortisol y acelera la recuperación muscular.\n\nSi los mejores del mundo lo hacen, algo de razón tendrán.\n\n¿Vos entrenás? Probá la diferencia.\n\n🔗 tiendaventus.com\n📲 wa.me/50231015202",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#respiramejor",
+    "#rendimientodeportivo",
+    "#nasalbreathing",
+    "#crossfitgt",
+    "#runninggt",
+    "#guatemalafit"
+  ],
+  "cta": "Guardá este post si entrenás / Link en bio",
+  "save_trigger": "Atletas de élite que optimizan su respiración",
+  "share_trigger": "Tagueá a alguien que entrena fuerte",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Atletas de élite que respiran por la nariz",
+      "subtext": "Los mejores del mundo lo hacen",
+      "visual_notes": "Fondo navy (#0b3e5d). Tipografía blanca bold grande. Siluetas minimalistas de atletas (corredor, futbolista, jugador de rugby) en lime green semi-transparente de fondo. Subtexto en cream. Energía deportiva pero elegante."
+    },
+    {
+      "number": 2,
+      "text": "Erling Haaland usa mouth tape para dormir",
+      "subtext": "El goleador del Manchester City duerme con la boca cerrada. Recovery es tan importante como el entrenamiento.",
+      "visual_notes": "Fondo blanco. Ícono minimalista de balón de fútbol y luna (sueño + deporte). Nombre 'HAALAND' en tipografía grande navy bold. Texto descriptivo debajo. Acento en lime green. NO usar foto del atleta — solo tipografía e íconos."
+    },
+    {
+      "number": 3,
+      "text": "LeBron James invierte $1.5M/año en recovery — respiración nasal incluida",
+      "subtext": "Su equipo de rendimiento incluye especialistas en respiración. A los 40 años, sigue dominando la NBA.",
+      "visual_notes": "Fondo cream (#f4ede5). Ícono minimalista de basquetbol. '$1.5M/año' en tipografía grande navy como dato anchor. Nombre 'LEBRON' en bold. Texto explicativo centrado. Diseño editorial limpio."
+    },
+    {
+      "number": 4,
+      "text": "Los All Blacks entrenan respiración nasal con Patrick McKeown",
+      "subtext": "El equipo más dominante del rugby mundial trabaja con el autor de 'The Oxygen Advantage' para optimizar su respiración.",
+      "visual_notes": "Fondo navy oscuro. Ícono minimalista de rugby. 'ALL BLACKS' en tipografía grande blanca bold. Nombre de Patrick McKeown en lime green como referencia de autoridad. Texto explicativo en blanco. Tono de respeto y autoridad."
+    },
+    {
+      "number": 5,
+      "text": "No es moda. Es ciencia aplicada al rendimiento.",
+      "subtext": "La respiración nasal mejora la oxigenación, reduce el cortisol y acelera la recuperación muscular.",
+      "visual_notes": "Fondo blanco. Texto navy grande y bold con la declaración principal. Tres beneficios en bullets con íconos verdes: oxígeno (pulmones), cortisol (flecha abajo), recovery (músculo). Diseño tipo manifiesto/statement."
+    },
+    {
+      "number": 6,
+      "text": "¿Vos entrenás? Probá la diferencia.",
+      "subtext": "Nose Tape VENTUS — Q100\nLink en bio → tiendaventus.com",
+      "visual_notes": "Fondo navy (#0b3e5d). Texto blanco grande centrado con CTA directo. Producto NT-01 pequeño en esquina. URL en lime green. Logo VENTUS blanco centrado abajo. Energía motivadora tipo coach."
+    }
+  ],
+  "approved": true,
+  "published": false
+}

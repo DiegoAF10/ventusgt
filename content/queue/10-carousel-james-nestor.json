@@ -1,0 +1,74 @@
+{
+  "id": "blitz-10",
+  "date": "2026-02-18",
+  "status": "draft",
+  "pillar": "social_proof",
+  "topic": "El experimento de James Nestor — respirar por la boca 10 días",
+  "format": "carousel",
+  "media_file": "media/carousels/10-slide-1.png",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "https://tiendaventus.com/assets/content/blitz-feb/10/01.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/10/02.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/10/03.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/10/04.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/10/05.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/10/06.png"
+  ],
+  "publish_at": "2026-02-19T19:00:00-06:00",
+  "hook": "Un periodista se tapó la nariz por 10 días. Lo que pasó asustó a los científicos de Stanford.",
+  "copy": "Un periodista se tapó la nariz por 10 días. Lo que pasó asustó a los científicos de Stanford.\n\n2020. James Nestor, periodista del New York Times, se somete a un experimento en la Universidad de Stanford.\n\nLa regla: respirar SOLO por la boca durante 10 días completos.\n\nLo que pasó después cambió la conversación mundial sobre respiración.\n\nDeslizá 👉\n\nEn solo 10 días, su cuerpo se deterioró dramáticamente.\nPresión arterial: +13%\nRonquidos: +4,000%\nApnea del sueño: apareció de la nada.\n\nPero lo más impactante fue lo siguiente.\n\nCuando volvió a respirar por la nariz, TODO se revirtió en días.\nPresión arterial normal. Ronquidos eliminados. Sueño profundo restaurado.\n\nSu libro 'Breath' se convirtió en bestseller mundial. Traducido a 35 idiomas. Millones de personas cambiaron cómo respiran después de leerlo.\n\nLa ciencia es clara: cómo respirás cambia TODO.\n\n¿Ya leíste Breath? Contanos qué te pareció 👇\n\n🔗 tiendaventus.com\n📲 wa.me/50231015202",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#jamesnestor",
+    "#breath",
+    "#respiracionnasal",
+    "#nasalbreathing",
+    "#cienciadelsueño",
+    "#dormirmejor"
+  ],
+  "cta": "Guardá este post / Contanos si leíste Breath",
+  "save_trigger": "El experimento que cambió la ciencia del sueño",
+  "share_trigger": "Enviale esto a alguien que ronca o duerme mal",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Un periodista respiró solo por la boca 10 días — esto pasó",
+      "subtext": "El experimento que cambió la ciencia del sueño",
+      "visual_notes": "Fondo navy (#0b3e5d). Tipografía blanca bold grande con el hook. Número '10' en tamaño enorme como elemento visual, en lime green semi-transparente de fondo. Subtexto en cream. Sensación de intriga/documental."
+    },
+    {
+      "number": 2,
+      "text": "James Nestor se tapó la nariz 10 días para un experimento de Stanford",
+      "subtext": "El periodista del New York Times quería probar qué pasa cuando solo respirás por la boca. El Dr. Jayakar Nayak de Stanford monitoreó todo.",
+      "visual_notes": "Fondo cream (#f4ede5). Silueta minimalista de una persona con la nariz tapada (estilo editorial). Texto navy bold. Logos sutiles de referencia (NYT, Stanford) en gris muy tenue. Estilo periodístico/documental."
+    },
+    {
+      "number": 3,
+      "text": "Resultado: presión arterial +13%, ronquidos +4,000%, apnea del sueño",
+      "subtext": "En solo 10 días de respirar por la boca, su cuerpo se deterioró dramáticamente.",
+      "visual_notes": "Fondo blanco. Tres métricas grandes en rojo/naranja con flechas hacia arriba: '+13% presión arterial', '+4,000% ronquidos', 'Apnea del sueño'. Diseño tipo dashboard/infografía. Borde inferior rojo sutil indicando alarma."
+    },
+    {
+      "number": 4,
+      "text": "Cuando volvió a respirar por la nariz: TODO se revirtió en días",
+      "subtext": "Presión arterial normal. Ronquidos eliminados. Sueño profundo restaurado.",
+      "visual_notes": "Fondo blanco. Mismas tres métricas ahora en verde con flechas hacia abajo/checkmarks: 'Presión normal', 'Cero ronquidos', 'Sueño profundo'. Contraste visual dramático con slide anterior. Diseño esperanzador."
+    },
+    {
+      "number": 5,
+      "text": "Su libro 'Breath' es bestseller mundial. La ciencia es clara.",
+      "subtext": "Traducido a 35 idiomas. Millones de personas cambiaron cómo respiran después de leerlo.",
+      "visual_notes": "Fondo navy (#0b3e5d). Ilustración minimalista de un libro abierto con ondas de aire saliendo. Texto blanco 'La ciencia es clara' en tipografía grande. Dato '35 idiomas' en lime green. Tono de autoridad y conclusión."
+    },
+    {
+      "number": 6,
+      "text": "¿Ya leíste Breath? ¿Qué te pareció? 👇",
+      "subtext": "Si querés empezar a respirar mejor esta noche → tiendaventus.com",
+      "visual_notes": "Fondo navy (#0b3e5d). Texto blanco grande centrado con la pregunta. URL en lime green. Logo VENTUS en blanco abajo. Diseño limpio, invita a la conversación."
+    }
+  ],
+  "approved": true,
+  "published": false
+}
