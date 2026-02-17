@@ -1,0 +1,57 @@
+{
+  "id": "mar-04-tutorial",
+  "date": "2026-03-05",
+  "status": "draft",
+  "pillar": "producto",
+  "topic": "Cómo usar Mouth Tape VENTUS — tutorial en 3 pasos",
+  "format": "carousel",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "PENDING — generate in Gemini",
+    "PENDING",
+    "PENDING",
+    "PENDING"
+  ],
+  "publish_at": "2026-03-05T19:00:00-06:00",
+  "hook": "¿Se ve complicado? No. Son 3 pasos. Te toma 10 segundos.",
+  "copy": "¿Se ve complicado? No. Son 3 pasos. Te toma 10 segundos.\n\nMucha gente ve el mouth tape por primera vez y piensa: 'eso debe ser difícil de usar'. La realidad es que es lo más simple que vas a agregar a tu rutina de sueño.\n\nDeslizá para ver los 3 pasos 👉\n\nPaso 1: Lavá tu cara. El adhesivo se pega mejor en piel limpia y seca. No necesitás crema ni nada especial.\n\nPaso 2: Despegá una cinta del pack. Es hipoalergénica, de grado médico, y viene en su propio liner individual.\n\nPaso 3: Colocá la cinta sobre tus labios, centrada. No apretés fuerte — solo posicioná y listo. Se despega fácil si necesitás abrir la boca.\n\nEso es todo. 10 segundos.\n\nMañana vas a despertar con la boca cerrada, la garganta hidratada, y más descansado.\n\n¿Querés probarlo? Escribinos:\n📲 DM en Instagram o Messenger\n📲 WhatsApp: wa.me/50231015202\n🔗 tiendaventus.com\n\nQ100 · 30 noches · Sin receta",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#mouthtape",
+    "#dormirmejor",
+    "#respiracionnasal",
+    "#tutorial",
+    "#habitossaludables",
+    "#guatemala"
+  ],
+  "cta": "Escribinos por DM — te ayudamos con tu primera noche",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Cómo usar Mouth Tape en 3 pasos",
+      "subtext": "10 segundos. Eso es todo.",
+      "visual_notes": "Fondo navy (#0b3e5d). '3' enorme en lime green. Ícono de reloj '10s'. Texto blanco bold. Subtexto cream."
+    },
+    {
+      "number": 2,
+      "text": "Paso 1: Lavá tu cara  |  Paso 2: Despegá una cinta",
+      "subtext": "Piel limpia y seca. La cinta es hipoalergénica, de grado médico, con liner individual.",
+      "visual_notes": "Fondo blanco. Dos pasos con íconos numerados (1, 2) en circles azules. Fotos/ilustraciones simples de cada paso."
+    },
+    {
+      "number": 3,
+      "text": "Paso 3: Colocá sobre tus labios",
+      "subtext": "Centrada, sin apretar. Se despega fácil si necesitás abrir la boca. No es un sello — es un recordatorio.",
+      "visual_notes": "Fondo cream. Paso 3 con ícono '3' en circle azul. Ilustración de labios con cinta colocada. Nota: 'Se despega fácil' con checkmark verde."
+    },
+    {
+      "number": 4,
+      "text": "Mañana vas a despertar diferente",
+      "subtext": "Q100 · 30 noches · Sin receta\nEscribinos por DM → tiendaventus.com",
+      "visual_notes": "Fondo navy. Texto blanco grande. Producto MT-01 centrado. Precio en lime green. CTA: DM + WhatsApp + URL. Logo VENTUS abajo."
+    }
+  ],
+  "approved": true,
+  "published": false
+}

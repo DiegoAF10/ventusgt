@@ -1,0 +1,64 @@
+{
+  "id": "mar-02-7noches",
+  "date": "2026-03-01",
+  "status": "draft",
+  "pillar": "social_proof",
+  "topic": "Tus primeras 7 noches con mouth tape — qué esperar",
+  "format": "carousel",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "PENDING — generate in Gemini",
+    "PENDING",
+    "PENDING",
+    "PENDING",
+    "PENDING"
+  ],
+  "publish_at": "2026-03-01T11:00:00-06:00",
+  "hook": "Tu primera noche con mouth tape va a ser rara. Pero la séptima te va a cambiar.",
+  "copy": "Tu primera noche con mouth tape va a ser rara. Pero la séptima te va a cambiar.\n\nTodo el mundo se pregunta lo mismo: ¿cómo se siente? ¿es incómodo? ¿realmente funciona?\n\nAcá va lo que podés esperar, noche por noche.\n\nDeslizá 👉\n\nNoche 1: Raro pero tolerable. Sentís la cinta, pensás en ella. Tal vez te la quitás a media noche. Está bien. Es tu primer intento.\n\nNoche 3: Te acostumbrás. Ya no pensás tanto en la cinta. Te dormís más rápido. Tal vez notás que tu boca está menos seca al despertar.\n\nNoche 5: Empieza a faltarte si no la usás. Tu cuerpo ya asoció la cinta con sueño profundo. Si una noche no la usás, sentís la diferencia.\n\nNoche 7: Dormís como nunca. La respiración nasal se vuelve tu modo normal de sueño. Más descanso, menos cansancio, cero boca seca.\n\nNo es instantáneo. Es un proceso. Pero 7 noches es todo lo que necesitás.\n\n¿Querés probarlo? Escribinos por Messenger y te guiamos:\n📲 DM en Instagram o Messenger\n📲 WhatsApp: wa.me/50231015202\n🔗 tiendaventus.com",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#mouthtape",
+    "#dormirmejor",
+    "#sueñoreparador",
+    "#respiracionnasal",
+    "#nasalbreathing",
+    "#guatemala"
+  ],
+  "cta": "Escribinos por Messenger y te guiamos en tus primeras 7 noches",
+  "slides": [
+    {
+      "number": 1,
+      "text": "Tus primeras 7 noches con mouth tape",
+      "subtext": "Qué esperar — noche por noche",
+      "visual_notes": "Fondo navy (#0b3e5d). Número '7' enorme en lime green semi-transparente. Luna creciente como elemento visual. Texto blanco bold. Subtexto cream."
+    },
+    {
+      "number": 2,
+      "text": "Noche 1: Raro pero tolerable",
+      "subtext": "Sentís la cinta. Pensás en ella. Tal vez te la quitás. Está bien — es tu primer intento.",
+      "visual_notes": "Fondo cream. Ícono de '1' grande. Tono empático y normalizador. Ilustración simple de persona en cama con signo de interrogación."
+    },
+    {
+      "number": 3,
+      "text": "Noche 3: Te acostumbrás  |  Noche 5: Te falta si no la usás",
+      "subtext": "Ya no pensás en la cinta. Tu cuerpo asocia la cinta con sueño profundo.",
+      "visual_notes": "Fondo blanco. Dividido en dos mitades: '3' y '5' grandes. Progresión visual de adaptación. Checkmarks verdes."
+    },
+    {
+      "number": 4,
+      "text": "Noche 7: Dormís como nunca",
+      "subtext": "La respiración nasal se vuelve tu modo normal. Más descanso, menos cansancio, cero boca seca.",
+      "visual_notes": "Fondo navy. '7' enorme en lime green. Ícono de luna llena + checkmark. Texto blanco celebratorio pero no exagerado."
+    },
+    {
+      "number": 5,
+      "text": "¿Querés probarlo? Escribinos por DM",
+      "subtext": "Te guiamos en tus primeras 7 noches.\nMouth Tape VENTUS — Q100\ntiendaventus.com",
+      "visual_notes": "Fondo navy. CTA blanco grande. Producto MT-01. URL y WhatsApp en lime green. Logo VENTUS abajo."
+    }
+  ],
+  "approved": true,
+  "published": false
+}

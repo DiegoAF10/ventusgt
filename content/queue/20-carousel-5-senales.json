@@ -1,0 +1,64 @@
+{
+  "id": "mar-01-senales",
+  "date": "2026-02-27",
+  "status": "draft",
+  "pillar": "educativo",
+  "topic": "5 señales de que respirás por la boca sin darte cuenta",
+  "format": "carousel",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "PENDING — generate in Gemini",
+    "PENDING",
+    "PENDING",
+    "PENDING",
+    "PENDING"
+  ],
+  "publish_at": "2026-02-27T19:00:00-06:00",
+  "hook": "5 señales de que respirás por la boca — y ni te diste cuenta.",
+  "copy": "5 señales de que respirás por la boca — y ni te diste cuenta.\n\nLa mayoría de personas que respiran por la boca no lo saben. Tu cuerpo te manda señales, pero nadie te enseñó a leerlas.\n\nDeslizá para ver las 5 señales 👉\n\n1. Te despertás con la boca seca\nSi amanecés con sed o con la garganta irritada, tu boca estuvo abierta toda la noche.\n\n2. Roncás (o te dicen que roncás)\nEl ronquido es el sonido de las vías aéreas parcialmente obstruidas. La respiración nasal mantiene todo abierto.\n\n3. Te sentís cansado aunque dormiste 7-8 horas\nLa respiración bucal fragmenta el sueño profundo. Dormís, pero no descansás.\n\n4. Tenés los labios agrietados frecuentemente\nSi no es por el clima, puede ser que tu boca esté abierta más de lo que pensás.\n\n5. Mal aliento crónico\nLa boca seca reduce la saliva, que es tu defensa natural contra las bacterias.\n\n¿Tenés 3 de 5? Escribinos por DM y te contamos cómo resolverlo.\n📲 Instagram DM o Messenger\n📲 WhatsApp: wa.me/50231015202\n🔗 tiendaventus.com",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#respiracionnasal",
+    "#dormirmejor",
+    "#mouthtape",
+    "#nasalbreathing",
+    "#bienestarnaturural",
+    "#guatemala"
+  ],
+  "cta": "Escribinos por DM si tenés 3 de 5 señales",
+  "slides": [
+    {
+      "number": 1,
+      "text": "5 señales de que respirás por la boca",
+      "subtext": "Y ni te diste cuenta",
+      "visual_notes": "Fondo navy (#0b3e5d). Número '5' enorme en lime green semi-transparente. Texto blanco bold. Subtexto en cream. Isotipo VENTUS en esquina."
+    },
+    {
+      "number": 2,
+      "text": "1. Boca seca al despertar  2. Ronquidos",
+      "subtext": "Si amanecés con sed, tu boca estuvo abierta toda la noche. El ronquido es aire forzado por vías parcialmente cerradas.",
+      "visual_notes": "Fondo blanco. Dos secciones con íconos: gota de agua para boca seca, zzz para ronquidos. Números grandes en navy. Texto explicativo en gris."
+    },
+    {
+      "number": 3,
+      "text": "3. Cansancio matutino  4. Labios agrietados",
+      "subtext": "Dormís pero no descansás — la respiración bucal fragmenta el sueño profundo. Labios secos = boca abierta.",
+      "visual_notes": "Fondo cream (#f4ede5). Misma estructura dual. Ícono de batería baja para cansancio, ícono de labios para labios agrietados."
+    },
+    {
+      "number": 4,
+      "text": "5. Mal aliento crónico",
+      "subtext": "La boca seca reduce la saliva — tu defensa natural contra bacterias. Si no es por comida, puede ser por cómo respirás.",
+      "visual_notes": "Fondo blanco. Un solo ícono centrado. Texto navy grande. Tono informativo, no alarmista."
+    },
+    {
+      "number": 5,
+      "text": "¿Tenés 3 de 5? Escribinos por DM",
+      "subtext": "Te ayudamos a encontrar la solución.\nMouth Tape VENTUS — Q100 · 30 noches\ntiendaventus.com",
+      "visual_notes": "Fondo navy (#0b3e5d). CTA en blanco grande. Producto MT-01 pequeño. URL y WhatsApp en lime green. Logo VENTUS centrado abajo."
+    }
+  ],
+  "approved": true,
+  "published": false
+}

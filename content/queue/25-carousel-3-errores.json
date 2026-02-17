@@ -1,0 +1,64 @@
+{
+  "id": "mar-06-errores",
+  "date": "2026-03-09",
+  "status": "draft",
+  "pillar": "educativo",
+  "topic": "3 errores que cometés al entrenar (uno es respirar mal)",
+  "format": "carousel",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "PENDING — generate in Gemini",
+    "PENDING",
+    "PENDING",
+    "PENDING",
+    "PENDING"
+  ],
+  "publish_at": "2026-03-09T19:00:00-06:00",
+  "hook": "3 errores comunes que te frenan en el gym. El tercero nadie te lo dice.",
+  "copy": "3 errores comunes que te frenan en el gym. El tercero nadie te lo dice.\n\nEntrenás fuerte. Pero si cometés estos errores, estás dejando rendimiento en la mesa.\n\nDeslizá para ver los 3 👉\n\nError 1: No calentar bien. 5 minutos de movilidad articular antes de empezar hacen más diferencia que 10 kg extra en la barra. Tu cuerpo necesita prepararse.\n\nError 2: No hidratar durante el entrenamiento. No solo antes y después — durante. La deshidratación reduce fuerza, concentración y resistencia.\n\nError 3: Respirar por la boca. Este es el que nadie te dice. Cuando respirás por la boca, perdés la producción de óxido nítrico — un vasodilatador natural que mejora la entrega de oxígeno a tus músculos.\n\nLa respiración nasal es más eficiente. Más oxígeno. Mejor rendimiento. Mejor recuperación.\n\n¿Cuál de los 3 cometés? Contanos por IG Direct:\n📲 Instagram Direct o Messenger\n📲 WhatsApp: wa.me/50231015202\n🔗 tiendaventus.com",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#rendimientodeportivo",
+    "#crossfitgt",
+    "#runninggt",
+    "#nasalbreathing",
+    "#nosetape",
+    "#guatemalafit"
+  ],
+  "cta": "Contanos por IG Direct cuál de los 3 cometés",
+  "slides": [
+    {
+      "number": 1,
+      "text": "3 errores que te frenan en el gym",
+      "subtext": "El tercero nadie te lo dice",
+      "visual_notes": "Fondo navy (#0b3e5d). '3' enorme en rojo semi-transparente. Texto blanco bold. Subtexto cream con intriga. Energía deportiva."
+    },
+    {
+      "number": 2,
+      "text": "Error 1: No calentar bien",
+      "subtext": "5 minutos de movilidad articular > 10 kg extra en la barra. Tu cuerpo necesita prepararse.",
+      "visual_notes": "Fondo blanco. '1' grande en rojo. Ícono de persona estirando. Texto navy. Tono de coach directo."
+    },
+    {
+      "number": 3,
+      "text": "Error 2: No hidratar durante el entrenamiento",
+      "subtext": "No solo antes y después — durante. La deshidratación reduce fuerza, concentración y resistencia.",
+      "visual_notes": "Fondo cream. '2' grande en rojo. Ícono de botella de agua. Texto navy."
+    },
+    {
+      "number": 4,
+      "text": "Error 3: Respirar por la boca",
+      "subtext": "Perdés la producción de óxido nítrico — un vasodilatador natural que mejora la entrega de oxígeno. La respiración nasal es más eficiente.",
+      "visual_notes": "Fondo blanco con borde verde. '3' grande en Breathing Green. Ícono de pulmones/nariz. Texto navy con highlight en 'óxido nítrico'. Este es el slide clave."
+    },
+    {
+      "number": 5,
+      "text": "¿Cuál de los 3 cometés? Contanos por DM",
+      "subtext": "Nose Tape VENTUS — Q100\ntiendaventus.com",
+      "visual_notes": "Fondo navy. CTA blanco grande e interactivo. Producto NT-01. URL y WhatsApp en lime green. Logo VENTUS abajo."
+    }
+  ],
+  "approved": true,
+  "published": false
+}
