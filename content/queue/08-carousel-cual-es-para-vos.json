@@ -1,0 +1,67 @@
+{
+  "id": "blitz-08",
+  "date": "2026-02-26",
+  "status": "approved",
+  "pillar": "producto",
+  "topic": "Guía de productos — cuál VENTUS es para vos",
+  "format": "carousel",
+  "media_file": "media/carousels/08-slide-1.png",
+  "media_type": "CAROUSEL",
+  "image_urls": [
+    "https://tiendaventus.com/assets/content/blitz-feb/08/01.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/02.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/03.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/04.png",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/05.png"
+  ],
+  "publish_at": "2026-02-17T19:00:00-06:00",
+  "hook": "No sabés cuál VENTUS necesitás? Depende de una sola cosa.",
+  "copy": "No sabés cuál VENTUS necesitás? Depende de una sola cosa.\n\nCuándo respirás mal.\n\n¿De noche cuando dormís? ¿De día cuando entrenás? ¿Todo el tiempo?\n\nCada problema tiene su solución.\n\nDeslizá para encontrar la tuya 👉\n\nSi dormís con la boca abierta → MT-01 Mouth Tape. Mantiene tu boca cerrada mientras dormís. Q100.\n\nSi entrenás y te falta aire → NT-01 Nose Tape. Dilata tus fosas nasales mecánicamente. Q100.\n\nSi querés el sistema completo → Bundle. Los dos productos juntos. Q169 con envío gratis (ahorrá Q31).\n\nNo es complicado. Es simple: respirá bien de noche, de día, o todo el tiempo.\n\n¿Todavía no estás seguro? Escribinos y te asesoramos:\n📲 wa.me/50231015202\n\n🔗 tiendaventus.com",
+  "hashtags": [
+    "#ventus",
+    "#ventusgt",
+    "#respiramejor",
+    "#mouthtape",
+    "#nosetape",
+    "#dormirmejor",
+    "#rendimientodeportivo",
+    "#guatemalafit"
+  ],
+  "cta": "Escribinos por WhatsApp si tenés dudas / Link en bio",
+  "save_trigger": "Guía rápida: cuál VENTUS necesitás según tu problema",
+  "share_trigger": "Enviale esto a alguien que necesita respirar mejor",
+  "slides": [
+    {
+      "number": 1,
+      "text": "¿Cuál VENTUS es para vos?",
+      "subtext": "No sabés cuál elegir? Te ayudamos",
+      "visual_notes": "Fondo navy (#0b3e5d). Los 3 productos (MT-01, NT-01, Bundle) en miniatura formando un triángulo visual. Texto blanco grande '¿Cuál VENTUS es para vos?' centrado. Subtexto en cream. Logo VENTUS abajo."
+    },
+    {
+      "number": 2,
+      "text": "MT-01 — Mouth Tape VENTUS",
+      "subtext": "¿Dormís con la boca abierta? Este es tu inicio.\n30 cintas · Hipoalergénico · Q100",
+      "visual_notes": "Fondo blanco con borde izquierdo en Sleep Blue (#1e60a6). Producto MT-01 a la derecha. Ícono de luna/almohada. Texto navy 'Mouth Tape VENTUS' bold. Beneficios en bullets: 'Mantiene la boca cerrada', 'Promueve respiración nasal', 'Cómodo toda la noche'. Precio Q100 en badge azul."
+    },
+    {
+      "number": 3,
+      "text": "NT-01 — Nose Tape VENTUS",
+      "subtext": "¿Entrenás fuerte? Respirá libre.\n30 tiras · Sin medicamentos · Q100",
+      "visual_notes": "Fondo blanco con borde izquierdo en Breathing Green (#059669). Producto NT-01 a la derecha. Ícono de rayo/runner. Texto navy 'Nose Tape VENTUS' bold. Beneficios: 'Dilata fosas nasales', 'Más oxígeno al entrenar', 'Efecto mecánico instantáneo'. Precio Q100 en badge verde."
+    },
+    {
+      "number": 4,
+      "text": "Bundle VENTUS — MT-01 + NT-01",
+      "subtext": "¿Querés el combo completo? Ahorrá Q31.\nEnvío gratis · Q169",
+      "visual_notes": "Fondo cream (#f4ede5) con borde izquierdo en Bundle Orange (#e67e22). Ambos productos juntos. Badge naranja 'MEJOR VALOR'. Comparación: 'Separados: Q200 → Bundle: Q169'. Texto 'Envío gratis' destacado en verde. Precio Q169 grande."
+    },
+    {
+      "number": 5,
+      "text": "Escribinos por WhatsApp y te asesoramos",
+      "subtext": "wa.me/50231015202\nLink en bio → tiendaventus.com",
+      "visual_notes": "Fondo navy (#0b3e5d). Ícono de WhatsApp en blanco grande centrado. Texto blanco 'Escribinos y te asesoramos' en tipografía bold. URL y WhatsApp en lime green. Logo VENTUS en blanco abajo. Tono invitador, no presión."
+    }
+  ],
+  "approved": true,
+  "published": false
+}
