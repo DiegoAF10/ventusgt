@@ -70,7 +70,8 @@ function updateOrderSummary() {
   }
 
   const afterDiscount = subtotal - discountAmount;
-  const shipping = isFreeShipping ? 0 : calculateShipping(afterDiscount);
+  // Use pre-discount subtotal for free shipping check — a coupon should never ADD cost
+  const shipping = isFreeShipping ? 0 : calculateShipping(subtotal);
   const total = afterDiscount + shipping;
 
   // Product card
@@ -130,7 +131,7 @@ function updateOrderSummary() {
   const shippingHint = document.getElementById('ch-shipping-hint');
   if (shippingHint) {
     if (shipping > 0 && !isFreeShipping) {
-      const remaining = FREE_SHIPPING_THRESHOLD - afterDiscount;
+      const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
       if (remaining > 0) {
         shippingHint.textContent = 'Agrega Q' + remaining + ' mas para envio gratis';
         shippingHint.style.display = '';
@@ -227,7 +228,8 @@ async function submitCheckout(e) {
       const discount = appliedCoupon && appliedCoupon.type === 'percent'
         ? Math.round(subtotal * appliedCoupon.discount_percent / 100) : 0;
       const finalSubtotal = subtotal - discount;
-      const shipping = isFreeShipping ? 0 : calculateShipping(finalSubtotal);
+      // Use pre-discount subtotal for free shipping check
+      const shipping = isFreeShipping ? 0 : calculateShipping(subtotal);
       localStorage.setItem('ventus_last_order', JSON.stringify({
         sku: currentSku,
         product_name: product?.name || '',
