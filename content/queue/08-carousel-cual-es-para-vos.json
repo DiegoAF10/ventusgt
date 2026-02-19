@@ -5,14 +5,14 @@
   "pillar": "producto",
   "topic": "Guía de productos — cuál VENTUS es para vos",
   "format": "carousel",
-  "media_file": "media/carousels/08-slide-1.png",
+  "media_file": "media/carousels/08-slide-1.jpg",
   "media_type": "CAROUSEL",
   "image_urls": [
-    "https://tiendaventus.com/assets/content/blitz-feb/08/01.png",
-    "https://tiendaventus.com/assets/content/blitz-feb/08/02.png",
-    "https://tiendaventus.com/assets/content/blitz-feb/08/03.png",
-    "https://tiendaventus.com/assets/content/blitz-feb/08/04.png",
-    "https://tiendaventus.com/assets/content/blitz-feb/08/05.png"
+    "https://tiendaventus.com/assets/content/blitz-feb/08/01.jpg",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/02.jpg",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/03.jpg",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/04.jpg",
+    "https://tiendaventus.com/assets/content/blitz-feb/08/05.jpg"
   ],
   "publish_at": "2026-02-26T19:00:00-06:00",
   "hook": "No sabés cuál VENTUS necesitás? Depende de una sola cosa.",
