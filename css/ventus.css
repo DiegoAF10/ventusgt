@@ -800,3 +800,241 @@ lite-youtube {
   background-color: #d4e6f1;
   color: #0b3e5d;
 }
+
+/* ── Before/After Grid ────────────────────────────── */
+.before-after-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 639px) {
+  .before-after-grid { grid-template-columns: 1fr; }
+}
+.before-card {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.before-card .before-label {
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.after-card {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.after-card .after-label {
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.before-card li, .after-card li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.375rem 0;
+}
+
+/* ── Objection Card ───────────────────────────────── */
+.objection-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+.objection-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.objection-card .objection-q {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: #1f2937;
+  margin-bottom: 0.375rem;
+}
+.objection-card .objection-a {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ── Social Proof Toast ───────────────────────────── */
+.social-proof-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.875rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 45;
+  max-width: 320px;
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+.social-proof-toast.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+.social-proof-toast .toast-name {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: #1f2937;
+}
+.social-proof-toast .toast-detail {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.125rem;
+}
+@media (max-width: 639px) {
+  .social-proof-toast {
+    left: 0.75rem;
+    right: 0.75rem;
+    max-width: none;
+    bottom: 5rem;
+  }
+}
+
+/* ── Price Per Night ──────────────────────────────── */
+.price-per-night {
+  color: #16a34a;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* ── Product Hero Card (homepage) ─────────────────── */
+.product-hero-card {
+  border: 2px solid #0b3e5d;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(11, 62, 93, 0.15);
+}
+.product-hero-card .bestseller-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #0b3e5d;
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  z-index: 5;
+  letter-spacing: 0.05em;
+}
+
+/* ── Inline Bundle Upsell (below CTA) ─────────────── */
+.inline-bundle-upsell {
+  background: linear-gradient(135deg, #fff7ed, #fffbeb);
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  padding: 0.875rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.inline-bundle-upsell:hover {
+  border-color: #fb923c;
+  box-shadow: 0 2px 8px rgba(251, 146, 60, 0.15);
+}
+
+/* ── Final CTA Section ────────────────────────────── */
+.final-cta-section {
+  background: linear-gradient(135deg, #0b3e5d 0%, #164e77 100%);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+}
+.final-cta-section h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.final-cta-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+.final-cta-section .btn-final {
+  background: white;
+  color: #0b3e5d;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.final-cta-section .btn-final:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 639px) {
+  .final-cta-section { padding: 2rem 1.25rem; }
+  .final-cta-section h2 { font-size: 1.375rem; }
+}
+
+/* ── FAQ Accordion ────────────────────────────────── */
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.125rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+.faq-question svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: #9ca3af;
+}
+.faq-item.open .faq-question svg {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 200px;
+}
+.faq-answer p {
+  padding-bottom: 1.125rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
