@@ -202,6 +202,113 @@ Con una sola sesión se pueden cubrir todos los P1:
 
 ---
 
+## Gemini Image Generation — Prompts por foto
+
+> **Instrucciones:** Copiar cada prompt en Google Gemini (imagen).
+> Generar, descargar, convertir a WebP (85%), guardar en la ruta indicada.
+> Aspect ratio: usar 3:2 landscape salvo donde se indique.
+
+---
+
+### Foto 1 — MT-01 paso 1: Secando labios
+**Archivo:** `assets/img/mt-01/paso-1.webp` (600x400)
+
+```
+Product photography, close-up shot of a young Latin American woman gently patting her lips dry with a small white towel. Clean bathroom setting with soft warm lighting. Skin is natural, no heavy makeup. Background is minimal — white tiles or cream wall, slightly out of focus. Shot from chest up, hands and lips are the focal point. Warm color temperature. No text or logos. Professional product tutorial style, clean and luminous.
+```
+
+---
+
+### Foto 2 — MT-01 paso 2: Aplicando mouth tape
+**Archivo:** `assets/img/mt-01/paso-2.webp` (600x400)
+
+```
+Product photography, medium close-up of a young Latin American woman applying a small rectangular adhesive tape strip across her closed lips. Her fingers are visible pressing the tape into place. The tape is a matte beige/skin-tone color, about 3cm wide. Clean background — white or soft cream. Soft natural side lighting. Expression is calm and focused. Shot from front at slight angle. Tutorial demonstration style, clean and bright. No text or logos.
+```
+
+---
+
+### Foto 3 — MT-01 paso 3: Durmiendo con mouth tape
+**Archivo:** `assets/img/mt-01/paso-3.webp` (600x400)
+
+```
+Lifestyle photography, a young Latin American woman sleeping peacefully on her side on a white pillow. A small beige adhesive tape strip is visible across her closed lips. Warm nighttime lighting — soft amber bedside lamp glow. White bedsheets, calm and cozy bedroom atmosphere. Expression is deeply relaxed and restful. Shot from slightly above at pillow level. Shallow depth of field. Color palette: warm creams, soft whites, gentle amber. No text or logos. Evokes a feeling of deep, restful sleep.
+```
+
+---
+
+### Foto 4 — NT-01 paso 1: Limpiando nariz
+**Archivo:** `assets/img/nt-01/paso-1.webp` (600x400)
+
+```
+Product photography, close-up of a young Latin American man cleaning the bridge of his nose with a small cotton pad or tissue. He is preparing his skin before applying an adhesive strip. Clean, bright bathroom or neutral background. Natural daylight from a window. Skin is natural with slight perspiration. Shot from front, nose bridge and hands are the focal point. Fresh, athletic feel — he looks like someone who works out. Clean and bright tutorial style. No text or logos.
+```
+
+---
+
+### Foto 5 — NT-01 paso 2: Aplicando nose tape
+**Archivo:** `assets/img/nt-01/paso-2.webp` (600x400)
+
+```
+Product photography, medium close-up of a young Latin American man applying a small nasal strip across the bridge of his nose. His fingers press the strip down firmly on both sides. The strip is a thin, semi-transparent adhesive bandage. Clean bright background — white or light gray. Soft natural front lighting. He has a focused, athletic expression. Tutorial demonstration style. Shot straight-on at face level. Crisp and clean. No text or logos.
+```
+
+---
+
+### Foto 6 — NT-01 paso 3 + lifestyle: Corriendo con nose tape
+**Archivo:** `assets/img/nt-01/lifestyle-sport.webp` (800x600)
+
+```
+Lifestyle sports photography, a fit young Latin American man running outdoors in an urban park with trees and morning sunlight. He wears athletic clothes (dark running shirt, shorts). A small nasal breathing strip is clearly visible across the bridge of his nose. He is mid-stride, looking confident and energized. Natural golden hour lighting. Background shows green trees and a path, slightly blurred with bokeh. Color palette: greens, cool blues, warm morning light. Dynamic action shot, feeling of performance and vitality. No text or logos.
+```
+
+---
+
+### Foto 7 — NT-02 paso 2: Aplicando nose tape premium
+**Archivo:** `assets/img/nt-02/paso-2.webp` (600x400)
+
+```
+Product photography, close-up of a young Latin American woman applying a premium nasal strip across the bridge of her nose. The strip is slightly wider and more visible than a standard nasal strip, with a matte finish. Her fingers press it into place on both sides. She has a determined, athletic expression. Clean neutral background — soft gray or white. Professional studio-style lighting with subtle shadows. Premium product feel — sharp focus, high quality. Tutorial step style. No text or logos.
+```
+
+---
+
+### Foto 8 — NT-02 paso 3 + lifestyle: Gym con nose tape premium
+**Archivo:** `assets/img/nt-02/lifestyle-gym.webp` (800x600)
+
+```
+Lifestyle fitness photography, a fit young Latin American woman in a gym performing a deadlift or kettlebell swing. She wears dark athletic wear. A premium nasal breathing strip is clearly visible on the bridge of her nose. The gym has modern equipment, rubber flooring, and overhead industrial lighting. She looks focused and powerful mid-rep. Slight motion blur on the weight, sharp focus on her face. Atmosphere: gritty determination, high intensity. Color palette: cool grays, deep blues, warm skin tones under gym lights. No text or logos.
+```
+
+---
+
+### Foto 9 — NT-02 lifestyle: Close-up premium product on nose
+**Archivo:** `assets/img/nt-02/lifestyle-closeup.webp` (800x600)
+
+```
+Product detail photography, extreme close-up of the bridge of a nose with a premium nasal breathing strip applied. The strip has a matte, slightly textured finish and is clearly adhered smoothly without wrinkles. Skin has a light sheen of sweat, suggesting exercise. Shallow depth of field — only the strip and surrounding skin are in sharp focus. Neutral background completely blurred. Studio-quality macro lighting, crisp detail on the adhesive edges. Premium product feel — clean, medical-grade quality. No text or logos.
+```
+
+---
+
+### Foto 10 — Testimonial: Persona sonriente con producto
+**Archivo:** `assets/img/testimonials/cliente-1.webp` (400x400, 1:1 square)
+
+```
+Portrait photography, a friendly young Latin American man in his early 30s smiling naturally at the camera. He is holding a small product box near his chin. Casual clothing (plain t-shirt). Outdoor setting with natural daylight — perhaps a balcony or park with soft green background bokeh. Warm, genuine smile — not posed or stiff. Shot from chest up. Warm color temperature, natural skin tones. Feels like a real customer selfie but with professional quality. Approachable and trustworthy. No text or logos. Square crop 1:1 ratio.
+```
+
+---
+
+### Bonus — Before/After visual
+**Archivo:** `assets/img/mt-01/before-after.webp` (800x400, 2:1 landscape)
+
+```
+Split comparison image, same young Latin American man in two panels side by side. LEFT panel labeled mental note "BEFORE": he is lying in bed with mouth slightly open, looking tired and restless, harsh blue-tinted lighting suggesting poor sleep, pillow slightly crumpled. RIGHT panel labeled mental note "AFTER": same man sleeping peacefully with a small beige tape on his lips, warm amber lighting, relaxed expression, smooth pillow. Both panels have the same camera angle and framing. Clean transition between panels. Warm cream tones on the AFTER side, cool blue-gray on the BEFORE side. Dramatic but realistic improvement. No text overlay — that will be added in code.
+```
+
+---
+
 ## Implementación en código
 
 Cuando los assets estén listos, hay que:
