@@ -64,7 +64,7 @@
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
           <span class="cart-badge hidden absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold min-w-[18px] h-[18px] rounded-full flex items-center justify-center leading-none"></span>
         </a>
-        <button onclick="addToCart('NT-02')" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer">Comprar</button>
+        <button onclick="buyProduct('NT-02')" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer">Comprar ahora</button>
       </div>
       <!-- Mobile: cart + hamburger -->
       <div class="flex items-center gap-1 md:hidden">
@@ -85,7 +85,7 @@
         <a href="../nosotros.html" class="block text-gray-900 font-medium py-1 mobile-nav-link">Nosotros</a>
         <a href="../#faq" class="block text-gray-900 font-medium py-1 mobile-nav-link">Preguntas frecuentes</a>
         <hr class="border-gray-100">
-        <button onclick="addToCart('NT-02')" class="block w-full btn-ventus text-white text-center py-3 rounded-xl font-semibold mobile-nav-link cursor-pointer">Comprar — Q149</button>
+        <button onclick="buyProduct('NT-02')" class="block w-full btn-ventus text-white text-center py-3 rounded-xl font-semibold mobile-nav-link cursor-pointer">Comprar ahora — Q149</button>
       </div>
     </div>
   </nav>
@@ -120,6 +120,12 @@
             </button>
             <button onclick="switchImage('../assets/img/nt-02/lado.webp', this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Vista lateral">
               <img loading="lazy" src="../assets/img/nt-02/lado.webp" alt="" class="w-full h-full object-contain">
+            </button>
+            <button onclick="switchImage('../assets/img/nt-02/lifestyle-gym.webp', this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Lifestyle gym">
+              <img loading="lazy" src="../assets/img/nt-02/lifestyle-gym.webp" alt="" class="w-full h-full object-cover rounded-lg">
+            </button>
+            <button onclick="switchImage('../assets/img/nt-02/lifestyle-closeup.webp', this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl p-2 border-2 border-transparent cursor-pointer transition-all hover:border-gray-300 hover:shadow-md" aria-label="Closeup del dilatador">
+              <img loading="lazy" src="../assets/img/nt-02/lifestyle-closeup.webp" alt="" class="w-full h-full object-cover rounded-lg">
             </button>
             <button onclick="playGalleryVideo(this)" class="w-16 h-16 bg-[#f4ede5] rounded-xl border-2 border-transparent cursor-pointer transition-all hover:border-purple-500 hover:shadow-md gallery-video-thumb" aria-label="Ver video demo">
               <svg class="gallery-play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -210,8 +216,12 @@
             </div>
           </div>
 
-          <button onclick="addToCart('NT-02')" class="w-full btn-ventus text-white font-semibold py-4 rounded-xl text-lg cursor-pointer mb-3">
-            Comprar — Q149
+          <button onclick="buyProduct('NT-02')" class="w-full btn-ventus text-white font-semibold py-4 rounded-xl text-lg cursor-pointer mb-2">
+            Comprar ahora — Q149
+          </button>
+          <button onclick="addToCart('NT-02')" class="w-full bg-white border-2 border-[#0b3e5d] text-[#0b3e5d] font-semibold py-3 rounded-xl text-sm cursor-pointer mb-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            Agregar al carrito
           </button>
 
           <!-- Guarantee badge -->
@@ -269,24 +279,20 @@
             </div>
 
             <div id="tab-uso" class="product-tab-content" role="tabpanel">
-              <ol class="space-y-3 text-sm text-gray-600">
-                <li class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">1</span></div>
-                  <p>Limpiá tu nariz — la piel debe estar seca y sin grasa.</p>
-                </li>
-                <li class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">2</span></div>
-                  <p>Despegá la tira y colocala sobre el puente nasal.</p>
-                </li>
-                <li class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">3</span></div>
-                  <p>Presioná suavemente para que se adhiera bien.</p>
-                </li>
-                <li class="flex gap-3">
-                  <div class="flex-shrink-0 w-7 h-7 bg-purple-50 rounded-lg flex items-center justify-center"><span class="text-purple-700 font-bold text-xs">4</span></div>
-                  <p>Sentí la diferencia — más aire, más rendimiento, incluso con sudor.</p>
-                </li>
-              </ol>
+              <div class="grid grid-cols-3 gap-3 mb-4">
+                <div class="text-center">
+                  <img loading="lazy" src="../assets/img/nt-02/paso-1.webp" alt="Paso 1: Limpiá tu nariz" class="w-full aspect-square object-cover rounded-xl mb-2">
+                  <p class="text-xs text-gray-600"><span class="font-bold text-purple-700">1.</span> Limpiá tu nariz</p>
+                </div>
+                <div class="text-center">
+                  <img loading="lazy" src="../assets/img/nt-02/paso-2.webp" alt="Paso 2: Colocá el dilatador" class="w-full aspect-square object-cover rounded-xl mb-2">
+                  <p class="text-xs text-gray-600"><span class="font-bold text-purple-700">2.</span> Colocá el dilatador</p>
+                </div>
+                <div class="text-center">
+                  <img loading="lazy" src="../assets/img/nt-02/paso-3.webp" alt="Paso 3: Entrenamiento con respiración nasal" class="w-full aspect-square object-cover rounded-xl mb-2">
+                  <p class="text-xs text-gray-600"><span class="font-bold text-purple-700">3.</span> Rendí al máximo</p>
+                </div>
+              </div>
             </div>
 
             <div id="tab-envio" class="product-tab-content" role="tabpanel">
@@ -594,8 +600,11 @@
         <div class="final-cta-section">
           <h2>Rendí al máximo desde hoy</h2>
           <p>30 tiras premium con envío gratis. Sentí la diferencia desde la primera.</p>
-          <button onclick="addToCart('NT-02')" class="btn-final">
+          <button onclick="buyProduct('NT-02')" class="btn-final">
             Probá el Premium — Q149
+          </button>
+          <button onclick="addToCart('NT-02')" class="mt-3 text-sm text-white/70 hover:text-white transition-colors cursor-pointer underline underline-offset-2 bg-transparent border-0">
+            O agregar al carrito
           </button>
           <a href="bundle.html" class="inline-block mt-3 text-sm text-white/80 hover:text-white underline transition-colors">Ver el Bundle completo</a>
           <p class="text-xs text-white/50 mt-4">Envío GRATIS a toda Guatemala · Satisfacción garantizada</p>
@@ -666,11 +675,14 @@
         <p class="text-lg font-bold leading-tight">Q149 <span class="text-xs font-normal text-green-600">envio gratis</span></p>
       </div>
       <div class="flex gap-2 flex-shrink-0">
-        <button onclick="addToCart('NT-02')" class="btn-ventus text-white font-semibold px-5 py-2.5 rounded-xl cursor-pointer text-sm">
-          Comprar — Q149
+        <button onclick="addToCart('NT-02')" class="border border-[#0b3e5d] text-[#0b3e5d] bg-white p-2.5 rounded-xl cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+        </button>
+        <button onclick="buyProduct('NT-02')" class="btn-ventus text-white font-semibold px-5 py-2.5 rounded-xl cursor-pointer text-sm">
+          Comprar
         </button>
         <a href="bundle.html" class="btn-orange font-semibold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1 no-underline">
-          Bundle Q169
+          Bundle
         </a>
       </div>
     </div>
@@ -823,7 +835,7 @@
     }
 
     const stickyCta = document.getElementById('sticky-cta');
-    const mainBuyBtn = document.querySelector('button[onclick="addToCart(\'NT-02\')"]');
+    const mainBuyBtn = document.querySelector('button[onclick="buyProduct(\'NT-02\')"]');
     if (stickyCta && mainBuyBtn) {
       new IntersectionObserver(([e]) => { stickyCta.classList.toggle('sticky-cta-hidden', e.isIntersecting); stickyCta.classList.toggle('sticky-cta-visible', !e.isIntersecting); }, { threshold: 0 }).observe(mainBuyBtn);
     }
