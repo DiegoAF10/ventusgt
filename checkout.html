@@ -19,7 +19,7 @@
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCJW3VE4CW"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YCJW3VE4CW');</script>
-  <script src="/js/pixel.js"></script>
+  <script src="/js/pixel.js" defer></script>
 </head>
 <body class="bg-[#f8fafc] text-gray-900">
 
@@ -415,12 +415,22 @@
       // ── Countdown Timer (15 min) ──
       var timerSeconds = 900;
       var timerEl = document.getElementById('ch-timer');
-      setInterval(function() {
+      var timerBanner = timerEl ? timerEl.closest('.rounded-xl') : null;
+      var timerInterval = setInterval(function() {
         timerSeconds--;
-        if (timerSeconds <= 0) timerSeconds = 0;
+        if (timerSeconds <= 0) {
+          timerSeconds = 0;
+          clearInterval(timerInterval);
+          if (timerBanner) {
+            timerBanner.className = timerBanner.className.replace('from-blue-50 to-blue-100 border-blue-200', 'from-amber-50 to-orange-100 border-orange-200');
+            timerBanner.querySelector('p.text-sm').textContent = 'Tu reserva ha expirado';
+            timerBanner.querySelector('p.text-xs').innerHTML = 'No te preocupes — <span class="font-semibold text-orange-700">todavía podés completar tu compra</span>';
+          }
+        }
         var min = Math.floor(timerSeconds / 60);
         var sec = timerSeconds % 60;
         timerEl.textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
+        if (timerSeconds <= 120 && timerSeconds > 0) timerEl.classList.add('text-red-600');
       }, 1000);
 
       function getProductDesc(sku) {

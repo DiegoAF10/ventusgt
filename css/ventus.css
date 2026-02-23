@@ -104,6 +104,31 @@ body {
   transform: translateY(0);
 }
 
+/* Fallback: show content if JS hasn't loaded after 3s */
+@keyframes fadeUpFallback {
+  to { opacity: 1; transform: none; }
+}
+.fade-up {
+  animation: fadeUpFallback 0s 3s forwards;
+}
+.fade-up.visible {
+  animation: none;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+  .animate-float { animation: none; }
+  .img-zoom-container:hover .img-zoom { transform: none; }
+  .card-product:hover { transform: none; }
+  .btn-ventus:hover, .btn-orange:hover { transform: none; }
+}
+
 /* ── Float Animation ──────────────────────────────── */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
