@@ -11,8 +11,8 @@
   <meta name="description" content="Parches de repuesto para Nose Tape VENTUS + pimple patches. Doble uso: dilata fosas nasales y cubre imperfecciones. Q49 con envío a toda Guatemala.">
 
   <link rel="canonical" href="https://tiendaventus.com/productos/repuestos.html">
-  <link rel="alternate" hreflang="es-GT" href="https://tiendaventus.com/productos/repuestos" />
-  <link rel="alternate" hreflang="x-default" href="https://tiendaventus.com/productos/repuestos" />
+  <link rel="alternate" hreflang="es-GT" href="https://tiendaventus.com/productos/repuestos.html" />
+  <link rel="alternate" hreflang="x-default" href="https://tiendaventus.com/productos/repuestos.html" />
 
   <meta property="og:type" content="product">
   <meta property="og:title" content="Repuestos VENTUS — Parches extra + Pimple Patch">
@@ -38,14 +38,18 @@
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCJW3VE4CW"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YCJW3VE4CW');</script>
-  <script src="../js/pixel.js"></script>
+  <script src="../js/pixel.js" defer></script>
+
+  <!-- Prefetch checkout for faster navigation -->
+  <link rel="prefetch" href="/checkout.html">
+  <link rel="prefetch" href="/js/recurrente.js">
 </head>
 <body class="bg-white text-gray-900">
   <!-- Skip to content (a11y) -->
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
   <!-- ═══ SHIPPING BANNER ═══ -->
-  <div class="shipping-banner">Envio gratis en pedidos de Q149+</div>
+  <div class="shipping-banner"><a href="bundle.html" class="text-white hover:text-white/90 transition-colors">Bundle: envío GRATIS + ahorrás Q31 →</a></div>
 
   <!-- ═══ NAV ═══ -->
   <nav class="fixed top-[36px] w-full z-50 bg-white/97 backdrop-blur-md border-b border-gray-100">
@@ -303,6 +307,78 @@
           </a>
         </div>
       </div>
+
+      <!-- ═══ SECTION: Upsell to Premium ═══ -->
+      <section class="mt-20 fade-up">
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6 sm:p-8 border border-purple-100">
+          <div class="flex flex-col sm:flex-row items-center gap-6">
+            <img loading="lazy" src="../assets/img/nt-02/frente.webp" alt="Nose Tape Premium VENTUS" class="w-24 h-24 object-contain flex-shrink-0">
+            <div class="flex-1 text-center sm:text-left">
+              <p class="text-xs font-semibold tracking-wider uppercase text-purple-600 mb-1">Producto principal</p>
+              <h3 class="font-bold text-lg mb-2">¿Todavia no tenes el Nose Tape Premium?</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Los repuestos funcionan con el Nose Tape Premium. Si aun no lo tenes, lleva el combo completo.</p>
+            </div>
+            <a href="nose-tape-premium.html" class="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all hover:shadow-md no-underline text-center">
+              Ver Nose Tape Premium — Q149<br><span class="text-xs font-normal opacity-80">(envio gratis)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION: FAQ ═══ -->
+      <section class="mt-20 fade-up">
+        <div class="text-center mb-10">
+          <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">FAQ</p>
+          <h2 class="text-2xl font-bold">Preguntas frecuentes</h2>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Con que productos funcionan los repuestos?
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Con el Nose Tape Premium (NT-02). Son los parches adhesivos que se pegan al dilatador.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Cuantos parches vienen?
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>30 parches por paquete — 1 mes de uso.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Tambien sirven como pimple patch?
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Si, los parches tienen doble funcion: repuesto nasal y parche para imperfecciones.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION: Final CTA ═══ -->
+      <section class="mt-20 mb-20 fade-up">
+        <div class="text-center py-12 px-6 bg-gray-50 rounded-2xl">
+          <h2 class="text-2xl font-bold mb-3">¿Buscas algo mas?</h2>
+          <p class="text-sm text-gray-500 mb-6">Explora nuestros productos principales.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="nose-tape-premium.html" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-7 py-3.5 rounded-xl text-sm transition-all hover:shadow-md no-underline">
+              Ver Nose Tape Premium — Q149
+            </a>
+            <a href="bundle.html" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3.5 rounded-xl text-sm transition-all hover:shadow-md no-underline">
+              Ver Bundle — Q169
+            </a>
+          </div>
+          <p class="text-xs text-gray-400 mt-4">Envio gratis en Premium y Bundle</p>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -313,12 +389,15 @@
 
   <!-- ═══ STICKY MOBILE CTA ═══ -->
   <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white/97 backdrop-blur-md border-t border-gray-200 p-3 z-40 md:hidden sticky-cta-hidden transition-transform duration-300">
-    <div class="flex items-center justify-between gap-3 max-w-lg mx-auto">
-      <div>
+    <div class="flex items-center justify-between gap-2 max-w-lg mx-auto">
+      <div class="min-w-0">
         <p class="font-semibold text-sm">Repuestos</p>
-        <p class="text-lg font-bold">Q49</p>
+        <p class="text-lg font-bold leading-tight">Q49</p>
       </div>
-      <button onclick="buyProduct('NT-03')" class="btn-ventus text-white font-semibold px-6 py-2.5 rounded-xl cursor-pointer text-sm">Comprar ahora</button>
+      <div class="flex gap-2 flex-shrink-0">
+        <button onclick="buyProduct('NT-03')" class="btn-ventus text-white font-semibold px-5 py-2.5 rounded-xl cursor-pointer text-sm">Comprar</button>
+        <a href="nose-tape-premium.html" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1 no-underline transition-colors">Premium Q149</a>
+      </div>
     </div>
   </div>
 
@@ -442,8 +521,16 @@
         document.getElementById('exit-popup').addEventListener('click', function(ev) { if (ev.target === this) closeExitPopup(); });
       }
     });
+    // ── FAQ Accordion ──
+    function toggleFaq(btn) {
+      var item = btn.parentElement;
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    }
   </script>
 
+  <script src="../js/social-proof.js" defer></script>
   <script src="../js/recurrente.js"></script>
 
   <script type="application/ld+json">
@@ -474,6 +561,38 @@
       { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://tiendaventus.com/" },
       { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://tiendaventus.com/#productos" },
       { "@type": "ListItem", "position": 3, "name": "Repuestos" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Con qué productos funcionan los repuestos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con el Nose Tape Premium (NT-02). Son los parches adhesivos que se pegan al dilatador."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuántos parches vienen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30 parches por paquete — 1 mes de uso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿También sirven como pimple patch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, los parches tienen doble función: repuesto nasal y parche para imperfecciones."
+        }
+      }
     ]
   }
   </script>
