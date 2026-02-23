@@ -1,15 +1,15 @@
 /**
- * VENTUS — Meta Pixel + Event Tracking
+ * VENTUS — Meta Pixel + Event Tracking v2 (Cart-aware)
  *
  * Single script for all pages. Auto-detects page type and fires events.
- * Add to <head> of every page: <script src="/js/pixel.js"></script>
+ * Add to <head> of every page: <script src="/js/pixel.js" defer></script>
  *
  * Events fired:
- *   PageView      — All pages (automatic)
- *   ViewContent   — Product pages (/productos/*)
- *   AddToCart      — When buyProduct() is called
- *   InitiateCheckout — Checkout page (/checkout.html)
- *   Purchase      — Thank you page (/gracias.html)
+ *   PageView         — All pages (automatic)
+ *   ViewContent      — Product pages (/productos/*)
+ *   AddToCart         — When addToCart() is called (patches cart.js)
+ *   InitiateCheckout — Checkout page, reads cart totals
+ *   Purchase         — Thank you page, reads ventus_last_order
  */
 
 // ═══ CONFIG ═══
@@ -58,52 +58,68 @@ fbq('track', 'PageView');
     });
   }
 
-  // --- Checkout page: InitiateCheckout ---
+  // --- Checkout page: InitiateCheckout (cart-aware) ---
   if (path.includes('/checkout')) {
-    const sku = params.get('sku');
-    const products = {
-      'MT-01': 100, 'NT-01': 100, 'NT-02': 149,
-      'NT-03': 49, 'BUNDLE': 169,
-    };
-    const value = products[sku] || 0;
-
-    fbq('track', 'InitiateCheckout', {
-      content_ids: sku ? [sku] : [],
-      value,
-      currency: 'GTQ',
-      num_items: 1,
-    });
+    if (typeof getCartTotals === 'function') {
+      var totals = getCartTotals();
+      if (totals.itemCount > 0) {
+        fbq('track', 'InitiateCheckout', {
+          content_ids: totals.lineItems.map(function(li) { return li.sku; }),
+          value: totals.subtotal,
+          currency: 'GTQ',
+          num_items: totals.itemCount,
+        });
+      }
+    } else {
+      // Legacy fallback: single SKU from URL
+      const sku = params.get('sku');
+      const products = { 'MT-01': 100, 'NT-01': 100, 'NT-02': 149, 'NT-03': 49, 'BUNDLE': 169 };
+      fbq('track', 'InitiateCheckout', {
+        content_ids: sku ? [sku] : [],
+        value: products[sku] || 0,
+        currency: 'GTQ',
+        num_items: 1,
+      });
+    }
   }
 
-  // --- Thank you page: Purchase ---
+  // --- Thank you page: Purchase (multi-item aware) ---
   if (path.includes('/gracias')) {
     try {
       const orderData = JSON.parse(localStorage.getItem('ventus_last_order') || '{}');
 
-      if (orderData.sku && orderData.value) {
+      if (orderData.value) {
+        // Build content_ids from items array (new) or single sku (legacy)
+        const contentIds = orderData.items
+          ? orderData.items.map(function(i) { return i.sku; })
+          : orderData.sku ? [orderData.sku] : [];
+
         fbq('track', 'Purchase', {
-          content_ids: [orderData.sku],
-          content_name: orderData.product_name || '',
+          content_ids: contentIds,
           content_type: 'product',
           value: orderData.value,
           currency: 'GTQ',
-          num_items: 1,
+          num_items: orderData.num_items || 1,
         });
 
         // Clear so it doesn't fire again on refresh
         localStorage.removeItem('ventus_last_order');
       }
     } catch { /* ignore */ }
+
+    // Safety: clear cart on thank you page
+    if (typeof clearCart === 'function') clearCart();
   }
 })();
 
 // ═══ ADDTOCART HOOK ═══
-// Patches buyProduct() to fire AddToCart before redirect
+// Patches addToCart() (from cart.js) to fire AddToCart pixel event
 (function() {
-  if (typeof window.buyProduct !== 'function') return;
+  if (typeof window.addToCart !== 'function') return;
 
-  const originalBuy = window.buyProduct;
-  window.buyProduct = function(sku) {
+  const originalAdd = window.addToCart;
+  window.addToCart = function(sku, quantity) {
+    quantity = quantity || 1;
     const products = {
       'MT-01': { name: 'Mouth Tape VENTUS', price: 100 },
       'NT-01': { name: 'Nose Tape VENTUS', price: 100 },
@@ -118,11 +134,11 @@ fbq('track', 'PageView');
         content_ids: [sku],
         content_name: product.name,
         content_type: 'product',
-        value: product.price,
+        value: product.price * quantity,
         currency: 'GTQ',
       });
     }
 
-    return originalBuy(sku);
+    return originalAdd(sku, quantity);
   };
 })();

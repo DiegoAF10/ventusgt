@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <title>Checkout — VENTUS</title>
+  <title>Carrito — VENTUS</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
       </a>
       <a href="productos.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        Volver a productos
+        Seguir comprando
       </a>
     </div>
   </nav>
@@ -46,10 +46,18 @@
   <main id="main-content" class="pt-24 pb-16 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto">
 
-      <!-- Loading state (shown while JS parses SKU) -->
+      <!-- Loading state -->
       <div id="checkout-loading" class="text-center py-20">
         <div class="w-8 h-8 border-2 border-gray-300 border-t-[#0b3e5d] rounded-full animate-spin mx-auto mb-4"></div>
-        <p class="text-gray-500 text-sm">Cargando checkout...</p>
+        <p class="text-gray-500 text-sm">Cargando carrito...</p>
+      </div>
+
+      <!-- Empty cart state -->
+      <div id="checkout-empty" class="hidden text-center py-20">
+        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <h2 class="text-xl font-bold text-gray-700 mb-2">Tu carrito esta vacio</h2>
+        <p class="text-gray-500 mb-6">Agrega productos para continuar</p>
+        <a href="/productos.html" class="inline-block btn-ventus text-white text-sm font-semibold px-8 py-3 rounded-full">Ver productos</a>
       </div>
 
       <!-- Checkout content (hidden until JS fills it) -->
@@ -59,47 +67,23 @@
           <!-- ═══ LEFT COLUMN (7/12) ═══ -->
           <div class="lg:col-span-7 space-y-6">
 
-            <!-- Product summary card -->
-            <div class="bg-white rounded-2xl p-5 border border-gray-200">
-              <div class="flex gap-4 items-center">
-                <div class="w-20 h-20 bg-[#f4ede5] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img id="ch-product-img" src="" alt="" class="max-h-full max-w-full object-contain">
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="font-bold text-lg" id="ch-product-name"></p>
-                  <p class="text-sm text-gray-500" id="ch-product-desc"></p>
-                  <p class="text-xs text-gray-400 mt-0.5" id="ch-unit-price" style="display:none;"></p>
-                </div>
-                <div class="text-right flex-shrink-0">
-                  <p class="text-xl font-bold" id="ch-product-price"></p>
-                </div>
+            <!-- Cart items -->
+            <div class="bg-white rounded-2xl border border-gray-200">
+              <div class="p-5 border-b border-gray-100">
+                <h2 class="font-bold text-lg">Tu carrito</h2>
               </div>
-              <!-- Quantity selector -->
-              <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-                <span class="text-sm font-medium text-gray-600">Cantidad</span>
-                <div class="flex items-center">
-                  <button type="button" id="ch-qty-minus" onclick="changeQuantity(-1)"
-                    class="w-9 h-9 flex items-center justify-center rounded-l-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors text-gray-600 font-medium text-lg cursor-pointer select-none"
-                    style="opacity:0.4" disabled>&#8722;</button>
-                  <span id="ch-quantity" class="w-12 h-9 flex items-center justify-center border-t border-b border-gray-200 bg-white text-sm font-semibold select-none">1</span>
-                  <button type="button" id="ch-qty-plus" onclick="changeQuantity(1)"
-                    class="w-9 h-9 flex items-center justify-center rounded-r-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors text-gray-600 font-medium text-lg cursor-pointer select-none">+</button>
-                </div>
+              <div id="ch-cart-items" class="divide-y divide-gray-100">
+                <!-- Cart items rendered by JS -->
+              </div>
+              <div class="p-4 bg-gray-50 rounded-b-2xl">
+                <a href="/productos.html" class="text-sm font-medium text-[#0b3e5d] hover:underline flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                  Agregar mas productos
+                </a>
               </div>
             </div>
 
-            <!-- Promo banner -->
-            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 flex items-center gap-3">
-              <div class="w-10 h-10 bg-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <div class="flex-1">
-                <p class="text-sm font-semibold text-blue-900">Completá tu compra</p>
-                <p class="text-xs text-blue-700">Tu carrito se reserva por <span id="ch-timer" class="font-mono font-bold">15:00</span></p>
-              </div>
-            </div>
-
-            <!-- NT-03 gift block (only for NT-02) -->
+            <!-- NT-03 gift block (only when NT-02 in cart and NT-03 not) -->
             <div id="ch-nt03-gift" class="hidden rounded-xl border-2 border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 p-4">
               <div class="flex items-start gap-3">
                 <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
@@ -110,6 +94,17 @@
                   <p class="text-xs text-green-700 mt-0.5"><span class="line-through text-gray-400">Q49</span> <span class="font-bold text-green-600">GRATIS</span></p>
                   <p class="text-xs text-green-600 mt-1">30 dias completos de uso + parches extras</p>
                 </div>
+              </div>
+            </div>
+
+            <!-- Promo banner -->
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm font-semibold text-blue-900">Completa tu compra</p>
+                <p class="text-xs text-blue-700">Tu carrito se reserva por <span id="ch-timer" class="font-mono font-bold">15:00</span></p>
               </div>
             </div>
 
@@ -181,7 +176,7 @@
                 <div class="checkout-section">
                   <p class="checkout-section-label">Codigo promocional</p>
                   <div class="flex gap-2">
-                    <input type="text" id="ch-promo" class="checkout-input flex-1" placeholder="Ingresá tu código">
+                    <input type="text" id="ch-promo" class="checkout-input flex-1" placeholder="Ingresa tu codigo">
                     <button type="button" onclick="applyPromoCode()" class="px-5 py-2.5 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg border border-gray-200 hover:bg-gray-200 transition cursor-pointer whitespace-nowrap">
                       Aplicar
                     </button>
@@ -190,14 +185,13 @@
                 </div>
               </div>
 
-              <!-- Error & submit (visible on mobile below form, desktop in sidebar) -->
+              <!-- Error & submit (mobile only — desktop in sidebar) -->
               <div class="lg:hidden mt-6 space-y-4">
                 <div id="checkout-error-mobile" class="checkout-error" style="display:none;"></div>
                 <button type="submit" id="checkout-submit-mobile" class="checkout-btn">
                   Continuar al pago
                 </button>
                 <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
-                <!-- Trust badges -->
                 <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
                   <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
                     <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
@@ -206,10 +200,6 @@
                   <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
                     <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                     Pago seguro con Recurrente
-                  </div>
-                  <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
-                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
-                    Envio con Boxful
                   </div>
                 </div>
               </div>
@@ -224,14 +214,14 @@
               <div class="bg-white rounded-2xl p-6 border border-gray-200">
                 <h3 class="font-bold text-lg mb-4">Resumen de orden</h3>
                 <div class="space-y-3">
-                  <div class="flex justify-between text-sm">
-                    <span class="text-gray-600" id="ch-summary-product">Producto</span>
-                    <span class="font-medium" id="ch-summary-price"></span>
+                  <div id="ch-summary-lines">
+                    <!-- Line items rendered by JS -->
                   </div>
-                  <div id="ch-summary-gift" class="hidden flex justify-between text-sm">
+                  <div id="ch-summary-gift" class="flex justify-between text-sm" style="display:none;">
                     <span class="text-green-600">Repuestos VENTUS (REGALO)</span>
                     <span class="text-green-600 font-medium">Q0</span>
                   </div>
+                  <div id="ch-summary-discount" class="flex justify-between text-sm" style="display:none;"></div>
                   <div class="flex justify-between text-sm">
                     <span class="text-gray-600">Envio</span>
                     <span class="font-medium" id="ch-summary-shipping"></span>
@@ -250,7 +240,6 @@
                     Continuar al pago
                   </button>
                   <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
-                  <!-- Trust badges -->
                   <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
                     <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
                       <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
@@ -259,10 +248,6 @@
                     <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
                       <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                       Pago seguro con Recurrente
-                    </div>
-                    <div class="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
-                      <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
-                      Envio con Boxful
                     </div>
                   </div>
                 </div>
@@ -296,7 +281,7 @@
               </div>
 
               <!-- Cross-sell -->
-              <div class="bg-white rounded-2xl p-5 border border-gray-200">
+              <div id="ch-cross-sell-container" class="bg-white rounded-2xl p-5 border border-gray-200 hidden">
                 <h4 class="font-semibold text-sm mb-3 text-gray-500 uppercase tracking-wider">Tambien te puede interesar</h4>
                 <div class="space-y-3" id="ch-cross-sell"></div>
               </div>
@@ -314,19 +299,19 @@
   <script>
     // ── Banner/Nav smooth position ──
     (function() {
-      const nav = document.querySelector('nav');
-      const shippingBanner = document.querySelector('.shipping-banner');
+      var nav = document.querySelector('nav');
+      var shippingBanner = document.querySelector('.shipping-banner');
       if (shippingBanner && nav) {
-        const bannerHeight = shippingBanner.offsetHeight;
-        let ticking = false;
+        var bannerHeight = shippingBanner.offsetHeight;
+        var ticking = false;
         function updateNavPosition() {
-          const offset = Math.max(bannerHeight - window.scrollY, 0);
+          var offset = Math.max(bannerHeight - window.scrollY, 0);
           nav.style.top = offset + 'px';
         }
         updateNavPosition();
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
           if (!ticking) {
-            requestAnimationFrame(() => { updateNavPosition(); ticking = false; });
+            requestAnimationFrame(function() { updateNavPosition(); ticking = false; });
             ticking = true;
           }
         }, { passive: true });
@@ -334,40 +319,133 @@
     })();
   </script>
 
+  <script src="js/cart.js"></script>
   <script src="js/recurrente.js"></script>
 
   <script>
-    // ── Checkout Page Logic ──
-    (function() {
-      const params = new URLSearchParams(window.location.search);
-      const sku = params.get('sku');
+    var PRODUCT_DESCS = {
+      'MT-01': '30 cintas — 1 mes de uso',
+      'NT-01': '30 tiras — 1 mes de uso',
+      'NT-02': '30 tiras — adhesivo mejorado + regalo',
+      'NT-03': 'Parches extra + pimple patch',
+      'BUNDLE': 'Mouth Tape + Nose Tape',
+    };
 
-      if (!sku || !PRODUCT_INFO[sku]) {
-        window.location.href = '/productos.html';
+    // ── Render cart items ──
+    function renderCartItems() {
+      var container = document.getElementById('ch-cart-items');
+      var totals = getCartTotals();
+
+      if (totals.lineItems.length === 0) {
+        document.getElementById('checkout-content').classList.add('hidden');
+        document.getElementById('checkout-empty').classList.remove('hidden');
         return;
       }
 
-      const product = PRODUCT_INFO[sku];
-      const isNT02 = sku === 'NT-02';
+      container.innerHTML = '';
+      for (var i = 0; i < totals.lineItems.length; i++) {
+        var item = totals.lineItems[i];
+        var div = document.createElement('div');
+        div.className = 'p-5 flex gap-4 items-center';
+        div.innerHTML =
+          '<div class="w-16 h-16 bg-[#f4ede5] rounded-xl flex items-center justify-center flex-shrink-0">' +
+            '<img src="' + item.img + '" alt="' + item.name + '" class="max-h-full max-w-full object-contain">' +
+          '</div>' +
+          '<div class="flex-1 min-w-0">' +
+            '<p class="font-semibold text-sm">' + item.name + '</p>' +
+            '<p class="text-xs text-gray-500">' + (PRODUCT_DESCS[item.sku] || '') + '</p>' +
+            '<div class="flex items-center gap-2 mt-2">' +
+              '<button type="button" onclick="cartQtyChange(\'' + item.sku + '\', -1)" class="w-7 h-7 flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-600 text-sm cursor-pointer select-none' + (item.quantity <= 1 ? ' opacity-40' : '') + '"' + (item.quantity <= 1 ? ' disabled' : '') + '>&#8722;</button>' +
+              '<span class="text-sm font-semibold w-6 text-center">' + item.quantity + '</span>' +
+              '<button type="button" onclick="cartQtyChange(\'' + item.sku + '\', 1)" class="w-7 h-7 flex items-center justify-center rounded-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-600 text-sm cursor-pointer select-none' + (item.quantity >= 10 ? ' opacity-40' : '') + '"' + (item.quantity >= 10 ? ' disabled' : '') + '>+</button>' +
+              '<button type="button" onclick="cartRemoveItem(\'' + item.sku + '\')" class="ml-2 text-gray-400 hover:text-red-500 transition-colors cursor-pointer" aria-label="Eliminar">' +
+                '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="text-right flex-shrink-0">' +
+            '<p class="font-bold">Q' + item.lineTotal + '</p>' +
+            (item.quantity > 1 ? '<p class="text-xs text-gray-400">Q' + item.price + ' c/u</p>' : '') +
+          '</div>';
+        container.appendChild(div);
+      }
 
-      // Set current SKU and quantity for submitCheckout
-      currentSku = sku;
-      currentQuantity = 1;
+      // NT-02 gift
+      var skus = totals.lineItems.map(function(l) { return l.sku; });
+      var giftBlock = document.getElementById('ch-nt03-gift');
+      if (skus.indexOf('NT-02') !== -1 && skus.indexOf('NT-03') === -1) {
+        giftBlock.classList.remove('hidden');
+      } else {
+        giftBlock.classList.add('hidden');
+      }
 
-      // Fill product info (static parts)
-      document.getElementById('ch-product-img').src = '/assets/img/' + sku.toLowerCase() + '/frente.webp';
-      document.getElementById('ch-product-img').alt = product.name;
-      document.getElementById('ch-product-name').textContent = product.name;
-      document.getElementById('ch-product-desc').textContent = getProductDesc(sku);
-
-      // Calculate and fill order summary (price, shipping, total, qty buttons)
+      // Update order summary
       updateOrderSummary();
 
-      // NT-02 gift block
-      if (isNT02) {
-        document.getElementById('ch-nt03-gift').classList.remove('hidden');
-        document.getElementById('ch-summary-gift').classList.remove('hidden');
+      // Cross-sell: products not in cart
+      var crossSell = document.getElementById('ch-cross-sell');
+      var crossSellContainer = document.getElementById('ch-cross-sell-container');
+      crossSell.innerHTML = '';
+      var hasCrossSell = false;
+      var allSkus = Object.keys(PRODUCT_INFO);
+      for (var j = 0; j < allSkus.length; j++) {
+        var s = allSkus[j];
+        if (skus.indexOf(s) !== -1) continue;
+        hasCrossSell = true;
+        var p = PRODUCT_INFO[s];
+        var link = document.createElement('button');
+        link.type = 'button';
+        link.className = 'flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors w-full text-left cursor-pointer';
+        link.setAttribute('onclick', "addToCart('" + s + "'); renderCartItems();");
+        link.innerHTML =
+          '<div class="w-12 h-12 bg-[#f4ede5] rounded-lg flex items-center justify-center flex-shrink-0">' +
+            '<img src="/assets/img/' + s.toLowerCase() + '/frente.webp" alt="' + p.name + '" class="max-h-full max-w-full object-contain">' +
+          '</div>' +
+          '<div class="flex-1 min-w-0">' +
+            '<p class="text-sm font-medium truncate">' + p.name + '</p>' +
+            '<p class="text-xs text-gray-500">Q' + p.price + '</p>' +
+          '</div>' +
+          '<span class="text-xs font-medium text-[#0b3e5d] bg-[#0b3e5d]/10 px-3 py-1 rounded-full flex-shrink-0">+ Agregar</span>';
+        crossSell.appendChild(link);
       }
+      crossSellContainer.classList.toggle('hidden', !hasCrossSell);
+    }
+
+    function cartQtyChange(sku, delta) {
+      var cart = getCart();
+      var item = cart.items.find(function(i) { return i.sku === sku; });
+      if (!item) return;
+      updateCartQuantity(sku, item.quantity + delta);
+      renderCartItems();
+    }
+
+    function cartRemoveItem(sku) {
+      removeFromCart(sku);
+      renderCartItems();
+    }
+
+    // ── Init ──
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var skuParam = params.get('sku');
+
+      // Backward compat: ?sku=MT-01 adds to cart
+      if (skuParam && PRODUCT_INFO[skuParam]) {
+        addToCart(skuParam, 1);
+        // Clean URL
+        history.replaceState(null, '', '/checkout.html');
+      }
+
+      var cart = getCart();
+      document.getElementById('checkout-loading').classList.add('hidden');
+
+      if (cart.items.length === 0) {
+        document.getElementById('checkout-empty').classList.remove('hidden');
+        return;
+      }
+
+      document.getElementById('checkout-content').classList.remove('hidden');
+      renderCartItems();
 
       // Fill departments
       var deptSelect = document.getElementById('ch-department');
@@ -378,31 +456,7 @@
         deptSelect.appendChild(opt);
       });
 
-      // Cross-sell
-      var crossSellContainer = document.getElementById('ch-cross-sell');
-      Object.keys(PRODUCT_INFO).forEach(function(s) {
-        if (s === sku) return;
-        var p = PRODUCT_INFO[s];
-        var link = document.createElement('a');
-        link.href = '/checkout.html?sku=' + s;
-        link.className = 'flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors';
-        link.innerHTML =
-          '<div class="w-12 h-12 bg-[#f4ede5] rounded-lg flex items-center justify-center flex-shrink-0">' +
-            '<img src="/assets/img/' + s.toLowerCase() + '/frente.webp" alt="' + p.name + '" class="max-h-full max-w-full object-contain">' +
-          '</div>' +
-          '<div class="flex-1 min-w-0">' +
-            '<p class="text-sm font-medium truncate">' + p.name + '</p>' +
-            '<p class="text-xs text-gray-500">Q' + p.price + '</p>' +
-          '</div>' +
-          '<svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
-        crossSellContainer.appendChild(link);
-      });
-
-      // Show checkout, hide loading
-      document.getElementById('checkout-loading').classList.add('hidden');
-      document.getElementById('checkout-content').classList.remove('hidden');
-
-      // Auto-apply coupon from URL param (e.g., ?sku=MT-01&coupon=VEN-XXXXX)
+      // Auto-apply coupon from URL
       var couponParam = params.get('coupon');
       if (couponParam) {
         document.getElementById('ch-promo').value = couponParam;
@@ -412,37 +466,30 @@
       // Focus first input
       setTimeout(function() { document.getElementById('ch-name').focus(); }, 100);
 
-      // ── Countdown Timer (15 min) ──
+      // Countdown Timer (15 min)
       var timerSeconds = 900;
       var timerEl = document.getElementById('ch-timer');
       var timerBanner = timerEl ? timerEl.closest('.rounded-xl') : null;
-      var timerInterval = setInterval(function() {
+      setInterval(function() {
         timerSeconds--;
         if (timerSeconds <= 0) {
           timerSeconds = 0;
-          clearInterval(timerInterval);
           if (timerBanner) {
             timerBanner.className = timerBanner.className.replace('from-blue-50 to-blue-100 border-blue-200', 'from-amber-50 to-orange-100 border-orange-200');
             timerBanner.querySelector('p.text-sm').textContent = 'Tu reserva ha expirado';
-            timerBanner.querySelector('p.text-xs').innerHTML = 'No te preocupes — <span class="font-semibold text-orange-700">todavía podés completar tu compra</span>';
+            timerBanner.querySelector('p.text-xs').innerHTML = 'No te preocupes — <span class="font-semibold text-orange-700">todavia podes completar tu compra</span>';
           }
         }
         var min = Math.floor(timerSeconds / 60);
         var sec = timerSeconds % 60;
-        timerEl.textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
-        if (timerSeconds <= 120 && timerSeconds > 0) timerEl.classList.add('text-red-600');
+        if (timerEl) timerEl.textContent = min + ':' + (sec < 10 ? '0' : '') + sec;
+        if (timerSeconds <= 120 && timerSeconds > 0 && timerEl) timerEl.classList.add('text-red-600');
       }, 1000);
 
-      function getProductDesc(sku) {
-        var descs = {
-          'MT-01': '30 cintas — 1 mes de uso',
-          'NT-01': '30 tiras — 1 mes de uso',
-          'NT-02': '30 tiras — adhesivo mejorado + regalo',
-          'NT-03': 'Parches extra + pimple patch',
-          'BUNDLE': 'Mouth Tape + Nose Tape',
-        };
-        return descs[sku] || '';
-      }
+      // Listen for cart updates from other interactions
+      window.addEventListener('cartUpdated', function() {
+        renderCartItems();
+      });
     })();
 
     // ── Promo Code ──
@@ -456,25 +503,23 @@
       msg.classList.remove('hidden');
 
       try {
-        var res = await fetch(WORKER_URL + '/api/coupons/validate?code=' + encodeURIComponent(code) + '&sku=' + currentSku);
+        var res = await fetch(WORKER_URL + '/api/coupons/validate?code=' + encodeURIComponent(code));
         var data = await res.json();
 
         if (data.valid) {
           appliedCoupon = { code: data.code, type: data.type, discount_percent: data.discount_percent };
-
-          // Recalculate everything with the coupon applied
           updateOrderSummary();
 
-          // Show success message
           if (data.type === 'free_shipping') {
-            var originalShipping = calculateShipping(PRODUCT_INFO[currentSku].price * currentQuantity);
+            var totals = getCartTotals();
+            var originalShipping = calculateShipping(totals.subtotal);
             msg.textContent = originalShipping > 0
-              ? '¡Envío GRATIS aplicado! Ahorrás Q' + originalShipping
-              : '¡Código válido! Tu pedido ya tiene envío gratis.';
+              ? 'Envio GRATIS aplicado! Ahorras Q' + originalShipping
+              : 'Codigo valido! Tu pedido ya tiene envio gratis.';
           } else if (data.type === 'percent') {
-            var subtotal = PRODUCT_INFO[currentSku].price * currentQuantity;
-            var saved = Math.round(subtotal * data.discount_percent / 100);
-            msg.textContent = '¡' + data.discount_percent + '% de descuento aplicado! Ahorrás Q' + saved;
+            var totals2 = getCartTotals();
+            var saved = Math.round(totals2.subtotal * data.discount_percent / 100);
+            msg.textContent = data.discount_percent + '% de descuento aplicado! Ahorras Q' + saved;
           }
           msg.className = 'text-xs mt-1 text-green-600 font-medium';
           document.getElementById('ch-promo').disabled = true;
@@ -484,7 +529,7 @@
           msg.className = 'text-xs mt-1 text-red-500';
         }
       } catch (err) {
-        msg.textContent = 'Error al validar. Intentá de nuevo.';
+        msg.textContent = 'Error al validar. Intenta de nuevo.';
         msg.className = 'text-xs mt-1 text-red-500';
       }
     }

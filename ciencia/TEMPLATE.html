@@ -67,19 +67,30 @@
         <a href="../productos.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Productos</a>
         <a href="./" class="text-sm font-medium text-gray-900 transition-colors">Ciencia</a>
         <a href="../nosotros.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Nosotros</a>
+        <a href="/checkout.html" class="relative text-gray-600 hover:text-gray-900 transition-colors p-1" aria-label="Carrito">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+          <span class="cart-badge hidden absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold min-w-[18px] h-[18px] rounded-full flex items-center justify-center leading-none"></span>
+        </a>
         <a href="../productos.html" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full">
           Comprar
         </a>
       </div>
 
-      <button id="menu-btn" class="md:hidden text-gray-900 p-2 -mr-2" aria-label="Abrir menú">
-        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
+      <!-- Mobile: cart + hamburger -->
+      <div class="flex items-center gap-1 md:hidden">
+        <a href="/checkout.html" class="relative text-gray-900 p-2" aria-label="Carrito">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+          <span class="cart-badge hidden absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold min-w-[18px] h-[18px] rounded-full flex items-center justify-center leading-none"></span>
+        </a>
+        <button id="menu-btn" class="text-gray-900 p-2 -mr-2" aria-label="Abrir menú">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
@@ -336,6 +347,7 @@
   }
   </script>
 
+  <script src="../js/cart.js"></script>
   <!-- Mobile menu toggle -->
   <script>
     var menuBtn = document.getElementById('menu-btn');

@@ -1,7 +1,7 @@
 /**
- * Recurrente Checkout Integration v4
+ * Recurrente Checkout Integration v5 — Cart-aware
  *
- * Redirects to /checkout.html?sku=XXX for full-page checkout experience.
+ * Works with cart.js for multi-item shopping cart.
  * checkout.html handles the form and POSTs to the Worker.
  *
  * Shared utilities: PRODUCT_INFO, DEPARTMENTS, calculateShipping, submitCheckout
@@ -32,106 +32,93 @@ const DEPARTMENTS = [
   'Izabal', 'Zacapa', 'Chiquimula', 'Jalapa', 'Jutiapa', 'El Progreso',
 ];
 
-let currentSku = null;
 let appliedCoupon = null; // { code, type, discount_percent? }
-let currentQuantity = 1;
 
 /**
- * Update quantity and recalculate order summary
+ * Backward compat: adds to cart and navigates to checkout
  */
-function changeQuantity(delta) {
-  const newQty = currentQuantity + delta;
-  if (newQty < 1 || newQty > 10) return;
-  currentQuantity = newQty;
-  updateOrderSummary();
+function buyProduct(sku) {
+  if (!PRODUCT_INFO[sku]) return;
+  if (typeof addToCart === 'function') {
+    addToCart(sku, 1);
+    window.location.href = '/checkout.html';
+  } else {
+    window.location.href = '/checkout.html?sku=' + sku;
+  }
 }
 
 /**
- * Recalculate and update all order summary DOM elements
+ * Recalculate and update order summary from cart state.
+ * Renders multi-item line items in the summary sidebar.
  */
 function updateOrderSummary() {
-  if (!currentSku) return;
-  const product = PRODUCT_INFO[currentSku];
-  if (!product) return;
+  if (typeof getCartTotals !== 'function') return;
 
-  const unitPrice = product.price;
-  const subtotal = unitPrice * currentQuantity;
+  var totals = getCartTotals();
 
-  // Apply coupon
-  let discountAmount = 0;
-  let isFreeShipping = false;
+  // Apply coupon to cart totals
+  var discountAmount = 0;
+  var isFreeShipping = false;
 
   if (appliedCoupon) {
     if (appliedCoupon.type === 'percent') {
-      discountAmount = Math.round(subtotal * appliedCoupon.discount_percent / 100);
+      discountAmount = Math.round(totals.subtotal * appliedCoupon.discount_percent / 100);
     } else if (appliedCoupon.type === 'free_shipping') {
       isFreeShipping = true;
     }
   }
 
-  const afterDiscount = subtotal - discountAmount;
-  // Use pre-discount subtotal for free shipping check — a coupon should never ADD cost
-  const shipping = isFreeShipping ? 0 : calculateShipping(subtotal);
-  const total = afterDiscount + shipping;
+  var afterDiscount = totals.subtotal - discountAmount;
+  var shipping = isFreeShipping ? 0 : calculateShipping(totals.subtotal);
+  var total = afterDiscount + shipping;
 
-  // Product card
-  document.getElementById('ch-product-price').textContent = 'Q' + subtotal;
-  const unitPriceEl = document.getElementById('ch-unit-price');
-  if (unitPriceEl) {
-    unitPriceEl.textContent = currentQuantity > 1 ? 'Q' + unitPrice + ' c/u' : '';
-    unitPriceEl.style.display = currentQuantity > 1 ? '' : 'none';
+  // Render line items in summary
+  var summaryLines = document.getElementById('ch-summary-lines');
+  if (summaryLines) {
+    summaryLines.innerHTML = '';
+    for (var i = 0; i < totals.lineItems.length; i++) {
+      var li = totals.lineItems[i];
+      var label = li.quantity > 1 ? li.quantity + 'x ' + li.name : li.name;
+      var row = document.createElement('div');
+      row.className = 'flex justify-between text-sm';
+      row.innerHTML = '<span class="text-gray-600">' + label + '</span><span class="font-medium">Q' + li.lineTotal + '.00</span>';
+      summaryLines.appendChild(row);
+    }
+
+    // NT-02 gift row
+    var skusInCart = totals.lineItems.map(function(l) { return l.sku; });
+    var hasNT02Gift = skusInCart.indexOf('NT-02') !== -1 && skusInCart.indexOf('NT-03') === -1;
+    var giftRow = document.getElementById('ch-summary-gift');
+    if (giftRow) {
+      giftRow.style.display = hasNT02Gift ? '' : 'none';
+    }
   }
-
-  // Quantity display
-  const qtyEl = document.getElementById('ch-quantity');
-  if (qtyEl) qtyEl.textContent = currentQuantity;
-
-  // +/- button states
-  const minusBtn = document.getElementById('ch-qty-minus');
-  const plusBtn = document.getElementById('ch-qty-plus');
-  if (minusBtn) {
-    minusBtn.disabled = currentQuantity <= 1;
-    minusBtn.style.opacity = currentQuantity <= 1 ? '0.4' : '1';
-  }
-  if (plusBtn) {
-    plusBtn.disabled = currentQuantity >= 10;
-    plusBtn.style.opacity = currentQuantity >= 10 ? '0.4' : '1';
-  }
-
-  // Order summary
-  const summaryLabel = currentQuantity > 1
-    ? currentQuantity + 'x ' + product.name
-    : product.name;
-  document.getElementById('ch-summary-product').textContent = summaryLabel;
-  document.getElementById('ch-summary-price').textContent = 'Q' + subtotal + '.00';
 
   // Discount row
-  const existingDiscount = document.getElementById('ch-summary-discount');
+  var existingDiscount = document.getElementById('ch-summary-discount');
   if (discountAmount > 0) {
-    const html = '<span class="text-green-600">Descuento (' + appliedCoupon.discount_percent + '%)</span><span class="text-green-600 font-medium">-Q' + discountAmount + '.00</span>';
+    var html = '<span class="text-green-600">Descuento (' + appliedCoupon.discount_percent + '%)</span><span class="text-green-600 font-medium">-Q' + discountAmount + '.00</span>';
     if (existingDiscount) {
       existingDiscount.innerHTML = html;
-    } else {
-      const row = document.createElement('div');
-      row.id = 'ch-summary-discount';
-      row.className = 'flex justify-between text-sm';
-      row.innerHTML = html;
-      document.getElementById('ch-summary-price').parentElement.after(row);
+      existingDiscount.style.display = '';
     }
   } else if (existingDiscount) {
-    existingDiscount.remove();
+    existingDiscount.style.display = 'none';
   }
 
   // Shipping
-  document.getElementById('ch-summary-shipping').innerHTML = shipping === 0
-    ? '<span class="text-green-600">Gratis</span>'
-    : 'Q' + shipping + '.00';
+  var shippingEl = document.getElementById('ch-summary-shipping');
+  if (shippingEl) {
+    shippingEl.innerHTML = shipping === 0
+      ? '<span class="text-green-600">Gratis</span>'
+      : 'Q' + shipping + '.00';
+  }
 
   // Shipping hint
-  const shippingHint = document.getElementById('ch-shipping-hint');
+  var shippingHint = document.getElementById('ch-shipping-hint');
   if (shippingHint) {
     if (shipping > 0 && !isFreeShipping) {
-      const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
+      var remaining = FREE_SHIPPING_THRESHOLD - totals.subtotal;
       if (remaining > 0) {
         shippingHint.textContent = 'Agrega Q' + remaining + ' mas para envio gratis';
         shippingHint.style.display = '';
@@ -144,32 +131,41 @@ function updateOrderSummary() {
   }
 
   // Total
-  document.getElementById('ch-summary-total').textContent = 'Q' + total + '.00';
+  var totalEl = document.getElementById('ch-summary-total');
+  if (totalEl) totalEl.textContent = 'Q' + total + '.00';
 }
 
 /**
- * Called from product pages — redirects to checkout page
- */
-function buyProduct(sku) {
-  if (!PRODUCT_INFO[sku]) return;
-  window.location.href = '/checkout.html?sku=' + sku;
-}
-
-/**
- * Form submission handler — used by checkout.html
+ * Form submission handler — reads cart, sends items[] to Worker
  */
 async function submitCheckout(e) {
   e.preventDefault();
-  const form = document.getElementById('checkout-form');
-  const btn = document.getElementById('checkout-submit');
-  const btnMobile = document.getElementById('checkout-submit-mobile');
-  const errorDiv = document.getElementById('checkout-error');
-  const errorDivMobile = document.getElementById('checkout-error-mobile');
+  var form = document.getElementById('checkout-form');
+  var btn = document.getElementById('checkout-submit');
+  var btnMobile = document.getElementById('checkout-submit-mobile');
+  var errorDiv = document.getElementById('checkout-error');
+  var errorDivMobile = document.getElementById('checkout-error-mobile');
 
-  // Collect form data
-  const data = {
-    sku: currentSku,
-    quantity: currentQuantity,
+  function showError(msg) {
+    if (errorDiv) { errorDiv.textContent = msg; errorDiv.style.display = 'block'; }
+    if (errorDivMobile) { errorDivMobile.textContent = msg; errorDivMobile.style.display = 'block'; }
+  }
+  function hideError() {
+    if (errorDiv) errorDiv.style.display = 'none';
+    if (errorDivMobile) errorDivMobile.style.display = 'none';
+  }
+
+  // Build items from cart
+  var cart = getCart();
+  var items = cart.items.map(function(i) { return { sku: i.sku, quantity: i.quantity }; });
+
+  if (items.length === 0) {
+    showError('Tu carrito esta vacio.');
+    return;
+  }
+
+  var data = {
+    items: items,
     name: form.name.value.trim(),
     email: form.email.value.trim(),
     phone: form.phone.value.trim(),
@@ -182,18 +178,8 @@ async function submitCheckout(e) {
     },
     nit: form.nit.value.trim() || 'CF',
     delivery_notes: form.delivery_notes.value.trim(),
-    addons: currentSku === 'NT-02' ? ['NT-03'] : [],
     coupon_code: appliedCoupon ? appliedCoupon.code : '',
   };
-
-  function showError(msg) {
-    if (errorDiv) { errorDiv.textContent = msg; errorDiv.style.display = 'block'; }
-    if (errorDivMobile) { errorDivMobile.textContent = msg; errorDivMobile.style.display = 'block'; }
-  }
-  function hideError() {
-    if (errorDiv) errorDiv.style.display = 'none';
-    if (errorDivMobile) errorDivMobile.style.display = 'none';
-  }
 
   // Basic client-side validation
   if (!data.name || !data.email || !data.phone || !data.address.line1 || !data.address.city || !data.address.department) {
@@ -207,43 +193,33 @@ async function submitCheckout(e) {
   hideError();
 
   try {
-    const res = await fetch(`${WORKER_URL}/api/checkout`, {
+    var res = await fetch(WORKER_URL + '/api/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
 
-    const result = await res.json();
+    var result = await res.json();
 
     if (!res.ok) {
       throw new Error(result.details ? result.details.join('. ') : result.error || 'Error al procesar');
     }
 
     if (result.checkout_url) {
-      // Save order data for Purchase pixel event on gracias.html
-      const product = PRODUCT_INFO[currentSku];
-      const basePrice = product?.price || 0;
-      const subtotal = basePrice * currentQuantity;
-      const isFreeShipping = appliedCoupon && appliedCoupon.type === 'free_shipping';
-      const discount = appliedCoupon && appliedCoupon.type === 'percent'
-        ? Math.round(subtotal * appliedCoupon.discount_percent / 100) : 0;
-      const finalSubtotal = subtotal - discount;
-      // Use pre-discount subtotal for free shipping check
-      const shipping = isFreeShipping ? 0 : calculateShipping(subtotal);
+      // Save order data for Purchase pixel event
+      var totals = getCartTotals();
       localStorage.setItem('ventus_last_order', JSON.stringify({
-        sku: currentSku,
-        product_name: product?.name || '',
-        quantity: currentQuantity,
-        value: finalSubtotal + shipping,
-        price: finalSubtotal,
-        unit_price: basePrice,
-        original_price: subtotal,
-        discount,
-        shipping_waived: isFreeShipping,
+        items: items,
+        value: totals.total,
+        subtotal: totals.subtotal,
+        shipping: totals.shipping,
+        num_items: totals.itemCount,
         coupon: appliedCoupon ? appliedCoupon.code : null,
-        shipping,
         timestamp: Date.now(),
       }));
+
+      // Clear cart before redirect
+      clearCart();
       window.location.href = result.checkout_url;
     } else {
       throw new Error('No se recibio URL de pago');
