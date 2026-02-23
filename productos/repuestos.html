@@ -65,7 +65,7 @@
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
           <span class="cart-badge hidden absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold min-w-[18px] h-[18px] rounded-full flex items-center justify-center leading-none"></span>
         </a>
-        <button onclick="addToCart('NT-03')" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer">Comprar</button>
+        <button onclick="buyProduct('NT-03')" class="btn-ventus text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-pointer">Comprar ahora</button>
       </div>
       <!-- Mobile: cart + hamburger -->
       <div class="flex items-center gap-1 md:hidden">
@@ -86,7 +86,7 @@
         <a href="../nosotros.html" class="block text-gray-900 font-medium py-1 mobile-nav-link">Nosotros</a>
         <a href="../#faq" class="block text-gray-900 font-medium py-1 mobile-nav-link">Preguntas frecuentes</a>
         <hr class="border-gray-100">
-        <button onclick="addToCart('NT-03')" class="block w-full btn-ventus text-white text-center py-3 rounded-xl font-semibold mobile-nav-link cursor-pointer">Comprar — Q49</button>
+        <button onclick="buyProduct('NT-03')" class="block w-full btn-ventus text-white text-center py-3 rounded-xl font-semibold mobile-nav-link cursor-pointer">Comprar ahora — Q49</button>
       </div>
     </div>
   </nav>
@@ -170,8 +170,12 @@
             </ul>
           </div>
 
-          <button onclick="addToCart('NT-03')" class="w-full btn-ventus text-white font-semibold py-4 rounded-xl text-lg cursor-pointer mb-3">
-            Comprar — Q49
+          <button onclick="buyProduct('NT-03')" class="w-full btn-ventus text-white font-semibold py-4 rounded-xl text-lg cursor-pointer mb-2">
+            Comprar ahora — Q49
+          </button>
+          <button onclick="addToCart('NT-03')" class="w-full bg-white border-2 border-[#0b3e5d] text-[#0b3e5d] font-semibold py-3 rounded-xl text-sm cursor-pointer mb-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            Agregar al carrito
           </button>
 
           <!-- Guarantee badge -->
@@ -406,7 +410,10 @@
         <p class="text-lg font-bold leading-tight">Q49</p>
       </div>
       <div class="flex gap-2 flex-shrink-0">
-        <button onclick="addToCart('NT-03')" class="btn-ventus text-white font-semibold px-5 py-2.5 rounded-xl cursor-pointer text-sm">Comprar</button>
+        <button onclick="addToCart('NT-03')" class="border border-[#0b3e5d] text-[#0b3e5d] bg-white p-2.5 rounded-xl cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+        </button>
+        <button onclick="buyProduct('NT-03')" class="btn-ventus text-white font-semibold px-5 py-2.5 rounded-xl cursor-pointer text-sm">Comprar</button>
         <a href="nose-tape-premium.html" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1 no-underline transition-colors">Premium Q149</a>
       </div>
     </div>
@@ -512,7 +519,7 @@
     document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => { mobileMenu.classList.add('hidden'); iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden'); }));
 
     const stickyCta = document.getElementById('sticky-cta');
-    const mainBuyBtn = document.querySelector('button[onclick="addToCart(\'NT-03\')"]');
+    const mainBuyBtn = document.querySelector('button[onclick="buyProduct(\'NT-03\')"]');
     if (stickyCta && mainBuyBtn) {
       new IntersectionObserver(([e]) => { stickyCta.classList.toggle('sticky-cta-hidden', e.isIntersecting); stickyCta.classList.toggle('sticky-cta-visible', !e.isIntersecting); }, { threshold: 0 }).observe(mainBuyBtn);
     }
