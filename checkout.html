@@ -399,7 +399,7 @@
         link.setAttribute('onclick', "addToCart('" + s + "'); renderCartItems();");
         link.innerHTML =
           '<div class="w-12 h-12 bg-[#f4ede5] rounded-lg flex items-center justify-center flex-shrink-0">' +
-            '<img src="/assets/img/' + s.toLowerCase() + '/frente.webp" alt="' + p.name + '" class="max-h-full max-w-full object-contain">' +
+            '<img src="' + (CART_PRODUCTS[s] ? CART_PRODUCTS[s].img : '/assets/img/' + s.toLowerCase() + '/frente.webp') + '" alt="' + p.name + '" class="max-h-full max-w-full object-contain">' +
           '</div>' +
           '<div class="flex-1 min-w-0">' +
             '<p class="text-sm font-medium truncate">' + p.name + '</p>' +
