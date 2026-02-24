@@ -58,7 +58,7 @@
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
   <!-- ═══ SHIPPING BANNER ═══ -->
-  <div class="shipping-banner"><a href="productos/bundle.html" class="text-white hover:text-white/90 transition-colors">Bundle: envío GRATIS + ahorrás Q31 →</a></div>
+  <div class="shipping-banner"><a href="productos/bundle.html" class="text-white hover:text-white/90 transition-colors">Envío Q35 · GRATIS en Bundle y Premium · Bundle Q169: ahorrás Q31 →</a></div>
 
   <!-- ═══ NAV ═══ -->
   <nav id="main-nav" class="fixed top-[36px] w-full z-50 transition-all duration-300 bg-transparent">
@@ -122,29 +122,33 @@
 
     <div class="max-w-6xl mx-auto relative">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Product visual (mobile first) -->
+        <div class="flex justify-center order-first lg:order-last">
+          <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS — Mouth Tape + Nose Tape" class="max-w-[200px] sm:max-w-[280px] lg:max-w-sm animate-float drop-shadow-2xl" loading="eager">
+        </div>
+
         <!-- Text -->
-        <div class="text-center lg:text-left">
+        <div class="text-center lg:text-left order-last lg:order-first">
           <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 text-sm">
             <span class="w-2 h-2 bg-green-400 rounded-full"></span>
             <span class="text-blue-100">Primera marca guatemalteca de cintas nasales</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight">
-            Respirá Bien,<br>
-            <span class="text-blue-300">Viví Mejor</span>
+          <h1 id="hero-h1" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight">
+            Respirá mejor de día.<br>
+            <span class="text-blue-300">Dormí mejor de noche.</span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-blue-100/90 max-w-lg mb-8 leading-relaxed mx-auto lg:mx-0">
-            Miles de personas ya duermen mejor con una simple cinta nasal. Mejorá tu sueño, rendimiento y bienestar — naturalmente.
+          <p id="hero-subtitle" class="text-lg sm:text-xl text-blue-100/90 max-w-lg mb-8 leading-relaxed mx-auto lg:mx-0">
+            Mouth Tape + Nose Tape: el combo completo para optimizar tu respiración — por Q5.63 al día.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-            <a href="productos/mouth-tape.html" class="bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-lg text-center">
-              Conocé el Mouth Tape
-            </a>
-            <a href="https://wa.me/50231015202?text=Hola%20VENTUS%2C%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all text-center inline-flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Escribinos
+            <button onclick="addToCart('BUNDLE')" class="btn-orange font-semibold px-8 py-3.5 rounded-full hover:shadow-lg text-center text-white">
+              Llevá el Bundle — Q169 envío gratis
+            </button>
+            <a href="#productos" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all text-center inline-flex items-center justify-center gap-2">
+              O elegí un producto individual →
             </a>
           </div>
 
@@ -170,16 +174,11 @@
             <span class="text-sm text-blue-200/80">Recomendado por especialistas en sueño y respiración</span>
           </div>
 
-          <!-- Mini testimonial in hero -->
-          <div class="mt-6 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 max-w-md mx-auto lg:mx-0">
-            <p class="text-sm text-blue-100/90 italic leading-relaxed">"Desde que uso el mouth tape, duermo mucho mejor y despierto con mas energia."</p>
-            <p class="text-xs text-blue-200/60 mt-1.5">— Carlos M., Zona 10</p>
+          <!-- Guarantee badge -->
+          <div class="mt-6 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 max-w-md mx-auto lg:mx-0 flex items-center gap-3">
+            <svg class="w-8 h-8 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <p class="text-sm text-blue-100/90 leading-relaxed">Satisfacción garantizada o te devolvemos tu dinero</p>
           </div>
-        </div>
-
-        <!-- Product visual -->
-        <div class="flex justify-center">
-          <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS — Mouth Tape + Nose Tape" class="max-w-[200px] sm:max-w-[280px] lg:max-w-sm animate-float drop-shadow-2xl" loading="lazy">
         </div>
       </div>
     </div>
@@ -204,6 +203,52 @@
         <div>
           <p class="text-2xl font-bold ventus-blue">24h</p>
           <p class="text-xs text-gray-500 mt-0.5">envío en Ciudad de Guatemala</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ANTES / DESPUÉS ═══ -->
+  <section class="py-16 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">El cambio</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">Antes vs. Después de VENTUS</h2>
+      </div>
+      <div class="before-after-grid fade-up">
+        <div class="before-card">
+          <p class="before-label">Antes — Sin VENTUS</p>
+          <ul class="space-y-1">
+            <li>
+              <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              Boca seca al despertar, ronquidos
+            </li>
+            <li>
+              <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              Te falta aire en los últimos rounds del entreno
+            </li>
+            <li>
+              <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              Cansancio constante, bajo rendimiento
+            </li>
+          </ul>
+        </div>
+        <div class="after-card">
+          <p class="after-label">Después — Con VENTUS</p>
+          <ul class="space-y-1">
+            <li>
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              8hrs de sueño profundo, noches silenciosas
+            </li>
+            <li>
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              15% más absorción de oxígeno entrenando
+            </li>
+            <li>
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Energía sostenida de día y de noche
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -262,104 +307,146 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- MT-01 -->
-        <a href="productos/mouth-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white ring-2 ring-blue-400 relative fade-up" style="transition-delay: 0ms">
+        <div class="card-product rounded-2xl overflow-hidden bg-white ring-2 ring-blue-400 relative fade-up" style="transition-delay: 0ms">
           <div class="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Más vendido</div>
-          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
-            <img src="assets/img/mt-01/frente.webp" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
-          </div>
-          <div class="p-5">
-            <p class="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-1.5">Sueño</p>
-            <h3 class="font-bold text-lg mb-1">Mouth Tape</h3>
-            <p class="text-sm text-gray-500 mb-2">30 cintas — 1 mes de uso</p>
-            <div class="flex flex-wrap gap-1.5 mb-3">
-              <span class="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Para dormir</span>
-              <span class="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Anti-ronquido</span>
-              <span class="text-[10px] font-medium bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">+Q35 envio</span>
+          <a href="productos/mouth-tape.html" class="block">
+            <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
+              <img src="assets/img/mt-01/frente.webp" alt="Mouth Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
             </div>
-            <div class="flex items-center justify-between">
-              <div>
-                <span class="text-xl font-bold">Q100</span>
-                <span class="text-xs text-green-600 font-medium block">Q3.33/noche</span>
+            <div class="px-5 pt-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-blue-600 mb-1.5">Sueño</p>
+              <h3 class="font-bold text-lg mb-1">Mouth Tape</h3>
+              <p class="text-sm text-gray-500 mb-2">30 cintas — 1 mes de uso</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Para dormir</span>
+                <span class="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Anti-ronquido</span>
+                <span class="text-[10px] font-medium bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">+Q35 envío</span>
               </div>
-              <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Probalo</span>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xl font-bold">Q100</span>
+                  <span class="text-xs text-green-600 font-medium block">Q3.33/noche</span>
+                </div>
+              </div>
             </div>
+          </a>
+          <div class="px-5 pb-5 pt-3">
+            <button onclick="addToCart('MT-01')" class="btn-ventus w-full py-2.5 rounded-xl font-semibold text-sm cursor-pointer">Agregar al carrito</button>
           </div>
-        </a>
+        </div>
 
         <!-- NT-01 -->
-        <a href="productos/nose-tape.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 80ms">
-          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
-            <img src="assets/img/nt-01/frente.webp" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
-          </div>
-          <div class="p-5">
-            <p class="text-xs font-semibold tracking-wider uppercase text-green-600 mb-1.5">Respiración</p>
-            <h3 class="font-bold text-lg mb-1">Nose Tape</h3>
-            <p class="text-sm text-gray-500 mb-2">30 tiras — 1 mes de uso</p>
-            <div class="flex flex-wrap gap-1.5 mb-3">
-              <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Deporte</span>
-              <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Respiración nasal</span>
-              <span class="text-[10px] font-medium bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">+Q35 envio</span>
+        <div class="card-product rounded-2xl overflow-hidden bg-white fade-up" style="transition-delay: 80ms">
+          <a href="productos/nose-tape.html" class="block">
+            <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
+              <img src="assets/img/nt-01/frente.webp" alt="Nose Tape VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xl font-bold">Q100</span>
-              <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
+            <div class="px-5 pt-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-green-600 mb-1.5">Respiración</p>
+              <h3 class="font-bold text-lg mb-1">Nose Tape</h3>
+              <p class="text-sm text-gray-500 mb-2">30 tiras — 1 mes de uso</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Deporte</span>
+                <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Respiración nasal</span>
+                <span class="text-[10px] font-medium bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">+Q35 envío</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold">Q100</span>
+              </div>
             </div>
+          </a>
+          <div class="px-5 pb-5 pt-3">
+            <button onclick="addToCart('NT-01')" class="btn-ventus w-full py-2.5 rounded-xl font-semibold text-sm cursor-pointer">Agregar al carrito</button>
           </div>
-        </a>
+        </div>
 
         <!-- NT-02 -->
-        <a href="productos/nose-tape-premium.html" class="card-product rounded-2xl overflow-hidden block bg-white fade-up" style="transition-delay: 160ms">
-          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
-            <img src="assets/img/nt-02/frente.webp" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
-          </div>
-          <div class="p-5">
-            <p class="text-xs font-semibold tracking-wider uppercase text-purple-600 mb-1.5">Premium</p>
-            <h3 class="font-bold text-lg mb-1">Nose Tape Premium</h3>
-            <p class="text-sm text-gray-500 mb-2">30 tiras — adhesivo mejorado</p>
-            <div class="flex flex-wrap gap-1.5 mb-3">
-              <span class="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Ejercicio intenso</span>
-              <span class="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Anti-sudor</span>
-              <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Envio gratis</span>
+        <div class="card-product rounded-2xl overflow-hidden bg-white fade-up" style="transition-delay: 160ms">
+          <a href="productos/nose-tape-premium.html" class="block">
+            <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
+              <img src="assets/img/nt-02/frente.webp" alt="Nose Tape Premium VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
             </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xl font-bold">Q149</span>
-              <span class="text-xs btn-ventus px-3.5 py-1.5 rounded-full font-medium">Ver más</span>
+            <div class="px-5 pt-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-purple-600 mb-1.5">Premium</p>
+              <h3 class="font-bold text-lg mb-1">Nose Tape Premium</h3>
+              <p class="text-sm text-gray-500 mb-2">30 tiras — adhesivo mejorado</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Ejercicio intenso</span>
+                <span class="text-[10px] font-medium bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full">Anti-sudor</span>
+                <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Envío gratis</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold">Q149</span>
+              </div>
             </div>
+          </a>
+          <div class="px-5 pb-5 pt-3">
+            <button onclick="addToCart('NT-02')" class="btn-ventus w-full py-2.5 rounded-xl font-semibold text-sm cursor-pointer">Agregar al carrito</button>
           </div>
-        </a>
+        </div>
 
         <!-- BUNDLE -->
-        <a href="productos/bundle.html" class="card-product rounded-2xl overflow-hidden block bg-white ring-2 ring-orange-400 relative fade-up" style="transition-delay: 240ms">
+        <div class="card-product rounded-2xl overflow-hidden bg-white ring-2 ring-orange-400 relative fade-up" style="transition-delay: 240ms">
           <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Mejor valor</div>
-          <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
-            <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
-          </div>
-          <div class="p-5">
-            <p class="text-xs font-semibold tracking-wider uppercase text-orange-600 mb-1.5">Combo</p>
-            <h3 class="font-bold text-lg mb-1">Bundle Completo</h3>
-            <p class="text-sm text-gray-500 mb-2">Mouth Tape + Nose Tape</p>
-            <div class="flex flex-wrap gap-1.5 mb-3">
-              <span class="text-[10px] font-medium bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">Sueño + deporte</span>
-              <span class="text-[10px] font-medium bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">Ahorrá Q31</span>
-              <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Envio gratis</span>
+          <a href="productos/bundle.html" class="block">
+            <div class="aspect-square bg-[#f4ede5] flex items-center justify-center p-6 img-zoom-container">
+              <img src="assets/img/bundle/bundle.webp" alt="Bundle VENTUS" class="max-h-full max-w-full object-contain img-zoom" loading="lazy">
             </div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-baseline gap-2">
-                <span class="text-xl font-bold">Q169</span>
-                <span class="text-sm text-gray-400 line-through">Q200</span>
+            <div class="px-5 pt-5">
+              <p class="text-xs font-semibold tracking-wider uppercase text-orange-600 mb-1.5">Combo</p>
+              <h3 class="font-bold text-lg mb-1">Bundle Completo</h3>
+              <p class="text-sm text-gray-500 mb-2">Mouth Tape + Nose Tape</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-medium bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">Sueño + deporte</span>
+                <span class="text-[10px] font-medium bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">Ahorrá Q31</span>
+                <span class="text-[10px] font-medium bg-green-50 text-green-700 px-2 py-0.5 rounded-full">Envío gratis</span>
               </div>
-              <span class="text-xs btn-orange px-3.5 py-1.5 rounded-full font-medium">Ahorrá Q31</span>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-xl font-bold">Q169</span>
+                  <span class="text-sm text-gray-400 line-through">Q200</span>
+                </div>
+              </div>
             </div>
+          </a>
+          <div class="px-5 pb-5 pt-3">
+            <button onclick="addToCart('BUNDLE')" class="btn-orange w-full py-2.5 rounded-xl font-semibold text-sm cursor-pointer">Agregar Bundle</button>
           </div>
-        </a>
+        </div>
 
       </div>
 
       <div class="text-center mt-10 fade-up">
-        <a href="productos/bundle.html" class="inline-flex items-center gap-2 text-sm font-semibold ventus-blue hover:underline transition-colors">
+        <button onclick="addToCart('BUNDLE')" class="inline-flex items-center gap-2 text-sm font-semibold ventus-blue hover:underline transition-colors cursor-pointer">
           Llevá el Bundle — Q169 con envío gratis
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </a>
+        </button>
+      </div>
+
+      <!-- Guarantee + Trust Badges -->
+      <div class="mt-12 text-center fade-up">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <svg class="w-8 h-8 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <p class="text-sm font-semibold text-gray-700">Satisfacción garantizada o te devolvemos tu dinero</p>
+        </div>
+        <div class="flex items-center justify-center gap-6 text-xs text-gray-400">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-6 h-4" viewBox="0 0 24 16" fill="none"><rect width="24" height="16" rx="2" fill="#1A1F71"/><text x="12" y="11" font-size="7" font-weight="bold" text-anchor="middle" fill="white">VISA</text></svg>
+            Visa
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-6 h-4" viewBox="0 0 24 16" fill="none"><rect width="24" height="16" rx="2" fill="#EB001B"/><circle cx="9" cy="8" r="5" fill="#EB001B"/><circle cx="15" cy="8" r="5" fill="#F79E1B"/><path d="M12 4.27A5 5 0 0012 11.73 5 5 0 0012 4.27z" fill="#FF5F00"/></svg>
+            Mastercard
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Recurrente
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            Boxful
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -388,6 +475,34 @@
           </div>
           <h3 class="font-bold text-xl mb-2">100% natural</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Sin medicamentos, sin químicos. Un hábito simple respaldado por ciencia que transforma tu bienestar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OBJECIONES ═══ -->
+  <section class="py-16 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10 fade-up">
+        <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Dudas comunes</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">Antes de decidir</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-up">
+        <div class="objection-card">
+          <p class="objection-q">"¿Me voy a ahogar con el Mouth Tape?"</p>
+          <p class="objection-a">No. El adhesivo de grado médico se despega solo si necesitás abrir la boca. Diseñado para que respires seguro toda la noche.</p>
+        </div>
+        <div class="objection-card">
+          <p class="objection-q">"¿Se me cae el Nose Tape con el sudor?"</p>
+          <p class="objection-a">El NT Premium está diseñado para ejercicio intenso. Resiste hasta sesiones de 2+ horas sin despegarse.</p>
+        </div>
+        <div class="objection-card">
+          <p class="objection-q">"¿Q169 es mucho por el Bundle?"</p>
+          <p class="objection-a">Q5.63 al día. Menos que un café. Y te llevás los dos: sueño + rendimiento por un mes completo, con envío gratis.</p>
+        </div>
+        <div class="objection-card">
+          <p class="objection-q">"¿Y si no me gusta?"</p>
+          <p class="objection-a">Garantía de satisfacción. Si no te convence, te devolvemos tu dinero. Sin preguntas.</p>
         </div>
       </div>
     </div>
@@ -476,7 +591,7 @@
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12 fade-up">
         <p class="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">Testimonios</p>
-        <h2 class="text-3xl sm:text-4xl font-bold">Lo que dicen quienes lo probaron</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold">Lo que nos cuentan</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
@@ -495,7 +610,7 @@
             <div>
               <p class="font-semibold text-sm">Carlos M.</p>
               <p class="text-xs text-gray-400">Empresario — Zona 10, Guatemala</p>
-              <p class="text-xs text-green-600 flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compra verificada — Mouth Tape</p>
+              <p class="text-xs text-blue-600 font-medium mt-1">Mouth Tape</p>
             </div>
           </div>
         </div>
@@ -515,7 +630,7 @@
             <div>
               <p class="font-semibold text-sm">Andrea R.</p>
               <p class="text-xs text-gray-400">Corredora — Cayalá, Guatemala</p>
-              <p class="text-xs text-green-600 flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compra verificada — Nose Tape</p>
+              <p class="text-xs text-green-600 font-medium mt-1">Nose Tape</p>
             </div>
           </div>
         </div>
@@ -535,54 +650,12 @@
             <div>
               <p class="font-semibold text-sm">Roberto L.</p>
               <p class="text-xs text-gray-400">CrossFitter — Zona 14, Guatemala</p>
-              <p class="text-xs text-green-600 flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compra verificada — Bundle</p>
+              <p class="text-xs text-orange-600 font-medium mt-1">Bundle</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Row 2: 2 more testimonials -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto fade-up">
-        <!-- Testimonial 4 -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-          <div class="flex gap-0.5 mb-4">
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Soy dentista y recomiendo la respiración nasal a mis pacientes. VENTUS es exactamente lo que necesitaba — calidad médica y fácil de usar."</p>
-          <div class="flex items-center gap-3">
-            <div class="avatar-initials" style="background-color: #7c3aed;">MV</div>
-            <div>
-              <p class="font-semibold text-sm">Dra. Maria V.</p>
-              <p class="text-xs text-gray-400">Odontologa — Antigua Guatemala</p>
-              <p class="text-xs text-green-600 flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compra verificada — Mouth Tape</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 5 -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-          <div class="flex gap-0.5 mb-4">
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Lo probé por curiosidad y ahora no puedo dormir sin él. La calidad del adhesivo es increíble — no irrita nada."</p>
-          <div class="flex items-center gap-3">
-            <div class="avatar-initials" style="background-color: #2d5289;">JA</div>
-            <div>
-              <p class="font-semibold text-sm">Jose A.</p>
-              <p class="text-xs text-gray-400">Ingeniero — Quetzaltenango</p>
-              <p class="text-xs text-green-600 flex items-center gap-1 mt-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Compra verificada — Mouth Tape</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -678,15 +751,14 @@
   <!-- ═══ CTA FINAL ═══ -->
   <section class="py-20 sm:py-28 px-4 sm:px-6 hero-gradient text-white">
     <div class="max-w-3xl mx-auto text-center fade-up">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Tu mejor noche de sueño empieza hoy</h2>
-      <p class="text-blue-200 mb-8 text-lg">Envío a toda Guatemala. Pagá con tarjeta de crédito o débito.</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Tu mejor respiración empieza hoy</h2>
+      <p class="text-blue-200 mb-8 text-lg">Envío gratis en Bundle y Premium. Pagá con tarjeta de crédito o débito.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="productos/mouth-tape.html" class="bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-lg">
-          Probá el Mouth Tape — Q100
-        </a>
-        <a href="https://wa.me/50231015202" target="_blank" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Escribinos
+        <button onclick="addToCart('BUNDLE')" class="bg-white text-gray-900 font-semibold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-lg cursor-pointer">
+          Llevá el Bundle — Q169 envío gratis
+        </button>
+        <a href="#productos" class="border border-white/25 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+          Ver todos los productos
         </a>
       </div>
     </div>
@@ -779,11 +851,11 @@
   <!-- ═══ STICKY MOBILE CTA ═══ -->
   <div class="sticky-mobile-cta md:hidden" id="sticky-cta">
     <div class="flex gap-2">
-      <a href="productos/mouth-tape.html" class="btn-ventus flex-1 text-center py-3 rounded-xl font-semibold text-sm">
-        Mouth Tape — Q100
-      </a>
-      <a href="productos/bundle.html" class="bg-orange-500 hover:bg-orange-600 text-white flex-1 text-center py-3 rounded-xl font-semibold text-sm transition-colors">
-        Bundle Q169 — Envío gratis
+      <button onclick="addToCart('BUNDLE')" class="btn-orange flex-1 text-center py-3 rounded-xl font-semibold text-sm cursor-pointer">
+        Bundle Q169
+      </button>
+      <a href="#productos" class="btn-ventus flex-1 text-center py-3 rounded-xl font-semibold text-sm">
+        Ver productos
       </a>
     </div>
   </div>
@@ -795,14 +867,15 @@
       <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
         <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
       </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-2">El Bundle tiene envío GRATIS</h3>
-      <p class="text-sm text-gray-500 mb-6 leading-relaxed">Llevá Mouth Tape + Nose Tape por Q169 — ahorrás Q31 y el envío es gratis.</p>
-      <a href="productos/bundle.html" onclick="closeExitPopup()" class="btn-orange block w-full text-white font-semibold py-3.5 rounded-xl text-sm mb-3">
-        Ver Bundle — Q169
+      <h3 class="text-xl font-bold text-gray-900 mb-2">Antes de irte...</h3>
+      <p class="text-sm text-gray-500 mb-6 leading-relaxed">¿Tenés dudas? Escribinos y te ayudamos a elegir el producto ideal para vos.</p>
+      <a href="https://wa.me/50231015202?text=Hola%20VENTUS%2C%20tengo%20una%20duda" target="_blank" onclick="closeExitPopup()" class="btn-ventus flex items-center justify-center gap-2 w-full text-white font-semibold py-3.5 rounded-xl text-sm mb-3">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribinos por WhatsApp
       </a>
-      <a href="productos/mouth-tape.html" onclick="closeExitPopup()" class="block text-sm text-gray-400 hover:text-gray-600 transition-colors">
-        Solo quiero el Mouth Tape
-      </a>
+      <button onclick="addToCart('BUNDLE'); closeExitPopup();" class="block w-full text-sm text-gray-500 hover:text-gray-700 transition-colors cursor-pointer py-2">
+        O llevá el Bundle por Q169 con envío gratis
+      </button>
     </div>
   </div>
 
@@ -906,11 +979,15 @@
     // ── Sticky Mobile CTA ──
     const stickyCta = document.getElementById('sticky-cta');
     const productosSection = document.getElementById('productos');
+    const whatsappBtn = document.getElementById('whatsapp-btn');
     if (stickyCta && productosSection) {
       const stickyObserver = new IntersectionObserver(([entry]) => {
-        stickyCta.classList.toggle('visible', !entry.isIntersecting);
+        const show = !entry.isIntersecting;
+        stickyCta.classList.toggle('visible', show);
+        if (whatsappBtn) whatsappBtn.style.bottom = show ? '80px' : '24px';
       }, { threshold: 0.1 });
       stickyObserver.observe(productosSection);
+      if (whatsappBtn) whatsappBtn.style.transition = 'bottom 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease';
     }
 
     // ── Exit Intent Popup ──
@@ -962,6 +1039,22 @@
       });
       return false;
     }
+    // ── UTM Hero Variants ──
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utm = (params.get('utm_content') || '').toLowerCase();
+      var h1 = document.getElementById('hero-h1');
+      var sub = document.getElementById('hero-subtitle');
+      if (!h1 || !sub) return;
+
+      if (/athlete|crossfit|sport|gym|deporte/.test(utm)) {
+        h1.innerHTML = '¿Te falta aire<br><span class="text-blue-300">en los últimos rounds?</span>';
+        sub.textContent = 'El Nose Tape abre tus fosas nasales para máxima oxigenación. Combinalo con el Mouth Tape para recuperarte mejor de noche.';
+      } else if (/ronquido|pareja|snore|sueno|sleep/.test(utm)) {
+        h1.innerHTML = '¿Tu pareja se queja<br><span class="text-blue-300">de tus ronquidos?</span>';
+        sub.textContent = 'El Mouth Tape cierra tu boca suavemente mientras dormís. Agregá el Nose Tape para respiración nasal completa — de día y de noche.';
+      }
+    })();
   </script>
 
   <!-- ═══ Schema.org ═══ -->
@@ -1043,7 +1136,7 @@
   }
   </script>
   <script src="js/cart.js"></script>
-  <script src="js/social-proof.js" defer></script>
+  <script src="js/recurrente.js"></script>
 
 </body>
 </html>
