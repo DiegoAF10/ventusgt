@@ -162,13 +162,12 @@ body {
 
 /* ── Nav Logo ─────────────────────────────────────── */
 .nav-logo-img {
-  height: 40px;
+  height: 36px;
   width: auto;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  transition: filter 0.3s ease;
 }
 .nav-logo-img.nav-logo-white {
   filter: brightness(0) invert(1);
-  opacity: 0.95;
 }
 
 /* ── Nav scroll state ─────────────────────────────── */

@@ -12,7 +12,7 @@ const CART_PRODUCTS = {
   'MT-01': { name: 'Mouth Tape VENTUS', price: 100, img: '/assets/img/mt-01/frente.webp' },
   'NT-01': { name: 'Nose Tape VENTUS', price: 100, img: '/assets/img/nt-01/frente.webp' },
   'NT-02': { name: 'Nose Tape VENTUS — Edicion Premium', price: 149, img: '/assets/img/nt-02/frente.webp' },
-  'NT-03': { name: 'Repuestos VENTUS — Pimple Patch', price: 49, img: '/assets/img/nt-02/frente.webp' },
+  'NT-03': { name: 'Repuestos VENTUS — Pimple Patch', price: 49, img: '/assets/img/nt-03/frente.webp' },
   'BUNDLE': { name: 'Bundle VENTUS — Mouth + Nose Tape', price: 169, img: '/assets/img/bundle/bundle.webp' },
 };
 
