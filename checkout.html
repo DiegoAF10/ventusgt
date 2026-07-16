@@ -19,7 +19,7 @@
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCJW3VE4CW"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YCJW3VE4CW');</script>
-  <script src="/js/pixel.js?v=2" defer></script>
+  <script src="/js/pixel.js?v=3" defer></script>
 </head>
 <body class="bg-[#f8fafc] text-gray-900">
 
@@ -113,6 +113,31 @@
               <div class="bg-white rounded-2xl p-6 border border-gray-200 space-y-6">
 
                 <div class="checkout-section">
+                  <p class="checkout-section-label">Metodo de pago</p>
+                  <div class="space-y-2">
+                    <label id="ch-pm-card-label" class="flex items-center gap-3 p-3 rounded-xl border-2 border-[#0b3e5d] bg-[#0b3e5d]/5 cursor-pointer transition-colors">
+                      <input type="radio" name="payment_method" value="card" id="ch-pm-card" checked class="w-4 h-4 accent-[#0b3e5d] flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-semibold text-gray-900">Tarjeta (Recurrente)</p>
+                        <p class="text-xs text-gray-500">Pago inmediato y seguro, procesado por Recurrente.</p>
+                      </div>
+                      <div class="flex items-center gap-1.5 flex-shrink-0">
+                        <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
+                        <svg class="h-4" viewBox="0 0 32 16" fill="none"><circle cx="11" cy="8" r="7" fill="#EB001B"/><circle cx="21" cy="8" r="7" fill="#F79E1B"/><path d="M16 2.5a7 7 0 010 11" fill="#FF5F00"/></svg>
+                      </div>
+                    </label>
+                    <label id="ch-pm-cod-label" class="flex items-center gap-3 p-3 rounded-xl border-2 border-gray-200 cursor-pointer transition-colors">
+                      <input type="radio" name="payment_method" value="cod_whatsapp" id="ch-pm-cod" class="w-4 h-4 accent-[#0b3e5d] flex-shrink-0">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-semibold text-gray-900">Contra entrega (COD)</p>
+                        <p class="text-xs text-gray-500">Coordinamos tu pedido por WhatsApp y pagas cuando lo recibis.</p>
+                      </div>
+                      <svg class="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="checkout-section">
                   <p class="checkout-section-label">Datos personales</p>
                   <div class="checkout-grid">
                     <div class="checkout-field checkout-full">
@@ -191,8 +216,9 @@
                 <button type="submit" id="checkout-submit-mobile" class="checkout-btn">
                   Continuar al pago
                 </button>
-                <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
-                <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+                <p class="checkout-disclaimer ch-pm-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
+                <p class="checkout-disclaimer ch-cod-note text-green-600 hidden">Te abrimos WhatsApp con tu pedido. Si no se abrio, escribinos directo al +502 3101 5202.</p>
+                <div class="ch-pm-badges flex flex-wrap items-center justify-center gap-3 mt-4">
                   <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
                     <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
                     <svg class="h-4" viewBox="0 0 32 16" fill="none"><circle cx="11" cy="8" r="7" fill="#EB001B"/><circle cx="21" cy="8" r="7" fill="#F79E1B"/><path d="M16 2.5a7 7 0 010 11" fill="#FF5F00"/></svg>
@@ -239,8 +265,9 @@
                   <button type="submit" form="checkout-form" id="checkout-submit" class="checkout-btn">
                     Continuar al pago
                   </button>
-                  <p class="checkout-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
-                  <div class="flex flex-wrap items-center justify-center gap-3 mt-4">
+                  <p class="checkout-disclaimer ch-pm-disclaimer">Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.</p>
+                  <p class="checkout-disclaimer ch-cod-note text-green-600 hidden">Te abrimos WhatsApp con tu pedido. Si no se abrio, escribinos directo al +502 3101 5202.</p>
+                  <div class="ch-pm-badges flex flex-wrap items-center justify-center gap-3 mt-4">
                     <div class="flex items-center gap-2 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg">
                       <svg class="h-4" viewBox="0 0 48 16" fill="none"><rect width="48" height="16" rx="2" fill="#1A1F71"/><text x="24" y="11" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="system-ui">VISA</text></svg>
                       <svg class="h-4" viewBox="0 0 32 16" fill="none"><circle cx="11" cy="8" r="7" fill="#EB001B"/><circle cx="21" cy="8" r="7" fill="#F79E1B"/><path d="M16 2.5a7 7 0 010 11" fill="#FF5F00"/></svg>
@@ -259,8 +286,8 @@
                   <div class="flex items-center gap-3">
                     <svg class="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     <div>
-                      <p class="text-sm font-medium">Pago 100% seguro</p>
-                      <p class="text-xs text-gray-500">Procesado por Recurrente con cifrado SSL</p>
+                      <p class="text-sm font-medium" id="ch-trust-payment-title">Pago 100% seguro</p>
+                      <p class="text-xs text-gray-500" id="ch-trust-payment-desc">Procesado por Recurrente con cifrado SSL</p>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
@@ -319,8 +346,8 @@
     })();
   </script>
 
-  <script src="js/cart.js?v=3"></script>
-  <script src="js/recurrente.js?v=5"></script>
+  <script src="js/cart.js?v=4"></script>
+  <script src="js/recurrente.js?v=6"></script>
 
   <script>
     var PRODUCT_DESCS = {
@@ -533,6 +560,64 @@
         msg.className = 'text-xs mt-1 text-red-500';
       }
     }
+
+    // ── Payment method UI (card vs. COD/WhatsApp) ──
+    (function() {
+      var cardLabel = document.getElementById('ch-pm-card-label');
+      var codLabel = document.getElementById('ch-pm-cod-label');
+      var cardRadio = document.getElementById('ch-pm-card');
+      var codRadio = document.getElementById('ch-pm-cod');
+      var submitBtns = [document.getElementById('checkout-submit'), document.getElementById('checkout-submit-mobile')];
+      var pmDisclaimers = document.querySelectorAll('.ch-pm-disclaimer');
+      var pmBadges = document.querySelectorAll('.ch-pm-badges');
+      var codNotes = document.querySelectorAll('.ch-cod-note');
+      var trustTitle = document.getElementById('ch-trust-payment-title');
+      var trustDesc = document.getElementById('ch-trust-payment-desc');
+
+      function renderPaymentMethodUI() {
+        var isCod = codRadio.checked;
+
+        if (cardLabel) {
+          cardLabel.classList.toggle('border-[#0b3e5d]', !isCod);
+          cardLabel.classList.toggle('bg-[#0b3e5d]/5', !isCod);
+          cardLabel.classList.toggle('border-gray-200', isCod);
+        }
+        if (codLabel) {
+          codLabel.classList.toggle('border-[#0b3e5d]', isCod);
+          codLabel.classList.toggle('bg-[#0b3e5d]/5', isCod);
+          codLabel.classList.toggle('border-gray-200', !isCod);
+        }
+
+        submitBtns.forEach(function(btn) {
+          if (!btn || btn.disabled) return;
+          btn.textContent = isCod ? 'Continuar por WhatsApp' : 'Continuar al pago';
+        });
+
+        pmDisclaimers.forEach(function(el) {
+          el.textContent = isCod
+            ? 'Te vamos a escribir por WhatsApp para coordinar el pago contra entrega.'
+            : 'Seras redirigido a Recurrente para completar el pago con tarjeta de forma segura.';
+        });
+
+        pmBadges.forEach(function(el) { el.classList.toggle('hidden', isCod); });
+        codNotes.forEach(function(el) { el.classList.add('hidden'); }); // reset on method change
+
+        if (trustTitle && trustDesc) {
+          trustTitle.textContent = isCod ? 'Pago contra entrega' : 'Pago 100% seguro';
+          trustDesc.textContent = isCod ? 'Coordinamos el cobro por WhatsApp al recibir tu pedido' : 'Procesado por Recurrente con cifrado SSL';
+        }
+      }
+
+      if (cardRadio) cardRadio.addEventListener('change', renderPaymentMethodUI);
+      if (codRadio) codRadio.addEventListener('change', renderPaymentMethodUI);
+
+      // Shown when recurrente.js opens the WhatsApp tab for the COD flow
+      window.addEventListener('ventusCodCheckoutOpened', function() {
+        codNotes.forEach(function(el) { el.classList.remove('hidden'); });
+      });
+
+      renderPaymentMethodUI();
+    })();
   </script>
 
 </body>

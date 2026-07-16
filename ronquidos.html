@@ -673,11 +673,17 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email })
-      }).then(function() {
+      }).then(function(res) {
+        if (!res.ok) throw new Error('bad_status');
         form.style.display = 'none';
+        success.textContent = 'Listo, te mantendremos informado.';
+        success.className = 'text-xs text-green-400 mt-2';
         success.classList.remove('hidden');
       }).catch(function() {
-        form.style.display = 'none';
+        btn.disabled = false;
+        btn.textContent = 'Suscribirme';
+        success.textContent = 'No pudimos guardar tu correo. Intenta de nuevo en un momento.';
+        success.className = 'text-xs text-red-400 mt-2';
         success.classList.remove('hidden');
       });
       return false;
