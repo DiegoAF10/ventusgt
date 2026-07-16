@@ -1,3 +1,115 @@
 {
-  "articles": []
+  "_note": "Registro de artículos YA publicados en el sitio (ciencia/*.html). NO es una cola de programación futura — el cron de GitHub Actions (publish-articles.yml) está deshabilitado por inactividad y reactivarlo es decisión de Diego. Todos los items abajo tienen published:true porque ya están en vivo en el repo.",
+  "articles": [
+    {
+      "slug": "efecto-bohr-respiracion-nasal-ciencia",
+      "title": "El Efecto Bohr: Por qué respirar menos oxigena más",
+      "description": "Descubre la paradoja fisiológica: por qué la retención de CO2 a través de la nariz es la clave para que tus músculos reciban más oxígeno.",
+      "category": "Rendimiento",
+      "read_time": 7,
+      "image": "efecto-bohr",
+      "publish_date": "2026-02-11",
+      "published": true
+    },
+    {
+      "slug": "5-senales-respirar-boca-dormir",
+      "title": "5 señales de que respirás por la boca al dormir",
+      "description": "Cinco señales que indican que estás respirando por la boca mientras dormís, explicadas con ciencia — y qué podés hacer para que tu nariz vuelva a hacer su trabajo.",
+      "category": "Sueño",
+      "read_time": 6,
+      "image": "5-senales-boca-abierta",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "por-que-te-despertas-con-la-boca-seca",
+      "title": "Por qué te despertás con la boca seca",
+      "description": "La boca seca al despertar no es solo sed. Te explicamos qué dice la ciencia sobre la respiración bucal nocturna y el pH de tu boca.",
+      "category": "Sueño",
+      "read_time": 6,
+      "image": "boca-seca-despertar",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "ronquidos-causas-soluciones-sin-medicamentos",
+      "title": "Ronquidos: por qué pasan y qué hacer sin medicamentos",
+      "description": "Qué causa mecánicamente el ronquido, qué dice la evidencia sobre alternativas sin medicamentos, y cuándo es momento de consultar a un médico.",
+      "category": "Sueño",
+      "read_time": 7,
+      "image": "ronquidos-sin-medicamentos",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "mouth-taping-guia-primera-semana",
+      "title": "Mouth taping: guía segura para tu primera semana",
+      "description": "Qué es el mouth taping, qué dice la ciencia, cuándo NO hacerlo, y qué esperar noche a noche en tu primera semana. Guía práctica y honesta.",
+      "category": "Sueño",
+      "read_time": 8,
+      "image": "mouth-taping-guia",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "higiene-sueno-guatemala-calor-altitud-descanso",
+      "title": "Guía de higiene del sueño para Guatemala: calor, altitud y descanso real",
+      "description": "Del calor de la costa a la altura de Xela: cómo el clima guatemalteco afecta tu sueño, según estudios reales, y qué hacer con esa información esta noche.",
+      "category": "Sueño",
+      "read_time": 7,
+      "image": "higiene-sueno-guatemala",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "como-respirar-durante-ejercicio-nariz-vs-boca",
+      "title": "Cómo respirar durante el ejercicio: nariz vs. boca",
+      "description": "Nariz para calentar, boca para el sprint final: guía práctica basada en estudios sobre cuándo usar cada vía respiratoria durante tu entrenamiento.",
+      "category": "Rendimiento",
+      "read_time": 6,
+      "image": "nariz-vs-boca-ejercicio",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "respiracion-nasal-rendimiento-deportivo-estudios",
+      "title": "Respiración nasal y rendimiento deportivo: qué dicen los estudios",
+      "description": "Revisamos los estudios reales sobre respiración nasal y rendimiento deportivo: dónde ayuda, dónde te frena, y qué hacer con esa información en tu entrenamiento.",
+      "category": "Rendimiento",
+      "read_time": 7,
+      "image": "rendimiento-deportivo-estudios",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "oxido-nitrico-nariz-karolinska",
+      "title": "La ciencia del óxido nítrico: tu nariz vs. tu boca",
+      "description": "Los senos paranasales producen óxido nítrico, una molécula que tu boca no puede generar. Te contamos qué descubrió el Karolinska Institute y por qué importa.",
+      "category": "Ciencia",
+      "read_time": 7,
+      "image": "oxido-nitrico-nariz",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "tiras-nasales-mecanica-que-no-hacen",
+      "title": "Tiras nasales: cómo funcionan mecánicamente (y qué NO hacen)",
+      "description": "La mecánica real detrás de una tira nasal, con estudios de rinometría acústica — y la lista honesta de lo que este producto no puede prometer.",
+      "category": "Ciencia",
+      "read_time": 6,
+      "image": "tiras-nasales-mecanica",
+      "publish_date": "2026-07-16",
+      "published": true
+    },
+    {
+      "slug": "james-nestor-experimento-stanford-respiracion-nasal",
+      "title": "James Nestor y el experimento de Stanford: 10 días sin respirar por la nariz",
+      "description": "El autor de Breath se tapó la nariz 10 días bajo supervisión de Stanford. Esto fue lo que pasó — y qué dice (y qué no dice) la ciencia real detrás de esa historia.",
+      "category": "Ciencia",
+      "read_time": 7,
+      "image": "nestor-stanford-experimento",
+      "publish_date": "2026-07-16",
+      "published": true
+    }
+  ]
 }

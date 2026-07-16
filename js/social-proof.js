@@ -7,53 +7,11 @@
 (function() {
   'use strict';
 
-  // ── Purchase Toast Notifications ──
-  var toastData = [
-    { name: 'María', zone: 'Zona 14', product: 'Bundle', time: '2 horas' },
-    { name: 'Carlos', zone: 'Zona 10', product: 'Mouth Tape', time: '4 horas' },
-    { name: 'Andrea', zone: 'Cayalá', product: 'Bundle', time: '6 horas' },
-    { name: 'Roberto', zone: 'Mixco', product: 'Mouth Tape', time: '8 horas' },
-    { name: 'Lucia', zone: 'Antigua', product: 'Nose Tape', time: '1 día' }
-  ];
-
-  function showToast() {
-    if (sessionStorage.getItem('ventus_toast_count') >= 2) return;
-
-    var count = parseInt(sessionStorage.getItem('ventus_toast_count') || '0');
-    var item = toastData[count % toastData.length];
-
-    var toast = document.createElement('div');
-    toast.className = 'social-proof-toast';
-    toast.innerHTML = '<div class="toast-name">' + item.name + ' de ' + item.zone + ' compro el ' + item.product + '</div>' +
-      '<div class="toast-detail">Hace ' + item.time + '</div>';
-    document.body.appendChild(toast);
-
-    // Slide in
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        toast.classList.add('visible');
-      });
-    });
-
-    // Slide out after 4s
-    setTimeout(function() {
-      toast.classList.remove('visible');
-      setTimeout(function() { toast.remove(); }, 500);
-    }, 4000);
-
-    sessionStorage.setItem('ventus_toast_count', count + 1);
-  }
-
-  // Show first toast after 8s, second after 25s
-  if (!sessionStorage.getItem('ventus_toast_count') || parseInt(sessionStorage.getItem('ventus_toast_count')) < 2) {
-    var currentCount = parseInt(sessionStorage.getItem('ventus_toast_count') || '0');
-    if (currentCount === 0) {
-      setTimeout(showToast, 8000);
-      setTimeout(showToast, 25000);
-    } else if (currentCount === 1) {
-      setTimeout(showToast, 12000);
-    }
-  }
+  // NOTA (2026-07-16): Se eliminaron los toasts de "compras recientes" —
+  // usaban nombres y zonas inventados (María Zona 14, Carlos Zona 10, etc.),
+  // no ventas reales. VENTUS no fabrica social proof. Si en el futuro se
+  // quiere reactivar, debe alimentarse de pedidos reales vía el Worker
+  // (ventus-backoffice), nunca de datos hardcodeados.
 
   // ── Enhanced Exit Intent ──
   // Desktop: mouseout top of viewport
