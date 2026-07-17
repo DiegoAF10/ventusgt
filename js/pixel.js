@@ -83,26 +83,55 @@ fbq('track', 'PageView');
     }
   }
 
-  // --- Thank you page: Purchase (multi-item aware) ---
+  // --- Thank you page: Purchase (multi-item aware, deduped by order id) ---
+  // NOTA: sin CAPI server-side esto sigue siendo aproximado (no cubre bloqueos
+  // de ad-blocker ni conversiones fuera del navegador). Es la mejor señal
+  // disponible solo con tracking client-side.
   if (path.includes('/gracias')) {
     try {
-      const orderData = JSON.parse(localStorage.getItem('ventus_last_order') || '{}');
+      const raw = localStorage.getItem('ventus_last_order');
+      const orderData = raw ? JSON.parse(raw) : null;
+      const FIRED_KEY = 'ventus_purchase_fired';
 
-      if (orderData.value) {
-        // Build content_ids from items array (new) or single sku (legacy)
-        const contentIds = orderData.items
-          ? orderData.items.map(function(i) { return i.sku; })
-          : orderData.sku ? [orderData.sku] : [];
+      if (orderData && orderData.value && orderData.orderId) {
+        const alreadyFired = localStorage.getItem(FIRED_KEY) === orderData.orderId;
 
-        fbq('track', 'Purchase', {
-          content_ids: contentIds,
-          content_type: 'product',
-          value: orderData.value,
-          currency: 'GTQ',
-          num_items: orderData.num_items || 1,
-        });
+        if (!alreadyFired) {
+          // Build content_ids from items array (new) or single sku (legacy)
+          const contentIds = orderData.items
+            ? orderData.items.map(function(i) { return i.sku; })
+            : orderData.sku ? [orderData.sku] : [];
 
-        // Clear so it doesn't fire again on refresh
+          fbq('track', 'Purchase', {
+            content_ids: contentIds,
+            content_type: 'product',
+            value: orderData.value,
+            currency: 'GTQ',
+            num_items: orderData.num_items || 1,
+          });
+
+          if (typeof gtag === 'function') {
+            gtag('event', 'purchase', {
+              transaction_id: orderData.orderId,
+              value: orderData.value,
+              shipping: orderData.shipping || 0,
+              currency: 'GTQ',
+              items: (orderData.items || []).map(function(i) {
+                return {
+                  item_id: i.sku,
+                  item_name: i.name || i.sku,
+                  price: i.price,
+                  quantity: i.quantity,
+                };
+              }),
+            });
+          }
+
+          // Flag this specific order as fired so a refresh can't re-fire it
+          localStorage.setItem(FIRED_KEY, orderData.orderId);
+        }
+
+        // Clear the order payload either way — it's been processed once
         localStorage.removeItem('ventus_last_order');
       }
     } catch { /* ignore */ }
@@ -110,6 +139,45 @@ fbq('track', 'PageView');
     // Safety: clear cart on thank you page
     if (typeof clearCart === 'function') clearCart();
   }
+})();
+
+// ═══ GA4 ECOMMERCE: view_item (product pages + landings) ═══
+// Landings (ronquidos.html, rendimiento.html) carry the same og:title /
+// product:price:amount meta as product pages, so we reuse them here.
+(function() {
+  if (typeof gtag !== 'function') return;
+
+  const path = window.location.pathname;
+  const isProductPage = path.includes('/productos/');
+
+  const productSkuMap = {
+    'mouth-tape': 'MT-01',
+    'nose-tape-premium': 'NT-02',
+    'nose-tape': 'NT-01',
+    'bundle': 'BUNDLE',
+    'repuestos': 'NT-03',
+  };
+  const landingSkuMap = {
+    'ronquidos': 'MT-01',
+    'rendimiento': 'NT-01',
+  };
+
+  const slug = path.split('/').pop().replace('.html', '');
+  const isLandingPage = !isProductPage && Object.prototype.hasOwnProperty.call(landingSkuMap, slug);
+
+  if (!isProductPage && !isLandingPage) return;
+
+  const sku = isProductPage ? (productSkuMap[slug] || slug) : landingSkuMap[slug];
+  const priceMeta = document.querySelector('meta[property="product:price:amount"]');
+  const titleMeta = document.querySelector('meta[property="og:title"]');
+  const price = parseFloat(priceMeta && priceMeta.content) || 0;
+  const name = (titleMeta && titleMeta.content) || document.title;
+
+  gtag('event', 'view_item', {
+    currency: 'GTQ',
+    value: price,
+    items: [{ item_id: sku, item_name: name, price: price, quantity: 1 }],
+  });
 })();
 
 // ═══ ADDTOCART HOOK ═══

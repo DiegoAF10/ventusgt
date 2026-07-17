@@ -34,6 +34,54 @@ const DEPARTMENTS = [
 
 let appliedCoupon = null; // { code, type, discount_percent? }
 
+const VENTUS_WHATSAPP = '50231015202';
+
+/**
+ * Builds a WhatsApp pre-filled message with the full cart, totals and
+ * (if already typed) the customer's name — used by the COD payment method.
+ */
+function buildCodWhatsAppMessage(data, totals) {
+  var lines = [];
+  lines.push('Hola VENTUS, quiero hacer este pedido con pago contra entrega (COD):');
+  lines.push('');
+  totals.lineItems.forEach(function(li) {
+    lines.push(li.quantity + 'x ' + li.name + ' - Q' + li.lineTotal);
+  });
+  lines.push('');
+  lines.push('Envio: ' + (totals.shipping === 0 ? 'Gratis' : 'Q' + totals.shipping));
+  lines.push('Total: Q' + totals.total);
+
+  if (data.name) {
+    lines.push('');
+    lines.push('Nombre: ' + data.name);
+  }
+  if (data.phone) lines.push('Telefono: ' + data.phone);
+  if (data.address && data.address.line1) {
+    var addrParts = [data.address.line1];
+    if (data.address.zone) addrParts.push('Zona ' + data.address.zone);
+    if (data.address.neighborhood) addrParts.push(data.address.neighborhood);
+    if (data.address.city) addrParts.push(data.address.city);
+    if (data.address.department) addrParts.push(data.address.department);
+    lines.push('Direccion: ' + addrParts.join(', '));
+  }
+
+  lines.push('');
+  lines.push('Como coordinamos el pago al recibir el pedido?');
+
+  return lines.join('\n');
+}
+
+/**
+ * COD path: builds the WhatsApp message and opens wa.me — never touches
+ * the Recurrente/Worker checkout endpoint.
+ */
+function submitCheckoutCod(data, totals) {
+  var message = buildCodWhatsAppMessage(data, totals);
+  var url = 'https://wa.me/' + VENTUS_WHATSAPP + '?text=' + encodeURIComponent(message);
+  window.open(url, '_blank');
+  window.dispatchEvent(new CustomEvent('ventusCodCheckoutOpened'));
+}
+
 /**
  * Backward compat: adds to cart and navigates to checkout
  */
@@ -187,6 +235,30 @@ async function submitCheckout(e) {
     return;
   }
 
+  // Payment method: 'card' (Recurrente) or 'cod_whatsapp' (contra entrega)
+  var pmField = form.elements.namedItem('payment_method');
+  var paymentMethod = pmField && pmField.value ? pmField.value : 'card';
+  var totals = getCartTotals();
+  var defaultLabel = paymentMethod === 'cod_whatsapp' ? 'Continuar por WhatsApp' : 'Continuar al pago';
+
+  // GA4 ecommerce: begin_checkout (fired once per submit attempt, method-aware)
+  if (typeof gtag === 'function') {
+    gtag('event', 'begin_checkout', {
+      currency: 'GTQ',
+      value: totals.subtotal,
+      method: paymentMethod,
+      items: totals.lineItems.map(function(li) {
+        return { item_id: li.sku, item_name: li.name, price: li.price, quantity: li.quantity };
+      }),
+    });
+  }
+
+  // COD: build the WhatsApp message and stop — never touches Recurrente
+  if (paymentMethod === 'cod_whatsapp') {
+    submitCheckoutCod(data, totals);
+    return;
+  }
+
   // Loading state
   if (btn) { btn.disabled = true; btn.textContent = 'Procesando...'; }
   if (btnMobile) { btnMobile.disabled = true; btnMobile.textContent = 'Procesando...'; }
@@ -206,10 +278,13 @@ async function submitCheckout(e) {
     }
 
     if (result.checkout_url) {
-      // Save order data for Purchase pixel event
-      var totals = getCartTotals();
+      // Save order data for Purchase pixel/GA4 event (orderId used for dedupe + transaction_id)
+      var orderId = result.order_id || result.id || result.reference || ('local_' + Date.now());
       localStorage.setItem('ventus_last_order', JSON.stringify({
-        items: items,
+        orderId: String(orderId),
+        items: totals.lineItems.map(function(li) {
+          return { sku: li.sku, name: li.name, price: li.price, quantity: li.quantity };
+        }),
         value: totals.total,
         subtotal: totals.subtotal,
         shipping: totals.shipping,
@@ -226,7 +301,7 @@ async function submitCheckout(e) {
     }
   } catch (err) {
     showError(err.message);
-    if (btn) { btn.disabled = false; btn.textContent = 'Continuar al pago'; }
-    if (btnMobile) { btnMobile.disabled = false; btnMobile.textContent = 'Continuar al pago'; }
+    if (btn) { btn.disabled = false; btn.textContent = defaultLabel; }
+    if (btnMobile) { btnMobile.disabled = false; btnMobile.textContent = defaultLabel; }
   }
 }

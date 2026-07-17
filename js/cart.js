@@ -57,6 +57,21 @@ function addToCart(sku, quantity) {
   }
   saveCart(cart);
   showCartConfirmation(sku, quantity);
+
+  // GA4 ecommerce: add_to_cart
+  if (typeof gtag === 'function') {
+    var product = CART_PRODUCTS[sku];
+    gtag('event', 'add_to_cart', {
+      currency: 'GTQ',
+      value: product.price * quantity,
+      items: [{
+        item_id: sku,
+        item_name: product.name,
+        price: product.price,
+        quantity: quantity,
+      }],
+    });
+  }
 }
 
 // ── Remove item ──
