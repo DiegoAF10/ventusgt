@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tiendaventus.com/sitemap.xml
-
-# Block thank-you page and checkout from indexing
-Disallow: /gracias.html
-Disallow: /checkout.html
+Sitemap: https://tiendaventus.com/sitemap-index.xml
