@@ -1,1 +1,0 @@
-import{g as e,t as c,c as o}from"./cart.CAQX5pWV.js";const a=e();if(a.itemCount>0){c("purchase",{currency:"GTQ",value:a.total}),o();const t=document.getElementById("cart-count");t&&(t.textContent="0")}
