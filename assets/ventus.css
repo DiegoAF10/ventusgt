@@ -635,7 +635,7 @@ input {
 /* ---------- listing ---------- */
 
 .v-lista {
-  padding: 2.4rem 0 3rem;
+  padding: 1.5rem 0 3rem;
 }
 
 .v-lista h1 {
@@ -664,13 +664,13 @@ input {
 .v-bandera__foto {
   display: block;
   background: #071018;
-  min-height: 42vh;
+  min-height: 34vh;
 }
 
 .v-bandera__foto img {
   width: 100%;
   height: 100%;
-  min-height: 42vh;
+  min-height: 34vh;
   object-fit: cover;
   object-position: 72% 50%;
 }
@@ -751,7 +751,8 @@ input {
 .v-sheet__media img.v-main {
   display: none;
   width: 100%;
-  height: min(68vh, 640px);
+  height: auto;
+  max-height: min(70vh, 720px);
   object-fit: contain;
   background: #08121d;
 }
