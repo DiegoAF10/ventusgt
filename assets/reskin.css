@@ -1,35 +1,30 @@
-/* VENTUS reskin — marketing pages only. Do not load on /pedido or /comprar. */
+/* VENTUS conversion overlay — marketing pages only.
+   Do not load on /pedido, /comprar, /gracias or checkout. */
 
-:root {
-  --reskin-radius: 12px;
-  --reskin-radius-sm: 8px;
-  --reskin-glass: rgba(13, 34, 56, 0.88);
-}
+/* ------------------------------------------------------------------ */
+/* Chrome: sólido, recto, sin vidrio de app                            */
+/* ------------------------------------------------------------------ */
 
-/* Header: glass, tighter retail chrome */
 header.sticky.top-0 {
-  background: var(--reskin-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom-color: rgba(244, 239, 230, 0.08);
+  background: var(--color-tinta);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: rgba(244, 239, 230, 0.1);
 }
 
 header.sticky.top-0 .oficio-wrap {
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-}
-
-header.sticky.top-0 img.h-8 {
-  height: 2.15rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .reskin-nav-cta {
   display: none;
   min-height: 40px;
-  padding: 0.4rem 0.95rem;
+  padding: 0.4rem 0.85rem;
   font-size: 0.8rem;
-  border-radius: 999px;
+  border-radius: 0;
   white-space: nowrap;
+  box-shadow: none;
 }
 
 @media (min-width: 48rem) {
@@ -39,125 +34,104 @@ header.sticky.top-0 img.h-8 {
 }
 
 #cart-count {
-  border-radius: 999px;
-  background: var(--color-ambar);
+  border-radius: 0;
+  background: var(--color-hueso);
   color: var(--color-tinta);
 }
 
 #mobile-menu {
-  background: #10263d;
-  padding-bottom: 1.1rem;
+  background: var(--color-tinta);
+  padding-bottom: 1.15rem;
 }
 
 #mobile-menu nav {
-  gap: 0.35rem;
+  gap: 0;
 }
 
 #mobile-menu a {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(244, 239, 230, 0.08);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.1);
 }
 
 #mobile-menu .reskin-menu-cta {
-  margin-top: 0.85rem;
+  margin-top: 1rem;
   width: 100%;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 0;
 }
 
 #mobile-menu .reskin-menu-wa {
   display: inline-block;
-  margin-top: 0.7rem;
+  margin-top: 0.85rem;
   color: var(--color-niebla);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   border-bottom: 0;
 }
 
-/* Trust strip under header */
+/* ------------------------------------------------------------------ */
+/* Una sola línea de confianza — no barra SaaS en mayúsculas           */
+/* ------------------------------------------------------------------ */
+
 .reskin-strip {
   background: #0a1b2c;
-  border-bottom: 1px solid rgba(244, 239, 230, 0.07);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.08);
   color: var(--color-niebla);
 }
 
 .reskin-strip-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.35rem 1.4rem;
-  padding: 0.5rem 0;
-  font-size: 0.74rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.reskin-strip-inner span {
-  position: relative;
-}
-
-@media (min-width: 700px) {
-  .reskin-strip-inner span + span::before {
-    content: "·";
-    position: absolute;
-    left: -0.85rem;
-    color: var(--color-ambar);
-  }
-}
-
-/* Buttons: store, not poster */
-.oficio-btn {
-  border-radius: var(--reskin-radius-sm);
+  margin: 0;
+  padding: 0.55rem 0 0.6rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
   letter-spacing: 0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  text-transform: none;
+  font-weight: 500;
 }
 
-.oficio-btn-linea {
-  box-shadow: inset 0 0 0 1.5px currentColor;
-}
+/* ------------------------------------------------------------------ */
+/* Botones: el oficio ya es recto. No pastillas, no sombra de card.    */
+/* ------------------------------------------------------------------ */
 
-.oficio-btn-24 {
-  border-radius: var(--reskin-radius-sm);
-}
-
+.oficio-btn,
+.oficio-btn-24,
+.oficio-btn-linea,
 .ficha-barra .oficio-btn,
-.puerta-compra .oficio-btn {
-  border-radius: var(--reskin-radius-sm);
+.puerta-compra .oficio-btn,
+.reskin-nav-cta,
+.reskin-menu-cta {
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Hero: readable type, less magazine, more offer */
-.puerta-tit {
-  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+.puerta-compra .oficio-btn {
+  min-width: 15.5rem;
 }
+
+/* ------------------------------------------------------------------ */
+/* Hero: producto + precio, foto a sangre                              */
+/* ------------------------------------------------------------------ */
 
 .puerta-oferta {
   color: #d7e2ec;
-  font-size: 1.05rem;
-  max-width: 32rem;
-}
-
-.puerta-compra .oficio-btn {
-  min-width: 16rem;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  font-size: 1.08rem;
+  max-width: 30rem;
 }
 
 .puerta-gente {
-  background: rgba(7, 16, 24, 0.82);
-  backdrop-filter: blur(10px);
+  background: rgba(7, 16, 24, 0.92);
+  backdrop-filter: none;
 }
 
 .puerta-tab {
   border-radius: 0;
 }
 
-/* Catalog */
-.estante {
-  padding: 3rem 0 3.4rem;
-}
+/* ------------------------------------------------------------------ */
+/* Estante: objeto, no mosaico de tarjetas                             */
+/* ------------------------------------------------------------------ */
 
-.estante-cab h1,
-.estante-cab h2 {
-  max-width: 18ch;
+.estante {
+  padding: 3rem 0 3.2rem;
 }
 
 .reskin-lead {
@@ -169,153 +143,234 @@ header.sticky.top-0 img.h-8 {
 }
 
 .estante-grid {
-  gap: 1.15rem;
+  gap: 2rem 1.5rem;
 }
 
 .estante-tile {
-  background: #10263d;
-  border: 1px solid rgba(244, 239, 230, 0.08);
-  border-radius: var(--reskin-radius);
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.estante-tile-foto {
+  border-radius: 0;
+  aspect-ratio: 1;
 }
 
 .estante-tile-cuerpo {
-  padding: 1.15rem 1.15rem 1.25rem;
+  padding: 1rem 0 0;
 }
 
-.estante-tile:first-child .oficio-kicker::after {
-  content: " · Más pedido";
-  color: var(--color-ambar);
-  letter-spacing: 0.12em;
+.estante-tile-precio {
+  margin-top: 0.55rem;
+}
+
+.estante-tile-precio strong {
+  font-size: clamp(1.55rem, 2.8vw, 2rem);
+  letter-spacing: -0.03em;
+  display: block;
+}
+
+.estante-tile-precio span {
+  color: var(--color-niebla);
+  margin-top: 0.18rem;
+  font-size: 0.92rem;
+  display: block;
+}
+
+.estante-tile .oficio-btn {
+  margin-top: 1rem;
+}
+
+/* El 24: bloque grande 55 / 45 */
+.es-bandera .estante-tile-foto {
+  aspect-ratio: 4 / 3;
 }
 
 @media (min-width: 700px) {
-  .estante-grid > .estante-tile:first-child {
+  .estante-grid > .es-bandera {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: 1.2fr 0.9fr;
+    grid-template-columns: 11fr 9fr;
+    gap: 0 1.8rem;
+    align-items: stretch;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(244, 239, 230, 0.1);
   }
 
-  .estante-grid > .estante-tile:first-child .estante-tile-foto {
+  .estante-grid > .es-bandera .estante-tile-foto {
     aspect-ratio: auto;
     min-height: 100%;
   }
 
-  .estante-grid > .estante-tile:first-child .estante-tile-cuerpo {
+  .estante-grid > .es-bandera .estante-tile-cuerpo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1.7rem 1.6rem 1.8rem;
+    padding: 0.4rem 0 0.6rem;
+  }
+
+  .estante-grid > .es-bandera .estante-tile-precio strong {
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
   }
 }
 
-/* How to order */
+/* ------------------------------------------------------------------ */
+/* Tres pasos en papel — lista, no tres cards                          */
+/* ------------------------------------------------------------------ */
+
 .reskin-pasos {
-  background: var(--color-tinta);
-  border-top: 1px solid rgba(244, 239, 230, 0.08);
-  padding: 3rem 0 3.2rem;
+  background: var(--color-hueso);
+  color: var(--color-tinta);
+  padding: 2.7rem 0 2.9rem;
+}
+
+.reskin-pasos .oficio-kicker {
+  color: rgba(13, 34, 56, 0.55);
 }
 
 .reskin-pasos h2 {
-  margin: 0.4rem 0 0;
+  margin: 0.35rem 0 0;
   font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  color: var(--color-tinta);
 }
 
-.reskin-pasos-grid {
+.reskin-pasos-lista {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.reskin-pasos-lista li {
   display: grid;
-  gap: 1rem;
-  margin-top: 1.6rem;
+  grid-template-columns: 2.6rem 1fr;
+  gap: 0.85rem;
+  align-items: baseline;
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(13, 34, 56, 0.14);
+  background: none;
+  border-radius: 0;
 }
 
-@media (min-width: 800px) {
-  .reskin-pasos-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-  }
+.reskin-pasos-lista li:last-child {
+  border-bottom: 1px solid rgba(13, 34, 56, 0.14);
 }
 
-.reskin-pasos-grid li {
-  background: #10263d;
-  border: 1px solid rgba(244, 239, 230, 0.08);
-  border-radius: var(--reskin-radius);
-  padding: 1.2rem 1.15rem 1.3rem;
-}
-
-.reskin-pasos-grid .n {
+.reskin-pasos-lista span {
   font-family: var(--font-display);
-  color: var(--color-ambar);
-  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.04em;
+  font-size: 1.05rem;
+  color: var(--color-tinta);
 }
 
-.reskin-pasos-grid h3 {
-  margin: 0.35rem 0 0;
-  font-size: 1.2rem;
+.reskin-pasos-lista strong {
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
-.reskin-pasos-grid p {
-  color: var(--color-niebla);
-  margin: 0.4rem 0 0;
-  font-size: 0.98rem;
+.reskin-pasos-lista div {
+  font-size: 1.02rem;
   line-height: 1.45;
 }
 
-/* Science / story band */
+/* ------------------------------------------------------------------ */
+/* ¿Por qué? — una sola superficie hueso con la lista de arriba        */
+/* ------------------------------------------------------------------ */
+
 .cuarto {
   overflow: hidden;
+  border-top: 1px solid rgba(13, 34, 56, 0.12);
 }
 
 .cuarto-papel {
   padding: 3rem 1.25rem;
 }
 
-.cuarto h2 {
-  max-width: 16ch;
-}
+/* ------------------------------------------------------------------ */
+/* Ficha: precio por uso como titular                                  */
+/* ------------------------------------------------------------------ */
 
-/* Product sheet */
-.ficha-info h1 {
-  letter-spacing: -0.03em;
+.ficha-cifra {
+  align-items: baseline;
 }
 
 .ficha-cifra strong {
+  font-size: clamp(2.35rem, 5vw, 3.35rem);
+  letter-spacing: -0.04em;
   color: var(--color-hueso);
+  line-height: 0.95;
+}
+
+.ficha-kit {
+  color: var(--color-niebla);
+  flex-basis: 100%;
+  font-size: 1.02rem;
+  margin-top: 0.15rem;
+}
+
+.ficha-antes {
+  color: var(--color-niebla);
+  font-size: 1rem;
 }
 
 .ficha-ahorro {
-  border-radius: 6px;
+  background: none;
+  color: var(--color-hueso);
+  border-radius: 0;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: block;
 }
 
 .ficha-confianza {
-  background: rgba(244, 239, 230, 0.04);
-  border: 1px solid rgba(244, 239, 230, 0.08);
-  border-radius: var(--reskin-radius);
-  padding: 0.9rem 1rem;
-  margin-top: 1.5rem;
-}
-
-.compra-qty {
-  border-radius: var(--reskin-radius-sm);
-  overflow: hidden;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0.2rem 0 0;
+  margin-top: 1.35rem;
 }
 
 .ficha-main,
 .ficha-thumb {
-  border-radius: var(--reskin-radius);
-}
-
-.ficha-thumb {
+  border-radius: 0;
   overflow: hidden;
 }
 
-.ficha-barra {
-  background: rgba(13, 34, 56, 0.94);
-  backdrop-filter: blur(12px);
+.compra-qty {
+  border-radius: 0;
 }
 
-/* Footer */
+.ficha-barra {
+  background: var(--color-tinta);
+  backdrop-filter: none;
+}
+
+.ficha-barra-precio {
+  letter-spacing: -0.03em;
+}
+
+.reskin-ficha-wa {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-niebla);
+}
+
+.reskin-ficha-wa a {
+  color: var(--color-hueso);
+  font-weight: 600;
+  text-underline-offset: 0.18em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Pie                                                                 */
+/* ------------------------------------------------------------------ */
+
 footer.bg-navy {
   background: #0a1b2c;
 }
@@ -332,14 +387,10 @@ footer.bg-navy a:hover {
   font-weight: 600;
 }
 
-/* Quiet pages */
-.pagina-quieta h1,
-.porque-tesis {
-  letter-spacing: -0.03em;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  header.sticky.top-0 {
+  header.sticky.top-0,
+  .puerta-gente,
+  .ficha-barra {
     backdrop-filter: none;
   }
 }
