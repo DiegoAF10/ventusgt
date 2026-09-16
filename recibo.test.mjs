@@ -10,17 +10,17 @@ const css = readFileSync(new URL('./_astro/gracias.IH5dsDWE.css', import.meta.ur
 test('pedido JS writes the receipt key before redirect', () => {
   assert.match(ped, /ventus-confirmed-order/);
   assert.match(ped, /mode:"cod"/);
-  assert.match(ped, /window\\.location\\.href=S/);
+  assert.match(ped, /window\.location\.href=S/);
 });
 
 test('pedido JS guarda entrega completa en el snapshot', () => {
-  assert.match(ped, /entrega:\\{nombre:/);
-  assert.match(ped, /localStorage\\.setItem\("ventus-confirmed-order"/);
+  assert.match(ped, /entrega:\{nombre:/);
+  assert.match(ped, /localStorage\.setItem\("ventus-confirmed-order"/);
 });
 
 test('gracias JS muestra Pedido #N aunque falte el resumen', () => {
   assert.match(gra, /pintarSoloNumero/);
-  assert.match(gra, /recibo-paint\\.mjs/);
+  assert.match(gra, /recibo-paint\.mjs/);
   assert.doesNotMatch(gra, /El resumen temporal de esta compra no está disponible/);
   assert.doesNotMatch(gra, /El detalle de líneas se muestra si volvés/);
 });
@@ -31,7 +31,7 @@ test('gracias JS pinta entrega también en contra entrega', () => {
 });
 
 test('gracias keeps ?pedido= in the address bar', () => {
-  assert.match(graHtml, /safe\\.toString\\(\\)\\s*\\?\\s*location\\.pathname/);
+  assert.match(graHtml, /safe\.toString\(\)\s*\?\s*location\.pathname/);
 });
 
 test('gracias es un recibo completo, no cuatro tarjetas iguales', () => {
@@ -39,6 +39,6 @@ test('gracias es un recibo completo, no cuatro tarjetas iguales', () => {
   assert.match(graHtml, /A dónde va/);
   assert.match(graHtml, /Cómo pagás/);
   assert.match(graHtml, /Qué sigue/);
-  assert.match(css, /\\.recibo-hoja|\\.recibo-bloque/);
+  assert.match(css, /\.recibo-hoja|\.recibo-bloque/);
   assert.doesNotMatch(css, /border-radius:22px/);
 });
