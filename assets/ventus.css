@@ -2330,3 +2330,174 @@ input {
   align-items: center;
   gap: 0.3rem;
 }
+
+.v-page .pedido-modos .modo:has([value="cod"]) {
+  background-size: 1.85rem;
+}
+
+.v-page .pedido-modos .modo:has([value="card"]) {
+  background-size: 1.85rem, 2.6rem, 2rem;
+}
+
+.v-page .caja-confirmar::after {
+  background-size: 1.05rem;
+}
+
+.v-vida .v-slot,
+.v-vida .v-slot img {
+  height: 100%;
+  min-height: 320px;
+}
+
+.v-vida .v-slot img {
+  object-fit: cover;
+}
+
+.v-vida__copy .v-kicker {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.v-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding-left: 0;
+}
+
+.v-card li::before {
+  content: none;
+}
+
+.v-card li .v-ico {
+  color: var(--verde);
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.12rem;
+}
+
+.v-card--24 li .v-ico {
+  color: var(--ambar);
+}
+
+.v-usa-pasos figure[data-paso]::before {
+  content: attr(data-paso);
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 1;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 12px rgba(7, 18, 32, 0.18);
+}
+
+.v-thumbs .v-thumb--play {
+  position: relative;
+}
+
+.v-thumbs .v-thumb--play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/ico/play.svg") no-repeat center / 1.55rem;
+  background-color: rgba(7, 18, 32, 0.32);
+}
+
+@media (min-width: 900px) {
+  .v-sheet__media {
+    display: grid;
+    grid-template-columns: 5.1rem 1fr;
+    gap: 0.65rem;
+    align-items: start;
+  }
+
+  .v-sheet__media > div:first-child {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .v-thumbs {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .v-thumbs button {
+    width: 100%;
+  }
+
+  .v-sheet__media img.v-main {
+    aspect-ratio: 4 / 5;
+    max-height: 640px;
+  }
+}
+
+/* Diego photos + mock layout */
+.v-hero,
+.v-hero__split {
+  min-height: min(86vh, 780px);
+}
+
+.v-hero__split .v-slot:first-child img {
+  object-position: 48% 26%;
+}
+
+.v-hero__split .v-slot:last-child img {
+  object-position: 38% 20%;
+}
+
+.v-hero__copy {
+  background: linear-gradient(90deg, rgba(7, 18, 32, 0.28) 0%, rgba(7, 18, 32, 0.14) 50%, rgba(7, 18, 32, 0.28) 100%);
+}
+
+@media (min-width: 900px) {
+  .v-pills ul {
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.v-cierre {
+  min-height: 280px;
+}
+
+.v-cierre__mount {
+  display: none;
+}
+
+.v-cierre img,
+.v-cierre .v-slot img {
+  object-position: center 42%;
+}
+
+.v-shop-hero {
+  min-height: 340px;
+}
+
+.v-shop-hero img {
+  min-height: 340px;
+  object-position: center 62%;
+}
+
+.v-pedido-hero {
+  min-height: 300px;
+}
+
+.v-pedido-hero img {
+  object-position: 55% 32%;
+}
+
+.v-card img {
+  aspect-ratio: 16 / 11;
+  object-position: center 40%;
+}
