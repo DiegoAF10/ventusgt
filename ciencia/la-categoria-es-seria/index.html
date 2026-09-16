@@ -20,7 +20,154 @@
         fbq('init', metaPixelId);
         fbq('track', 'PageView');
       }
-    })();</script><noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1674866443482392&ev=PageView&noscript=1"></noscript><link rel="stylesheet" href="/_astro/_ruta_.CN68cFat.css"></head> <body class="flex min-h-screen flex-col bg-tinta text-hueso"> <a href="#main" class="sr-only">Saltar al contenido</a> <header class="sticky top-0 z-40 border-b border-hueso/10 bg-tinta"> <div class="oficio-wrap flex items-center justify-between py-3"> <a href="/" aria-label="VENTUS — Inicio"> <img src="/_astro/logo-horizontal.o8OW7M8O_1nMfXA.webp" alt="VENTUS" loading="eager" decoding="async" fetchpriority="auto" width="280" height="92" class="h-8 w-auto brightness-0 invert"> </a> <div class="flex items-center gap-1 md:gap-3"> <nav class="hidden items-center gap-5 md:flex" aria-label="Principal"> <a href="/productos" class="text-sm font-semibold text-niebla hover:text-hueso">Productos</a> <a href="/por-que" class="text-sm font-semibold text-niebla hover:text-hueso">¿Por qué?</a> <a href="/nosotros" class="text-sm font-semibold text-niebla hover:text-hueso">Nosotros</a> </nav> <a href="/pedido/" id="cart-toggle" class="relative p-2 text-hueso" aria-label="Tu pedido"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"> <path d="M6 6h15l-1.5 9h-12z"></path> <circle cx="9" cy="20" r="1.4"></circle> <circle cx="18" cy="20" r="1.4"></circle> <path d="M6 6L5 3H2"></path> </svg> <span id="cart-count" class="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center bg-hueso px-1 text-[10px] font-bold tabular-nums text-tinta">0</span> </a> <button id="menu-toggle" class="p-2 text-hueso md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"> <line x1="3" y1="6" x2="21" y2="6"></line> <line x1="3" y1="12" x2="21" y2="12"></line> <line x1="3" y1="18" x2="21" y2="18"></line> </svg> </button> </div> </div> <div id="mobile-menu" class="hidden border-t border-hueso/10 bg-navy px-4 pb-4 md:hidden"> <nav class="flex flex-col gap-3 pt-4" aria-label="Móvil"> <a href="/productos" class="text-base font-semibold text-hueso">Productos</a> <a href="/por-que" class="text-base font-semibold text-hueso">¿Por qué?</a> <a href="/nosotros" class="text-base font-semibold text-hueso">Nosotros</a> </nav> </div> </header> <main id="main" class="flex-1">  <article class="oficio-wrap py-10 md:py-16"> <nav aria-label="Migas" class="text-sm text-niebla"> <a href="/" class="hover:text-hueso">Inicio</a> <span aria-hidden="true"> / </span> <a href="/por-que" class="hover:text-hueso">¿Por qué?</a> <span aria-hidden="true"> / </span> <span class="text-hueso">La categoría es seria</span> </nav> <header class="mt-8"> <p class="oficio-kicker text-niebla">Mercado real</p> <h1 class="mt-3 max-w-3xl text-3xl md:text-5xl">La categoría es seria</h1> <p class="mt-4 max-w-2xl text-lg text-niebla">Alguien pagó mil millones de dólares por una tira de plástico. Eso no prueba que sane nada, pero prueba que el hábito ya es categoría.</p> <p class="mt-3 text-sm text-niebla"> <time datetime="2026-08-13T00:00:00.000Z"> 13 de agosto de 2026 </time>
+    })();</script><noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1674866443482392&ev=PageView&noscript=1"></noscript><link rel="stylesheet" href="/_astro/_ruta_.CN68cFat.css"><link rel="stylesheet" href="/assets/ventus.css"></head> <body class="v-page"><svg class="v-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 14.2A8.4 8.4 0 1 1 9.8 3 6.8 6.8 0 0 0 21 14.2z"/>
+  </symbol>
+  <symbol id="correr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="13.5" cy="4.2" r="2"/>
+    <path d="M5 20.5 8.2 14l2.2-4.2 4.4 2"/>
+    <path d="M12.6 10.6 16.2 21"/>
+    <path d="M9.2 12.2 6.4 9.6 3.8 10.6"/>
+    <path d="m14.4 12.2 3-2.4 3.4.6"/>
+  </symbol>
+  <symbol id="comodo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.4"/>
+    <path d="M8.2 13.4c1.1 1.8 6.5 1.8 7.6 0"/>
+    <path d="M9 9.4h.02M15 9.4h.02"/>
+  </symbol>
+  <symbol id="corazon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19.4 12.6 12 20 4.6 12.6a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9a4.6 4.6 0 0 1 6.5 6.5z"/>
+  </symbol>
+  <symbol id="gota" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3s6 7.2 6 11.2A6 6 0 1 1 6 14.2C6 10.2 12 3 12 3z"/>
+  </symbol>
+  <symbol id="hoja" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 20s.4-9 8.2-12.8C20.8 3.6 21 4 21 4s.2 8.4-7.4 12.2C6.4 20 5 20 5 20z"/>
+    <path d="M8 14c3-1.4 5.4-3.8 7-7"/>
+  </symbol>
+  <symbol id="camion" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 7h11v8H3z"/>
+    <path d="M14 10h4.2L21 13.2V15h-7z"/>
+    <circle cx="6.5" cy="17.5" r="1.6"/>
+    <circle cx="17.5" cy="17.5" r="1.6"/>
+  </symbol>
+  <symbol id="escudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3 5 6.2v5.6c0 4 2.8 6.9 7 8.7 4.2-1.8 7-4.7 7-8.7V6.2L12 3z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </symbol>
+  <symbol id="personas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="8" r="2.3"/>
+    <path d="M4.5 18.2c.4-2.8 2.4-4.4 4.5-4.4s4.1 1.6 4.5 4.4"/>
+    <circle cx="16.2" cy="9" r="2"/>
+    <path d="M15 13.8c1.8.2 3.4 1.5 3.8 4.4"/>
+  </symbol>
+  <symbol id="whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.2 18.8 6 15.4A7.8 7.8 0 1 1 8.6 19l-3.4-.2z"/>
+    <path d="M9.4 9.6c.2.8.9 2.4 2.4 3.6 1.5 1.2 2.8 1.5 3.6 1.6"/>
+  </symbol>
+  <symbol id="auriculares" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.8 13v-1.2A7.2 7.2 0 0 1 12 4.6a7.2 7.2 0 0 1 7.2 7.2V13"/>
+    <rect x="3.6" y="12.4" width="3.4" height="6.4" rx="1.4"/>
+    <rect x="17" y="12.4" width="3.4" height="6.4" rx="1.4"/>
+  </symbol>
+  <symbol id="flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14M14 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 12 5 5 9-10"/>
+  </symbol>
+  <symbol id="nariz" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4c2.4 1.4 3.8 4.2 3.8 7.2 0 2.4-.8 4-2.2 5.6-.6.7-1.8.7-2.2-.1-.4.8-1.6.8-2.2.1C7.8 15.2 7 10.6 9.4 6.6"/>
+    <path d="M9.4 16.6c-.8.6-1.8.6-2.6 0M17.2 16.6c.8.6 1.8.6 2.6 0"/>
+  </symbol>
+  <symbol id="labios" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.8 12s3.2-3.6 8.2-3.6 8.2 3.6 8.2 3.6-3.2 3.6-8.2 3.6S3.8 12 3.8 12z"/>
+    <path d="M4.4 12h15.2"/>
+  </symbol>
+  <symbol id="candado" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="11" width="14" height="10" rx="2"/>
+    <path d="M8 11V8.2a4 4 0 0 1 8 0V11"/>
+  </symbol>
+  <symbol id="tarjeta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="5" width="19" height="14" rx="2"/>
+    <path d="M2.5 9.2h19"/>
+    <path d="M6 14.2h4.2"/>
+    <path d="M16.2 14.2h2.2"/>
+  </symbol>
+  <symbol id="efectivo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="8" width="16.5" height="11" rx="1.6"/>
+    <path d="M6 8V6.6A1.6 1.6 0 0 1 7.6 5h12.3A1.6 1.6 0 0 1 20.5 6.6V15"/>
+    <circle cx="10.8" cy="13.5" r="2"/>
+  </symbol>
+  <symbol id="documento" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 3.5h7l5 5V20a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V5A1.5 1.5 0 0 1 7 3.5z"/>
+    <path d="M14 3.5V9h5.5M8.5 13h7M8.5 16.5h5"/>
+  </symbol>
+  <symbol id="pregunta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M9.4 9.2a2.6 2.6 0 1 1 3.5 3.1c-.7.4-1.1 1-.1 1.9"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+  <symbol id="play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path fill="currentColor" stroke="none" d="M10 8.6v6.8l6-3.4z"/>
+  </symbol>
+  <symbol id="instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="16" height="16" rx="4.5"/>
+    <circle cx="12" cy="12" r="3.4"/>
+    <circle cx="17.2" cy="6.8" r=".6" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 8.5h2.4V5.2H14c-2.6 0-4.4 1.8-4.4 4.6v2.1H7.2V15h2.4v6.2h3.4V15h2.5l.5-3.1h-3V9.8c0-.8.4-1.3 1.4-1.3z"/>
+  </symbol>
+  <symbol id="bolsa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6h15l-1.5 9H6.2z"/>
+    <circle cx="9" cy="20" r="1.3"/>
+    <circle cx="18" cy="20" r="1.3"/>
+    <path d="M6 6 5 3H2"/>
+  </symbol>
+  <symbol id="menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+    <path d="M3 6h18M3 12h18M3 18h18"/>
+  </symbol>
+  <symbol id="marca" viewBox="0 0 32 32">
+    <path fill="currentColor" d="M10.2 22.8c.4-3.8 2.2-7.2 5.2-10.1 2.4-2.3 5-3.8 7.6-4.5.5-.1.9.4.7.9-1.4 3.6-3.4 6.7-6.2 9.4-2.3 2.2-4.8 3.6-7.3 4.3-.5.1-.9-.4-.7-.9z"/>
+    <path fill="currentColor" d="M6.4 19.2c.5-3.6 2.2-6.8 5-9.5 2.2-2.1 4.6-3.5 7.1-4.1.5-.1.9.4.7.9-1.3 3.3-3.2 6.2-5.8 8.7-2.2 2.1-4.6 3.4-7 4.1-.5.1-.9-.4-.7-.9z"/>
+  </symbol>
+</svg>
+
+<a class="v-skip" href="#main">Saltar al contenido</a>
+<div class="v-ann">Envíos a toda Guatemala <span>·</span> Pago contra entrega disponible</div>
+<header class="v-top">
+  <div class="v-wrap v-top__in">
+    <a href="/" aria-label="VENTUS — Inicio"><img src="/_astro/logo-horizontal.o8OW7M8O_1nMfXA.webp" alt="VENTUS" width="280" height="92"></a>
+    <nav class="v-nav" aria-label="Principal">
+      <a href="/productos">Productos</a>
+      <a href="/#como">Cómo funciona</a>
+      <a href="/por-que">¿Por qué?</a>
+      <a href="/nosotros">Nosotros</a>
+    </nav>
+    <div class="v-top__tools">
+      <a class="v-ayuda" href="https://wa.me/16066590170" rel="noopener">¿Necesitás ayuda?<span>Escribinos por WhatsApp</span></a>
+      <a href="/pedido/" class="v-bag" id="cart-toggle" aria-label="Tu pedido">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"></path><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M6 6L5 3H2"></path></svg>
+        <span id="cart-count">0</span>
+      </a>
+      <a href="/productos" class="v-btn v-pedir">Pedir ahora</a>
+      <button type="button" class="v-menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="v-drawer">
+    <a href="/productos">Productos</a>
+    <a href="/24">24 horas</a>
+    <a href="/por-que">¿Por qué?</a>
+    <a href="/nosotros">Nosotros</a>
+    <a href="/24" class="v-btn v-btn--24">Pedir el 24</a>
+    <a class="v-wa" href="https://wa.me/16066590170" rel="noopener">¿Duda? WhatsApp</a>
+  </div>
+</header> <main id="main" class="flex-1">  <article class="oficio-wrap py-10 md:py-16"> <nav aria-label="Migas" class="text-sm text-niebla"> <a href="/" class="hover:text-hueso">Inicio</a> <span aria-hidden="true"> / </span> <a href="/por-que" class="hover:text-hueso">¿Por qué?</a> <span aria-hidden="true"> / </span> <span class="text-hueso">La categoría es seria</span> </nav> <header class="mt-8"> <p class="oficio-kicker text-niebla">Mercado real</p> <h1 class="mt-3 max-w-3xl text-3xl md:text-5xl">La categoría es seria</h1> <p class="mt-4 max-w-2xl text-lg text-niebla">Alguien pagó mil millones de dólares por una tira de plástico. Eso no prueba que sane nada, pero prueba que el hábito ya es categoría.</p> <p class="mt-3 text-sm text-niebla"> <time datetime="2026-08-13T00:00:00.000Z"> 13 de agosto de 2026 </time>
 · 5 min de lectura
 </p> </header> <div class="ciencia-prose mt-10 max-w-2xl"> <p>En junio de 2026 alguien escribió un cheque de mil millones de dólares por una tira adhesiva. Prestige Consumer Healthcare compró Breathe Right (y otras marcas OTC) por US$1.045 mil millones. El cierre fue el 15 de junio. Breathe Right pasó a ser la marca más grande de Prestige.</p>
 <p>Eso no prueba que la tira suba el VO2. Prueba otra cosa: el hábito de respirar por la nariz ya es pasillo de farmacia y feed de wellness al mismo tiempo.</p>
@@ -33,8 +180,38 @@
 <p>Nos negamos a usar los números ajenos como propios. No vamos a decir «88 % menos ronquidos» porque eso es de Intake, no de una revisión independiente. No vamos a decir «51 millones vendidos» porque es de Hostage Tape. No vamos a decir que sanamos apnea, que tenemos estudios clínicos propios o que la tira te hace deportista de alto nivel.</p>
 <h2 id="el-vacío-en-español">El vacío en español</h2>
 <p>En 2026 no hay una marca hispana de tiras con voz propia. El español habla de Santi Giménez con su parche, de un artículo serio de The Conversation y de anuncios de Amazon o SHEIN. No hay educador de categoría. No hay líder.</p>
-<p>VENTUS no pretende ser el médico de turno. Pretende ser la voz honesta en español: lo que la tira hace, lo que no, y cuándo no usarla. En Guatemala, con envío real.</p> </div> <footer class="mt-14 border-t border-hueso/15 pt-8"> <h2 class="text-xl">Fuentes</h2> <ul class="mt-4 space-y-3"> <li> <a href="https://www.wsj.com/articles/prestige-consumer-healthcare-to-buy-breathe-right-other-brands-for-1-045-billion-d58024cf" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Wall Street Journal — Prestige to buy Breathe Right for $1.045 billion </a> </li><li> <a href="https://www.reuters.com/legal/transactional/prestige-buy-breathe-right-brand-105-billion-deal-2026-03-20/" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Reuters — Prestige buys Breathe Right brand in $1.05 billion deal </a> </li><li> <a href="https://ir.prestigebrands.com/news-releases/news-release-details/prestige-consumer-healthcare-inc-completes-acquisition-breathe" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Prestige Consumer Healthcare — acquisition completion </a> </li><li> <a href="https://run.outsideonline.com/road/road-culture/the-real-reason-nasal-strips-are-everywhere-again/" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Outside — The Real Reason Nasal Strips are Everywhere Again </a> </li><li> <a href="https://x.com/carlosdmngez/status/2084586930239426563" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> HiStrips founder sobre cultura de categoría </a> </li><li> <a href="https://hostagetape.com/" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Hostage Tape — Nose Strips </a> </li> </ul> <p class="mt-8"> <a href="/por-que" class="text-sm font-semibold underline underline-offset-4">← Volver a ¿Por qué?</a> </p> </footer> </article> <section class="estante"> <div class="oficio-wrap"> <div class="estante-cab"> <p class="oficio-kicker text-niebla">Si esto te hizo sentido</p> <h2>La mesa está abierta</h2> </div> <div class="estante-grid"> <article class="estante-tile"> <a href="/24" class="estante-tile-foto"> <img src="/_astro/bundle-pouches.CF5uPcAd_ZXzPIl.webp" srcset="/_astro/bundle-pouches.CF5uPcAd_Ziq9X.webp 480w, /_astro/bundle-pouches.CF5uPcAd_Z1uc0TG.webp 800w, /_astro/bundle-pouches.CF5uPcAd_ZXzPIl.webp 1024w" alt="VENTUS 24 horas" sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" decoding="async" fetchpriority="auto" width="1024" height="1024"> </a> <div class="estante-tile-cuerpo"> <p class="oficio-kicker text-niebla">Día y noche</p> <h3><a href="/24">VENTUS 24 horas</a></h3> <p class="estante-tile-precio"> <strong class="oficio-precio">Q169</strong> <span>Q5.63/día — los dos productos</span> <span>Envío gratis a toda Guatemala</span> </p> <button type="button" data-agregar data-slug="bundle" data-sku="BUNDLE" data-name="VENTUS 24 horas" data-short-name="24 horas" data-price="169" data-unit-label="Mouth Tape + Nose Tape" data-shipping-free="true" class="oficio-btn oficio-btn-24">
-Agregar · Q169 </button> <a class="estante-tile-ver" href="/24">Ver la ficha</a> </div> </article><article class="estante-tile"> <a href="/boca" class="estante-tile-foto"> <img src="/_astro/producto-boca.DykpWK2r_tn4Vy.webp" srcset="/_astro/producto-boca.DykpWK2r_Z1y3yvS.webp 480w, /_astro/producto-boca.DykpWK2r_Z2x3V7z.webp 800w, /_astro/producto-boca.DykpWK2r_Z22Tp9Q.webp 1100w" alt="VENTUS Mouth Tape" sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" decoding="async" fetchpriority="auto" width="2048" height="2048"> </a> <div class="estante-tile-cuerpo"> <p class="oficio-kicker text-niebla">Noche</p> <h3><a href="/boca">VENTUS Mouth Tape</a></h3> <p class="estante-tile-precio"> <strong class="oficio-precio">Q100</strong> <span>Q3.33/noche</span> <span>Envío Q35 · gratis desde Q149 o con Clip / 24 horas</span> </p> <button type="button" data-agregar data-slug="mouth-tape" data-sku="MT-01" data-name="VENTUS Mouth Tape" data-short-name="Mouth Tape" data-price="100" data-unit-label="30 cintas bucales — 1 mes de noches" data-shipping-free="false" class="oficio-btn oficio-btn-ambar">
-Agregar · Q100 </button> <a class="estante-tile-ver" href="/boca">Ver la ficha</a> </div> </article> </div> </div> </section>  </main> <footer class="border-t border-hueso/10 bg-navy text-sm"> <div class="oficio-wrap py-10"> <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"> <div> <p class="font-display text-lg font-bold">VENTUS</p> <p class="mt-2 text-niebla">Boca cerrada. Nariz trabajando.</p>  </div> <div> <p class="font-semibold text-hueso">El mostrador</p> <ul class="mt-2 space-y-1 text-niebla"> <li><a href="/productos" class="hover:text-hueso">Productos</a></li> <li><a href="/24" class="hover:text-hueso">24 horas</a></li> <li><a href="/boca" class="hover:text-hueso">Mouth Tape</a></li> <li><a href="/nariz" class="hover:text-hueso">Nose Tape</a></li> <li><a href="/clip" class="hover:text-hueso">Clip</a></li> <li><a href="/recambios" class="hover:text-hueso">Repuestos Clip</a></li> </ul> </div> <div> <p class="font-semibold text-hueso">La casa</p> <ul class="mt-2 space-y-1 text-niebla"> <li><a href="/nosotros" class="hover:text-hueso">Nosotros</a></li> <li><a href="/por-que" class="hover:text-hueso">¿Por qué?</a></li> <li><a href="/pedido/" class="hover:text-hueso">Tu pedido</a></li> </ul> </div> <div> <p class="font-semibold text-hueso">Guatemala</p> <p class="mt-2 text-niebla">Envío Q35 · gratis desde Q149 o con Clip / 24 horas</p> <p class="mt-2 text-niebla">1–5 días hábiles a toda Guatemala vía Boxful</p> </div> </div> <p class="mt-8 border-t border-hueso/10 pt-4 text-center text-niebla">
-© 2026 VENTUS. Una marca guatemalteca.
-</p> </div> </footer> <script type="module" src="/_astro/CartBoot.astro_astro_type_script_index_0_lang.DMpylI7e.js"></script> <script type="module">const e=document.getElementById("menu-toggle"),t=document.getElementById("mobile-menu");e&&t&&e.addEventListener("click",()=>{const n=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",String(!n)),t.classList.toggle("hidden")});</script> </body> </html>
+<p>VENTUS no pretende ser el médico de turno. Pretende ser la voz honesta en español: lo que la tira hace, lo que no, y cuándo no usarla. En Guatemala, con envío real.</p> </div> <footer class="mt-14 border-t border-hueso/15 pt-8"> <h2 class="text-xl">Fuentes</h2> <ul class="mt-4 space-y-3"> <li> <a href="https://www.wsj.com/articles/prestige-consumer-healthcare-to-buy-breathe-right-other-brands-for-1-045-billion-d58024cf" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Wall Street Journal — Prestige to buy Breathe Right for $1.045 billion </a> </li><li> <a href="https://www.reuters.com/legal/transactional/prestige-buy-breathe-right-brand-105-billion-deal-2026-03-20/" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Reuters — Prestige buys Breathe Right brand in $1.05 billion deal </a> </li><li> <a href="https://ir.prestigebrands.com/news-releases/news-release-details/prestige-consumer-healthcare-inc-completes-acquisition-breathe" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Prestige Consumer Healthcare — acquisition completion </a> </li><li> <a href="https://run.outsideonline.com/road/road-culture/the-real-reason-nasal-strips-are-everywhere-again/" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Outside — The Real Reason Nasal Strips are Everywhere Again </a> </li><li> <a href="https://x.com/carlosdmngez/status/2084586930239426563" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> HiStrips founder sobre cultura de categoría </a> </li><li> <a href="https://hostagetape.com/" target="_blank" rel="noopener noreferrer" class="text-hueso underline underline-offset-4 hover:text-niebla"> Hostage Tape — Nose Strips </a> </li> </ul> <p class="mt-8"> <a href="/por-que" class="text-sm font-semibold underline underline-offset-4">← Volver a ¿Por qué?</a> </p> </footer> </article> <section class="estante"> <div class="oficio-wrap"> <div class="estante-cab"> <p class="oficio-kicker text-niebla">Si esto te hizo sentido</p> <h2>La mesa está abierta</h2> </div> <div class="estante-grid"> <article class="estante-tile es-bandera"> <a href="/24" class="estante-tile-foto"> <img src="/_astro/bundle-pouches.CF5uPcAd_ZXzPIl.webp" srcset="/_astro/bundle-pouches.CF5uPcAd_Ziq9X.webp 480w, /_astro/bundle-pouches.CF5uPcAd_Z1uc0TG.webp 800w, /_astro/bundle-pouches.CF5uPcAd_ZXzPIl.webp 1024w" alt="VENTUS 24 horas" sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" decoding="async" fetchpriority="auto" width="1024" height="1024"> </a> <div class="estante-tile-cuerpo"> <p class="oficio-kicker text-niebla">Día y noche</p> <h3><a href="/24">VENTUS 24 horas</a></h3> <p class="estante-tile-precio"> <strong class="oficio-precio">Q5.63/día</strong> <span>Q169 · Mouth Tape + Nose Tape</span> <span>Envío gratis a toda Guatemala</span> </p> <button type="button" data-agregar data-slug="bundle" data-sku="BUNDLE" data-name="VENTUS 24 horas" data-short-name="24 horas" data-price="169" data-unit-label="Mouth Tape + Nose Tape" data-shipping-free="true" class="oficio-btn oficio-btn-24">
+Agregar · Q169 </button> <a class="estante-tile-ver" href="/24">Ver la ficha</a> </div> </article><article class="estante-tile"> <a href="/boca" class="estante-tile-foto"> <img src="/_astro/producto-boca.DykpWK2r_tn4Vy.webp" srcset="/_astro/producto-boca.DykpWK2r_Z1y3yvS.webp 480w, /_astro/producto-boca.DykpWK2r_Z2x3V7z.webp 800w, /_astro/producto-boca.DykpWK2r_Z22Tp9Q.webp 1100w" alt="VENTUS Mouth Tape" sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" decoding="async" fetchpriority="auto" width="2048" height="2048"> </a> <div class="estante-tile-cuerpo"> <p class="oficio-kicker text-niebla">Noche</p> <h3><a href="/boca">VENTUS Mouth Tape</a></h3> <p class="estante-tile-precio"> <strong class="oficio-precio">Q3.33/noche</strong> <span>Q100 · 30 cintas</span> <span>Envío Q35 · gratis desde Q149</span> </p> <button type="button" data-agregar data-slug="mouth-tape" data-sku="MT-01" data-name="VENTUS Mouth Tape" data-short-name="Mouth Tape" data-price="100" data-unit-label="30 cintas bucales — 1 mes de noches" data-shipping-free="false" class="oficio-btn oficio-btn-ambar">
+Agregar · Q100 </button> <a class="estante-tile-ver" href="/boca">Ver la ficha</a> </div> </article> </div> </div> </section>  </main> <footer class="v-pie">
+  <div class="v-wrap v-pie__grid">
+    <div>
+      <strong class="marca">VENTUS</strong>
+      <p>Boca cerrada. Nariz trabajando.</p>
+    </div>
+    <div>
+      <p style="margin:0;font-weight:700;color:#fff">Productos</p>
+      <ul>
+        <li><a href="/productos">Elegí tu kit</a></li>
+        <li><a href="/24">24 horas</a></li>
+        <li><a href="/boca">Mouth Tape</a></li>
+        <li><a href="/nariz">Nose Tape</a></li>
+        <li><a href="/clip">Clip</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin:0;font-weight:700;color:#fff">La marca</p>
+      <ul>
+        <li><a href="/nosotros">Nosotros</a></li>
+        <li><a href="/por-que">¿Por qué?</a></li>
+        <li><a href="/pedido/">Tu pedido</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="margin:0;font-weight:700;color:#fff">Guatemala</p>
+      <p>Envío Q35 · gratis desde Q149 o con Clip / 24 horas</p>
+      <p>1–5 días hábiles a toda Guatemala vía Boxful</p>
+      <a class="v-wa" href="https://wa.me/16066590170" rel="noopener">Escribinos por WhatsApp</a>
+    </div>
+  </div>
+  <p class="v-copy">© 2026 VENTUS. Una marca guatemalteca.</p>
+</footer> <script type="module" src="/_astro/CartBoot.astro_astro_type_script_index_0_lang.DMpylI7e.js"></script> <script type="module">const b=document.getElementById("menu-toggle"),d=document.getElementById("mobile-menu");b&&d&&b.addEventListener("click",()=>{const o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",String(!o));d.classList.toggle("is-open");});</script> </body> </html>
