@@ -88,6 +88,37 @@ header.sticky.top-0 .oficio-wrap {
   font-weight: 500;
 }
 
+/* El strip come altura: el precio y el Pedir del hero tienen que verse. */
+.puerta {
+  min-height: calc(100svh - 6.75rem);
+}
+
+.puerta-cuerpo {
+  min-height: calc(100svh - 10.9rem);
+  padding-top: 1rem;
+  padding-bottom: 0.55rem;
+}
+
+@media (max-height: 760px) {
+  .puerta-hora {
+    font-size: clamp(2.35rem, 8vw, 4.1rem);
+  }
+
+  .puerta-tit {
+    font-size: clamp(1.45rem, 3.2vw, 2.25rem);
+    max-width: 18ch;
+  }
+
+  .puerta-oferta {
+    font-size: 1rem;
+    margin-top: 0.55rem;
+  }
+
+  .puerta-compra {
+    margin-top: 0.85rem;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /* Botones: el oficio ya es recto. No pastillas, no sombra de card.    */
 /* ------------------------------------------------------------------ */
