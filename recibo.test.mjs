@@ -42,3 +42,9 @@ test('gracias es un recibo completo, no cuatro tarjetas iguales', () => {
   assert.match(css, /\.recibo-hoja|\.recibo-bloque/);
   assert.doesNotMatch(css, /border-radius:22px/);
 });
+
+test('el lead del hero deja ver el espacio de Pagás cuando', () => {
+  const bloque = css.slice(css.indexOf('.recibo-hero #receipt-lead'), css.indexOf('.recibo-hero #receipt-number'));
+  assert.match(bloque, /letter-spacing:\s*0/);
+  assert.match(bloque, /word-spacing:/);
+});

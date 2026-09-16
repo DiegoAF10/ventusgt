@@ -59,7 +59,8 @@ test('las filas de entrega salen en orden y sin vacíos', () => {
 test('el hero COD con resumen no pide que vuelvas a comprar', () => {
   const t = textosHero({ mode: 'cod', numero: 18, tieneResumen: true });
   assert.equal(t.title, 'Pedido recibido');
-  assert.match(t.lead, /Pagás cuando te llega/);
+  assert.equal(t.lead, 'Ya lo tenemos anotado. Pagás cuando te llega.');
+  assert.doesNotMatch(t.lead, /Pagáscuando/);
   assert.equal(t.number, 'Pedido #18');
   assert.doesNotMatch(t.lead, /Consultá tu pedido/);
 });
