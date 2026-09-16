@@ -380,10 +380,15 @@ input {
   min-height: min(78vh, 720px);
 }
 
+.v-hero__split .v-slot,
 .v-hero__split img {
   width: 100%;
   height: 100%;
   min-height: min(52vh, 520px);
+  margin: 0;
+}
+
+.v-hero__split img {
   object-fit: cover;
 }
 
@@ -460,6 +465,7 @@ input {
     grid-template-columns: 1fr;
   }
 
+  .v-hero__split .v-slot,
   .v-hero__split img {
     min-height: 38vh;
     max-height: 42vh;
@@ -940,10 +946,15 @@ input {
   color: #fff;
 }
 
+.v-shop-hero .v-slot,
 .v-shop-hero img {
   width: 100%;
   height: 100%;
   min-height: 280px;
+  margin: 0;
+}
+
+.v-shop-hero img {
   object-fit: cover;
 }
 
@@ -1469,9 +1480,14 @@ input {
   overflow: hidden;
 }
 
-.v-pedido-hero img {
+.v-pedido-hero > .v-slot,
+.v-pedido-hero > img {
   position: absolute;
   inset: 0;
+  margin: 0;
+}
+
+.v-pedido-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1895,4 +1911,422 @@ input {
     border-top: 1px solid rgba(22, 55, 90, 0.12);
     box-shadow: 0 -10px 28px rgba(13, 34, 56, 0.08);
   }
+}
+
+/* ---------- exact mock UI: icons, slots, pieces ---------- */
+
+.v-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.v-ico {
+  width: 1.2em;
+  height: 1.2em;
+  flex: none;
+  display: inline-block;
+  vertical-align: -0.2em;
+}
+
+.v-ico--lg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.v-ayuda::before {
+  content: "";
+  width: 1.15rem;
+  height: 1.15rem;
+  background: url("/assets/ico/auriculares.svg") no-repeat center / contain;
+}
+
+.v-hero__marks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem 1.35rem;
+  margin-top: 1.2rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.v-hero__marks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.v-pills li svg,
+.v-pills li img {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.v-pills .v-gt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.v-pills .v-gt img {
+  width: 1.15rem;
+  height: 0.78rem;
+}
+
+.v-kit a.v-slot {
+  display: grid;
+  place-items: center;
+  padding: 1.1rem 1.1rem 0;
+  min-height: 180px;
+}
+
+.v-kit img {
+  width: auto;
+  max-width: 70%;
+  height: 170px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.v-kit__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.v-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--navy);
+}
+
+.v-kit--24 .v-link {
+  color: #fff;
+}
+
+.v-paso b {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+}
+
+.v-vidas-fotos {
+  display: grid;
+  gap: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .v-vidas-fotos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .v-vidas-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.v-lista-ico {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.v-lista-ico li {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(22, 55, 90, 0.1);
+}
+
+.v-lista-ico strong {
+  display: block;
+  font-size: 0.98rem;
+}
+
+.v-lista-ico p {
+  margin: 0.15rem 0 0;
+  color: var(--niebla);
+  font-size: 0.9rem;
+}
+
+.v-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.4rem;
+  font-size: 0.92rem;
+}
+
+.v-tabla th,
+.v-tabla td {
+  padding: 0.7rem 0.6rem;
+  border-bottom: 1px solid rgba(22, 55, 90, 0.1);
+  text-align: left;
+}
+
+.v-tabla th {
+  font-family: var(--display);
+}
+
+.v-tabla td:not(:first-child),
+.v-tabla th:not(:first-child) {
+  text-align: center;
+}
+
+.v-ok {
+  color: var(--verde);
+}
+
+.v-faq__grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+@media (min-width: 800px) {
+  .v-faq__grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}
+
+.v-cierre {
+  background: #0a1c30;
+}
+
+.v-cierre__mount {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.v-cierre .v-slot {
+  position: absolute;
+  inset: 0;
+}
+
+.v-cierre .v-slot img[src] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v-pie__social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.v-pie__social a,
+.v-pie__social span {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.v-pie__social .v-ico {
+  width: 1rem;
+  height: 1rem;
+}
+
+.v-hand {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.v-filters a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.v-sheet__icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 0.7rem;
+  margin: 1.1rem 0 0;
+}
+
+@media (min-width: 520px) {
+  .v-sheet__icons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.v-sheet__icons div {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.v-sheet .v-conf {
+  gap: 0.7rem 1rem;
+}
+
+.v-sheet .v-conf li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  padding: 0;
+}
+
+.v-feats {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 800px) {
+  .v-feats {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.v-feats article {
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+}
+
+.v-feats h3 {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+}
+
+.v-feats p {
+  margin: 0.25rem 0 0;
+  color: var(--niebla);
+  font-size: 0.88rem;
+}
+
+.v-usa-pasos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .v-usa-pasos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.v-usa-pasos figure {
+  margin: 0 0 0.7rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #e8eef4;
+  aspect-ratio: 1;
+}
+
+.v-usa-pasos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v-ayuda-banda {
+  background: var(--tinta);
+  color: #e8eef4;
+  padding: 1.6rem 0;
+}
+
+.v-ayuda-banda .v-wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .v-ayuda-banda .v-wrap {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.v-ayuda-banda p {
+  margin: 0.2rem 0 0;
+  color: #9fb3c8;
+  font-size: 0.88rem;
+}
+
+.v-slot {
+  margin: 0;
+  position: relative;
+}
+
+.v-slot img {
+  width: 100%;
+}
+
+.v-pedido-marks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.v-page .pedido-modos .modo:has([value="cod"]) {
+  background-image: url("/assets/ico/efectivo.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  background-size: 1.55rem;
+  padding-left: 3.15rem;
+}
+
+.v-page .pedido-modos .modo:has([value="card"]) {
+  background-image: url("/assets/ico/tarjeta.svg"), url("/assets/ico/visa.svg"), url("/assets/ico/mastercard.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem center, calc(100% - 3.6rem) center, calc(100% - 0.85rem) center;
+  background-size: 1.55rem, 2.4rem, 1.9rem;
+  padding-left: 3.15rem;
+  padding-right: 6.5rem;
+}
+
+.v-page .caja-confirmar::after {
+  content: "Tu información está protegida";
+  display: block;
+  margin-top: 0.55rem;
+  padding-left: 1.4rem;
+  background: url("/assets/ico/candado.svg") no-repeat left center / 0.95rem;
+  font-size: 0.78rem;
+  color: var(--niebla);
+}
+
+.v-pedido-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
