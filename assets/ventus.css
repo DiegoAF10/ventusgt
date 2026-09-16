@@ -1656,23 +1656,24 @@ input {
   padding: 0;
 }
 
-.v-page .pedido-modos-campo::before {
-  content: "Paso 2 de 2";
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--niebla);
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
 .v-page .pedido-modos-campo legend {
   font-family: var(--display);
   font-size: 1.35rem;
   font-weight: 750;
   padding: 0;
   margin-bottom: 0.55rem;
+}
+
+.v-page .pedido-modos-campo legend::before {
+  content: "Paso 2 de 2";
+  display: block;
+  font-family: var(--body);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--niebla);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
 }
 
 .v-page .pedido-modos {
