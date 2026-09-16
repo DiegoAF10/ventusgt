@@ -208,7 +208,7 @@ async function arrancar() {
     } catch {
       texto("receipt-title", "No pudimos consultar el pago");
       texto("receipt-lead", "Esto no significa que haya fallado.");
-      el("receipt-state").textContent = "Revisá el estado aquí o escribinos antes de volver a comprar.");
+      el("receipt-state").textContent = "Revisá el estado aquí o escribinos antes de volver a comprar.";
       retry.hidden = false;
     } finally {
       ocupado = false;
