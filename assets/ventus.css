@@ -649,33 +649,66 @@ input {
   max-width: 38ch;
 }
 
+.v-lista__intro {
+  padding-bottom: 0.4rem;
+}
+
 .v-bandera {
   display: grid;
-  gap: 1.2rem;
-  margin-top: 1.8rem;
-  padding-bottom: 2rem;
+  margin-top: 1.6rem;
+  background: var(--tinta-2);
+  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.v-bandera img {
+.v-bandera__foto {
+  display: block;
+  background: #071018;
+  min-height: 42vh;
+}
+
+.v-bandera__foto img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
+  min-height: 42vh;
   object-fit: cover;
+  object-position: 72% 50%;
+}
+
+.v-bandera__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.6rem var(--gutter) 1.9rem;
 }
 
 .v-bandera .v-price strong {
   font-size: clamp(2.1rem, 4vw, 2.8rem);
 }
 
+.v-bandera .v-btn {
+  margin-top: 1.15rem;
+  align-self: flex-start;
+  min-width: 14.5rem;
+}
+
 @media (min-width: 800px) {
   .v-bandera {
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: center;
-    gap: 2rem;
+    grid-template-columns: 1.2fr 0.9fr;
+    min-height: 56vh;
   }
 
-  .v-bandera img {
-    aspect-ratio: 5 / 4;
+  .v-bandera__foto,
+  .v-bandera__foto img {
+    min-height: 100%;
+  }
+
+  .v-bandera__copy {
+    padding: 2.2rem 2.4rem 2.4rem 2rem;
+  }
+
+  .v-bandera .v-price {
+    margin-top: 0.7rem;
   }
 }
 
@@ -718,8 +751,8 @@ input {
 .v-sheet__media img.v-main {
   display: none;
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  height: min(68vh, 640px);
+  object-fit: contain;
   background: #08121d;
 }
 
@@ -748,7 +781,8 @@ input {
 .v-thumbs img {
   width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
+  background: #08121d;
 }
 
 .v-sheet h1 {
