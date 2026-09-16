@@ -1,1 +1,222 @@
-import{c as $,t as A}from"./cart.CC054dpK.js";const x=72e5,p=s=>new Intl.NumberFormat("es-GT",{style:"currency",currency:"GTQ"}).format(s/100);async function P(){const s=document.getElementById("receipt-main");if(!s)return;const h=new URLSearchParams(window.__receiptQuery||"");delete window.__receiptQuery;const m=h.get("checkout_id"),y=h.get("pedido"),c=e=>document.getElementById(e),a=(e,t)=>{c(e).textContent=t},d=c("receipt-state"),N=c("receipt-content"),r=c("receipt-retry"),b=JSON.parse(s.dataset.thumbs||"{}"),S=e=>{try{const t=JSON.parse(sessionStorage.getItem(e)||"null");if(t&&Number.isFinite(t.savedAt)&&Date.now()-t.savedAt>=0&&Date.now()-t.savedAt<x)return t;sessionStorage.removeItem(e)}catch{}return null},_=e=>e&&e.numero&&Array.isArray(e.lineas)&&e.lineas.length>0&&[e.subtotal_centavos,e.envio_centavos,e.total_centavos].every(t=>Number.isInteger(t)&&t>=0)&&e.lineas.every(t=>typeof t.sku=="string"&&Number.isInteger(t.cantidad)&&t.cantidad>0&&Number.isInteger(t.precio_unitario_centavos)&&t.precio_unitario_centavos>=0);function E(e,t,w){d.hidden=!0,r.hidden=!0,N.hidden=!1,a("receipt-title","Pedido recibido"),a("receipt-lead",t==="cod"?"Tu pedido está registrado. Pagás al recibir.":"Tu pago fue confirmado."),a("receipt-number",`Pedido #VT-${e.numero}`),c("receipt-number").hidden=!1,a("receipt-method",t==="cod"?"Contra entrega":"Tarjeta"),a("receipt-payment",t==="cod"?"Pagás al recibir":"Pago confirmado");const C=c("receipt-lines");C.replaceChildren();for(const n of e.lineas){const i=document.createElement("div");if(i.className="receipt-line",b[n.sku]){const g=document.createElement("img");g.src=b[n.sku],g.alt=n.nombre||n.sku,i.append(g)}const o=document.createElement("div"),u=document.createElement("strong"),l=document.createElement("small"),I=document.createElement("b");u.textContent=n.nombre||{"MT-01":"VENTUS Boca","NT-01":"VENTUS Nariz"}[n.sku]||n.sku,l.textContent=`Cantidad: ${n.cantidad}`,I.textContent=p(n.cantidad*n.precio_unitario_centavos),o.append(u,l),i.append(o,I),C.append(i)}a("receipt-subtotal",p(e.subtotal_centavos)),a("receipt-shipping",e.envio_centavos===0?"Gratis":p(e.envio_centavos)),a("receipt-total",p(e.total_centavos)),e.descuento_centavos&&(c("receipt-discount-row").hidden=!1,a("receipt-discount",`−${p(e.descuento_centavos)}`));const v=e.departamento||e.entrega?.departamento||"",T=c("receipt-delivery");if(T.replaceChildren(),t==="card"&&e.entrega){for(const[n,i]of Object.entries({nombre:"Nombre completo",telefono:"Teléfono",departamento:"Departamento",municipio:"Municipio",direccion:"Dirección de entrega",nota:"Nota adicional"})){if(!e.entrega[n])continue;const o=document.createElement("div"),u=document.createElement("dt"),l=document.createElement("dd");u.textContent=i,l.textContent=e.entrega[n],o.append(u,l),T.append(o)}c("receipt-address-card").hidden=!1}if(t==="cod"&&w&&v){const n=v==="Guatemala"?24:48,i=o=>new Intl.DateTimeFormat("es-GT",{timeZone:"America/Guatemala",day:"numeric",month:"long"}).format(new Date(w+o*36e5));a("receipt-eta",`Entre el ${i(n)} y el ${i(n+24)} · ${v}. Estimación de ${n}–${n+24} horas desde tu pedido.`)}else a("receipt-eta","Guatemala: 24–48 horas. Otros departamentos: 48–72 horas desde el pedido.");try{$(),sessionStorage.removeItem("ventus-checkout-context")}catch{}if(t==="card"){const n=`ventus-purchase-${e.numero}`;let i=!1;try{i=!!sessionStorage.getItem(n)}catch{}if(!i){A("purchase",{transaction_id:String(e.numero),currency:"GTQ",value:e.total_centavos/100,items:e.lineas.map(o=>({item_id:o.sku,quantity:o.cantidad,price:o.precio_unitario_centavos/100}))},{eventID:`ventus-orden-${e.numero}`,metaParams:{content_type:"product",contents:e.lineas.map(o=>({id:o.sku,quantity:o.cantidad,item_price:o.precio_unitario_centavos/100}))}});try{sessionStorage.setItem(n,String(Date.now()))}catch{}}}}if(y){const e=S("ventus-confirmed-order");e?.mode==="cod"&&String(e.order?.numero)===y&&_(e.order)?E(e.order,"cod",e.savedAt):(a("receipt-title","Pedido recibido"),a("receipt-lead","Ya lo tenemos anotado. Pagás cuando te llega."),a("receipt-number",`Pedido #${y}`),c("receipt-number").hidden=!1,d.textContent="El detalle de líneas se muestra si volvés desde la misma compra.");return}if(!m||!/^[A-Za-z0-9_-]{6,64}$/.test(m)){a("receipt-title","Consultá tu pedido"),a("receipt-lead","Abrí el enlace de tu compra o escribinos por WhatsApp."),d.hidden=!0;return}let f=!1;async function k(){if(!f){f=!0,r.disabled=!0;try{const e=await fetch(`${s.dataset.base}/api/tienda/pedido/${encodeURIComponent(m)}`,{cache:"no-store",referrerPolicy:"no-referrer",signal:AbortSignal.timeout(15e3)});if(!e.ok)throw new Error("lookup");const t=await e.json();t.ok&&t.pagado===!0&&_(t)?E(t,"card"):(a("receipt-title",t.confirmando?"Estamos confirmando el pago":"Pago sin confirmar"),a("receipt-lead","Todavía no tenemos confirmación del pago."),d.textContent="Revisá el estado aquí. No hace falta crear otro pedido.",r.hidden=!1)}catch{a("receipt-title","No pudimos consultar el pago"),a("receipt-lead","Esto no significa que haya fallado."),d.textContent="Revisá el estado aquí o escribinos antes de volver a comprar.",r.hidden=!1}finally{f=!1,r.disabled=!1}}}r.addEventListener("click",k),await k()}P();
+import { c as vaciarCarrito, t as track } from "./cart.CC054dpK.js";
+import {
+  filasEntrega,
+  leerSnapshot,
+  nombreSku,
+  pedidoValido,
+  quetzales,
+  textoEta,
+  textosHero,
+} from "../recibo-paint.mjs";
+
+const LLAVE = "ventus-confirmed-order";
+
+function el(id) {
+  return document.getElementById(id);
+}
+
+function texto(id, valor) {
+  el(id).textContent = valor;
+}
+
+function leerGuardado() {
+  for (const store of [sessionStorage, localStorage]) {
+    try {
+      const snap = leerSnapshot(store.getItem(LLAVE));
+      if (snap) return snap;
+      store.removeItem(LLAVE);
+    } catch {}
+  }
+  return null;
+}
+
+function pintarHero({ mode, numero, tieneResumen }) {
+  const t = textosHero({ mode, numero, tieneResumen });
+  texto("receipt-title", t.title);
+  texto("receipt-lead", t.lead);
+  if (t.number) {
+    texto("receipt-number", t.number);
+    el("receipt-number").hidden = false;
+  }
+}
+
+function pintarLineas(order, thumbs) {
+  const caja = el("receipt-lines");
+  caja.replaceChildren();
+  for (const n of order.lineas) {
+    const fila = document.createElement("div");
+    fila.className = "receipt-line";
+    if (thumbs[n.sku]) {
+      const img = document.createElement("img");
+      img.src = thumbs[n.sku];
+      img.alt = nombreSku(n.sku, n.nombre);
+      fila.append(img);
+    }
+    const cuerpo = document.createElement("div");
+    const nom = document.createElement("strong");
+    const cant = document.createElement("small");
+    const monto = document.createElement("b");
+    nom.textContent = nombreSku(n.sku, n.nombre);
+    cant.textContent = `Cantidad: ${n.cantidad}`;
+    monto.textContent = quetzales(n.cantidad * n.precio_unitario_centavos);
+    cuerpo.append(nom, cant);
+    fila.append(cuerpo, monto);
+    caja.append(fila);
+  }
+}
+
+function pintarEntrega(order) {
+  const filas = filasEntrega(order);
+  const lista = el("receipt-delivery");
+  lista.replaceChildren();
+  if (!filas.length) {
+    el("receipt-address-card").hidden = true;
+    return;
+  }
+  for (const f of filas) {
+    const row = document.createElement("div");
+    const dt = document.createElement("dt");
+    const dd = document.createElement("dd");
+    dt.textContent = f.dt;
+    dd.textContent = f.dd;
+    row.append(dt, dd);
+    lista.append(row);
+  }
+  el("receipt-address-card").hidden = false;
+}
+
+function pintarPedido(order, mode, savedAt, thumbs) {
+  el("receipt-state").hidden = true;
+  el("receipt-retry").hidden = true;
+  el("receipt-content").hidden = false;
+  el("recibo-productos").hidden = false;
+  pintarHero({ mode, numero: order.numero, tieneResumen: true });
+  texto("receipt-method", mode === "cod" ? "Contra entrega" : "Tarjeta");
+  texto("receipt-payment", mode === "cod" ? "Pagás al recibir" : "Pago confirmado");
+  pintarLineas(order, thumbs);
+  texto("receipt-subtotal", quetzales(order.subtotal_centavos));
+  texto("receipt-shipping", order.envio_centavos === 0 ? "Gratis" : quetzales(order.envio_centavos));
+  texto("receipt-total", quetzales(order.total_centavos));
+  if (order.descuento_centavos) {
+    el("receipt-discount-row").hidden = false;
+    texto("receipt-discount", `−${quetzales(order.descuento_centavos)}`);
+  }
+  pintarEntrega(order);
+  texto("receipt-eta", textoEta(order.departamento || order.entrega?.departamento || "", savedAt));
+  try {
+    vaciarCarrito();
+    sessionStorage.removeItem("ventus-checkout-context");
+  } catch {}
+  if (mode === "card") {
+    const llave = `ventus-purchase-${order.numero}`;
+    let ya = false;
+    try {
+      ya = !!sessionStorage.getItem(llave);
+    } catch {}
+    if (!ya) {
+      track(
+        "purchase",
+        {
+          transaction_id: String(order.numero),
+          currency: "GTQ",
+          value: order.total_centavos / 100,
+          items: order.lineas.map((o) => ({
+            item_id: o.sku,
+            quantity: o.cantidad,
+            price: o.precio_unitario_centavos / 100,
+          })),
+        },
+        {
+          eventID: `ventus-orden-${order.numero}`,
+          metaParams: {
+            content_type: "product",
+            contents: order.lineas.map((o) => ({
+              id: o.sku,
+              quantity: o.cantidad,
+              item_price: o.precio_unitario_centavos / 100,
+            })),
+          },
+        },
+      );
+      try {
+        sessionStorage.setItem(llave, String(Date.now()));
+      } catch {}
+    }
+  }
+}
+
+function pintarSoloNumero(numero, mode) {
+  el("receipt-state").hidden = true;
+  el("receipt-retry").hidden = true;
+  el("receipt-content").hidden = false;
+  el("recibo-productos").hidden = true;
+  el("receipt-address-card").hidden = true;
+  pintarHero({ mode, numero, tieneResumen: false });
+  texto("receipt-method", mode === "cod" ? "Contra entrega" : "Tarjeta");
+  texto("receipt-payment", mode === "cod" ? "Pagás al recibir" : "Pago confirmado");
+  texto("receipt-eta", textoEta("", 0));
+}
+
+async function arrancar() {
+  const root = el("receipt-main");
+  if (!root) return;
+  const q = new URLSearchParams(window.__receiptQuery || "");
+  delete window.__receiptQuery;
+  const checkoutId = q.get("checkout_id");
+  const pedido = q.get("pedido");
+  const thumbs = JSON.parse(root.dataset.thumbs || "{}");
+
+  if (pedido) {
+    const snap = leerGuardado();
+    if (snap?.mode === "cod" && String(snap.order?.numero) === pedido && pedidoValido(snap.order)) {
+      pintarPedido(snap.order, "cod", snap.savedAt, thumbs);
+    } else {
+      pintarSoloNumero(pedido, "cod");
+    }
+    return;
+  }
+
+  if (!checkoutId || !/^[A-Za-z0-9_-]{6,64}$/.test(checkoutId)) {
+    pintarHero({ mode: "card", numero: "", tieneResumen: false });
+    texto("receipt-title", "Consultá tu pedido");
+    texto("receipt-lead", "Abrí el enlace de tu compra o escribinos por WhatsApp.");
+    el("receipt-state").hidden = true;
+    return;
+  }
+
+  const retry = el("receipt-retry");
+  let ocupado = false;
+  async function consultar() {
+    if (ocupado) return;
+    ocupado = true;
+    retry.disabled = true;
+    try {
+      const r = await fetch(`${root.dataset.base}/api/tienda/pedido/${encodeURIComponent(checkoutId)}`, {
+        cache: "no-store",
+        referrerPolicy: "no-referrer",
+        signal: AbortSignal.timeout(15000),
+      });
+      if (!r.ok) throw new Error("lookup");
+      const t = await r.json();
+      if (t.ok && t.pagado === true && pedidoValido(t)) pintarPedido(t, "card", Date.now(), thumbs);
+      else {
+        texto("receipt-title", t.confirmando ? "Estamos confirmando el pago" : "Pago sin confirmar");
+        texto("receipt-lead", "Todavía no tenemos confirmación del pago.");
+        el("receipt-state").textContent = "Revisá el estado aquí. No hace falta crear otro pedido.";
+        retry.hidden = false;
+      }
+    } catch {
+      texto("receipt-title", "No pudimos consultar el pago");
+      texto("receipt-lead", "Esto no significa que haya fallado.");
+      el("receipt-state").textContent = "Revisá el estado aquí o escribinos antes de volver a comprar.";
+      retry.hidden = false;
+    } finally {
+      ocupado = false;
+      retry.disabled = false;
+    }
+  }
+  retry.addEventListener("click", consultar);
+  await consultar();
+}
+
+arrancar();

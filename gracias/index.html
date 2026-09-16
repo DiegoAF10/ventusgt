@@ -1,13 +1,41 @@
-<!DOCTYPE html><html lang="es-GT"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>Confirmación de compra — VENTUS</title><meta name="description" content="Consultá el resumen y el estado de tu pedido VENTUS."><script>const input=new URLSearchParams(location.search || history.state?.ventusReceiptQuery || ""); const safe=new URLSearchParams(); for(const key of ["checkout_id","pedido"]){const value=input.get(key);if(value && /^[A-Za-z0-9_-]{1,64}$/.test(value))safe.set(key,value);} window.__receiptQuery=safe.toString(); history.replaceState({ventusReceiptQuery:window.__receiptQuery}, "", safe.toString()?location.pathname+"?"+safe.toString():location.pathname);</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YCJW3VE4CW"></script><script>(function(){const ga4Id = "G-YCJW3VE4CW";
-
+<!DOCTYPE html>
+<html lang="es-GT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Pedido recibido — VENTUS</title>
+  <meta name="description" content="Tu pedido VENTUS ya está anotado. Acá está el resumen.">
+  <script>
+    const input = new URLSearchParams(location.search || history.state?.ventusReceiptQuery || "");
+    const safe = new URLSearchParams();
+    for (const key of ["checkout_id", "pedido"]) {
+      const value = input.get(key);
+      if (value && /^[A-Za-z0-9_-]{1,64}$/.test(value)) safe.set(key, value);
+    }
+    window.__receiptQuery = safe.toString();
+    history.replaceState(
+      { ventusReceiptQuery: window.__receiptQuery },
+      "",
+      safe.toString() ? location.pathname + "?" + safe.toString() : location.pathname,
+    );
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCJW3VE4CW"></script>
+  <script>
+    (function () {
+      const ga4Id = "G-YCJW3VE4CW";
       if (!['localhost', '127.0.0.1'].includes(location.hostname)) {
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag(){ dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', ga4Id);
       }
-    })();</script><script>(function(){const metaPixelId = "1674866443482392";
-
+    })();
+  </script>
+  <script>
+    (function () {
+      const metaPixelId = "1674866443482392";
       if (!['localhost', '127.0.0.1'].includes(location.hostname)) {
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -20,5 +48,73 @@
         fbq('init', metaPixelId);
         fbq('track', 'PageView');
       }
-    })();</script><noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1674866443482392&ev=PageView&noscript=1"></noscript><link rel="stylesheet" href="/_astro/boca.CN68cFat.css">
-<link rel="stylesheet" href="/_astro/gracias.IH5dsDWE.css"></head> <body class="receipt-page"><header class="receipt-header"><a href="/" aria-label="VENTUS, inicio"><img src="/_astro/logo-horizontal.o8OW7M8O_Z1xULY3.webp" alt="VENTUS" loading="eager" decoding="async" fetchpriority="auto" width="150" height="49"></a><a href="https://wa.me/16066590170" rel="noopener">¿Necesitás ayuda?</a></header><main id="receipt-main" data-base="https://ventus-core.ventusgt.workers.dev" data-thumbs="{&#34;MT-01&#34;:&#34;/_astro/producto-boca.DykpWK2r_vkVuq.webp&#34;,&#34;NT-03&#34;:&#34;/_astro/repuestos-blister.2oV5wCe9_1THfiG.webp&#34;,&#34;BUNDLE&#34;:&#34;/_astro/bundle-pouches.CF5uPcAd_Z10xHHf.webp&#34;,&#34;NT-01&#34;:&#34;/_astro/producto-nariz.Pvdgppp__Z1GMinx.webp&#34;,&#34;NT-02&#34;:&#34;/_astro/clip-closeup.DGS-R5bb_1xoGHj.webp&#34;}"><section class="receipt-hero"><p class="receipt-eyebrow">VENTUS · tu pedido</p><h1 id="receipt-title">Estamos revisando tu pedido.</h1><p id="receipt-lead">Un momento: confirmamos los datos antes de mostrar el resumen.</p><p id="receipt-number" hidden></p></section><div id="receipt-state" class="receipt-state" aria-live="polite">Buscando el estado del pedido…</div><button id="receipt-retry" type="button" hidden>Revisar estado del pago</button><div id="receipt-content" hidden><section class="receipt-card"><h2>Forma de pago</h2><strong id="receipt-method"></strong><p id="receipt-payment"></p></section><section class="receipt-card"><h2>Resumen del pedido</h2><div id="receipt-lines"></div><div class="receipt-totals"><div><span>Productos</span><strong id="receipt-subtotal"></strong></div><div><span>Envío</span><strong id="receipt-shipping"></strong></div><div id="receipt-discount-row" hidden><span>Descuento</span><strong id="receipt-discount"></strong></div><div class="receipt-total"><span>Total</span><strong id="receipt-total"></strong></div></div></section><section class="receipt-card" id="receipt-address-card" hidden><h2>Datos de entrega</h2><dl id="receipt-delivery"></dl></section><section class="receipt-card"><h2>Estado del pedido</h2><ol class="receipt-steps"><li>✓<strong>Recibido</strong><span>Pedido registrado</span></li><li>2<strong>Preparando envío</strong><span>Pendiente</span></li><li>3<strong>En camino</strong><span>Pendiente</span></li></ol><h3>Entrega estimada</h3><p id="receipt-eta"></p></section></div><p id="receipt-help" class="receipt-help">¿Necesitás corregir algo? <a href="https://wa.me/16066590170" rel="noopener">Escribinos por WhatsApp</a>.</p></main><noscript>Activá JavaScript para consultar tu pedido o escribinos por WhatsApp.</noscript><script type="module" src="/_astro/gracias.astro_astro_type_script_index_0_lang.BLmVIAnI.js"></script></body></html>
+    })();
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1674866443482392&ev=PageView&noscript=1"></noscript>
+  <link rel="stylesheet" href="/_astro/boca.CN68cFat.css">
+  <link rel="stylesheet" href="/_astro/gracias.IH5dsDWE.css">
+</head>
+<body class="recibo">
+  <header class="recibo-top">
+    <a href="/" aria-label="VENTUS, inicio">
+      <img src="/_astro/logo-horizontal.o8OW7M8O_Z1xULY3.webp" alt="VENTUS" width="150" height="49" loading="eager" decoding="async">
+    </a>
+    <a href="https://wa.me/16066590170" rel="noopener">¿Necesitás ayuda?</a>
+  </header>
+
+  <main
+    id="receipt-main"
+    data-base="https://ventus-core.ventusgt.workers.dev"
+    data-thumbs="{&#34;MT-01&#34;:&#34;/_astro/producto-boca.DykpWK2r_vkVuq.webp&#34;,&#34;NT-03&#34;:&#34;/_astro/repuestos-blister.2oV5wCe9_1THfiG.webp&#34;,&#34;BUNDLE&#34;:&#34;/_astro/bundle-pouches.CF5uPcAd_Z10xHHf.webp&#34;,&#34;NT-01&#34;:&#34;/_astro/producto-nariz.Pvdgppp__Z1GMinx.webp&#34;,&#34;NT-02&#34;:&#34;/_astro/clip-closeup.DGS-R5bb_1xoGHj.webp&#34;}"
+  >
+    <section class="recibo-hero">
+      <p class="recibo-eyebrow">VENTUS · Guatemala</p>
+      <h1 id="receipt-title">Estamos revisando tu pedido.</h1>
+      <p id="receipt-lead">Un momento: confirmamos los datos antes de mostrar el resumen.</p>
+      <p id="receipt-number" hidden></p>
+    </section>
+
+    <div id="receipt-state" class="recibo-aviso" aria-live="polite">Buscando el estado del pedido…</div>
+    <button id="receipt-retry" type="button" hidden>Revisar estado del pago</button>
+
+    <div id="receipt-content" hidden>
+      <section class="recibo-bloque" id="recibo-productos">
+        <h2>Lo que pediste</h2>
+        <div id="receipt-lines"></div>
+        <div class="recibo-totales">
+          <div><span>Productos</span><strong id="receipt-subtotal"></strong></div>
+          <div><span>Envío</span><strong id="receipt-shipping"></strong></div>
+          <div id="receipt-discount-row" hidden><span>Descuento</span><strong id="receipt-discount"></strong></div>
+          <div class="recibo-total"><span>Total</span><strong id="receipt-total"></strong></div>
+        </div>
+      </section>
+
+      <div class="recibo-dos">
+        <section class="recibo-bloque" id="receipt-address-card" hidden>
+          <h2>A dónde va</h2>
+          <dl id="receipt-delivery"></dl>
+        </section>
+        <section class="recibo-bloque">
+          <h2>Cómo pagás</h2>
+          <strong id="receipt-method"></strong>
+          <p id="receipt-payment"></p>
+        </section>
+      </div>
+
+      <section class="recibo-bloque recibo-sigue">
+        <h2>Qué sigue</h2>
+        <ol>
+          <li><strong>Lo anotamos</strong><span>Tu pedido ya está en la casa.</span></li>
+          <li><strong>Boxful lo arma</strong><span>Lo preparamos sin que tengás que escribir.</span></li>
+          <li><strong>Te llega</strong><span>1–5 días hábiles en Guatemala.</span></li>
+        </ol>
+        <p id="receipt-eta"></p>
+      </section>
+    </div>
+
+    <p id="receipt-help" class="recibo-ayuda">¿Algo quedó mal? <a href="https://wa.me/16066590170" rel="noopener">Escribinos por WhatsApp</a>.</p>
+  </main>
+  <noscript>Activá JavaScript para ver tu pedido o escribinos por WhatsApp.</noscript>
+  <script type="module" src="/_astro/gracias.astro_astro_type_script_index_0_lang.BLmVIAnI.js"></script>
+</body>
+</html>

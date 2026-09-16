@@ -1,1 +1,206 @@
-.receipt-page{margin:0;background:#e7e9e9;color:#0d2238;font-family:var(--font-body);min-height:100vh}.receipt-header{max-width:1160px;margin:auto;padding:22px 34px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d8d4cd}.receipt-header a:last-child{color:#16375a;font-size:.8rem}.receipt-header img{width:150px}.receipt-page main{max-width:780px;margin:0 auto;padding:48px 24px 90px}.receipt-hero{text-align:center;margin-bottom:30px}.receipt-eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#607286}.receipt-hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:12px 0}.receipt-hero p{color:#607286}.receipt-state{text-align:center;padding:20px;color:#607286}.receipt-card{background:#fffdf9;border-radius:15px;padding:25px;margin:15px 0;box-shadow:0 8px 26px #0d22380d}.receipt-card h2{font:700 1.3rem var(--font-display);margin:0 0 16px}.receipt-line{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #e2dfd8}.receipt-line:last-child{border-bottom:0}.receipt-line img{width:64px;height:64px;object-fit:cover;border-radius:8px}.receipt-line div{flex:1}.receipt-line small{display:block;color:#607286;margin-top:3px}.receipt-line b{white-space:nowrap}.receipt-totals{border-top:1px solid #d8d4cd;margin-top:12px;padding-top:12px}.receipt-totals div{display:flex;justify-content:space-between;padding:5px 0;color:#607286}.receipt-totals .receipt-total{border-top:1px solid #d8d4cd;margin-top:5px;padding-top:12px;font-size:1.12rem;font-weight:800;color:#0d2238}.receipt-card p{color:#526477;line-height:1.5}.receipt-note{border-left:3px solid #d9a441;padding-left:10px}.receipt-help{text-align:center;color:#607286;font-size:.85rem}.receipt-help a{color:#16375a}@media(max-width:600px){.receipt-header{padding:18px 16px}.receipt-page main{padding:30px 16px 80px}.receipt-card{padding:19px}}.receipt-page{background:#f7f4ee}.receipt-header{max-width:780px;border:0;padding:28px 24px}.receipt-header a:last-child{font-size:18px;text-decoration:underline}.receipt-page main{padding-top:14px}.receipt-hero{text-align:left;border:1px solid #dceade;background:#f2f8f3;border-radius:22px;padding:26px}.receipt-hero h1{margin:0 0 12px;font-size:40px}.receipt-hero p{font-size:20px;color:#355369}.receipt-hero .receipt-eyebrow{font-size:13px;margin-bottom:12px}.receipt-hero #receipt-number{font-size:24px;font-weight:700;margin-top:20px;padding-top:16px;border-top:1px solid #dceade}.receipt-card{background:#fff;border-radius:22px;box-shadow:none;padding:26px;margin:20px 0}.receipt-card h2{font-size:26px}.receipt-card>strong{font-size:26px}.receipt-card p,.receipt-totals{font-size:19px}.receipt-line img{width:105px;height:120px;object-fit:contain;background:#f7f6f3;border-radius:14px}.receipt-line strong{font-size:22px}.receipt-line small{font-size:18px}.receipt-line b{font-size:20px}.receipt-totals .receipt-total{font-size:27px}.receipt-card dl>div{display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-bottom:1px solid #d9dfe5;font-size:18px}.receipt-card dd{max-width:65%;text-align:right;overflow-wrap:anywhere}.receipt-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;color:#647587;margin:20px 0 28px}.receipt-steps li{list-style:none}.receipt-steps strong,.receipt-steps span{display:block}.receipt-steps strong{color:#16375a;font-size:18px;margin:8px 0}.receipt-steps span{font-size:15px}.receipt-steps li:first-child{color:#267542}.receipt-card h3{font-size:21px}.receipt-help{font-size:18px}.receipt-page button{border-radius:12px;background:#16375a;color:#fff;padding:14px 22px;cursor:pointer}.receipt-page [hidden]{display:none!important}@media(max-width:520px){.receipt-header{padding:20px 16px}.receipt-header a:last-child{font-size:16px}.receipt-page main{padding:8px 16px 40px}.receipt-hero{padding:20px}.receipt-hero h1{font-size:31px}.receipt-card{padding:20px}.receipt-card h2{font-size:24px}.receipt-line img{width:85px;height:100px}.receipt-line strong{font-size:20px}.receipt-line b{font-size:18px}.receipt-steps{gap:8px}.receipt-steps strong{font-size:16px}}
+.recibo {
+  margin: 0;
+  min-height: 100vh;
+  background: #f4efe6;
+  color: #0d2238;
+  font-family: var(--font-body), "Source Sans 3", sans-serif;
+}
+.recibo [hidden] { display: none !important; }
+.recibo-top {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recibo-top img { width: 150px; height: auto; display: block; }
+.recibo-top a:last-child {
+  color: #16375a;
+  font-size: 0.95rem;
+  text-underline-offset: 3px;
+}
+.recibo-hero,
+#receipt-content,
+.recibo-aviso,
+.recibo-ayuda {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.recibo-hero { padding-top: 48px; padding-bottom: 8px; }
+.recibo-eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #607286;
+}
+.recibo-hero h1 {
+  margin: 0 0 12px;
+  font-family: var(--font-display), Outfit, sans-serif;
+  font-size: clamp(2.4rem, 7vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  color: #0d2238;
+}
+.recibo-hero #receipt-lead {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: #355369;
+  max-width: 28rem;
+  letter-spacing: 0;
+  word-spacing: 0.12em;
+}
+.recibo-hero #receipt-number {
+  margin: 28px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid #cfc8bb;
+  font-feature-settings: "tnum";
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #16375a;
+}
+.recibo-aviso {
+  padding-top: 18px;
+  padding-bottom: 8px;
+  color: #607286;
+}
+.recibo button {
+  display: block;
+  margin: 8px 24px;
+  border: 0;
+  background: #16375a;
+  color: #f4efe6;
+  padding: 12px 18px;
+  font: inherit;
+  cursor: pointer;
+}
+.recibo-bloque {
+  padding: 28px 0;
+  border-top: 1px solid #cfc8bb;
+}
+.recibo-bloque h2 {
+  margin: 0 0 16px;
+  font-family: var(--font-display), Outfit, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #607286;
+  font-weight: 600;
+}
+.receipt-line {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+}
+.receipt-line img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  background: #fff;
+}
+.receipt-line strong {
+  display: block;
+  font-size: 1.15rem;
+}
+.receipt-line small {
+  display: block;
+  margin-top: 4px;
+  color: #607286;
+}
+.receipt-line b {
+  font-feature-settings: "tnum";
+  white-space: nowrap;
+}
+.recibo-totales {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #cfc8bb;
+}
+.recibo-totales > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 0;
+  color: #355369;
+}
+.recibo-totales .recibo-total {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #cfc8bb;
+  color: #0d2238;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-feature-settings: "tnum";
+}
+.recibo-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+}
+.recibo-dos .recibo-bloque { border-top: 1px solid #cfc8bb; }
+#receipt-method {
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+#receipt-payment { margin: 0; color: #355369; }
+#receipt-delivery { margin: 0; }
+#receipt-delivery div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e4ddd2;
+  font-size: 1rem;
+}
+#receipt-delivery dt { color: #607286; }
+#receipt-delivery dd {
+  margin: 0;
+  text-align: right;
+  max-width: 65%;
+  overflow-wrap: anywhere;
+}
+.recibo-sigue ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.recibo-sigue li strong,
+.recibo-sigue li span { display: block; }
+.recibo-sigue li strong {
+  font-size: 1.1rem;
+  color: #16375a;
+}
+.recibo-sigue li span { color: #607286; margin-top: 2px; }
+#receipt-eta {
+  margin: 20px 0 0;
+  color: #355369;
+}
+.recibo-ayuda {
+  padding: 8px 24px 72px;
+  color: #607286;
+}
+.recibo-ayuda a { color: #16375a; }
+@media (max-width: 600px) {
+  .recibo-top { padding: 20px 16px 0; }
+  .recibo-hero,
+  #receipt-content,
+  .recibo-aviso,
+  .recibo-ayuda { padding-left: 16px; padding-right: 16px; }
+  .recibo-hero { padding-top: 32px; }
+  .recibo-hero h1 { font-size: 2.35rem; }
+  .recibo-dos { grid-template-columns: 1fr; }
+  .recibo-dos .recibo-bloque:first-child { border-bottom: 0; }
+  .receipt-line { grid-template-columns: 64px 1fr auto; }
+  .receipt-line img { width: 64px; height: 64px; }
+}
