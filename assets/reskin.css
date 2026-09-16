@@ -1,0 +1,345 @@
+/* VENTUS reskin — marketing pages only. Do not load on /pedido or /comprar. */
+
+:root {
+  --reskin-radius: 12px;
+  --reskin-radius-sm: 8px;
+  --reskin-glass: rgba(13, 34, 56, 0.88);
+}
+
+/* Header: glass, tighter retail chrome */
+header.sticky.top-0 {
+  background: var(--reskin-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgba(244, 239, 230, 0.08);
+}
+
+header.sticky.top-0 .oficio-wrap {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+header.sticky.top-0 img.h-8 {
+  height: 2.15rem;
+}
+
+.reskin-nav-cta {
+  display: none;
+  min-height: 40px;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (min-width: 48rem) {
+  .reskin-nav-cta {
+    display: inline-flex;
+  }
+}
+
+#cart-count {
+  border-radius: 999px;
+  background: var(--color-ambar);
+  color: var(--color-tinta);
+}
+
+#mobile-menu {
+  background: #10263d;
+  padding-bottom: 1.1rem;
+}
+
+#mobile-menu nav {
+  gap: 0.35rem;
+}
+
+#mobile-menu a {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.08);
+}
+
+#mobile-menu .reskin-menu-cta {
+  margin-top: 0.85rem;
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+#mobile-menu .reskin-menu-wa {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: var(--color-niebla);
+  font-size: 0.9rem;
+  border-bottom: 0;
+}
+
+/* Trust strip under header */
+.reskin-strip {
+  background: #0a1b2c;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.07);
+  color: var(--color-niebla);
+}
+
+.reskin-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.4rem;
+  padding: 0.5rem 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.reskin-strip-inner span {
+  position: relative;
+}
+
+@media (min-width: 700px) {
+  .reskin-strip-inner span + span::before {
+    content: "·";
+    position: absolute;
+    left: -0.85rem;
+    color: var(--color-ambar);
+  }
+}
+
+/* Buttons: store, not poster */
+.oficio-btn {
+  border-radius: var(--reskin-radius-sm);
+  letter-spacing: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.oficio-btn-linea {
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+
+.oficio-btn-24 {
+  border-radius: var(--reskin-radius-sm);
+}
+
+.ficha-barra .oficio-btn,
+.puerta-compra .oficio-btn {
+  border-radius: var(--reskin-radius-sm);
+}
+
+/* Hero: readable type, less magazine, more offer */
+.puerta-tit {
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.puerta-oferta {
+  color: #d7e2ec;
+  font-size: 1.05rem;
+  max-width: 32rem;
+}
+
+.puerta-compra .oficio-btn {
+  min-width: 16rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.puerta-gente {
+  background: rgba(7, 16, 24, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.puerta-tab {
+  border-radius: 0;
+}
+
+/* Catalog */
+.estante {
+  padding: 3rem 0 3.4rem;
+}
+
+.estante-cab h1,
+.estante-cab h2 {
+  max-width: 18ch;
+}
+
+.reskin-lead {
+  color: var(--color-niebla);
+  max-width: 36rem;
+  margin: 0.75rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.estante-grid {
+  gap: 1.15rem;
+}
+
+.estante-tile {
+  background: #10263d;
+  border: 1px solid rgba(244, 239, 230, 0.08);
+  border-radius: var(--reskin-radius);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.estante-tile-cuerpo {
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.estante-tile:first-child .oficio-kicker::after {
+  content: " · Más pedido";
+  color: var(--color-ambar);
+  letter-spacing: 0.12em;
+}
+
+@media (min-width: 700px) {
+  .estante-grid > .estante-tile:first-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+  }
+
+  .estante-grid > .estante-tile:first-child .estante-tile-foto {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+
+  .estante-grid > .estante-tile:first-child .estante-tile-cuerpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.7rem 1.6rem 1.8rem;
+  }
+}
+
+/* How to order */
+.reskin-pasos {
+  background: var(--color-tinta);
+  border-top: 1px solid rgba(244, 239, 230, 0.08);
+  padding: 3rem 0 3.2rem;
+}
+
+.reskin-pasos h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+}
+
+.reskin-pasos-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 800px) {
+  .reskin-pasos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+.reskin-pasos-grid li {
+  background: #10263d;
+  border: 1px solid rgba(244, 239, 230, 0.08);
+  border-radius: var(--reskin-radius);
+  padding: 1.2rem 1.15rem 1.3rem;
+}
+
+.reskin-pasos-grid .n {
+  font-family: var(--font-display);
+  color: var(--color-ambar);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.reskin-pasos-grid h3 {
+  margin: 0.35rem 0 0;
+  font-size: 1.2rem;
+}
+
+.reskin-pasos-grid p {
+  color: var(--color-niebla);
+  margin: 0.4rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+/* Science / story band */
+.cuarto {
+  overflow: hidden;
+}
+
+.cuarto-papel {
+  padding: 3rem 1.25rem;
+}
+
+.cuarto h2 {
+  max-width: 16ch;
+}
+
+/* Product sheet */
+.ficha-info h1 {
+  letter-spacing: -0.03em;
+}
+
+.ficha-cifra strong {
+  color: var(--color-hueso);
+}
+
+.ficha-ahorro {
+  border-radius: 6px;
+}
+
+.ficha-confianza {
+  background: rgba(244, 239, 230, 0.04);
+  border: 1px solid rgba(244, 239, 230, 0.08);
+  border-radius: var(--reskin-radius);
+  padding: 0.9rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.compra-qty {
+  border-radius: var(--reskin-radius-sm);
+  overflow: hidden;
+}
+
+.ficha-main,
+.ficha-thumb {
+  border-radius: var(--reskin-radius);
+}
+
+.ficha-thumb {
+  overflow: hidden;
+}
+
+.ficha-barra {
+  background: rgba(13, 34, 56, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+/* Footer */
+footer.bg-navy {
+  background: #0a1b2c;
+}
+
+footer.bg-navy a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.reskin-wa {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: var(--color-hueso);
+  font-weight: 600;
+}
+
+/* Quiet pages */
+.pagina-quieta h1,
+.porque-tesis {
+  letter-spacing: -0.03em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.sticky.top-0 {
+    backdrop-filter: none;
+  }
+}
