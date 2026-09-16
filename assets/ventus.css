@@ -2743,7 +2743,48 @@ input {
   padding: 0.9rem 1.2rem;
 }
 
-.v-shop-hero h1 {
-  font-size: clamp(1.35rem, 3vw, 1.9rem);
-  max-width: 18ch;
+.v-shop-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin: 2rem 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-height: 180px;
+}
+
+.v-shop-split img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.v-shop-split .v-slot:first-child img {
+  object-position: 48% 26%;
+}
+
+.v-shop-split .v-slot:last-child img {
+  object-position: 38% 18%;
+}
+
+.v-tag--dia {
+  background: var(--verde-soft);
+  color: var(--verde);
+}
+
+.v-pedido-hero {
+  min-height: 360px;
+}
+
+.v-kit--24 a.v-slot {
+  padding: 0;
+  min-height: 0;
+}
+
+.v-kit--24 img {
+  width: 100%;
+  max-width: none;
+  height: 190px;
+  object-fit: cover;
+  object-position: center 58%;
 }
