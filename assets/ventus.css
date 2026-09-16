@@ -2776,6 +2776,11 @@ input {
   min-height: 360px;
 }
 
+.v-pedido-hero img {
+  object-fit: cover;
+  object-position: 52% 22%;
+}
+
 .v-kit--24 a.v-slot {
   padding: 0;
   min-height: 0;
@@ -2787,4 +2792,17 @@ input {
   height: 190px;
   object-fit: cover;
   object-position: center 58%;
+}
+
+@media (max-width: 759px) {
+  .v-hero,
+  .v-hero__split {
+    min-height: 0;
+  }
+
+  .v-hero__split .v-slot,
+  .v-hero__split img {
+    min-height: 240px;
+    max-height: 280px;
+  }
 }
