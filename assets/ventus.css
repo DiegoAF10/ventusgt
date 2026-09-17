@@ -653,13 +653,14 @@ input {
 /* ---------- pasos ---------- */
 
 .v-pasos-sec {
-  background: var(--navy);
-  color: #fff;
+  background: var(--papel);
+  color: var(--ink);
   padding: 2.5rem 0 2.7rem;
+  border-block: 1px solid rgba(22, 55, 90, 0.08);
 }
 
 .v-pasos-sec .v-kicker {
-  color: #9fb3c8;
+  color: var(--navy);
 }
 
 .v-pasos-sec h2 {
@@ -681,13 +682,20 @@ input {
 
 .v-paso {
   display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  gap: 0.7rem;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.v-paso__mark {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
 }
 
 .v-paso b {
   font-family: var(--display);
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 .v-paso h3 {
@@ -1937,9 +1945,10 @@ input {
 
 .v-ayuda::before {
   content: "";
-  width: 1.15rem;
-  height: 1.15rem;
-  background: url("/assets/ico/auriculares.svg") no-repeat center / contain;
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  background: url("/assets/ico/whatsapp.svg") no-repeat center / contain;
 }
 
 .v-hero__marks {
@@ -2527,7 +2536,7 @@ input {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  color: #fff;
+  color: var(--navy);
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -2537,12 +2546,18 @@ input {
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
-  background: #fff;
-  color: var(--navy);
+  background: var(--navy);
+  color: #fff;
   display: grid;
   place-items: center;
   font-size: 1rem;
   font-weight: 800;
+}
+
+.v-paso__mark .v-ico {
+  width: 1.45rem;
+  height: 1.45rem;
+  color: var(--navy);
 }
 
 .v-vidas {
@@ -2782,16 +2797,16 @@ input {
 }
 
 .v-kit--24 a.v-slot {
-  padding: 0;
-  min-height: 0;
+  padding: 1.1rem 1.1rem 0;
+  min-height: 180px;
 }
 
 .v-kit--24 img {
-  width: 100%;
-  max-width: none;
-  height: 190px;
-  object-fit: cover;
-  object-position: center 58%;
+  width: auto;
+  max-width: 78%;
+  height: 170px;
+  object-fit: contain;
+  object-position: center;
 }
 
 @media (max-width: 759px) {
@@ -2805,4 +2820,309 @@ input {
     min-height: 240px;
     max-height: 280px;
   }
+}
+
+.v-kit .v-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.v-pills li {
+  gap: 0.45rem;
+}
+
+.v-pills .v-ico {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+
+.v-sheet__icons {
+  align-items: start;
+}
+
+.v-sheet__icons .v-ico {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+
+.v-lista-ico .v-ico {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: var(--navy);
+}
+
+.v-usa-pasos .v-usa--ico {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 0.55rem;
+  background: var(--papel);
+  border-radius: var(--radius);
+  padding: 1.1rem 1rem 1.2rem;
+}
+
+.v-usa__n {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.v-usa--ico h3 {
+  margin: 0.2rem 0 0;
+}
+
+.v-usa--ico p {
+  margin: 0;
+}
+
+.v-wa .v-ico {
+  color: #25d366;
+}
+
+/* ----- Nosotros ----- */
+.v-casa-hero {
+  position: relative;
+  min-height: min(72vh, 640px);
+  display: grid;
+  color: #fff;
+}
+
+.v-casa-hero .v-slot,
+.v-casa-hero img {
+  width: 100%;
+  height: 100%;
+  min-height: min(72vh, 640px);
+  object-fit: cover;
+  object-position: center 42%;
+  margin: 0;
+}
+
+.v-casa-hero__in {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem var(--gutter) 3.2rem;
+  background: linear-gradient(180deg, rgba(7, 18, 32, 0.12) 0%, rgba(7, 18, 32, 0.72) 100%);
+}
+
+.v-casa-hero__in .v-kicker {
+  color: #f4efe6;
+}
+
+.v-casa-hero h1 {
+  margin: 0.35rem 0 0;
+  font-family: var(--display);
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+  color: #fff;
+}
+
+.v-casa-hero p {
+  margin: 0.85rem 0 0;
+  max-width: 42ch;
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.v-casa-grid {
+  padding: 3.2rem 0;
+}
+
+.v-casa-grid__in {
+  display: grid;
+  gap: 1.8rem;
+}
+
+@media (min-width: 860px) {
+  .v-casa-grid__in {
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+    gap: 2.4rem;
+  }
+}
+
+.v-casa-grid h2 {
+  margin: 0.3rem 0 0.8rem;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.v-casa-grid img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.v-casa-vals {
+  padding: 0 0 3.2rem;
+}
+
+.v-casa-vals ul {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .v-casa-vals ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.v-casa-vals li {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.2rem 1.15rem 1.3rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.v-casa-vals strong {
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+
+.v-casa-vals p {
+  margin: 0;
+  color: var(--niebla);
+}
+
+.v-casa-quote {
+  padding: 0 0 3.4rem;
+}
+
+.v-casa-quote__in {
+  display: grid;
+  gap: 1.4rem;
+}
+
+@media (min-width: 860px) {
+  .v-casa-quote__in {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+  }
+}
+
+.v-casa-quote img {
+  width: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.v-casa-quote blockquote {
+  margin: 0;
+}
+
+.v-casa-quote h2 {
+  margin: 0.3rem 0 0.7rem;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+/* ----- ¿Por qué? light ----- */
+#main .v-porque,
+#main .porque {
+  background: var(--hueso);
+  color: var(--ink);
+}
+
+#main .porque-portada {
+  background: var(--papel);
+  border-bottom: 1px solid rgba(22, 55, 90, 0.1);
+}
+
+#main .porque-tesis,
+#main .porque-h2,
+#main .porque h3 {
+  color: var(--tinta);
+}
+
+#main .porque-entrada,
+#main .porque-lead,
+#main .porque-aviso,
+#main .porque-para,
+#main .porque-funcion-texto,
+#main .porque-mitad p,
+#main .porque-indice-titulo,
+#main .porque-turno,
+#main .porque-fuentes {
+  color: var(--niebla);
+}
+
+#main .porque-aviso {
+  border-left-color: var(--ambar);
+}
+
+#main .porque-indice a {
+  color: var(--niebla);
+  border-left-color: rgba(22, 55, 90, 0.14);
+}
+
+#main .porque-indice a:hover {
+  color: var(--navy);
+  border-left-color: var(--ambar);
+}
+
+#main .porque-funciones,
+#main .porque-expediente {
+  background: rgba(22, 55, 90, 0.08);
+  border-color: rgba(22, 55, 90, 0.1);
+}
+
+#main .porque-funciones li,
+#main .porque-expediente a {
+  background: #fff;
+  color: var(--ink);
+}
+
+#main .porque-expediente a:hover {
+  background: var(--papel);
+}
+
+#main .porque-funcion-nombre {
+  color: var(--navy);
+}
+
+#main .porque-nota,
+#main .porque-limite,
+#main .porque-objeto {
+  background: #fff;
+  border-color: rgba(22, 55, 90, 0.12);
+}
+
+#main .porque-h2,
+#main .porque-mitad-rotulo,
+#main .porque-objeto-pie {
+  border-color: rgba(22, 55, 90, 0.1);
+}
+
+#main .porque-ver {
+  color: var(--navy);
+  border-bottom-color: var(--navy);
+}
+
+#main .porque-cita {
+  background: var(--papel);
+  border-left-color: var(--ambar);
+  color: var(--ink);
+}
+
+#main .porque-cierre-foto img {
+  height: clamp(16rem, 32vw, 24rem);
+  object-position: center 30%;
 }
