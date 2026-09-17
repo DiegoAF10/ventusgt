@@ -564,7 +564,13 @@ input {
 
 @media (min-width: 800px) {
   .v-kit-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .v-kit--24 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    align-items: stretch;
   }
 }
 
@@ -585,19 +591,21 @@ input {
 }
 
 .v-kit--24 {
-  background: var(--navy);
-  color: #fff;
+  background: var(--papel);
+  color: var(--ink);
 }
 
 .v-kit--24 .v-kicker,
 .v-kit--24 .v-kit__meta {
-  color: #c5d4e3;
+  color: var(--niebla);
 }
 
 .v-kit img {
   width: 100%;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 18%;
+}
 }
 
 .v-kit__body {
@@ -705,7 +713,7 @@ input {
 
 .v-paso p {
   margin: 0.25rem 0 0;
-  color: #c5d4e3;
+  color: var(--niebla);
 }
 
 /* ---------- vidas (noche / día) ---------- */
@@ -793,8 +801,9 @@ input {
 
 .v-wa-card {
   margin-top: 1.2rem;
-  background: var(--navy);
-  color: #fff;
+  background: var(--papel);
+  color: var(--ink);
+  border: 1px solid rgba(22, 55, 90, 0.1);
   border-radius: var(--radius);
   padding: 1.15rem 1.2rem;
   display: flex;
@@ -809,7 +818,7 @@ input {
 }
 
 .v-wa-card a {
-  color: #fff;
+  color: inherit;
   font-weight: 700;
 }
 
@@ -1995,11 +2004,12 @@ input {
 }
 
 .v-kit img {
-  width: auto;
-  max-width: 70%;
-  height: 170px;
-  aspect-ratio: auto;
-  object-fit: contain;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .v-kit__cta {
@@ -2019,7 +2029,7 @@ input {
 }
 
 .v-kit--24 .v-link {
-  color: #fff;
+  color: var(--navy);
 }
 
 .v-paso b {
@@ -2269,9 +2279,10 @@ input {
 }
 
 .v-ayuda-banda {
-  background: var(--tinta);
-  color: #e8eef4;
+  background: var(--papel);
+  color: var(--ink);
   padding: 1.6rem 0;
+  border-block: 1px solid rgba(22, 55, 90, 0.08);
 }
 
 .v-ayuda-banda .v-wrap {
@@ -2288,7 +2299,7 @@ input {
 
 .v-ayuda-banda p {
   margin: 0.2rem 0 0;
-  color: #9fb3c8;
+  color: var(--niebla);
   font-size: 0.88rem;
 }
 
@@ -2797,15 +2808,17 @@ input {
 }
 
 .v-kit--24 a.v-slot {
-  padding: 1.1rem 1.1rem 0;
-  min-height: 180px;
+  padding: 0;
+  min-height: 0;
 }
 
 .v-kit--24 img {
-  width: auto;
-  max-width: 78%;
-  height: 170px;
-  object-fit: contain;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-height: 240px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   object-position: center;
 }
 

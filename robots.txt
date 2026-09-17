@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://tiendaventus.com/sitemap.xml
 Sitemap: https://tiendaventus.com/sitemap-index.xml
