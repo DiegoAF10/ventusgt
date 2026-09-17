@@ -2012,6 +2012,10 @@ input {
   object-position: center 20%;
 }
 
+.v-kit--noche img {
+  object-position: center 8%;
+}
+
 .v-kit__cta {
   display: flex;
   flex-direction: column;
@@ -2608,7 +2612,7 @@ input {
 }
 
 .v-vida:first-child img {
-  object-position: 38% 18%;
+  object-position: 78% 42%;
 }
 
 .v-vida:last-child img {
@@ -2818,8 +2822,8 @@ input {
   height: auto;
   min-height: 0;
   aspect-ratio: 3 / 2;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 @media (max-width: 759px) {
